@@ -123,6 +123,13 @@ export function Settings({ onBack }: { onBack: () => void }) {
           </Button>
         </Card>
       </div>
+
+      {/* Permet de vérifier d'un coup d'œil quelle version tourne réellement
+          sur l'appareil, sans quoi un défaut déjà corrigé peut sembler
+          persister sur un téléphone qui n'a pas rechargé son code. */}
+      <p className="mt-6 text-center text-xs text-muted">
+        Version {__APP_VERSION__}
+      </p>
     </Screen>
   )
 }
