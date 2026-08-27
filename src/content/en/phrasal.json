@@ -1,0 +1,238 @@
+{
+  "id": "en.phrasal",
+  "title": "Phrasal verbs du quotidien",
+  "subtitle": "Ceux qu'un francophone contourne alors qu'un anglophone les emploie sans y penser",
+  "lexemes": [
+    {
+      "id": "en.ph.put-off",
+      "term": "to put off",
+      "pos": "verb",
+      "gloss": "reporter, remettre à plus tard ; aussi : rebuter",
+      "note": "Deux sens très différents. « Put off a meeting » = la reporter. « The smell put me off » = l'odeur m'a dégoûté.",
+      "examples": [
+        { "text": "They put the trip off until spring.", "fr": "Ils ont reporté le voyage au printemps." },
+        { "text": "Don't let the price put you off.", "fr": "Ne te laisse pas rebuter par le prix." }
+      ]
+    },
+    {
+      "id": "en.ph.come-across",
+      "term": "to come across",
+      "pos": "verb",
+      "gloss": "tomber sur (par hasard) ; donner l'impression d'être",
+      "note": "« Come across as » décrit l'impression qu'on produit : « he comes across as arrogant » = il donne l'impression d'être arrogant.",
+      "examples": [
+        { "text": "I came across an old photo of us.", "fr": "Je suis tombé sur une vieille photo de nous." },
+        { "text": "She comes across as shy at first.", "fr": "Elle donne l'impression d'être timide au début." }
+      ]
+    },
+    {
+      "id": "en.ph.get-by",
+      "term": "to get by",
+      "pos": "verb",
+      "gloss": "s'en sortir, se débrouiller (avec juste ce qu'il faut)",
+      "note": "Sous-entend qu'on fait avec des moyens limités. « I get by in Spanish » = je me débrouille en espagnol, sans plus.",
+      "examples": [
+        { "text": "We can get by on very little.", "fr": "On peut se débrouiller avec très peu." },
+        { "text": "I get by in Japanese, but I couldn't hold a real conversation.", "fr": "Je me débrouille en japonais, mais je ne pourrais pas tenir une vraie conversation." }
+      ]
+    },
+    {
+      "id": "en.ph.look-forward",
+      "term": "to look forward to",
+      "pos": "verb",
+      "gloss": "attendre avec impatience, se réjouir à l'avance de",
+      "note": "Toujours suivi d'un nom ou d'un verbe en -ing : « looking forward to seeing you », jamais « to see you ».",
+      "examples": [
+        { "text": "I'm really looking forward to the trip.", "fr": "J'attends vraiment ce voyage avec impatience." },
+        { "text": "We look forward to hearing from you.", "fr": "Dans l'attente de votre réponse." }
+      ]
+    },
+    {
+      "id": "en.ph.make-up-for",
+      "term": "to make up for",
+      "pos": "verb",
+      "gloss": "compenser, rattraper (une perte, un manque)",
+      "note": "« Make up for lost time » est une expression toute faite très courante.",
+      "examples": [
+        { "text": "Nothing can make up for those years.", "fr": "Rien ne peut compenser ces années-là." },
+        { "text": "He worked all weekend to make up for it.", "fr": "Il a travaillé tout le week-end pour rattraper." }
+      ]
+    },
+    {
+      "id": "en.ph.run-out-of",
+      "term": "to run out of",
+      "pos": "verb",
+      "gloss": "être à court de, ne plus avoir de",
+      "note": "Sans complément, « we ran out » suffit : « on n'en avait plus ». Attention à « run out of time », très fréquent.",
+      "examples": [
+        { "text": "We've run out of coffee.", "fr": "On n'a plus de café." },
+        { "text": "I ran out of time before the last question.", "fr": "Le temps m'a manqué avant la dernière question." }
+      ]
+    },
+    {
+      "id": "en.ph.figure-out",
+      "term": "to figure out",
+      "pos": "verb",
+      "gloss": "comprendre, trouver (après réflexion)",
+      "note": "Insiste sur l'effort de résolution, là où « understand » décrit seulement l'état final.",
+      "examples": [
+        { "text": "It took me a while to figure out how it works.", "fr": "Il m'a fallu un moment pour comprendre comment ça marche." },
+        { "text": "We'll figure something out.", "fr": "On trouvera une solution." }
+      ]
+    },
+    {
+      "id": "en.ph.catch-up",
+      "term": "to catch up",
+      "pos": "verb",
+      "gloss": "rattraper son retard ; prendre des nouvelles",
+      "note": "« Catch up on work » = rattraper du travail. « Catch up with a friend » = se revoir pour prendre des nouvelles.",
+      "examples": [
+        { "text": "I need to catch up on sleep.", "fr": "J'ai besoin de rattraper mon sommeil." },
+        { "text": "Let's catch up over coffee next week.", "fr": "Retrouvons-nous autour d'un café la semaine prochaine." }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.ph.put-off.c0",
+      "lexemeId": "en.ph.put-off",
+      "fr": "Ils ont reporté la réunion à jeudi.",
+      "sentence": "They ___ the meeting off until Thursday.",
+      "accepted": ["put"],
+      "nearMisses": [
+        { "word": "postponed", "why": "« Postponed » est juste sur le sens, mais la phrase contient déjà « off » : la structure attendue est « put ... off »." }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.ph.put-off.q0",
+      "lexemeId": "en.ph.put-off",
+      "prompt": "Ne te laisse pas rebuter par la longueur. → Don't let the length ___ you off.",
+      "options": ["put", "take", "throw", "keep"],
+      "answer": "put",
+      "why": "« Put someone off » = rebuter, décourager. C'est le second sens de ce verbe à particule."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.come-across.c0",
+      "lexemeId": "en.ph.come-across",
+      "fr": "Je suis tombé sur ton message en rangeant ma boîte mail.",
+      "sentence": "I ___ across your message while cleaning up my inbox.",
+      "accepted": ["came"],
+      "nearMisses": [
+        { "word": "fell", "why": "« Tomber sur » ne se traduit pas mot à mot. Trouver par hasard, c'est « come across »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.come-across.c1",
+      "lexemeId": "en.ph.come-across",
+      "fr": "Il donne l'impression d'être froid, mais il ne l'est pas.",
+      "sentence": "He comes ___ as cold, but he isn't.",
+      "accepted": ["across"],
+      "hint": "a_____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.ph.get-by.r0",
+      "lexemeId": "en.ph.get-by",
+      "fr": "se débrouiller, s'en sortir avec le minimum",
+      "accepted": ["get by", "to get by"],
+      "hint": "g__ b_"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.get-by.c0",
+      "lexemeId": "en.ph.get-by",
+      "fr": "Je me débrouille en italien, mais je suis loin d'être à l'aise.",
+      "sentence": "I get ___ in Italian, but I'm far from comfortable.",
+      "accepted": ["by"],
+      "nearMisses": [
+        { "word": "along", "why": "« Get along » veut dire bien s'entendre avec quelqu'un. Se débrouiller, c'est « get by »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.look-forward.c0",
+      "lexemeId": "en.ph.look-forward",
+      "fr": "J'ai hâte de te revoir.",
+      "sentence": "I'm looking forward to ___ you again.",
+      "accepted": ["seeing"],
+      "nearMisses": [
+        { "word": "see", "why": "Le « to » de « look forward to » est une préposition, pas un infinitif : le verbe qui suit prend toujours -ing." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.make-up-for.c0",
+      "lexemeId": "en.ph.make-up-for",
+      "fr": "Il a travaillé tard pour rattraper le temps perdu.",
+      "sentence": "He worked late to make up ___ lost time.",
+      "accepted": ["for"],
+      "hint": "f__"
+    },
+    {
+      "kind": "recall",
+      "id": "en.ph.make-up-for.r0",
+      "lexemeId": "en.ph.make-up-for",
+      "fr": "compenser, rattraper (un manque)",
+      "accepted": ["make up for", "to make up for"],
+      "hint": "m___ u_ f__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.run-out-of.c0",
+      "lexemeId": "en.ph.run-out-of",
+      "fr": "On n'a plus de pain.",
+      "sentence": "We've ___ out of bread.",
+      "accepted": ["run"],
+      "nearMisses": [
+        { "word": "ran", "why": "Après « we've », il faut le participe passé : « run », identique à l'infinitif pour ce verbe." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.run-out-of.c1",
+      "lexemeId": "en.ph.run-out-of",
+      "fr": "Le temps m'a manqué avant la fin de l'examen.",
+      "sentence": "I ran out of ___ before the end of the exam.",
+      "accepted": ["time"],
+      "hint": "t___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ph.figure-out.c0",
+      "lexemeId": "en.ph.figure-out",
+      "fr": "Il m'a fallu un moment pour comprendre ce qu'il voulait dire.",
+      "sentence": "It took me a while to ___ out what he meant.",
+      "accepted": ["figure", "work"],
+      "nearMisses": [
+        { "word": "understand", "why": "« Understand » ne se construit pas avec « out ». Comprendre après réflexion, c'est « figure out » (ou « work out » en anglais britannique)." }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.ph.catch-up.q0",
+      "lexemeId": "en.ph.catch-up",
+      "prompt": "On se revoit bientôt pour prendre des nouvelles ? → Shall we ___ up soon?",
+      "options": ["catch", "take", "get", "meet"],
+      "answer": "catch",
+      "why": "« Catch up with someone » = se retrouver pour prendre des nouvelles. Très courant à l'oral."
+    },
+    {
+      "kind": "listen",
+      "id": "en.ph.figure-out.l0",
+      "lexemeId": "en.ph.figure-out",
+      "text": "Don't worry, we'll figure it out.",
+      "fr": "Ne t'inquiète pas, on va trouver une solution."
+    },
+    {
+      "kind": "listen",
+      "id": "en.ph.look-forward.l0",
+      "lexemeId": "en.ph.look-forward",
+      "text": "I'm looking forward to hearing from you.",
+      "fr": "J'attends de vos nouvelles avec impatience."
+    }
+  ]
+}

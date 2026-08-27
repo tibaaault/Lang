@@ -1,0 +1,247 @@
+{
+  "id": "id.premiers-mots",
+  "title": "Premiers mots",
+  "subtitle": "De quoi être poli et se présenter dès l'aéroport",
+  "lexemes": [
+    {
+      "id": "id.pm.selamat-pagi",
+      "term": "selamat pagi",
+      "pos": "expr",
+      "gloss": "bonjour (le matin)",
+      "note": "« Selamat » ouvre toutes les salutations, suivi du moment : pagi (matin), siang (midi), sore (fin d'après-midi), malam (soir). Se prononce « seu-la-mat pa-gui ».",
+      "examples": [
+        { "text": "Selamat pagi, Pak.", "fr": "Bonjour monsieur (le matin)." },
+        { "text": "Selamat malam!", "fr": "Bonsoir !" }
+      ]
+    },
+    {
+      "id": "id.pm.terima-kasih",
+      "term": "terima kasih",
+      "pos": "expr",
+      "gloss": "merci",
+      "note": "On répond « sama-sama » (de rien). Version courte très courante entre jeunes : « makasih ». Se prononce « teu-ri-ma ka-si ».",
+      "examples": [
+        { "text": "Terima kasih banyak!", "fr": "Merci beaucoup !" },
+        { "text": "Sama-sama.", "fr": "De rien." }
+      ]
+    },
+    {
+      "id": "id.pm.permisi",
+      "term": "permisi",
+      "pos": "expr",
+      "gloss": "excusez-moi (pour passer, ou pour aborder quelqu'un)",
+      "note": "S'emploie pour se frayer un chemin ou entrer quelque part. Pour s'excuser d'une faute, c'est « maaf ». Se prononce « peur-mi-si ».",
+      "examples": [
+        { "text": "Permisi, saya mau lewat.", "fr": "Excusez-moi, je voudrais passer." },
+        { "text": "Permisi, boleh tanya?", "fr": "Excusez-moi, puis-je poser une question ?" }
+      ]
+    },
+    {
+      "id": "id.pm.maaf",
+      "term": "maaf",
+      "pos": "expr",
+      "gloss": "pardon, désolé",
+      "note": "Sert à s'excuser d'une erreur ou à refuser poliment. Se prononce « ma-af », en marquant les deux voyelles.",
+      "examples": [
+        { "text": "Maaf, saya tidak mengerti.", "fr": "Désolé, je ne comprends pas." },
+        { "text": "Maaf, saya terlambat.", "fr": "Désolé, je suis en retard." }
+      ]
+    },
+    {
+      "id": "id.pm.tolong",
+      "term": "tolong",
+      "pos": "expr",
+      "gloss": "s'il vous plaît (pour demander un service) ; à l'aide",
+      "note": "Se place avant le verbe : « tolong bantu saya » (aidez-moi s'il vous plaît). Ne s'emploie pas pour demander un objet, où l'on dit « minta ».",
+      "examples": [
+        { "text": "Tolong bantu saya.", "fr": "Aidez-moi, s'il vous plaît." },
+        { "text": "Tolong panggil taksi.", "fr": "Appelez un taxi, s'il vous plaît." }
+      ]
+    },
+    {
+      "id": "id.pm.saya",
+      "term": "saya",
+      "pos": "noun",
+      "gloss": "je, moi (poli)",
+      "note": "« Saya » est le « je » poli, toujours sûr avec un inconnu. « Aku » est familier, réservé aux amis et à la famille.",
+      "examples": [
+        { "text": "Saya dari Prancis.", "fr": "Je viens de France." },
+        { "text": "Nama saya Thibault.", "fr": "Je m'appelle Thibault." }
+      ]
+    },
+    {
+      "id": "id.pm.tidak",
+      "term": "tidak",
+      "pos": "adv",
+      "gloss": "non, ne… pas (devant un verbe ou un adjectif)",
+      "note": "Forme courte à l'oral : « nggak » ou « gak ». À ne pas confondre avec « bukan », qui nie un nom.",
+      "examples": [
+        { "text": "Saya tidak mengerti.", "fr": "Je ne comprends pas." },
+        { "text": "Tidak pedas, ya.", "fr": "Pas épicé, d'accord ?" }
+      ]
+    },
+    {
+      "id": "id.pm.bukan",
+      "term": "bukan",
+      "pos": "adv",
+      "gloss": "non, ce n'est pas (devant un nom)",
+      "note": "C'est la grande règle de la négation indonésienne : « bukan » devant un nom, « tidak » devant un verbe ou un adjectif. Se tromper s'entend immédiatement.",
+      "examples": [
+        { "text": "Saya bukan turis.", "fr": "Je ne suis pas touriste." },
+        { "text": "Ini bukan punya saya.", "fr": "Ce n'est pas à moi." }
+      ]
+    },
+    {
+      "id": "id.pm.bisa",
+      "term": "bisa",
+      "pos": "verb",
+      "gloss": "pouvoir, savoir (faire)",
+      "note": "Mot à tout faire : « bisa? » seul veut dire « c'est possible ? ». Se prononce « bi-sa ».",
+      "examples": [
+        { "text": "Saya bisa bahasa Inggris.", "fr": "Je parle anglais." },
+        { "text": "Bisa lebih murah?", "fr": "Ça peut être moins cher ?" }
+      ]
+    },
+    {
+      "id": "id.pm.sedikit",
+      "term": "sedikit",
+      "pos": "adv",
+      "gloss": "un peu",
+      "note": "Phrase de survie : « saya bisa bahasa Indonesia sedikit » (je parle un peu indonésien). Souvent raccourci en « dikit ».",
+      "examples": [
+        { "text": "Saya bicara sedikit bahasa Indonesia.", "fr": "Je parle un peu indonésien." },
+        { "text": "Pedas sedikit saja.", "fr": "Juste un peu épicé." }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "choice",
+      "id": "id.pm.selamat-pagi.q0",
+      "lexemeId": "id.pm.selamat-pagi",
+      "prompt": "Bonjour (le matin) →",
+      "options": ["selamat pagi", "selamat malam", "selamat sore", "selamat tinggal"],
+      "answer": "selamat pagi",
+      "why": "Pagi = le matin. Malam = le soir, sore = la fin d'après-midi, et « selamat tinggal » veut dire adieu."
+    },
+    {
+      "kind": "recall",
+      "id": "id.pm.terima-kasih.r0",
+      "lexemeId": "id.pm.terima-kasih",
+      "fr": "merci",
+      "accepted": ["terima kasih", "makasih", "terimakasih"],
+      "hint": "t_____ k____"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.pm.terima-kasih.c0",
+      "lexemeId": "id.pm.terima-kasih",
+      "fr": "Merci beaucoup !",
+      "sentence": "Terima kasih ___!",
+      "accepted": ["banyak"],
+      "hint": "b_____"
+    },
+    {
+      "kind": "choice",
+      "id": "id.pm.permisi.q0",
+      "lexemeId": "id.pm.permisi",
+      "prompt": "Vous voulez passer dans une allée bondée. Vous dites :",
+      "options": ["permisi", "maaf", "tolong", "silakan"],
+      "answer": "permisi",
+      "why": "« Permisi » sert à se frayer un chemin. « Maaf » s'excuse d'une faute, « tolong » demande un service, « silakan » signifie « je vous en prie »."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.pm.maaf.c0",
+      "lexemeId": "id.pm.maaf",
+      "fr": "Désolé, je ne comprends pas.",
+      "sentence": "___, saya tidak mengerti.",
+      "accepted": ["maaf"],
+      "nearMisses": [
+        { "word": "permisi", "why": "« Permisi » sert à passer ou à aborder quelqu'un. Pour s'excuser, c'est « maaf »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.pm.tolong.c0",
+      "lexemeId": "id.pm.tolong",
+      "fr": "Aidez-moi, s'il vous plaît.",
+      "sentence": "___ bantu saya.",
+      "accepted": ["tolong"],
+      "hint": "t_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.pm.saya.c0",
+      "lexemeId": "id.pm.saya",
+      "fr": "Je viens de France.",
+      "sentence": "___ dari Prancis.",
+      "accepted": ["saya", "aku"],
+      "nearMisses": [
+        { "word": "aku", "why": "« Aku » n'est pas faux, mais c'est le « je » familier. Avec un inconnu, on dit « saya »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.pm.tidak.c0",
+      "lexemeId": "id.pm.tidak",
+      "fr": "Je ne comprends pas.",
+      "sentence": "Saya ___ mengerti.",
+      "accepted": ["tidak", "nggak", "gak"],
+      "nearMisses": [
+        { "word": "bukan", "why": "« Mengerti » est un verbe : la négation est « tidak ». « Bukan » ne nie que les noms." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.pm.bukan.c0",
+      "lexemeId": "id.pm.bukan",
+      "fr": "Je ne suis pas touriste.",
+      "sentence": "Saya ___ turis.",
+      "accepted": ["bukan"],
+      "nearMisses": [
+        { "word": "tidak", "why": "« Turis » est un nom : on le nie avec « bukan ». « Tidak » sert devant les verbes et les adjectifs." }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "id.pm.bukan.q0",
+      "lexemeId": "id.pm.bukan",
+      "prompt": "Ce n'est pas cher. (cher = mahal, un adjectif) →",
+      "options": ["tidak mahal", "bukan mahal", "mahal tidak", "bukan harga"],
+      "answer": "tidak mahal",
+      "why": "« Mahal » est un adjectif, donc « tidak ». On réserve « bukan » aux noms : « bukan turis »."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.pm.bisa.c0",
+      "lexemeId": "id.pm.bisa",
+      "fr": "Ça peut être moins cher ?",
+      "sentence": "___ lebih murah?",
+      "accepted": ["bisa", "boleh"],
+      "hint": "b___"
+    },
+    {
+      "kind": "recall",
+      "id": "id.pm.sedikit.r0",
+      "lexemeId": "id.pm.sedikit",
+      "fr": "un peu",
+      "accepted": ["sedikit", "dikit"],
+      "hint": "s______"
+    },
+    {
+      "kind": "listen",
+      "id": "id.pm.terima-kasih.l0",
+      "lexemeId": "id.pm.terima-kasih",
+      "text": "Terima kasih banyak.",
+      "fr": "Merci beaucoup."
+    },
+    {
+      "kind": "listen",
+      "id": "id.pm.saya.l0",
+      "lexemeId": "id.pm.saya",
+      "text": "Saya bicara sedikit bahasa Indonesia.",
+      "fr": "Je parle un peu indonésien."
+    }
+  ]
+}

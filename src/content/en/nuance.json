@@ -1,0 +1,223 @@
+{
+  "id": "en.nuance",
+  "title": "Nuancer et argumenter",
+  "subtitle": "Le vocabulaire qui sépare un bon B2 d'un C1 : dire les choses avec précision",
+  "lexemes": [
+    {
+      "id": "en.nu.downplay",
+      "term": "to downplay",
+      "pos": "verb",
+      "gloss": "minimiser, atténuer l'importance de",
+      "note": "Suppose une intention : on minimise pour rassurer ou se protéger. Le contraire exact est « to overstate ».",
+      "examples": [
+        { "text": "The report downplays the risks.", "fr": "Le rapport minimise les risques." },
+        { "text": "He downplayed his own role in the project.", "fr": "Il a minimisé son propre rôle dans le projet." }
+      ]
+    },
+    {
+      "id": "en.nu.overstate",
+      "term": "to overstate",
+      "pos": "verb",
+      "gloss": "exagérer, surestimer (dans son propos)",
+      "note": "La tournure « it's hard to overstate how... » veut dire « on ne dira jamais assez à quel point... ». Elle est très fréquente à l'écrit soutenu.",
+      "examples": [
+        { "text": "It's hard to overstate how much this changed things.", "fr": "On ne dira jamais assez à quel point cela a changé les choses." },
+        { "text": "I don't want to overstate the case.", "fr": "Je ne veux pas forcer le trait." }
+      ]
+    },
+    {
+      "id": "en.nu.arguably",
+      "term": "arguably",
+      "pos": "adv",
+      "gloss": "sans doute, on peut soutenir que",
+      "note": "Sert à avancer une opinion forte tout en reconnaissant qu'elle se discute. Très utile pour nuancer sans s'affaiblir.",
+      "examples": [
+        { "text": "It's arguably her best film.", "fr": "C'est sans doute son meilleur film." },
+        { "text": "Arguably, the whole approach was flawed.", "fr": "On peut soutenir que toute l'approche était viciée." }
+      ]
+    },
+    {
+      "id": "en.nu.hint-at",
+      "term": "to hint at",
+      "pos": "verb",
+      "gloss": "laisser entendre, faire allusion à",
+      "note": "Plus discret que « to suggest » : on laisse deviner sans dire. « To drop a hint » = faire une allusion.",
+      "examples": [
+        { "text": "She hinted at a possible move abroad.", "fr": "Elle a laissé entendre qu'elle partirait peut-être à l'étranger." },
+        { "text": "He hinted that he might resign.", "fr": "Il a laissé entendre qu'il pourrait démissionner." }
+      ]
+    },
+    {
+      "id": "en.nu.blunt",
+      "term": "blunt",
+      "pos": "adj",
+      "gloss": "direct, sans détour, parfois brutal",
+      "note": "« To be blunt » n'est pas toujours péjoratif : « let me be blunt » annonce une franchise assumée. Le nom « bluntness » existe aussi.",
+      "examples": [
+        { "text": "Let me be blunt: this won't work.", "fr": "Soyons directs : ça ne marchera pas." },
+        { "text": "Her answer was blunt but fair.", "fr": "Sa réponse était sans détour, mais juste." }
+      ]
+    },
+    {
+      "id": "en.nu.caveat",
+      "term": "a caveat",
+      "pos": "noun",
+      "gloss": "une réserve, un bémol, une mise en garde",
+      "note": "Se prononce à peu près « KAV-ee-at ». « With one caveat » = à une réserve près. Mot d'origine latine, courant dans un registre soutenu.",
+      "examples": [
+        { "text": "I'd agree, with one caveat.", "fr": "Je serais d'accord, à une réserve près." },
+        { "text": "There's an important caveat to those figures.", "fr": "Ces chiffres appellent une mise en garde importante." }
+      ]
+    },
+    {
+      "id": "en.nu.inclined",
+      "term": "to be inclined to",
+      "pos": "expr",
+      "gloss": "être enclin à, avoir tendance à, pencher pour",
+      "note": "Façon polie et prudente d'annoncer une opinion : « I'm inclined to disagree » adoucit nettement « I disagree ».",
+      "examples": [
+        { "text": "I'm inclined to agree with you.", "fr": "J'aurais tendance à être d'accord avec toi." },
+        { "text": "She was inclined to wait before deciding.", "fr": "Elle penchait pour attendre avant de décider." }
+      ]
+    },
+    {
+      "id": "en.nu.compelling",
+      "term": "compelling",
+      "pos": "adj",
+      "gloss": "convaincant ; captivant, prenant",
+      "note": "Deux emplois : « a compelling argument » (convaincant) et « a compelling story » (qu'on ne lâche pas). Bien plus fort que « interesting ».",
+      "examples": [
+        { "text": "That's a compelling argument.", "fr": "C'est un argument convaincant." },
+        { "text": "The series is oddly compelling.", "fr": "La série est étrangement prenante." }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.nu.downplay.c0",
+      "lexemeId": "en.nu.downplay",
+      "fr": "Le communiqué minimise l'ampleur du problème.",
+      "sentence": "The statement ___ the scale of the problem.",
+      "accepted": ["downplays", "understates"],
+      "nearMisses": [
+        { "word": "minimizes", "why": "« Minimize » s'emploie surtout pour réduire une quantité réelle (des coûts, des risques). Minimiser en paroles, c'est « downplay »." }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.nu.downplay.r0",
+      "lexemeId": "en.nu.downplay",
+      "fr": "minimiser l'importance de quelque chose (en paroles)",
+      "accepted": ["downplay", "to downplay"],
+      "hint": "d_______y"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.nu.overstate.c0",
+      "lexemeId": "en.nu.overstate",
+      "fr": "On ne dira jamais assez à quel point ce détail compte.",
+      "sentence": "It's hard to ___ how much this detail matters.",
+      "accepted": ["overstate", "overemphasize"],
+      "nearMisses": [
+        { "word": "exaggerate", "why": "« Exaggerate » est proche, mais la tournure figée est « it's hard to overstate ». « Exaggerate » suppose qu'on déforme la vérité." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.nu.arguably.c0",
+      "lexemeId": "en.nu.arguably",
+      "fr": "C'est sans doute le meilleur restaurant de la ville.",
+      "sentence": "It's ___ the best restaurant in town.",
+      "accepted": ["arguably"],
+      "nearMisses": [
+        { "word": "surely", "why": "« Surely » exprime une quasi-certitude et attend l'accord. « Arguably » assume que l'affirmation se discute, ce que dit ici « sans doute »." },
+        { "word": "probably", "why": "« Probably » porte sur une probabilité de fait. Ici il s'agit d'un jugement défendable : « arguably »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.nu.hint-at.c0",
+      "lexemeId": "en.nu.hint-at",
+      "fr": "Il a laissé entendre qu'il pourrait partir.",
+      "sentence": "He ___ that he might leave.",
+      "accepted": ["hinted", "implied", "suggested"],
+      "nearMisses": [
+        { "word": "insinuated", "why": "« Insinuate » ajoute une nuance nettement négative, comme « insinuer » en français. « Laisser entendre » est neutre : « hinted »." }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.nu.blunt.q0",
+      "lexemeId": "en.nu.blunt",
+      "prompt": "Sa réponse était directe, presque brutale. → Her answer was ___.",
+      "options": ["blunt", "bland", "blank", "bold"],
+      "answer": "blunt",
+      "why": "« Blunt » = direct, sans ménagement. « Bland » veut dire fade, « blank » vide, « bold » audacieux."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.nu.blunt.c0",
+      "lexemeId": "en.nu.blunt",
+      "fr": "Je vais être direct : ce n'est pas assez bon.",
+      "sentence": "Let me be ___: this isn't good enough.",
+      "accepted": ["blunt", "frank", "honest"],
+      "hint": "b____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.nu.caveat.c0",
+      "lexemeId": "en.nu.caveat",
+      "fr": "Je suis d'accord, à une réserve près.",
+      "sentence": "I agree, with one ___.",
+      "accepted": ["caveat", "reservation"],
+      "nearMisses": [
+        { "word": "exception", "why": "« Exception » désigne un cas qui échappe à la règle. Une réserve qu'on émet sur un accord, c'est « a caveat »." }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.nu.caveat.r0",
+      "lexemeId": "en.nu.caveat",
+      "fr": "une réserve, un bémol qu'on ajoute à un accord",
+      "accepted": ["caveat", "a caveat"],
+      "hint": "c_____t"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.nu.inclined.c0",
+      "lexemeId": "en.nu.inclined",
+      "fr": "J'aurais plutôt tendance à ne pas être d'accord.",
+      "sentence": "I'm ___ to disagree.",
+      "accepted": ["inclined"],
+      "nearMisses": [
+        { "word": "tended", "why": "« Tend » ne se construit pas avec « be » : on dit « I tend to disagree » ou « I'm inclined to disagree »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.nu.compelling.c0",
+      "lexemeId": "en.nu.compelling",
+      "fr": "Il n'a présenté aucune raison convaincante de changer d'avis.",
+      "sentence": "He gave no ___ reason to change our minds.",
+      "accepted": ["compelling", "convincing"],
+      "nearMisses": [
+        { "word": "interesting", "why": "« Interesting » est bien trop faible ici. Un argument qui emporte l'adhésion est « compelling »." }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.nu.arguably.l0",
+      "lexemeId": "en.nu.arguably",
+      "text": "Arguably, that was the turning point.",
+      "fr": "On peut soutenir que c'était le tournant."
+    },
+    {
+      "kind": "listen",
+      "id": "en.nu.caveat.l0",
+      "lexemeId": "en.nu.caveat",
+      "text": "There is one important caveat to keep in mind.",
+      "fr": "Il y a une réserve importante à garder à l'esprit."
+    }
+  ]
+}

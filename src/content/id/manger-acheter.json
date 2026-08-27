@@ -1,0 +1,253 @@
+{
+  "id": "id.manger-acheter",
+  "title": "Manger, acheter, s'orienter",
+  "subtitle": "Les phrases dont on se sert vraiment tous les jours sur place",
+  "lexemes": [
+    {
+      "id": "id.ma.berapa",
+      "term": "berapa",
+      "pos": "adv",
+      "gloss": "combien",
+      "note": "« Berapa harganya? » (combien ça coûte ?) est la phrase la plus utile du voyage. Se prononce « beu-ra-pa ».",
+      "examples": [
+        { "text": "Berapa harganya?", "fr": "Combien ça coûte ?" },
+        { "text": "Berapa lama?", "fr": "Combien de temps ?" }
+      ]
+    },
+    {
+      "id": "id.ma.mahal",
+      "term": "mahal",
+      "pos": "adj",
+      "gloss": "cher",
+      "note": "Au marché, « terlalu mahal » (trop cher) ouvre la négociation. Marchander se fait avec le sourire, jamais sèchement.",
+      "examples": [
+        { "text": "Terlalu mahal!", "fr": "C'est trop cher !" },
+        { "text": "Ini mahal sekali.", "fr": "C'est vraiment cher." }
+      ]
+    },
+    {
+      "id": "id.ma.murah",
+      "term": "murah",
+      "pos": "adj",
+      "gloss": "bon marché, pas cher",
+      "note": "« Lebih murah » = moins cher. C'est la contre-proposition à formuler après « terlalu mahal ».",
+      "examples": [
+        { "text": "Bisa lebih murah?", "fr": "Ça peut être moins cher ?" },
+        { "text": "Di sini lebih murah.", "fr": "C'est moins cher ici." }
+      ]
+    },
+    {
+      "id": "id.ma.air",
+      "term": "air",
+      "pos": "noun",
+      "gloss": "eau",
+      "note": "Se prononce en deux syllabes, « a-ir », et non comme le mot français. « Air putih » (eau blanche) désigne l'eau plate à boire.",
+      "examples": [
+        { "text": "Saya mau air putih.", "fr": "Je voudrais de l'eau plate." },
+        { "text": "Air ini dingin.", "fr": "Cette eau est froide." }
+      ]
+    },
+    {
+      "id": "id.ma.makan",
+      "term": "makan",
+      "pos": "verb",
+      "gloss": "manger",
+      "note": "« Makanan » = la nourriture, « rumah makan » = un restaurant (littéralement : maison où l'on mange).",
+      "examples": [
+        { "text": "Saya mau makan.", "fr": "Je voudrais manger." },
+        { "text": "Makanan ini enak.", "fr": "Ce plat est délicieux." }
+      ]
+    },
+    {
+      "id": "id.ma.enak",
+      "term": "enak",
+      "pos": "adj",
+      "gloss": "bon (au goût), agréable",
+      "note": "Compliment universel sur la nourriture, et toujours bien reçu. S'emploie aussi pour un moment agréable.",
+      "examples": [
+        { "text": "Enak sekali!", "fr": "C'est vraiment bon !" },
+        { "text": "Nasi gorengnya enak.", "fr": "Le riz frit est bon." }
+      ]
+    },
+    {
+      "id": "id.ma.pedas",
+      "term": "pedas",
+      "pos": "adj",
+      "gloss": "épicé, piquant",
+      "note": "À retenir avant tout le reste : « tidak pedas » (pas épicé). En Indonésie, « un peu épicé » dépasse souvent ce qu'un palais français encaisse.",
+      "examples": [
+        { "text": "Tidak pedas, ya.", "fr": "Pas épicé, d'accord ?" },
+        { "text": "Ini pedas sekali!", "fr": "C'est très épicé !" }
+      ]
+    },
+    {
+      "id": "id.ma.di-mana",
+      "term": "di mana",
+      "pos": "expr",
+      "gloss": "où (se trouve)",
+      "note": "« Di mana toilet? » = où sont les toilettes ? On place « di mana » après ce qu'on cherche, ou en tête de phrase.",
+      "examples": [
+        { "text": "Toilet di mana?", "fr": "Où sont les toilettes ?" },
+        { "text": "Di mana stasiun?", "fr": "Où est la gare ?" }
+      ]
+    },
+    {
+      "id": "id.ma.kiri",
+      "term": "kiri",
+      "pos": "noun",
+      "gloss": "gauche",
+      "note": "« Kiri » (gauche) et « kanan » (droite). Dans un bus ou un taxi partagé, crier « kiri! » signifie « arrêtez-moi ici ».",
+      "examples": [
+        { "text": "Belok kiri.", "fr": "Tournez à gauche." },
+        { "text": "Kiri, Pak!", "fr": "Arrêtez ici, monsieur !" }
+      ]
+    },
+    {
+      "id": "id.ma.kanan",
+      "term": "kanan",
+      "pos": "noun",
+      "gloss": "droite",
+      "note": "« Belok kanan » = tournez à droite. « Lurus » veut dire tout droit.",
+      "examples": [
+        { "text": "Belok kanan di lampu merah.", "fr": "Tournez à droite au feu rouge." },
+        { "text": "Rumahnya di sebelah kanan.", "fr": "La maison est sur la droite." }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "id.ma.berapa.c0",
+      "lexemeId": "id.ma.berapa",
+      "fr": "Combien ça coûte ?",
+      "sentence": "___ harganya?",
+      "accepted": ["berapa"],
+      "hint": "b_____"
+    },
+    {
+      "kind": "recall",
+      "id": "id.ma.berapa.r0",
+      "lexemeId": "id.ma.berapa",
+      "fr": "combien",
+      "accepted": ["berapa"],
+      "hint": "b_____"
+    },
+    {
+      "kind": "choice",
+      "id": "id.ma.mahal.q0",
+      "lexemeId": "id.ma.mahal",
+      "prompt": "C'est trop cher ! →",
+      "options": ["Terlalu mahal!", "Terlalu murah!", "Sangat enak!", "Tidak apa-apa!"],
+      "answer": "Terlalu mahal!",
+      "why": "Mahal = cher, murah = bon marché. « Terlalu » veut dire trop."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.ma.murah.c0",
+      "lexemeId": "id.ma.murah",
+      "fr": "Ça peut être moins cher ?",
+      "sentence": "Bisa lebih ___?",
+      "accepted": ["murah"],
+      "nearMisses": [
+        { "word": "mahal", "why": "« Mahal » veut dire cher : vous demanderiez que ce soit plus cher. Moins cher, c'est « lebih murah »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.ma.air.c0",
+      "lexemeId": "id.ma.air",
+      "fr": "Je voudrais de l'eau plate.",
+      "sentence": "Saya mau ___ putih.",
+      "accepted": ["air"],
+      "hint": "a__"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.ma.makan.c0",
+      "lexemeId": "id.ma.makan",
+      "fr": "Ce plat est délicieux.",
+      "sentence": "Makanan ini ___.",
+      "accepted": ["enak"],
+      "nearMisses": [
+        { "word": "bagus", "why": "« Bagus » veut dire bien, de bonne qualité, mais ne s'emploie pas pour un goût. Pour la nourriture, c'est « enak »." }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "id.ma.makan.r0",
+      "lexemeId": "id.ma.makan",
+      "fr": "manger",
+      "accepted": ["makan"],
+      "hint": "m____"
+    },
+    {
+      "kind": "choice",
+      "id": "id.ma.enak.q0",
+      "lexemeId": "id.ma.enak",
+      "prompt": "C'est vraiment bon ! →",
+      "options": ["Enak sekali!", "Pedas sekali!", "Mahal sekali!", "Bukan enak!"],
+      "answer": "Enak sekali!",
+      "why": "« Sekali » placé après l'adjectif veut dire « très ». Enak = bon au goût."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.ma.pedas.c0",
+      "lexemeId": "id.ma.pedas",
+      "fr": "Pas épicé, s'il vous plaît.",
+      "sentence": "Tidak ___, ya.",
+      "accepted": ["pedas"],
+      "hint": "p____"
+    },
+    {
+      "kind": "recall",
+      "id": "id.ma.pedas.r0",
+      "lexemeId": "id.ma.pedas",
+      "fr": "épicé, piquant",
+      "accepted": ["pedas"],
+      "hint": "p____"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.ma.di-mana.c0",
+      "lexemeId": "id.ma.di-mana",
+      "fr": "Où sont les toilettes ?",
+      "sentence": "Toilet ___ ___?",
+      "accepted": ["di mana"],
+      "hint": "d_ m___"
+    },
+    {
+      "kind": "choice",
+      "id": "id.ma.kiri.q0",
+      "lexemeId": "id.ma.kiri",
+      "prompt": "Tournez à gauche. →",
+      "options": ["Belok kiri.", "Belok kanan.", "Jalan lurus.", "Berhenti di sini."],
+      "answer": "Belok kiri.",
+      "why": "Kiri = gauche, kanan = droite. « Lurus » veut dire tout droit."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.ma.kanan.c0",
+      "lexemeId": "id.ma.kanan",
+      "fr": "Tournez à droite au feu rouge.",
+      "sentence": "Belok ___ di lampu merah.",
+      "accepted": ["kanan"],
+      "nearMisses": [
+        { "word": "kiri", "why": "« Kiri » veut dire gauche. Droite, c'est « kanan » — les deux mots se ressemblent, c'est la confusion la plus fréquente." }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "id.ma.berapa.l0",
+      "lexemeId": "id.ma.berapa",
+      "text": "Berapa harganya?",
+      "fr": "Combien ça coûte ?"
+    },
+    {
+      "kind": "listen",
+      "id": "id.ma.pedas.l0",
+      "lexemeId": "id.ma.pedas",
+      "text": "Tidak pedas, ya.",
+      "fr": "Pas épicé, d'accord ?"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "id": "en.false-friends",
+  "title": "Faux amis",
+  "subtitle": "Les mots qui ressemblent au français et ne veulent pas dire la même chose",
+  "lexemes": [
+    {
+      "id": "en.ff.actually",
+      "term": "actually",
+      "pos": "adv",
+      "gloss": "en fait, en réalité",
+      "note": "Ne veut jamais dire « actuellement » (= currently, right now). « Actually » corrige une idée fausse ou introduit une précision inattendue.",
+      "examples": [
+        { "text": "It sounds complicated, but it's actually quite simple.", "fr": "Ça a l'air compliqué, mais en fait c'est assez simple." },
+        { "text": "Did he actually say that, or are you paraphrasing?", "fr": "Il a vraiment dit ça, ou tu paraphrases ?" }
+      ]
+    },
+    {
+      "id": "en.ff.eventually",
+      "term": "eventually",
+      "pos": "adv",
+      "gloss": "finalement, à terme, au bout du compte",
+      "note": "Ne veut jamais dire « éventuellement » (= possibly, if need be). « Eventually » dit qu'une chose finit par arriver, avec l'idée d'une attente.",
+      "examples": [
+        { "text": "We waited for an hour and the train eventually arrived.", "fr": "On a attendu une heure et le train a fini par arriver." },
+        { "text": "Everyone gets tired of it eventually.", "fr": "Tout le monde finit par s'en lasser." }
+      ]
+    },
+    {
+      "id": "en.ff.attend",
+      "term": "to attend",
+      "pos": "verb",
+      "gloss": "assister à, être présent à",
+      "note": "Ne veut jamais dire « attendre » (= to wait). Se construit sans préposition : on dit « attend a meeting », pas « attend to a meeting ».",
+      "examples": [
+        { "text": "She couldn't attend the ceremony.", "fr": "Elle n'a pas pu assister à la cérémonie." },
+        { "text": "Around forty people attended the talk.", "fr": "Une quarantaine de personnes ont assisté à la conférence." }
+      ]
+    },
+    {
+      "id": "en.ff.sensible",
+      "term": "sensible",
+      "pos": "adj",
+      "gloss": "sensé, raisonnable, avisé",
+      "note": "« Sensible » au sens français (émotif, délicat) se dit sensitive. Un « sensible decision » est une décision raisonnable, pas une décision délicate.",
+      "examples": [
+        { "text": "That's the sensible thing to do.", "fr": "C'est la chose raisonnable à faire." },
+        { "text": "He's sensitive about his accent.", "fr": "Il est sensible au sujet de son accent." }
+      ]
+    },
+    {
+      "id": "en.ff.resume",
+      "term": "to resume",
+      "pos": "verb",
+      "gloss": "reprendre (après une interruption)",
+      "note": "« Résumer » se dit to summarize. Attention aussi au nom « a resume » (ou résumé), qui désigne un CV en anglais américain.",
+      "examples": [
+        { "text": "Talks will resume on Monday.", "fr": "Les négociations reprendront lundi." },
+        { "text": "Could you summarize the article in three sentences?", "fr": "Pourrais-tu résumer l'article en trois phrases ?" }
+      ]
+    },
+    {
+      "id": "en.ff.deceive",
+      "term": "to deceive",
+      "pos": "verb",
+      "gloss": "tromper, induire en erreur",
+      "note": "« Décevoir » se dit to disappoint. Deceive suppose une intention de tromper ; disappoint décrit seulement une attente non satisfaite.",
+      "examples": [
+        { "text": "The photos deceive you: the room is much smaller.", "fr": "Les photos trompent : la pièce est bien plus petite." },
+        { "text": "I don't want to disappoint them again.", "fr": "Je ne veux pas les décevoir à nouveau." }
+      ]
+    },
+    {
+      "id": "en.ff.demand",
+      "term": "to demand",
+      "pos": "verb",
+      "gloss": "exiger, réclamer",
+      "note": "Beaucoup plus fort que « demander » (= to ask). Dire « I demand a coffee » au serveur passe pour de l'agressivité.",
+      "examples": [
+        { "text": "The staff are demanding an apology.", "fr": "Le personnel exige des excuses." },
+        { "text": "Could I ask you for a favour?", "fr": "Puis-je te demander un service ?" }
+      ]
+    },
+    {
+      "id": "en.ff.achieve",
+      "term": "to achieve",
+      "pos": "verb",
+      "gloss": "atteindre, accomplir, obtenir (un résultat)",
+      "note": "Ne veut pas dire « achever » au sens de terminer (= to finish, to complete). Achieve porte toujours sur un résultat obtenu par l'effort.",
+      "examples": [
+        { "text": "They achieved record results this quarter.", "fr": "Ils ont obtenu des résultats record ce trimestre." },
+        { "text": "I finished the report last night.", "fr": "J'ai achevé le rapport hier soir." }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "choice",
+      "id": "en.ff.actually.q0",
+      "lexemeId": "en.ff.actually",
+      "prompt": "It sounds complicated, but it's ___ quite simple.",
+      "options": ["actually", "currently", "eventually", "finally"],
+      "answer": "actually",
+      "why": "« Actually » corrige l'impression donnée juste avant. « Currently » voudrait dire « en ce moment »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.actually.c0",
+      "lexemeId": "en.ff.actually",
+      "fr": "Je croyais qu'il plaisantait, mais en fait il était sérieux.",
+      "sentence": "I thought he was joking, but he was ___ serious.",
+      "accepted": ["actually"],
+      "nearMisses": [
+        { "word": "currently", "why": "« Currently » signifie « actuellement, en ce moment ». Ici, « en fait » corrige une idée fausse : c'est « actually »." },
+        { "word": "really", "why": "« Really » n'est pas faux, mais il insiste sur l'intensité. « Actually » marque le contraste avec ce qu'on croyait, ce que demande la phrase française." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.eventually.c0",
+      "lexemeId": "en.ff.eventually",
+      "fr": "On a attendu longtemps, et le bus a fini par arriver.",
+      "sentence": "We waited a long time, and the bus ___ arrived.",
+      "accepted": ["eventually", "finally"],
+      "nearMisses": [
+        { "word": "possibly", "why": "Le piège classique : « éventuellement » se dit « possibly ». « Eventually » veut dire « finalement, au bout du compte »." }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.ff.eventually.r0",
+      "lexemeId": "en.ff.eventually",
+      "fr": "finalement, au bout du compte (après une attente)",
+      "accepted": ["eventually"],
+      "hint": "e_______y"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.attend.c0",
+      "lexemeId": "en.ff.attend",
+      "fr": "Plus de deux cents personnes ont assisté à la conférence.",
+      "sentence": "More than two hundred people ___ the conference.",
+      "accepted": ["attended"],
+      "nearMisses": [
+        { "word": "waited", "why": "« To attend » ne veut pas dire attendre, mais être présent à un événement. « Attendre » se dit « to wait »." },
+        { "word": "assisted", "why": "« To assist » veut dire aider, prêter assistance. Assister à un événement, c'est « to attend »." }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.ff.sensible.q0",
+      "lexemeId": "en.ff.sensible",
+      "prompt": "Elle est très sensible aux critiques. → She's very ___ to criticism.",
+      "options": ["sensitive", "sensible", "susceptible", "delicate"],
+      "answer": "sensitive",
+      "why": "« Sensible » en anglais veut dire « raisonnable ». Le français « sensible » se traduit par « sensitive »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.sensible.c0",
+      "lexemeId": "en.ff.sensible",
+      "fr": "Partir tôt serait la décision la plus raisonnable.",
+      "sentence": "Leaving early would be the most ___ decision.",
+      "accepted": ["sensible", "reasonable"],
+      "nearMisses": [
+        { "word": "sensitive", "why": "« Sensitive » veut dire sensible, émotif. Ici on parle d'une décision avisée : « sensible »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.resume.c0",
+      "lexemeId": "en.ff.resume",
+      "fr": "Les travaux reprendront après l'hiver.",
+      "sentence": "The works will ___ after the winter.",
+      "accepted": ["resume", "restart"],
+      "nearMisses": [
+        { "word": "summarize", "why": "« To summarize » veut dire résumer. Reprendre après une interruption, c'est « to resume »." }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.ff.resume.r0",
+      "lexemeId": "en.ff.resume",
+      "fr": "résumer (un texte, un propos)",
+      "accepted": ["summarize", "summarise", "to summarize", "to summarise"],
+      "hint": "s________e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.deceive.c0",
+      "lexemeId": "en.ff.deceive",
+      "fr": "Le film m'a déçu, mais l'affiche était trompeuse dès le départ.",
+      "sentence": "The film ___ me, but the poster was misleading from the start.",
+      "accepted": ["disappointed"],
+      "nearMisses": [
+        { "word": "deceived", "why": "« To deceive » veut dire tromper volontairement. Décevoir, c'est « to disappoint »." }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.demand.c0",
+      "lexemeId": "en.ff.demand",
+      "fr": "Les habitants exigent une réponse claire.",
+      "sentence": "Residents are ___ a clear answer.",
+      "accepted": ["demanding"],
+      "nearMisses": [
+        { "word": "asking", "why": "« Asking » est neutre : demander. La phrase française dit « exiger », donc « demanding »." }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.ff.achieve.q0",
+      "lexemeId": "en.ff.achieve",
+      "prompt": "J'ai achevé le rapport hier. → I ___ the report yesterday.",
+      "options": ["finished", "achieved", "attended", "resumed"],
+      "answer": "finished",
+      "why": "« To achieve » veut dire atteindre un résultat, pas terminer. Achever au sens de finir, c'est « to finish » ou « to complete »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.ff.achieve.c0",
+      "lexemeId": "en.ff.achieve",
+      "fr": "Il a atteint tous les objectifs qu'il s'était fixés.",
+      "sentence": "He ___ every goal he had set for himself.",
+      "accepted": ["achieved", "reached"],
+      "nearMisses": [
+        { "word": "finished", "why": "« Finished » dit qu'on a terminé quelque chose. Ici il s'agit d'atteindre un objectif : « achieved »." }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.ff.actually.l0",
+      "lexemeId": "en.ff.actually",
+      "text": "It's actually much better than I expected.",
+      "fr": "C'est en fait bien mieux que ce à quoi je m'attendais."
+    },
+    {
+      "kind": "listen",
+      "id": "en.ff.attend.l0",
+      "lexemeId": "en.ff.attend",
+      "text": "She attended every single meeting.",
+      "fr": "Elle a assisté à absolument toutes les réunions."
+    }
+  ]
+}

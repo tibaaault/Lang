@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+/* Palette sobre : peu de couleurs, un seul accent, un contraste confortable
+   en plein soleil comme le soir. Le thème suit le réglage du système. */
+@theme {
+  --color-paper: #faf9f7;
+  --color-ink: #16181a;
+  --color-muted: #6b7280;
+  --color-line: #e4e1dc;
+  --color-surface: #ffffff;
+  --color-accent: #2f6f4e;
+  --color-accent-soft: #e6f0ea;
+  --color-wrong: #a4342b;
+  --color-wrong-soft: #fbeae8;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: ui-serif, Georgia, 'Times New Roman', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-paper: #131416;
+    --color-ink: #e9e7e4;
+    --color-muted: #9aa0a6;
+    --color-line: #2a2d31;
+    --color-surface: #1b1d20;
+    --color-accent: #7fb894;
+    --color-accent-soft: #1e2b24;
+    --color-wrong: #e0837a;
+    --color-wrong-soft: #2c1e1d;
+  }
+}
+
+html {
+  /* Évite le zoom automatique de Safari iOS au focus d'un champ. */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* Zone sûre sous l'encoche et la barre d'accueil des iPhone. */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  overscroll-behavior-y: none;
+}
+
+/* Supprime le surlignage bleu au tap sur mobile. */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

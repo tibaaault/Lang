@@ -1,0 +1,197 @@
+// État de progression : la seule donnée qui appartienne vraiment à l'utilisateur.
+//
+// Elle vit d'abord en local (localStorage), ce qui rend l'application
+// utilisable hors-ligne et instantanée au démarrage. Supabase n'intervient
+// qu'en second rideau, pour retrouver sa progression sur un autre appareil.
+
+import { useSyncExternalStore } from 'react'
+import type { CardState } from '../engine/fsrs'
+import { MASTERED_STABILITY_DAYS, isDue } from '../engine/fsrs'
+
+export interface DayStats {
+  reviews: number
+  correct: number
+  /** Secondes réellement passées à répondre. */
+  seconds: number
+  newWords: number
+}
+
+export interface Progress {
+  version: 1
+  /** Une carte par mot, indexée `courseId:lexemeId`. */
+  cards: Record<string, CardState>
+  /** Compteur d'apparitions par exercice, pour éviter les répétitions. */
+  seen: Record<string, number>
+  streak: { current: number; longest: number; lastDay: string | null }
+  days: Record<string, DayStats>
+  settings: {
+    dailyGoal: number
+    newPerDay: number
+    audio: boolean
+  }
+  /** Horodatage de la dernière écriture, pour arbitrer la synchronisation. */
+  updatedAt: string
+}
+
+const STORAGE_KEY = 'lang.progress.v1'
+
+export function emptyProgress(): Progress {
+  return {
+    version: 1,
+    cards: {},
+    seen: {},
+    streak: { current: 0, longest: 0, lastDay: null },
+    days: {},
+    settings: { dailyGoal: 20, newPerDay: 8, audio: true },
+    updatedAt: new Date(0).toISOString(),
+  }
+}
+
+export function today(now = new Date()): string {
+  // Date locale, pas UTC : une session à 23 h compte pour le bon jour.
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
+}
+
+function load(): Progress {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return emptyProgress()
+    const parsed = JSON.parse(raw) as Progress
+    if (parsed.version !== 1) return emptyProgress()
+    // Complète les réglages ajoutés après coup sans perdre la progression.
+    return { ...emptyProgress(), ...parsed, settings: { ...emptyProgress().settings, ...parsed.settings } }
+  } catch {
+    return emptyProgress()
+  }
+}
+
+let state: Progress = load()
+const listeners = new Set<() => void>()
+let onChange: ((p: Progress) => void) | null = null
+
+function emit() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+  } catch {
+    // Quota plein ou mode privé : on continue en mémoire plutôt que planter.
+  }
+  for (const l of listeners) l()
+  onChange?.(state)
+}
+
+/** Branche la synchronisation distante (voir store/sync.ts). */
+export function setProgressListener(fn: ((p: Progress) => void) | null) {
+  onChange = fn
+}
+
+export function getProgress(): Progress {
+  return state
+}
+
+export function replaceProgress(next: Progress) {
+  state = next
+  emit()
+}
+
+function update(fn: (draft: Progress) => void) {
+  const next: Progress = structuredClone(state)
+  fn(next)
+  next.updatedAt = new Date().toISOString()
+  state = next
+  emit()
+}
+
+export function useProgress(): Progress {
+  return useSyncExternalStore(
+    (cb) => {
+      listeners.add(cb)
+      return () => listeners.delete(cb)
+    },
+    getProgress,
+    getProgress,
+  )
+}
+
+export const cardKey = (courseId: string, lexemeId: string) =>
+  `${courseId}:${lexemeId}`
+
+export function getCard(
+  courseId: string,
+  lexemeId: string,
+): CardState | undefined {
+  return state.cards[cardKey(courseId, lexemeId)]
+}
+
+/** Enregistre le résultat d'une réponse et met à jour la série de jours. */
+export function recordReview(opts: {
+  courseId: string
+  lexemeId: string
+  card: CardState
+  correct: boolean
+  isNew: boolean
+  seconds: number
+  exerciseId: string
+}) {
+  update((p) => {
+    p.cards[cardKey(opts.courseId, opts.lexemeId)] = opts.card
+    p.seen[opts.exerciseId] = (p.seen[opts.exerciseId] ?? 0) + 1
+
+    const day = today()
+    const stats = (p.days[day] ??= {
+      reviews: 0,
+      correct: 0,
+      seconds: 0,
+      newWords: 0,
+    })
+    stats.reviews += 1
+    if (opts.correct) stats.correct += 1
+    if (opts.isNew) stats.newWords += 1
+    // Une réponse qui prend plus de deux minutes est une pause, pas du travail.
+    stats.seconds += Math.min(opts.seconds, 120)
+
+    if (p.streak.lastDay !== day) {
+      const yesterday = today(new Date(Date.now() - 86_400_000))
+      p.streak.current = p.streak.lastDay === yesterday ? p.streak.current + 1 : 1
+      p.streak.longest = Math.max(p.streak.longest, p.streak.current)
+      p.streak.lastDay = day
+    }
+  })
+}
+
+export function updateSettings(patch: Partial<Progress['settings']>) {
+  update((p) => {
+    p.settings = { ...p.settings, ...patch }
+  })
+}
+
+export function resetProgress() {
+  replaceProgress(emptyProgress())
+}
+
+// --- Statistiques dérivées -------------------------------------------------
+
+export interface CourseStats {
+  known: number
+  mastered: number
+  due: number
+  total: number
+}
+
+export function courseStats(
+  courseId: string,
+  lexemeIds: string[],
+  now = new Date(),
+): CourseStats {
+  let known = 0
+  let mastered = 0
+  let due = 0
+  for (const id of lexemeIds) {
+    const card = state.cards[cardKey(courseId, id)]
+    if (!card) continue
+    known++
+    if (card.stability >= MASTERED_STABILITY_DAYS) mastered++
+    if (isDue(card, now)) due++
+  }
+  return { known, mastered, due, total: lexemeIds.length }
+}
