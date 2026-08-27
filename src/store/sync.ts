@@ -127,6 +127,22 @@ export function publicSummary(p: Progress) {
 
 let pushTimer: ReturnType<typeof setTimeout> | null = null
 
+/** Horodatage de la dernière sauvegarde en ligne réussie. */
+let lastPushedAt: string | null = null
+
+export function getLastPushedAt(): string | null {
+  return lastPushedAt
+}
+
+/** Force une sauvegarde immédiate, sans attendre le délai habituel. */
+export async function pushNow(): Promise<void> {
+  if (pushTimer) {
+    clearTimeout(pushTimer)
+    pushTimer = null
+  }
+  await push(getProgress())
+}
+
 function schedulePush(progress: Progress) {
   if (!snapshot.user) return
   if (pushTimer) clearTimeout(pushTimer)
@@ -151,6 +167,7 @@ async function push(progress: Progress) {
     .from('profiles')
     .update(publicSummary(progress))
     .eq('id', snapshot.user.id)
+  if (!statsError) lastPushedAt = new Date().toISOString()
   set(
     statsError
       ? { sync: 'error', error: statsError.message }
