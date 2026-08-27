@@ -103,7 +103,8 @@ export function Settings({ onBack }: { onBack: () => void }) {
         <Card>
           <h2 className="text-sm font-medium">Zone sensible</h2>
           <p className="mt-1 text-xs text-muted">
-            Efface toute la progression de cet appareil, sans retour possible.
+            Efface toute la progression de ce compte, sans retour possible. Si
+            vous êtes connecté, la sauvegarde en ligne est effacée aussi.
           </p>
           <Button
             variant="ghost"
@@ -111,7 +112,7 @@ export function Settings({ onBack }: { onBack: () => void }) {
             onClick={() => {
               if (
                 confirm(
-                  'Effacer toute la progression enregistrée sur cet appareil ?',
+                  'Effacer toute la progression de ce compte, ici comme en ligne ?',
                 )
               ) {
                 resetProgress()

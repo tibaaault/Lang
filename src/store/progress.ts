@@ -46,7 +46,25 @@ export interface Progress {
   updatedAt: string
 }
 
+// Chaque compte a son propre espace de stockage sur l'appareil. Sans ce
+// cloisonnement, deux personnes partageant un téléphone héritent l'une de la
+// progression de l'autre : c'est exactement ce qui arrivait au compte créé en
+// second, qui reprenait les réponses et les réglages du premier.
 const STORAGE_KEY = 'lang.progress.v1'
+
+/** Espace d'un compte donné ; sans compte, on reste sur l'espace anonyme. */
+function storageKeyFor(userId: string | null): string {
+  return userId ? `${STORAGE_KEY}.${userId}` : STORAGE_KEY
+}
+
+/**
+ * Compte ayant repris la progression faite avant toute inscription.
+ * Elle ne peut être reprise qu'une fois : le deuxième compte créé sur
+ * l'appareil part forcément de zéro.
+ */
+const CLAIM_KEY = 'lang.anonymous-claimed-by'
+
+let activeKey = STORAGE_KEY
 
 export function emptyProgress(): Progress {
   return {
@@ -66,9 +84,9 @@ export function today(now = new Date()): string {
   return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
 }
 
-function load(): Progress {
+function load(key = activeKey): Progress {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY)
+    const raw = localStorage.getItem(key)
     if (!raw) return emptyProgress()
     const parsed = JSON.parse(raw) as Progress
     if (parsed.version !== 1) return emptyProgress()
@@ -85,7 +103,7 @@ let onChange: ((p: Progress) => void) | null = null
 
 function emit() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+    localStorage.setItem(activeKey, JSON.stringify(state))
   } catch {
     // Quota plein ou mode privé : on continue en mémoire plutôt que planter.
   }
@@ -100,6 +118,55 @@ export function setProgressListener(fn: ((p: Progress) => void) | null) {
 
 export function getProgress(): Progress {
   return state
+}
+
+/** Vrai si du travail a été fait sur cet appareil avant toute inscription. */
+export function hasUnclaimedAnonymousProgress(): boolean {
+  try {
+    if (localStorage.getItem(CLAIM_KEY)) return false
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return false
+    const parsed = JSON.parse(raw) as Progress
+    return Object.keys(parsed.cards ?? {}).length > 0
+  } catch {
+    return false
+  }
+}
+
+/**
+ * Bascule l'application sur l'espace de stockage d'un compte.
+ *
+ * `adoptAnonymous` ne vaut que pour une première inscription depuis un
+ * appareil déjà utilisé sans compte : la progression anonyme est alors
+ * rattachée à ce compte, et à lui seul. Tout autre compte démarre vierge,
+ * même sur le même téléphone.
+ */
+export function activateAccount(
+  userId: string | null,
+  adoptAnonymous = false,
+): Progress {
+  const key = storageKeyFor(userId)
+  const stored = localStorage.getItem(key)
+
+  let next: Progress
+  if (stored) {
+    next = load(key)
+  } else if (userId && adoptAnonymous && hasUnclaimedAnonymousProgress()) {
+    next = load(STORAGE_KEY)
+    try {
+      localStorage.setItem(CLAIM_KEY, userId)
+    } catch {
+      // Sans trace de reprise, la progression anonyme pourrait être reprise
+      // une seconde fois : on continue, mais le cas reste rare.
+    }
+  } else {
+    next = emptyProgress()
+  }
+
+  activeKey = key
+  state = next
+  emit()
+  return next
 }
 
 export function replaceProgress(next: Progress) {

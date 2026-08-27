@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { hasUnclaimedAnonymousProgress } from '../store/progress'
 import { isRemoteEnabled } from '../store/supabase'
 import {
   fetchProfiles,
@@ -18,6 +19,10 @@ export function Account({ onBack }: { onBack: () => void }) {
   const [pseudo, setPseudo] = useState('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // Proposé uniquement s'il y a du travail fait sans compte sur cet appareil,
+  // et qu'aucun compte ne l'a déjà repris.
+  const [canAdopt] = useState(hasUnclaimedAnonymousProgress)
+  const [adoptLocal, setAdoptLocal] = useState(false)
   const [profiles, setProfiles] = useState<PublicProfile[]>([])
 
   useEffect(() => {
@@ -51,7 +56,7 @@ export function Account({ onBack }: { onBack: () => void }) {
         if (pseudo.trim().length < 2) {
           throw new Error('Choisissez un pseudo d’au moins deux lettres.')
         }
-        await signUp(email.trim(), password, pseudo.trim())
+        await signUp(email.trim(), password, pseudo.trim(), adoptLocal)
       } else {
         await signIn(email.trim(), password)
       }
@@ -113,6 +118,34 @@ export function Account({ onBack }: { onBack: () => void }) {
               }
               className="w-full rounded-xl border border-line bg-surface px-4 py-3.5 outline-none focus:border-accent"
             />
+            {mode === 'signup' && canAdopt && (
+              <button
+                type="button"
+                onClick={() => setAdoptLocal((v) => !v)}
+                className={`flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left text-sm ${
+                  adoptLocal ? 'border-accent bg-accent-soft' : 'border-line'
+                }`}
+              >
+                <span
+                  aria-hidden
+                  className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border text-xs ${
+                    adoptLocal
+                      ? 'border-accent bg-accent text-paper'
+                      : 'border-line'
+                  }`}
+                >
+                  {adoptLocal ? '✓' : ''}
+                </span>
+                <span>
+                  Reprendre la progression déjà faite sur cet appareil
+                  <span className="mt-0.5 block text-xs text-muted">
+                    À cocher seulement si c'est vous qui l'avez faite. Un compte
+                    créé pour quelqu'un d'autre doit partir de zéro.
+                  </span>
+                </span>
+              </button>
+            )}
+
             {error && <p className="text-sm text-wrong">{error}</p>}
             <Button type="submit" className="w-full" disabled={busy}>
               {busy
@@ -125,8 +158,9 @@ export function Account({ onBack }: { onBack: () => void }) {
         </Card>
 
         <p className="mt-4 px-1 text-xs leading-relaxed text-muted">
-          Chaque compte a sa propre progression, invisible des autres. Seuls le
-          pseudo, la série de jours et le nombre de mots acquis sont partagés.
+          Chaque compte a sa propre progression et ses propres réglages, y
+          compris sur un appareil partagé. Seuls le pseudo, la série de jours et
+          le nombre de mots acquis sont visibles des autres.
         </p>
       </Screen>
     )

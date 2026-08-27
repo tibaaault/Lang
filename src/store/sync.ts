@@ -9,6 +9,7 @@ import { useSyncExternalStore } from 'react'
 import type { User } from '@supabase/supabase-js'
 import { getSupabase, isRemoteEnabled } from './supabase'
 import {
+  activateAccount,
   getProgress,
   replaceProgress,
   setProgressListener,
@@ -157,10 +158,24 @@ async function push(progress: Progress) {
   )
 }
 
+/**
+ * Vrai le temps d'une inscription ayant demandé à reprendre la progression
+ * faite sur cet appareil avant tout compte. Le drapeau est consommé par la
+ * synchronisation qui suit immédiatement.
+ */
+let adoptAnonymousOnNextLogin = false
+
 async function pullAndMerge(user: User) {
   const supabase = await getSupabase()
   if (!supabase) return
   set({ sync: 'syncing', error: null })
+
+  // On bascule d'abord sur l'espace de ce compte : sans cela, la progression
+  // affichée — celle d'un autre compte ou d'une session anonyme — serait
+  // fusionnée dans le sien.
+  const adopt = adoptAnonymousOnNextLogin
+  adoptAnonymousOnNextLogin = false
+  activateAccount(user.id, adopt)
 
   const [{ data: row, error }, { data: profile }] = await Promise.all([
     supabase.from('progress').select('payload').eq('user_id', user.id).maybeSingle(),
@@ -219,10 +234,18 @@ export async function initAuth() {
     const user = session?.user ?? null
     set({ user, sync: user ? 'idle' : 'signed-out' })
     if (user) void pullAndMerge(user)
+    // Déconnexion, ici ou dans un autre onglet : on quitte l'espace du compte.
+    else activateAccount(null)
   })
 }
 
-export async function signUp(email: string, password: string, pseudo: string) {
+export async function signUp(
+  email: string,
+  password: string,
+  pseudo: string,
+  adoptLocalProgress = false,
+) {
+  adoptAnonymousOnNextLogin = adoptLocalProgress
   const supabase = await getSupabase()
   if (!supabase) throw new Error('Synchronisation non configurée.')
   // Le pseudo est aussi rangé dans les métadonnées du compte : si la création
@@ -253,6 +276,9 @@ export async function signOut() {
   const supabase = await getSupabase()
   if (!supabase) return
   await supabase.auth.signOut()
+  // On revient à l'espace anonyme : laisser la progression du compte à
+  // l'écran la donnerait au prochain qui se connecte sur cet appareil.
+  activateAccount(null)
   set({ user: null, pseudo: null, sync: 'signed-out' })
 }
 
