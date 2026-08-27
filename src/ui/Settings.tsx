@@ -1,4 +1,5 @@
 import { resetProgress, updateSettings, useProgress } from '../store/progress'
+import { courses } from '../content'
 import { Button, Card, Screen } from './components'
 
 const GOALS = [10, 20, 30, 50]
@@ -10,6 +11,50 @@ export function Settings({ onBack }: { onBack: () => void }) {
   return (
     <Screen title="Réglages" onBack={onBack}>
       <div className="space-y-5">
+        <Card>
+          <h2 className="text-sm font-medium">Cours suivis</h2>
+          <p className="mt-1 text-xs text-muted">
+            Seuls les cours cochés apparaissent sur l'accueil. Un cours trop
+            difficile décourage : mieux vaut le masquer que le subir.
+          </p>
+          <div className="mt-3 space-y-2">
+            {courses.map((course) => {
+              const followed =
+                progress.settings.courses?.includes(course.id) ?? true
+              return (
+                <button
+                  key={course.id}
+                  onClick={() => {
+                    const current =
+                      progress.settings.courses ?? courses.map((c) => c.id)
+                    const next = followed
+                      ? current.filter((id) => id !== course.id)
+                      : [...current, course.id]
+                    updateSettings({ courses: next })
+                  }}
+                  className={`flex min-h-14 w-full items-center gap-3 rounded-xl border px-4 text-left text-sm ${
+                    followed ? 'border-accent bg-accent-soft' : 'border-line'
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border text-xs ${
+                      followed
+                        ? 'border-accent bg-accent text-paper'
+                        : 'border-line'
+                    }`}
+                  >
+                    {followed ? '✓' : ''}
+                  </span>
+                  <span className={followed ? 'text-accent' : ''}>
+                    {course.title}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        </Card>
+
         <Card>
           <h2 className="text-sm font-medium">Objectif quotidien</h2>
           <p className="mt-1 text-xs text-muted">

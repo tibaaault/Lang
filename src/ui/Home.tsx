@@ -18,9 +18,15 @@ export function Home({
   const doneToday = day?.reviews ?? 0
   const goal = progress.settings.dailyGoal
 
+  const followed = progress.settings.courses
+  const visibleCourses = useMemo(
+    () => (followed ? courses.filter((c) => followed.includes(c.id)) : courses),
+    [courses, followed],
+  )
+
   const indexes = useMemo(
-    () => new Map(courses.map((c) => [c.id, indexCourse(c)])),
-    [courses],
+    () => new Map(visibleCourses.map((c) => [c.id, indexCourse(c)])),
+    [visibleCourses],
   )
 
   return (
@@ -63,7 +69,7 @@ export function Home({
       </Card>
 
       <div className="space-y-3">
-        {courses.map((course) => {
+        {visibleCourses.map((course) => {
           const index = indexes.get(course.id)!
           const { due, fresh, remaining } = pendingCount(course, index, progress)
           const stats = courseStats(
@@ -114,6 +120,14 @@ export function Home({
           )
         })}
       </div>
+
+      {visibleCourses.length === 0 && (
+        <Card>
+          <p className="text-sm text-muted">
+            Aucun cours suivi. Choisissez-en un dans les réglages.
+          </p>
+        </Card>
+      )}
 
       <p className="mt-5 px-1 text-xs leading-relaxed text-muted">
         L'entraînement libre ignore le rythme conseillé : il enchaîne les mots

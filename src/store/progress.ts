@@ -35,6 +35,12 @@ export interface Progress {
     dailyGoal: number
     newPerDay: number
     audio: boolean
+    /**
+     * Identifiants des cours suivis. Absent signifie « tous ».
+     * Chaque compte choisit son parcours : afficher un cours hors de portée
+     * décourage plus qu'il ne motive.
+     */
+    courses?: string[]
   }
   /** Horodatage de la dernière écriture, pour arbitrer la synchronisation. */
   updatedAt: string
