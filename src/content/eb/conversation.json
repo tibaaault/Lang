@@ -1,0 +1,410 @@
+{
+  "id": "eb.conversation",
+  "title": "Phrases de conversation",
+  "subtitle": "Les tournures qu'on entend sans arrêt dans les séries et les échanges",
+  "lexemes": [
+    {
+      "id": "eb.cv.i-dont-know",
+      "term": "I don't know",
+      "pos": "expr",
+      "gloss": "je ne sais pas",
+      "note": "Se prononce souvent « aïdonno » à l'oral. La négation se construit avec « don't » + verbe.",
+      "examples": [
+        {
+          "text": "I don't know what to say.",
+          "fr": "Je ne sais pas quoi dire."
+        },
+        {
+          "text": "I don't know yet.",
+          "fr": "Je ne sais pas encore."
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.never-mind",
+      "term": "never mind",
+      "pos": "expr",
+      "gloss": "laisse tomber, ce n'est pas grave",
+      "note": "Sert à clore un sujet sans importance, ou à rassurer après une erreur.",
+      "examples": [
+        {
+          "text": "Never mind, it's not important.",
+          "fr": "Laisse tomber, ce n'est pas important."
+        },
+        {
+          "text": "Never mind, I'll do it myself.",
+          "fr": "Tant pis, je le ferai moi-même."
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.it-depends",
+      "term": "it depends",
+      "pos": "expr",
+      "gloss": "ça dépend",
+      "note": "Toujours avec un -s : « it depends ». Suivi de « on » : « it depends on the weather ».",
+      "examples": [
+        {
+          "text": "It depends on the weather.",
+          "fr": "Ça dépend du temps."
+        },
+        {
+          "text": "It depends, why?",
+          "fr": "Ça dépend, pourquoi ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.no-worries",
+      "term": "no worries",
+      "pos": "expr",
+      "gloss": "pas de souci, de rien",
+      "note": "Répond à des excuses ou à un merci. « No problem » et « don't worry » sont équivalents.",
+      "examples": [
+        {
+          "text": "No worries, it happens.",
+          "fr": "Pas de souci, ça arrive."
+        },
+        {
+          "text": "Thanks! — No worries.",
+          "fr": "Merci ! — De rien."
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.hold-on",
+      "term": "hold on",
+      "pos": "expr",
+      "gloss": "attends, une seconde",
+      "note": "« Hold on » ou « hang on » à l'oral et au téléphone. « Wait » seul peut sembler sec.",
+      "examples": [
+        {
+          "text": "Hold on a second.",
+          "fr": "Attends une seconde."
+        },
+        {
+          "text": "Hold on, I'll check.",
+          "fr": "Attends, je vérifie."
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.i-guess",
+      "term": "I guess",
+      "pos": "expr",
+      "gloss": "je suppose, j'imagine",
+      "note": "Nuance d'incertitude ou d'accord tiède : « I guess so » = si tu veux, oui.",
+      "examples": [
+        {
+          "text": "I guess you're right.",
+          "fr": "Je suppose que tu as raison."
+        },
+        {
+          "text": "I guess so.",
+          "fr": "J'imagine, oui."
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.what-about",
+      "term": "what about...?",
+      "pos": "expr",
+      "gloss": "et... ? qu'en est-il de... ?",
+      "note": "Sert à proposer ou à relancer : « What about Friday? ». Suivi d'un nom ou d'un verbe en -ing.",
+      "examples": [
+        {
+          "text": "What about Friday?",
+          "fr": "Et vendredi ?"
+        },
+        {
+          "text": "What about going out tonight?",
+          "fr": "Et si on sortait ce soir ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.by-the-way",
+      "term": "by the way",
+      "pos": "expr",
+      "gloss": "au fait, à propos",
+      "note": "Introduit une remarque annexe. Abrégé en « btw » à l'écrit informel.",
+      "examples": [
+        {
+          "text": "By the way, did you call her?",
+          "fr": "Au fait, tu l'as appelée ?"
+        },
+        {
+          "text": "Nice shirt, by the way.",
+          "fr": "Jolie chemise, au passage."
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.i-mean",
+      "term": "I mean",
+      "pos": "expr",
+      "gloss": "enfin, je veux dire",
+      "note": "Sert à préciser ou à se reprendre. « What do you mean? » = qu'est-ce que tu veux dire ?",
+      "examples": [
+        {
+          "text": "I mean, it's not that simple.",
+          "fr": "Enfin, ce n'est pas si simple."
+        },
+        {
+          "text": "What do you mean?",
+          "fr": "Qu'est-ce que tu veux dire ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.cv.take-care",
+      "term": "take care",
+      "pos": "expr",
+      "gloss": "prends soin de toi, à bientôt",
+      "note": "Formule d'au revoir chaleureuse, courante à l'oral et en fin de message.",
+      "examples": [
+        {
+          "text": "See you, take care!",
+          "fr": "À bientôt, prends soin de toi !"
+        },
+        {
+          "text": "Take care of yourself.",
+          "fr": "Prends soin de toi."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "eb.cv.i-dont-know.x0",
+      "lexemeId": "eb.cv.i-dont-know",
+      "fr": "Je ne sais pas encore.",
+      "sentence": "I ___ know yet.",
+      "accepted": [
+        "don't",
+        "do not"
+      ],
+      "hint": "d___'_"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.cv.i-dont-know.x1",
+      "lexemeId": "eb.cv.i-dont-know",
+      "prompt": "Elle ne sait pas. →",
+      "options": [
+        "She doesn't know",
+        "She don't know",
+        "She not know",
+        "She doesn't knows"
+      ],
+      "answer": "She doesn't know",
+      "why": "Avec she, he ou it, la négation devient « doesn't », et le verbe reste nu."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.never-mind.x0",
+      "lexemeId": "eb.cv.never-mind",
+      "fr": "Laisse tomber, ce n'est pas grave.",
+      "sentence": "___ mind, it's not a big deal.",
+      "accepted": [
+        "never",
+        "Never"
+      ],
+      "hint": "N____"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.cv.never-mind.x1",
+      "lexemeId": "eb.cv.never-mind",
+      "fr": "laisse tomber, ce n'est pas grave",
+      "accepted": [
+        "never mind"
+      ],
+      "hint": "n____ m___"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.it-depends.x0",
+      "lexemeId": "eb.cv.it-depends",
+      "fr": "Ça dépend du temps qu'il fera.",
+      "sentence": "It depends ___ the weather.",
+      "accepted": [
+        "on"
+      ],
+      "nearMisses": [
+        {
+          "word": "of",
+          "why": "Calque du français « dépendre de ». En anglais, c'est toujours « depend on »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "eb.cv.it-depends.x1",
+      "lexemeId": "eb.cv.it-depends",
+      "fr": "ça dépend",
+      "accepted": [
+        "it depends",
+        "depends"
+      ],
+      "hint": "i_ d______"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.no-worries.x0",
+      "lexemeId": "eb.cv.no-worries",
+      "fr": "Pas de souci, ça arrive.",
+      "sentence": "No ___, it happens.",
+      "accepted": [
+        "worries"
+      ],
+      "hint": "w______s"
+    },
+    {
+      "kind": "listen",
+      "id": "eb.cv.no-worries.x1",
+      "lexemeId": "eb.cv.no-worries",
+      "text": "No worries, take your time.",
+      "fr": "Pas de souci, prends ton temps."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.hold-on.x0",
+      "lexemeId": "eb.cv.hold-on",
+      "fr": "Attends une seconde.",
+      "sentence": "___ on a second.",
+      "accepted": [
+        "hold",
+        "Hold",
+        "hang",
+        "Hang"
+      ],
+      "hint": "H___"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.cv.hold-on.x1",
+      "lexemeId": "eb.cv.hold-on",
+      "fr": "attends, une seconde",
+      "accepted": [
+        "hold on",
+        "hang on"
+      ],
+      "hint": "h___ o_"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.i-guess.x0",
+      "lexemeId": "eb.cv.i-guess",
+      "fr": "Je suppose que tu as raison.",
+      "sentence": "I ___ you're right.",
+      "accepted": [
+        "guess"
+      ],
+      "hint": "g____"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.cv.i-guess.x1",
+      "lexemeId": "eb.cv.i-guess",
+      "fr": "je suppose, j'imagine",
+      "accepted": [
+        "I guess",
+        "guess"
+      ],
+      "hint": "I g____"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.what-about.x0",
+      "lexemeId": "eb.cv.what-about",
+      "fr": "Et si on sortait ce soir ?",
+      "sentence": "What about ___ out tonight?",
+      "accepted": [
+        "going"
+      ],
+      "nearMisses": [
+        {
+          "word": "go",
+          "why": "Après « what about », le verbe prend toujours -ing : « what about going »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.cv.what-about.x1",
+      "lexemeId": "eb.cv.what-about",
+      "prompt": "Et toi ? →",
+      "options": [
+        "What about you?",
+        "What about your?",
+        "And you what?",
+        "What about of you?"
+      ],
+      "answer": "What about you?",
+      "why": "« What about you? » est la façon courante de renvoyer la question."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.by-the-way.x0",
+      "lexemeId": "eb.cv.by-the-way",
+      "fr": "Au fait, tu l'as appelée ?",
+      "sentence": "___ the way, did you call her?",
+      "accepted": [
+        "by",
+        "By"
+      ],
+      "hint": "B_"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.cv.by-the-way.x1",
+      "lexemeId": "eb.cv.by-the-way",
+      "fr": "au fait, à propos",
+      "accepted": [
+        "by the way"
+      ],
+      "hint": "b_ t__ w__"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.i-mean.x0",
+      "lexemeId": "eb.cv.i-mean",
+      "fr": "Qu'est-ce que tu veux dire ?",
+      "sentence": "What do you ___?",
+      "accepted": [
+        "mean"
+      ],
+      "hint": "m___"
+    },
+    {
+      "kind": "listen",
+      "id": "eb.cv.i-mean.x1",
+      "lexemeId": "eb.cv.i-mean",
+      "text": "What do you mean exactly?",
+      "fr": "Qu'est-ce que tu veux dire exactement ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.take-care.x0",
+      "lexemeId": "eb.cv.take-care",
+      "fr": "À bientôt, prends soin de toi !",
+      "sentence": "See you, ___ care!",
+      "accepted": [
+        "take"
+      ],
+      "hint": "t___"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.cv.take-care.x1",
+      "lexemeId": "eb.cv.take-care",
+      "fr": "prends soin de toi (au revoir)",
+      "accepted": [
+        "take care"
+      ],
+      "hint": "t___ c___"
+    }
+  ]
+}

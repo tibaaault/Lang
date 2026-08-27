@@ -6,11 +6,22 @@ import { isDue, retrievability } from './fsrs'
 import type { Progress } from '../store/progress'
 import { cardKey, newWordsToday } from '../store/progress'
 
+/**
+ * `introduce` montre le mot, son sens et un exemple, sans rien demander.
+ * `test` interroge, et l'encadré de présentation n'est alors plus affiché.
+ *
+ * Les deux ne doivent jamais tenir sur le même écran : la réponse attendue
+ * serait lisible juste au-dessus de la question, et l'exercice se réduirait à
+ * une recopie.
+ */
+export type SessionPhase = 'introduce' | 'test'
+
 export interface SessionItem {
   lexeme: Lexeme
   exercise: Exercise
   isNew: boolean
   unitTitle: string
+  phase: SessionPhase
   /** Rejoué en fin de session après une erreur : ne replanifie pas la carte. */
   replay?: boolean
 }
@@ -102,6 +113,48 @@ function interleave<T>(reviews: T[], fresh: T[]): T[] {
   return out
 }
 
+/** Questions qui séparent la présentation d'un mot de son premier test. */
+const INTRODUCTION_GAP = 4
+
+/**
+ * Insère, après chaque présentation, le test correspondant quelques questions
+ * plus loin. L'écart laisse le mot quitter la mémoire immédiate : le
+ * retrouver demande alors un vrai effort de rappel, ce qui est précisément ce
+ * qui fixe le souvenir.
+ */
+export function scheduleIntroductions(
+  base: SessionItem[],
+  gap = INTRODUCTION_GAP,
+): SessionItem[] {
+  const out: SessionItem[] = []
+  const pending: { item: SessionItem; dueAt: number }[] = []
+  let i = 0
+
+  while (i < base.length || pending.length) {
+    const ready = pending.findIndex((p) => p.dueAt <= out.length)
+    if (ready !== -1) {
+      out.push(pending[ready].item)
+      pending.splice(ready, 1)
+      continue
+    }
+    if (i < base.length) {
+      const item = base[i++]
+      out.push(item)
+      if (item.phase === 'introduce') {
+        pending.push({
+          item: { ...item, phase: 'test' },
+          dueAt: out.length + gap,
+        })
+      }
+    } else {
+      // Fin de la file : on sort les tests restants dans l'ordre prévu.
+      pending.sort((a, b) => a.dueAt - b.dueAt)
+      out.push(pending.shift()!.item)
+    }
+  }
+  return out
+}
+
 /**
  * `daily` respecte le rythme conseillé : ce qui est dû, plus un quota de mots
  * neufs. `free` ignore les deux, pour qui veut travailler plus longtemps —
@@ -146,11 +199,12 @@ export function buildSession(
 
     if (!card) {
       if (freshItems.length < newBudget) {
-        freshItems.push({ ...base, isNew: true })
+        // Un mot inconnu commence par être montré ; son test suit plus loin.
+        freshItems.push({ ...base, isNew: true, phase: 'introduce' })
       }
     } else if (isDue(card, now)) {
       dueItems.push({
-        item: { ...base, isNew: false },
+        item: { ...base, isNew: false, phase: 'test' },
         lateness: now.getTime() - Date.parse(card.due),
       })
     } else if (mode === 'free') {
@@ -158,7 +212,7 @@ export function buildSession(
       // d'abord, pour que l'entraînement libre serve vraiment à quelque chose.
       const elapsed = (now.getTime() - Date.parse(card.lastReview)) / 86_400_000
       earlyItems.push({
-        item: { ...base, isNew: false },
+        item: { ...base, isNew: false, phase: 'test' },
         retention: retrievability(elapsed, card.stability),
       })
     }
@@ -173,7 +227,10 @@ export function buildSession(
     ...earlyItems.map((e) => e.item),
   ].slice(0, Math.max(size - Math.min(freshItems.length, size), 0))
 
-  return interleave(reviews, freshItems.slice(0, size)).slice(0, size)
+  // Le plafond porte sur les questions de fond ; les présentations, qui ne
+  // demandent aucune réponse, s'y ajoutent.
+  const base = interleave(reviews, freshItems.slice(0, size)).slice(0, size)
+  return scheduleIntroductions(base)
 }
 
 /** Ce qui reste à faire aujourd'hui, pour l'écran d'accueil. */

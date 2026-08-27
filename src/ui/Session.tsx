@@ -53,7 +53,7 @@ export function Session({ course, index, mode, onExit }: Props) {
 
   const submit = useCallback(
     (raw: string) => {
-      if (!item || verdict) return
+      if (!item || verdict || item.phase === 'introduce') return
       const ex = item.exercise
       const accepted =
         ex.kind === 'choice'
@@ -152,14 +152,20 @@ export function Session({ course, index, mode, onExit }: Props) {
 
       <main className="flex flex-1 flex-col">
         <p className="mb-1 text-xs uppercase tracking-wide text-muted">
-          {item.isNew ? 'Nouveau mot' : item.unitTitle}
+          {item.phase === 'introduce' ? 'Nouveau mot' : item.unitTitle}
         </p>
 
+        {item.phase === 'introduce' ? (
+          <Introduction
+            lexeme={item.lexeme}
+            voice={course.voice}
+            onNext={next}
+          />
+        ) : (
+          <>
         <Prompt
           exercise={item.exercise}
-          lexeme={item.lexeme}
           voice={course.voice}
-          isNew={item.isNew}
           locked={verdict !== null}
           input={input}
           setInput={setInput}
@@ -190,6 +196,8 @@ export function Session({ course, index, mode, onExit }: Props) {
             </Button>
           )
         )}
+          </>
+        )}
       </main>
     </div>
   )
@@ -197,9 +205,7 @@ export function Session({ course, index, mode, onExit }: Props) {
 
 function Prompt({
   exercise,
-  lexeme,
   voice,
-  isNew,
   locked,
   input,
   setInput,
@@ -210,9 +216,7 @@ function Prompt({
   verdict,
 }: {
   exercise: Exercise
-  lexeme: Lexeme
   voice: string
-  isNew: boolean
   locked: boolean
   input: string
   setInput: (v: string) => void
@@ -227,22 +231,6 @@ function Prompt({
 
   return (
     <div className="space-y-4">
-      {/* Un mot rencontré pour la première fois est d'abord montré, pas testé :
-          deviner un mot qu'on n'a jamais vu n'apprend rien. */}
-      {isNew && (
-        <Card className="bg-accent-soft border-accent/20">
-          <div className="flex items-baseline justify-between gap-3">
-            <span className="text-lg font-semibold">{lexeme.term}</span>
-            <span className="text-sm text-muted">{lexeme.gloss}</span>
-          </div>
-          {lexeme.note && (
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              {lexeme.note}
-            </p>
-          )}
-        </Card>
-      )}
-
       {exercise.kind === 'cloze' && (
         <>
           <p className="text-sm text-muted">{exercise.fr}</p>
@@ -347,6 +335,65 @@ function Prompt({
         </div>
       )}
     </div>
+  )
+}
+
+/**
+ * Présentation d'un mot inconnu : on montre, on ne teste pas.
+ * Le test du même mot revient quelques questions plus loin, une fois cet
+ * écran disparu — sans quoi il suffirait de recopier la réponse.
+ */
+function Introduction({
+  lexeme,
+  voice,
+  onNext,
+}: {
+  lexeme: Lexeme
+  voice: string
+  onNext: () => void
+}) {
+  return (
+    <>
+      <div className="space-y-4">
+        <Card className="border-accent/30 bg-accent-soft">
+          <div className="flex items-baseline justify-between gap-3">
+            <span className="font-serif text-2xl">{lexeme.term}</span>
+            {lexeme.roman && (
+              <span className="text-sm text-muted">{lexeme.roman}</span>
+            )}
+          </div>
+          <p className="mt-1 text-base">{lexeme.gloss}</p>
+          {lexeme.note && (
+            <p className="mt-3 border-t border-accent/20 pt-3 text-sm leading-relaxed text-muted">
+              {lexeme.note}
+            </p>
+          )}
+          <div className="mt-3">
+            <SpeakButton onClick={() => speak(lexeme.term, voice)} />
+          </div>
+        </Card>
+
+        <div className="space-y-3">
+          {lexeme.examples.map((ex) => (
+            <div key={ex.text} className="border-l-2 border-line pl-3">
+              <p className="font-serif text-lg leading-snug">{ex.text}</p>
+              <p className="mt-0.5 text-sm text-muted">{ex.fr}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-xs text-muted">
+          Lisez-le une fois. La question sur ce mot arrive dans quelques
+          écrans.
+        </p>
+      </div>
+
+      <div className="flex-1" />
+
+      <Button className="w-full" onClick={onNext}>
+        J'ai lu
+      </Button>
+    </>
   )
 }
 

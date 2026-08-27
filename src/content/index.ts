@@ -27,6 +27,12 @@ import enMedia from './en/media.json'
 import enSociety from './en/society.json'
 import enIdioms1 from './en/idioms1.json'
 import enIdioms2 from './en/idioms2.json'
+import ebVerbes from './eb/verbes.json'
+import ebQuestions from './eb/questions.json'
+import ebQuotidien from './eb/quotidien.json'
+import ebGens from './eb/gens.json'
+import ebConversation from './eb/conversation.json'
+import ebTemps from './eb/temps.json'
 import idPremiersMots from './id/premiers-mots.json'
 import idMangerAcheter from './id/manger-acheter.json'
 import idNombres from './id/nombres.json'
@@ -79,7 +85,25 @@ const indonesian: Course = {
   ] as Unit[],
 }
 
-export const courses: Course[] = [english, indonesian]
+// Parcours débutant, distinct du parcours B2+ : les exercices de nuance du
+// second n'ont aucun sens sans les bases, et voir un cours hors de portée
+// décourage. Chaque compte choisit ce qu'il suit dans les réglages.
+const englishBasics: Course = {
+  id: 'en-basics',
+  lang: 'en',
+  voice: 'en-GB',
+  title: 'Anglais — les bases',
+  units: [
+    ebVerbes,
+    ebQuestions,
+    ebQuotidien,
+    ebConversation,
+    ebGens,
+    ebTemps,
+  ] as Unit[],
+}
+
+export const courses: Course[] = [english, englishBasics, indonesian]
 
 export function courseById(id: string): Course | undefined {
   return courses.find((c) => c.id === id)

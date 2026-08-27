@@ -1,0 +1,422 @@
+{
+  "id": "eb.quotidien",
+  "title": "La journée",
+  "subtitle": "Raconter ce qu'on fait dans une journée ordinaire",
+  "lexemes": [
+    {
+      "id": "eb.qt.wake-up",
+      "term": "to wake up",
+      "pos": "verb",
+      "gloss": "se réveiller",
+      "note": "« Wake up » = se réveiller, « get up » = se lever. Les deux sont différents et souvent confondus.",
+      "examples": [
+        {
+          "text": "I wake up at seven.",
+          "fr": "Je me réveille à sept heures."
+        },
+        {
+          "text": "I get up ten minutes later.",
+          "fr": "Je me lève dix minutes plus tard."
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.breakfast",
+      "term": "breakfast",
+      "pos": "noun",
+      "gloss": "le petit-déjeuner",
+      "note": "« Have breakfast » et non « take breakfast ». Les trois repas : breakfast, lunch, dinner.",
+      "examples": [
+        {
+          "text": "I have breakfast at eight.",
+          "fr": "Je prends le petit-déjeuner à huit heures."
+        },
+        {
+          "text": "What's for dinner?",
+          "fr": "Qu'est-ce qu'on mange ce soir ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.work",
+      "term": "to work",
+      "pos": "verb",
+      "gloss": "travailler ; fonctionner",
+      "note": "Deux sens : « I work in a shop » et « it doesn't work » (ça ne marche pas).",
+      "examples": [
+        {
+          "text": "I work from home.",
+          "fr": "Je travaille à la maison."
+        },
+        {
+          "text": "It doesn't work.",
+          "fr": "Ça ne marche pas."
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.tired",
+      "term": "tired",
+      "pos": "adj",
+      "gloss": "fatigué",
+      "note": "« I'm tired » et non « I have tired ». En anglais, les états se disent avec « be ».",
+      "examples": [
+        {
+          "text": "I'm really tired today.",
+          "fr": "Je suis vraiment fatiguée aujourd'hui."
+        },
+        {
+          "text": "Are you tired?",
+          "fr": "Tu es fatigué ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.hungry",
+      "term": "hungry",
+      "pos": "adj",
+      "gloss": "affamé, qui a faim",
+      "note": "« I'm hungry » = j'ai faim ; « I'm thirsty » = j'ai soif. Toujours avec « be ».",
+      "examples": [
+        {
+          "text": "I'm hungry.",
+          "fr": "J'ai faim."
+        },
+        {
+          "text": "Are you thirsty?",
+          "fr": "Tu as soif ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.busy",
+      "term": "busy",
+      "pos": "adj",
+      "gloss": "occupé, pris",
+      "note": "« I'm busy » = je suis occupé. « A busy street » = une rue passante.",
+      "examples": [
+        {
+          "text": "Sorry, I'm busy tonight.",
+          "fr": "Désolée, je suis prise ce soir."
+        },
+        {
+          "text": "It's a busy day.",
+          "fr": "C'est une journée chargée."
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.late",
+      "term": "late",
+      "pos": "adj",
+      "gloss": "en retard ; tard",
+      "note": "« I'm late » = je suis en retard. « Early » est le contraire : tôt, en avance.",
+      "examples": [
+        {
+          "text": "Sorry I'm late.",
+          "fr": "Désolée, je suis en retard."
+        },
+        {
+          "text": "I woke up early today.",
+          "fr": "Je me suis réveillée tôt aujourd'hui."
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.watch",
+      "term": "to watch",
+      "pos": "verb",
+      "gloss": "regarder (un film, une série)",
+      "note": "Trois verbes à distinguer : « watch » (regarder longuement), « see » (voir), « look at » (regarder brièvement).",
+      "examples": [
+        {
+          "text": "I watch series every night.",
+          "fr": "Je regarde des séries tous les soirs."
+        },
+        {
+          "text": "Look at this!",
+          "fr": "Regarde ça !"
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.sleep",
+      "term": "to sleep",
+      "pos": "verb",
+      "gloss": "dormir",
+      "note": "« Sleep » = dormir ; « go to bed » = aller se coucher. « I slept well » = j'ai bien dormi.",
+      "examples": [
+        {
+          "text": "I slept badly last night.",
+          "fr": "J'ai mal dormi cette nuit."
+        },
+        {
+          "text": "I go to bed at eleven.",
+          "fr": "Je me couche à onze heures."
+        }
+      ]
+    },
+    {
+      "id": "eb.qt.every-day",
+      "term": "every day",
+      "pos": "expr",
+      "gloss": "tous les jours",
+      "note": "En deux mots. Attention : « everyday » en un mot est un adjectif qui signifie « quotidien, ordinaire ».",
+      "examples": [
+        {
+          "text": "I study English every day.",
+          "fr": "J'étudie l'anglais tous les jours."
+        },
+        {
+          "text": "It's an everyday problem.",
+          "fr": "C'est un problème quotidien."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "eb.qt.wake-up.x0",
+      "lexemeId": "eb.qt.wake-up",
+      "fr": "Je me réveille à sept heures.",
+      "sentence": "I ___ up at seven.",
+      "accepted": [
+        "wake"
+      ],
+      "hint": "w___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qt.wake-up.x1",
+      "lexemeId": "eb.qt.wake-up",
+      "prompt": "Je me lève tard le week-end. →",
+      "options": [
+        "I get up late at weekends",
+        "I wake up late at weekends",
+        "I raise late at weekends",
+        "I am getting up late weekend"
+      ],
+      "answer": "I get up late at weekends",
+      "why": "« Wake up » c'est ouvrir les yeux ; « get up » c'est sortir du lit."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.breakfast.x0",
+      "lexemeId": "eb.qt.breakfast",
+      "fr": "Je prends mon petit-déjeuner à huit heures.",
+      "sentence": "I ___ breakfast at eight.",
+      "accepted": [
+        "have",
+        "eat"
+      ],
+      "nearMisses": [
+        {
+          "word": "take",
+          "why": "Calque du français « prendre ». En anglais on dit « have breakfast »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "eb.qt.breakfast.x1",
+      "lexemeId": "eb.qt.breakfast",
+      "fr": "le petit-déjeuner",
+      "accepted": [
+        "breakfast"
+      ],
+      "hint": "b_______t"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.work.x0",
+      "lexemeId": "eb.qt.work",
+      "fr": "Ça ne marche pas.",
+      "sentence": "It doesn't ___.",
+      "accepted": [
+        "work"
+      ],
+      "hint": "w___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qt.work.x1",
+      "lexemeId": "eb.qt.work",
+      "prompt": "Je travaille à la maison. →",
+      "options": [
+        "I work from home",
+        "I work at home from",
+        "I am work from home",
+        "I work from the home"
+      ],
+      "answer": "I work from home",
+      "why": "L'expression figée est « work from home », sans article."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.tired.x0",
+      "lexemeId": "eb.qt.tired",
+      "fr": "Je suis vraiment fatiguée aujourd'hui.",
+      "sentence": "I'm really ___ today.",
+      "accepted": [
+        "tired"
+      ],
+      "hint": "t____"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qt.tired.x1",
+      "lexemeId": "eb.qt.tired",
+      "prompt": "J'ai faim. →",
+      "options": [
+        "I'm hungry",
+        "I have hungry",
+        "I have hunger",
+        "I am hunger"
+      ],
+      "answer": "I'm hungry",
+      "why": "Comme pour « tired », l'anglais dit « je suis affamé » et non « j'ai faim »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.hungry.x0",
+      "lexemeId": "eb.qt.hungry",
+      "fr": "J'ai faim.",
+      "sentence": "I'm ___.",
+      "accepted": [
+        "hungry"
+      ],
+      "hint": "h_____"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.qt.hungry.x1",
+      "lexemeId": "eb.qt.hungry",
+      "fr": "qui a faim",
+      "accepted": [
+        "hungry"
+      ],
+      "hint": "h_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.busy.x0",
+      "lexemeId": "eb.qt.busy",
+      "fr": "Désolée, je suis prise ce soir.",
+      "sentence": "Sorry, I'm ___ tonight.",
+      "accepted": [
+        "busy"
+      ],
+      "hint": "b___"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.qt.busy.x1",
+      "lexemeId": "eb.qt.busy",
+      "fr": "occupé, pris",
+      "accepted": [
+        "busy"
+      ],
+      "hint": "b___"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.late.x0",
+      "lexemeId": "eb.qt.late",
+      "fr": "Désolée, je suis en retard.",
+      "sentence": "Sorry I'm ___.",
+      "accepted": [
+        "late"
+      ],
+      "hint": "l___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qt.late.x1",
+      "lexemeId": "eb.qt.late",
+      "prompt": "Je me suis levée tôt. →",
+      "options": [
+        "I got up early",
+        "I got up soon",
+        "I got up late",
+        "I got up before"
+      ],
+      "answer": "I got up early",
+      "why": "« Early » = tôt. « Soon » veut dire « bientôt », ce qui est différent."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.watch.x0",
+      "lexemeId": "eb.qt.watch",
+      "fr": "Je regarde des séries tous les soirs.",
+      "sentence": "I ___ series every night.",
+      "accepted": [
+        "watch"
+      ],
+      "nearMisses": [
+        {
+          "word": "look",
+          "why": "« Look » se construit avec « at » et désigne un regard bref. Pour une série, c'est « watch »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qt.watch.x1",
+      "lexemeId": "eb.qt.watch",
+      "prompt": "Regarde ça ! →",
+      "options": [
+        "Look at this!",
+        "Watch this at!",
+        "See this at!",
+        "Look this!"
+      ],
+      "answer": "Look at this!",
+      "why": "« Look » est toujours suivi de « at » devant ce qu'on regarde."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.sleep.x0",
+      "lexemeId": "eb.qt.sleep",
+      "fr": "J'ai mal dormi cette nuit.",
+      "sentence": "I ___ badly last night.",
+      "accepted": [
+        "slept"
+      ],
+      "nearMisses": [
+        {
+          "word": "sleeped",
+          "why": "« Sleep » est irrégulier : son passé est « slept », jamais « sleeped »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "eb.qt.sleep.x1",
+      "lexemeId": "eb.qt.sleep",
+      "text": "I didn't sleep well last night.",
+      "fr": "Je n'ai pas bien dormi cette nuit."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.every-day.x0",
+      "lexemeId": "eb.qt.every-day",
+      "fr": "J'étudie l'anglais tous les jours.",
+      "sentence": "I study English every ___.",
+      "accepted": [
+        "day"
+      ],
+      "hint": "d__"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.qt.every-day.x1",
+      "lexemeId": "eb.qt.every-day",
+      "fr": "tous les jours",
+      "accepted": [
+        "every day"
+      ],
+      "hint": "e____ d__"
+    }
+  ]
+}

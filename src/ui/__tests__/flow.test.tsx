@@ -42,11 +42,19 @@ describe("parcours complet d'une session", () => {
     const start = (await screen.findAllByRole('button', { name: /Réviser/ }))[0]
     await user.click(start)
 
-    // Premier exercice : un mot neuf est présenté avant d'être testé.
+    // Le premier écran présente un mot neuf : il montre, il n'interroge pas.
     expect(await screen.findByText(/Nouveau mot/)).toBeTruthy()
+    expect(screen.queryByPlaceholderText('Votre réponse')).toBeNull()
 
-    // On répond à dix questions, quelle que soit leur forme.
-    for (let i = 0; i < 10; i++) {
+    // On avance sur vingt écrans, présentations comprises.
+    for (let i = 0; i < 20; i++) {
+      const read = screen.queryByRole('button', { name: "J'ai lu" })
+      if (read) {
+        // Écran de présentation : le mot est visible, mais rien n'est demandé.
+        await user.click(read)
+        continue
+      }
+
       const input = screen.queryByPlaceholderText<HTMLInputElement>(
         'Votre réponse',
       )
@@ -73,6 +81,7 @@ describe("parcours complet d'une session", () => {
     // Le premier jour, la session est plafonnée par le nombre de mots
     // nouveaux autorisés : il n'y a encore rien à réviser.
     const budget = progress.settings.newPerDay
+    // Une présentation ne crée pas de carte : seul le test qui suit compte.
     expect(Object.keys(progress.cards).length).toBe(budget)
     expect(progress.streak.current).toBe(1)
 
@@ -92,6 +101,13 @@ describe("parcours complet d'une session", () => {
     await user.click(
       (await screen.findAllByRole('button', { name: /Réviser/ }))[0],
     )
+
+    // On traverse les présentations pour atteindre la première vraie question.
+    for (let i = 0; i < 12; i++) {
+      const read = screen.queryByRole('button', { name: "J'ai lu" })
+      if (!read) break
+      await user.click(read)
+    }
 
     const input = document.querySelector<HTMLInputElement>(
       'input[placeholder="Votre réponse"]',
@@ -120,7 +136,12 @@ describe("parcours complet d'une session", () => {
   }, 20_000)
 
   it('expose chaque cours avec des mots tous couverts par un exercice', () => {
-    expect(courses.map((c) => c.id)).toEqual(['en', 'id'])
+    // On vérifie des invariants plutôt qu'une liste figée : ajouter un cours
+    // ne doit pas casser le test, mais un cours mal formé doit le casser.
+    expect(courses.length).toBeGreaterThanOrEqual(3)
+    expect(new Set(courses.map((c) => c.id)).size).toBe(courses.length)
+    // Le parcours débutant doit rester distinct du parcours B2+.
+    expect(courses.some((c) => c.id === 'en-basics')).toBe(true)
     for (const course of courses) {
       const index = indexCourse(course)
       expect(index.lexemes.length).toBeGreaterThanOrEqual(20)

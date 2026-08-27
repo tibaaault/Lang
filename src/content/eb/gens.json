@@ -1,0 +1,411 @@
+{
+  "id": "eb.gens",
+  "title": "Les gens et les sentiments",
+  "subtitle": "Parler de ses proches et de ce qu'on ressent",
+  "lexemes": [
+    {
+      "id": "eb.gn.friend",
+      "term": "a friend",
+      "pos": "noun",
+      "gloss": "un ami, une amie",
+      "note": "Même mot pour les deux genres. « A friend of mine » = un ami à moi.",
+      "examples": [
+        {
+          "text": "She's a friend of mine.",
+          "fr": "C'est une amie à moi."
+        },
+        {
+          "text": "We're good friends.",
+          "fr": "Nous sommes de bons amis."
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.family",
+      "term": "family",
+      "pos": "noun",
+      "gloss": "la famille",
+      "note": "« My family is... » au singulier en anglais américain. Les membres : mother, father, sister, brother, parents.",
+      "examples": [
+        {
+          "text": "My family lives in Lyon.",
+          "fr": "Ma famille habite à Lyon."
+        },
+        {
+          "text": "I have a big family.",
+          "fr": "J'ai une grande famille."
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.happy",
+      "term": "happy",
+      "pos": "adj",
+      "gloss": "content, heureux",
+      "note": "« I'm happy » et non « I have happy ». « Happy about » ou « happy with » selon ce qui suit.",
+      "examples": [
+        {
+          "text": "I'm happy for you.",
+          "fr": "Je suis contente pour toi."
+        },
+        {
+          "text": "She looks happy.",
+          "fr": "Elle a l'air heureuse."
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.sad",
+      "term": "sad",
+      "pos": "adj",
+      "gloss": "triste",
+      "note": "« I'm sad » = je suis triste. « Sad about something » = triste à propos de.",
+      "examples": [
+        {
+          "text": "Why are you sad?",
+          "fr": "Pourquoi es-tu triste ?"
+        },
+        {
+          "text": "It's a sad story.",
+          "fr": "C'est une histoire triste."
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.angry",
+      "term": "angry",
+      "pos": "adj",
+      "gloss": "en colère, fâché",
+      "note": "« Angry with someone » (contre quelqu'un) mais « angry about something » (à propos de quelque chose). « Mad » est la version familière.",
+      "examples": [
+        {
+          "text": "She's angry with me.",
+          "fr": "Elle est en colère contre moi."
+        },
+        {
+          "text": "Don't be angry.",
+          "fr": "Ne te fâche pas."
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.love",
+      "term": "to love",
+      "pos": "verb",
+      "gloss": "aimer (fort), adorer",
+      "note": "Plus fort que « like ». S'emploie aussi pour les choses : « I love this song ».",
+      "examples": [
+        {
+          "text": "I love this song.",
+          "fr": "J'adore cette chanson."
+        },
+        {
+          "text": "I love my family.",
+          "fr": "J'aime ma famille."
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.miss",
+      "term": "to miss",
+      "pos": "verb",
+      "gloss": "manquer (à quelqu'un) ; rater",
+      "note": "Attention à l'inversion : « I miss you » veut dire « tu me manques ». Le sujet est celui qui ressent le manque.",
+      "examples": [
+        {
+          "text": "I miss you.",
+          "fr": "Tu me manques."
+        },
+        {
+          "text": "I missed the bus.",
+          "fr": "J'ai raté le bus."
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.feel",
+      "term": "to feel",
+      "pos": "verb",
+      "gloss": "se sentir, ressentir",
+      "note": "« I feel tired » et non « I feel me tired » : le verbe n'est pas réfléchi en anglais.",
+      "examples": [
+        {
+          "text": "I feel much better today.",
+          "fr": "Je me sens beaucoup mieux aujourd'hui."
+        },
+        {
+          "text": "How do you feel?",
+          "fr": "Comment te sens-tu ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.nice",
+      "term": "nice",
+      "pos": "adj",
+      "gloss": "gentil, sympa, agréable",
+      "note": "Mot passe-partout : une personne sympathique, un moment agréable, un objet joli. « That's nice » convient partout.",
+      "examples": [
+        {
+          "text": "She's really nice.",
+          "fr": "Elle est vraiment sympa."
+        },
+        {
+          "text": "Have a nice day!",
+          "fr": "Bonne journée !"
+        }
+      ]
+    },
+    {
+      "id": "eb.gn.together",
+      "term": "together",
+      "pos": "adv",
+      "gloss": "ensemble",
+      "note": "« We live together » = on vit ensemble. Ne se met jamais avec « with » : jamais « together with me » dans ce sens.",
+      "examples": [
+        {
+          "text": "Let's do it together.",
+          "fr": "Faisons-le ensemble."
+        },
+        {
+          "text": "They work together.",
+          "fr": "Ils travaillent ensemble."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "eb.gn.friend.x0",
+      "lexemeId": "eb.gn.friend",
+      "fr": "C'est une amie à moi.",
+      "sentence": "She's a ___ of mine.",
+      "accepted": [
+        "friend"
+      ],
+      "hint": "f_____"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.gn.friend.x1",
+      "lexemeId": "eb.gn.friend",
+      "prompt": "Nous sommes de bons amis. →",
+      "options": [
+        "We're good friends",
+        "We are good friend",
+        "We're goods friends",
+        "We have good friends"
+      ],
+      "answer": "We're good friends",
+      "why": "Au pluriel, le nom prend un -s mais l'adjectif reste invariable : « good friends »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.family.x0",
+      "lexemeId": "eb.gn.family",
+      "fr": "Ma famille habite à Lyon.",
+      "sentence": "My ___ lives in Lyon.",
+      "accepted": [
+        "family"
+      ],
+      "hint": "f_____"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.gn.family.x1",
+      "lexemeId": "eb.gn.family",
+      "fr": "la famille",
+      "accepted": [
+        "family"
+      ],
+      "hint": "f_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.happy.x0",
+      "lexemeId": "eb.gn.happy",
+      "fr": "Je suis contente pour toi.",
+      "sentence": "I'm ___ for you.",
+      "accepted": [
+        "happy",
+        "glad"
+      ],
+      "hint": "h____"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.gn.happy.x1",
+      "lexemeId": "eb.gn.happy",
+      "fr": "content, heureux",
+      "accepted": [
+        "happy"
+      ],
+      "hint": "h____"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.sad.x0",
+      "lexemeId": "eb.gn.sad",
+      "fr": "Pourquoi es-tu triste ?",
+      "sentence": "Why are you ___?",
+      "accepted": [
+        "sad"
+      ],
+      "hint": "s__"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.gn.sad.x1",
+      "lexemeId": "eb.gn.sad",
+      "fr": "triste",
+      "accepted": [
+        "sad"
+      ],
+      "hint": "s__"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.angry.x0",
+      "lexemeId": "eb.gn.angry",
+      "fr": "Elle est en colère contre moi.",
+      "sentence": "She's angry ___ me.",
+      "accepted": [
+        "with",
+        "at"
+      ],
+      "nearMisses": [
+        {
+          "word": "against",
+          "why": "Calque du français « contre ». En anglais on dit « angry with somebody »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "eb.gn.angry.x1",
+      "lexemeId": "eb.gn.angry",
+      "fr": "en colère, fâché",
+      "accepted": [
+        "angry",
+        "mad"
+      ],
+      "hint": "a____"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.love.x0",
+      "lexemeId": "eb.gn.love",
+      "fr": "J'adore cette chanson.",
+      "sentence": "I ___ this song.",
+      "accepted": [
+        "love"
+      ],
+      "hint": "l___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.gn.love.x1",
+      "lexemeId": "eb.gn.love",
+      "prompt": "J'aime bien, sans plus. →",
+      "options": [
+        "I like it",
+        "I love it",
+        "I am liking it",
+        "I like it a lot"
+      ],
+      "answer": "I like it",
+      "why": "« Like » = aimer bien ; « love » est bien plus fort."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.miss.x0",
+      "lexemeId": "eb.gn.miss",
+      "fr": "Tu me manques.",
+      "sentence": "I ___ you.",
+      "accepted": [
+        "miss"
+      ],
+      "hint": "m___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.gn.miss.x1",
+      "lexemeId": "eb.gn.miss",
+      "prompt": "Tu me manques. →",
+      "options": [
+        "I miss you",
+        "You miss me",
+        "You are missing to me",
+        "I am missing of you"
+      ],
+      "answer": "I miss you",
+      "why": "L'anglais inverse la construction française : celui qui ressent le manque est le sujet."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.feel.x0",
+      "lexemeId": "eb.gn.feel",
+      "fr": "Je me sens beaucoup mieux aujourd'hui.",
+      "sentence": "I ___ much better today.",
+      "accepted": [
+        "feel"
+      ],
+      "hint": "f___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.gn.feel.x1",
+      "lexemeId": "eb.gn.feel",
+      "prompt": "Comment te sens-tu ? →",
+      "options": [
+        "How do you feel?",
+        "How do you feel you?",
+        "How are you feel?",
+        "How you feel?"
+      ],
+      "answer": "How do you feel?",
+      "why": "Pas de pronom réfléchi, et la question se forme avec « do »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.nice.x0",
+      "lexemeId": "eb.gn.nice",
+      "fr": "Elle est vraiment sympa.",
+      "sentence": "She's really ___.",
+      "accepted": [
+        "nice",
+        "kind"
+      ],
+      "hint": "n___"
+    },
+    {
+      "kind": "listen",
+      "id": "eb.gn.nice.x1",
+      "lexemeId": "eb.gn.nice",
+      "text": "That's really nice of you.",
+      "fr": "C'est vraiment gentil de ta part."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.together.x0",
+      "lexemeId": "eb.gn.together",
+      "fr": "Faisons-le ensemble.",
+      "sentence": "Let's do it ___.",
+      "accepted": [
+        "together"
+      ],
+      "hint": "t______r"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.gn.together.x1",
+      "lexemeId": "eb.gn.together",
+      "fr": "ensemble",
+      "accepted": [
+        "together"
+      ],
+      "hint": "t______r"
+    }
+  ]
+}

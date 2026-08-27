@@ -1,0 +1,457 @@
+{
+  "id": "eb.verbes",
+  "title": "Les verbes indispensables",
+  "subtitle": "Dix verbes qui permettent déjà de dire presque tout",
+  "lexemes": [
+    {
+      "id": "eb.vb.be",
+      "term": "to be",
+      "pos": "verb",
+      "gloss": "être",
+      "note": "Le verbe le plus fréquent de l'anglais : I am, you are, he/she/it is, we are, they are. Il sert aussi pour l'âge : « I am 25 » (j'ai 25 ans), jamais « I have 25 ».",
+      "examples": [
+        {
+          "text": "I am tired.",
+          "fr": "Je suis fatigué."
+        },
+        {
+          "text": "She is my sister.",
+          "fr": "C'est ma sœur."
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.have",
+      "term": "to have",
+      "pos": "verb",
+      "gloss": "avoir",
+      "note": "I have, you have, he/she/it has, we have, they have. Le « has » à la troisième personne est la seule irrégularité.",
+      "examples": [
+        {
+          "text": "I have two brothers.",
+          "fr": "J'ai deux frères."
+        },
+        {
+          "text": "He has a car.",
+          "fr": "Il a une voiture."
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.go",
+      "term": "to go",
+      "pos": "verb",
+      "gloss": "aller",
+      "note": "« Go to » + lieu : « go to work ». Exception : « go home », sans « to ».",
+      "examples": [
+        {
+          "text": "I go to work by bus.",
+          "fr": "Je vais au travail en bus."
+        },
+        {
+          "text": "Let's go home.",
+          "fr": "Rentrons à la maison."
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.want",
+      "term": "to want",
+      "pos": "verb",
+      "gloss": "vouloir",
+      "note": "Toujours suivi de « to » + verbe : « I want to go ». Pour être poli, on dit « I would like » plutôt que « I want ».",
+      "examples": [
+        {
+          "text": "I want to learn English.",
+          "fr": "Je veux apprendre l'anglais."
+        },
+        {
+          "text": "I'd like a coffee, please.",
+          "fr": "Je voudrais un café, s'il vous plaît."
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.need",
+      "term": "to need",
+      "pos": "verb",
+      "gloss": "avoir besoin de",
+      "note": "« I need to go » = je dois y aller. « I need a break » = j'ai besoin d'une pause. Jamais « I have need of ».",
+      "examples": [
+        {
+          "text": "I need to go.",
+          "fr": "Je dois y aller."
+        },
+        {
+          "text": "Do you need help?",
+          "fr": "Tu as besoin d'aide ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.like",
+      "term": "to like",
+      "pos": "verb",
+      "gloss": "aimer bien, apprécier",
+      "note": "Suivi d'un verbe en -ing : « I like reading ». « I love » est plus fort, « I don't like » plus poli que « I hate ».",
+      "examples": [
+        {
+          "text": "I like this song.",
+          "fr": "J'aime bien cette chanson."
+        },
+        {
+          "text": "She likes cooking.",
+          "fr": "Elle aime cuisiner."
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.know",
+      "term": "to know",
+      "pos": "verb",
+      "gloss": "savoir, connaître",
+      "note": "Un seul verbe pour les deux sens français. « I don't know » (je ne sais pas) est l'une des phrases les plus utiles.",
+      "examples": [
+        {
+          "text": "I don't know.",
+          "fr": "Je ne sais pas."
+        },
+        {
+          "text": "Do you know her?",
+          "fr": "Tu la connais ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.get",
+      "term": "to get",
+      "pos": "verb",
+      "gloss": "obtenir, recevoir ; devenir",
+      "note": "Verbe à tout faire : « get a coffee » (prendre un café), « get home » (rentrer), « get tired » (se fatiguer).",
+      "examples": [
+        {
+          "text": "I got your message.",
+          "fr": "J'ai reçu ton message."
+        },
+        {
+          "text": "It's getting late.",
+          "fr": "Il se fait tard."
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.think",
+      "term": "to think",
+      "pos": "verb",
+      "gloss": "penser, croire",
+      "note": "« I think so » = je crois que oui. « I don't think so » = je ne crois pas. Deux réponses très courantes.",
+      "examples": [
+        {
+          "text": "I think it's a good idea.",
+          "fr": "Je pense que c'est une bonne idée."
+        },
+        {
+          "text": "I don't think so.",
+          "fr": "Je ne crois pas."
+        }
+      ]
+    },
+    {
+      "id": "eb.vb.can",
+      "term": "can",
+      "pos": "verb",
+      "gloss": "pouvoir, savoir faire",
+      "note": "Suivi du verbe sans « to » : « I can swim », jamais « I can to swim ». La négation est « can't ».",
+      "examples": [
+        {
+          "text": "I can swim.",
+          "fr": "Je sais nager."
+        },
+        {
+          "text": "Can you help me?",
+          "fr": "Tu peux m'aider ?"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "choice",
+      "id": "eb.vb.be.x0",
+      "lexemeId": "eb.vb.be",
+      "prompt": "Je suis fatiguée. →",
+      "options": [
+        "I am tired",
+        "I is tired",
+        "I are tired",
+        "I be tired"
+      ],
+      "answer": "I am tired",
+      "why": "Avec « I », on emploie toujours « am ». « Is » va avec he, she, it ; « are » avec you, we, they."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.be.x1",
+      "lexemeId": "eb.vb.be",
+      "fr": "Elle est ma sœur.",
+      "sentence": "She ___ my sister.",
+      "accepted": [
+        "is"
+      ],
+      "nearMisses": [
+        {
+          "word": "are",
+          "why": "« Are » s'emploie avec you, we et they. Avec « she », il faut « is »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.be.x2",
+      "lexemeId": "eb.vb.be",
+      "prompt": "J'ai 25 ans. →",
+      "options": [
+        "I am 25",
+        "I have 25",
+        "I have 25 years",
+        "I am 25 years"
+      ],
+      "answer": "I am 25",
+      "why": "L'anglais dit littéralement « je suis 25 ». Ne jamais traduire « avoir » ici."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.have.x0",
+      "lexemeId": "eb.vb.have",
+      "fr": "Il a une voiture.",
+      "sentence": "He ___ a car.",
+      "accepted": [
+        "has"
+      ],
+      "nearMisses": [
+        {
+          "word": "have",
+          "why": "Avec he, she ou it, le verbe devient « has ». « Have » sert pour I, you, we et they."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.have.x1",
+      "lexemeId": "eb.vb.have",
+      "prompt": "Nous avons le temps. →",
+      "options": [
+        "We have time",
+        "We has time",
+        "We are time",
+        "We have the time to"
+      ],
+      "answer": "We have time",
+      "why": "Avec « we », c'est « have ». En anglais, « time » ne prend pas d'article ici."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.go.x0",
+      "lexemeId": "eb.vb.go",
+      "fr": "Je vais au travail en bus.",
+      "sentence": "I go ___ work by bus.",
+      "accepted": [
+        "to"
+      ],
+      "hint": "t_"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.go.x1",
+      "lexemeId": "eb.vb.go",
+      "prompt": "Rentrons à la maison. →",
+      "options": [
+        "Let's go home",
+        "Let's go to home",
+        "Let's go at home",
+        "Let's go in home"
+      ],
+      "answer": "Let's go home",
+      "why": "« Home » est l'exception : jamais de « to » devant."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.want.x0",
+      "lexemeId": "eb.vb.want",
+      "fr": "Je veux apprendre l'anglais.",
+      "sentence": "I want ___ learn English.",
+      "accepted": [
+        "to"
+      ],
+      "hint": "t_"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.want.x1",
+      "lexemeId": "eb.vb.want",
+      "prompt": "Je voudrais un café. (poli) →",
+      "options": [
+        "I'd like a coffee",
+        "I want a coffee",
+        "I want to coffee",
+        "I like a coffee"
+      ],
+      "answer": "I'd like a coffee",
+      "why": "« I want » est très direct, presque brusque. La formule polie est « I'd like »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.need.x0",
+      "lexemeId": "eb.vb.need",
+      "fr": "J'ai besoin d'aide.",
+      "sentence": "I ___ help.",
+      "accepted": [
+        "need"
+      ],
+      "hint": "n___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.need.x1",
+      "lexemeId": "eb.vb.need",
+      "prompt": "Tu as besoin d'aide ? →",
+      "options": [
+        "Do you need help?",
+        "You need help?",
+        "Have you need help?",
+        "Do you need of help?"
+      ],
+      "answer": "Do you need help?",
+      "why": "Une question se forme avec « Do » en tête : « Do you need...? »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.like.x0",
+      "lexemeId": "eb.vb.like",
+      "fr": "Elle aime cuisiner.",
+      "sentence": "She ___ cooking.",
+      "accepted": [
+        "likes"
+      ],
+      "nearMisses": [
+        {
+          "word": "like",
+          "why": "Avec she, he ou it, le verbe prend un -s au présent : « she likes »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.like.x1",
+      "lexemeId": "eb.vb.like",
+      "prompt": "J'aime regarder des séries. →",
+      "options": [
+        "I like watching series",
+        "I like watch series",
+        "I like to watching series",
+        "I am like watching"
+      ],
+      "answer": "I like watching series",
+      "why": "Après « like », le verbe prend -ing (ou « to » + infinitif : « like to watch »)."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.know.x0",
+      "lexemeId": "eb.vb.know",
+      "fr": "Je ne sais pas.",
+      "sentence": "I don't ___.",
+      "accepted": [
+        "know"
+      ],
+      "hint": "k___"
+    },
+    {
+      "kind": "listen",
+      "id": "eb.vb.know.x1",
+      "lexemeId": "eb.vb.know",
+      "text": "I don't know, sorry.",
+      "fr": "Je ne sais pas, désolé."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.get.x0",
+      "lexemeId": "eb.vb.get",
+      "fr": "J'ai reçu ton message.",
+      "sentence": "I ___ your message.",
+      "accepted": [
+        "got"
+      ],
+      "nearMisses": [
+        {
+          "word": "get",
+          "why": "Il s'agit du passé : « get » devient « got »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.get.x1",
+      "lexemeId": "eb.vb.get",
+      "prompt": "Il se fait tard. →",
+      "options": [
+        "It's getting late",
+        "It's get late",
+        "It gets late now",
+        "It is late getting"
+      ],
+      "answer": "It's getting late",
+      "why": "« Be + verbe en -ing » décrit ce qui est en train de se passer."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.think.x0",
+      "lexemeId": "eb.vb.think",
+      "fr": "Je pense que c'est une bonne idée.",
+      "sentence": "I ___ it's a good idea.",
+      "accepted": [
+        "think"
+      ],
+      "hint": "t____"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.think.x1",
+      "lexemeId": "eb.vb.think",
+      "prompt": "Je ne crois pas. →",
+      "options": [
+        "I don't think so",
+        "I think no",
+        "I not think so",
+        "I don't think it"
+      ],
+      "answer": "I don't think so",
+      "why": "La négation se construit avec « don't » + verbe : « I don't think so »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.can.x0",
+      "lexemeId": "eb.vb.can",
+      "fr": "Tu peux m'aider ?",
+      "sentence": "___ you help me?",
+      "accepted": [
+        "can",
+        "Can"
+      ],
+      "hint": "C__"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.vb.can.x1",
+      "lexemeId": "eb.vb.can",
+      "prompt": "Je sais nager. →",
+      "options": [
+        "I can swim",
+        "I can to swim",
+        "I can swimming",
+        "I know swim"
+      ],
+      "answer": "I can swim",
+      "why": "Après « can », le verbe reste à l'infinitif nu, sans « to » ni -ing."
+    }
+  ]
+}

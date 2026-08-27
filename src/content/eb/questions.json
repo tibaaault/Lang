@@ -1,0 +1,424 @@
+{
+  "id": "eb.questions",
+  "title": "Poser une question",
+  "subtitle": "Les mots interrogatifs et la façon de construire une question",
+  "lexemes": [
+    {
+      "id": "eb.qu.what",
+      "term": "what",
+      "pos": "adv",
+      "gloss": "quoi, quel",
+      "note": "« What is it? » = qu'est-ce que c'est ? « What time? » = à quelle heure ?",
+      "examples": [
+        {
+          "text": "What is your name?",
+          "fr": "Comment tu t'appelles ?"
+        },
+        {
+          "text": "What time is it?",
+          "fr": "Quelle heure est-il ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.where",
+      "term": "where",
+      "pos": "adv",
+      "gloss": "où",
+      "note": "« Where are you? » = tu es où ? « Where from? » = d'où ?",
+      "examples": [
+        {
+          "text": "Where do you live?",
+          "fr": "Tu habites où ?"
+        },
+        {
+          "text": "Where are you from?",
+          "fr": "Tu viens d'où ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.when",
+      "term": "when",
+      "pos": "adv",
+      "gloss": "quand",
+      "note": "« When? » pour le moment. Ne pas confondre avec « where » (où) : les deux mots se ressemblent beaucoup.",
+      "examples": [
+        {
+          "text": "When do you start?",
+          "fr": "Tu commences quand ?"
+        },
+        {
+          "text": "When is your birthday?",
+          "fr": "C'est quand, ton anniversaire ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.who",
+      "term": "who",
+      "pos": "adv",
+      "gloss": "qui",
+      "note": "Pour les personnes uniquement. « Who is it? » = qui est-ce ?",
+      "examples": [
+        {
+          "text": "Who is that?",
+          "fr": "C'est qui ?"
+        },
+        {
+          "text": "Who told you?",
+          "fr": "Qui te l'a dit ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.why",
+      "term": "why",
+      "pos": "adv",
+      "gloss": "pourquoi",
+      "note": "On répond avec « because » (parce que). « Why not? » = pourquoi pas ?",
+      "examples": [
+        {
+          "text": "Why are you late?",
+          "fr": "Pourquoi tu es en retard ?"
+        },
+        {
+          "text": "Because the bus was late.",
+          "fr": "Parce que le bus était en retard."
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.how",
+      "term": "how",
+      "pos": "adv",
+      "gloss": "comment",
+      "note": "« How are you? » = comment vas-tu ? « How much? » = combien (prix) ? « How many? » = combien (nombre) ?",
+      "examples": [
+        {
+          "text": "How are you?",
+          "fr": "Comment vas-tu ?"
+        },
+        {
+          "text": "How much is it?",
+          "fr": "Ça coûte combien ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.do-question",
+      "term": "do you...?",
+      "pos": "expr",
+      "gloss": "est-ce que tu... ?",
+      "note": "Pour poser une question au présent, on met « do » (ou « does » avec he, she, it) devant le sujet. Le verbe qui suit ne change pas.",
+      "examples": [
+        {
+          "text": "Do you speak English?",
+          "fr": "Tu parles anglais ?"
+        },
+        {
+          "text": "Does she work here?",
+          "fr": "Elle travaille ici ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.is-there",
+      "term": "is there...?",
+      "pos": "expr",
+      "gloss": "est-ce qu'il y a... ?",
+      "note": "« There is » = il y a (singulier), « there are » = il y a (pluriel). En question, on inverse : « Is there...? ».",
+      "examples": [
+        {
+          "text": "Is there a toilet here?",
+          "fr": "Il y a des toilettes ici ?"
+        },
+        {
+          "text": "There are two options.",
+          "fr": "Il y a deux options."
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.can-you",
+      "term": "can you...?",
+      "pos": "expr",
+      "gloss": "peux-tu... ? (demande polie)",
+      "note": "« Can you help me? » est la façon standard de demander un service. « Could you...? » est encore plus poli.",
+      "examples": [
+        {
+          "text": "Can you repeat, please?",
+          "fr": "Tu peux répéter, s'il te plaît ?"
+        },
+        {
+          "text": "Could you speak slowly?",
+          "fr": "Pourriez-vous parler lentement ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.qu.which",
+      "term": "which",
+      "pos": "adv",
+      "gloss": "lequel, quel (parmi un choix)",
+      "note": "« Which one? » = lequel ? On emploie « which » quand le choix est limité, « what » quand il est ouvert.",
+      "examples": [
+        {
+          "text": "Which one do you prefer?",
+          "fr": "Lequel préfères-tu ?"
+        },
+        {
+          "text": "Which day works for you?",
+          "fr": "Quel jour t'arrange ?"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "eb.qu.what.x0",
+      "lexemeId": "eb.qu.what",
+      "fr": "Quelle heure est-il ?",
+      "sentence": "___ time is it?",
+      "accepted": [
+        "what",
+        "What"
+      ],
+      "hint": "W___"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qu.what.x1",
+      "lexemeId": "eb.qu.what",
+      "prompt": "Comment tu t'appelles ? →",
+      "options": [
+        "What is your name?",
+        "How is your name?",
+        "Who is your name?",
+        "Which your name?"
+      ],
+      "answer": "What is your name?",
+      "why": "L'anglais demande « quel est ton nom », avec « what », alors que le français dit « comment »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.where.x0",
+      "lexemeId": "eb.qu.where",
+      "fr": "Tu habites où ?",
+      "sentence": "___ do you live?",
+      "accepted": [
+        "where",
+        "Where"
+      ],
+      "hint": "W____"
+    },
+    {
+      "kind": "listen",
+      "id": "eb.qu.where.x1",
+      "lexemeId": "eb.qu.where",
+      "text": "Where are you from?",
+      "fr": "D'où viens-tu ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.when.x0",
+      "lexemeId": "eb.qu.when",
+      "fr": "Tu commences quand ?",
+      "sentence": "___ do you start?",
+      "accepted": [
+        "when",
+        "When"
+      ],
+      "nearMisses": [
+        {
+          "word": "where",
+          "why": "« Where » veut dire « où ». Pour le moment, c'est « when »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qu.when.x1",
+      "lexemeId": "eb.qu.when",
+      "prompt": "C'est quand, ton anniversaire ? →",
+      "options": [
+        "When is your birthday?",
+        "Where is your birthday?",
+        "What is your birthday?",
+        "When your birthday is?"
+      ],
+      "answer": "When is your birthday?",
+      "why": "Dans une question, le verbe passe avant le sujet : « When is your birthday? »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.who.x0",
+      "lexemeId": "eb.qu.who",
+      "fr": "C'est qui ?",
+      "sentence": "___ is that?",
+      "accepted": [
+        "who",
+        "Who"
+      ],
+      "hint": "W__"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.qu.who.x1",
+      "lexemeId": "eb.qu.who",
+      "fr": "qui (pour une personne)",
+      "accepted": [
+        "who"
+      ],
+      "hint": "w__"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.why.x0",
+      "lexemeId": "eb.qu.why",
+      "fr": "Pourquoi tu es en retard ?",
+      "sentence": "___ are you late?",
+      "accepted": [
+        "why",
+        "Why"
+      ],
+      "hint": "W__"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qu.why.x1",
+      "lexemeId": "eb.qu.why",
+      "prompt": "Parce que j'étais fatiguée. →",
+      "options": [
+        "Because I was tired",
+        "Why I was tired",
+        "Because I am tired yesterday",
+        "For I was tired"
+      ],
+      "answer": "Because I was tired",
+      "why": "On répond à « why » par « because ». « Was » est le passé de « am »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.how.x0",
+      "lexemeId": "eb.qu.how",
+      "fr": "Ça coûte combien ?",
+      "sentence": "___ much is it?",
+      "accepted": [
+        "how",
+        "How"
+      ],
+      "hint": "H__"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qu.how.x1",
+      "lexemeId": "eb.qu.how",
+      "prompt": "Tu as combien de frères ? →",
+      "options": [
+        "How many brothers do you have?",
+        "How much brothers do you have?",
+        "How many brother you have?",
+        "How much of brothers you have?"
+      ],
+      "answer": "How many brothers do you have?",
+      "why": "« How many » pour ce qui se compte, « how much » pour ce qui ne se compte pas ou pour un prix."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.do-question.x0",
+      "lexemeId": "eb.qu.do-question",
+      "fr": "Tu parles anglais ?",
+      "sentence": "___ you speak English?",
+      "accepted": [
+        "do",
+        "Do"
+      ],
+      "hint": "D_"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qu.do-question.x1",
+      "lexemeId": "eb.qu.do-question",
+      "prompt": "Elle travaille ici ? →",
+      "options": [
+        "Does she work here?",
+        "Do she works here?",
+        "Does she works here?",
+        "She works here?"
+      ],
+      "answer": "Does she work here?",
+      "why": "Avec she, on emploie « does », et le verbe reperd son -s : « does she work »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.is-there.x0",
+      "lexemeId": "eb.qu.is-there",
+      "fr": "Il y a des toilettes ici ?",
+      "sentence": "___ there a toilet here?",
+      "accepted": [
+        "is",
+        "Is"
+      ],
+      "hint": "I_"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.qu.is-there.x1",
+      "lexemeId": "eb.qu.is-there",
+      "prompt": "Il y a deux options. →",
+      "options": [
+        "There are two options",
+        "There is two options",
+        "It has two options",
+        "There have two options"
+      ],
+      "answer": "There are two options",
+      "why": "Au pluriel, on dit « there are ». « Il y a » ne se traduit jamais par « it has »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.can-you.x0",
+      "lexemeId": "eb.qu.can-you",
+      "fr": "Tu peux répéter, s'il te plaît ?",
+      "sentence": "___ you repeat, please?",
+      "accepted": [
+        "can",
+        "Can",
+        "could",
+        "Could"
+      ],
+      "hint": "C__"
+    },
+    {
+      "kind": "listen",
+      "id": "eb.qu.can-you.x1",
+      "lexemeId": "eb.qu.can-you",
+      "text": "Could you speak more slowly, please?",
+      "fr": "Pourriez-vous parler plus lentement, s'il vous plaît ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.which.x0",
+      "lexemeId": "eb.qu.which",
+      "fr": "Lequel préfères-tu ?",
+      "sentence": "___ one do you prefer?",
+      "accepted": [
+        "which",
+        "Which"
+      ],
+      "hint": "W____"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.qu.which.x1",
+      "lexemeId": "eb.qu.which",
+      "fr": "lequel, quel (parmi plusieurs)",
+      "accepted": [
+        "which"
+      ],
+      "hint": "w____"
+    }
+  ]
+}

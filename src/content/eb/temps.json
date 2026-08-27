@@ -1,0 +1,426 @@
+{
+  "id": "eb.temps",
+  "title": "Le temps et les quantités",
+  "subtitle": "Dire quand, combien, et à quelle fréquence",
+  "lexemes": [
+    {
+      "id": "eb.tp.today",
+      "term": "today",
+      "pos": "adv",
+      "gloss": "aujourd'hui",
+      "note": "« Today », « tomorrow » (demain), « yesterday » (hier). Trois mots à connaître ensemble.",
+      "examples": [
+        {
+          "text": "What are you doing today?",
+          "fr": "Tu fais quoi aujourd'hui ?"
+        },
+        {
+          "text": "I saw her yesterday.",
+          "fr": "Je l'ai vue hier."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.always",
+      "term": "always",
+      "pos": "adv",
+      "gloss": "toujours",
+      "note": "Se place entre le sujet et le verbe : « I always forget », jamais « I forget always ».",
+      "examples": [
+        {
+          "text": "I always forget his name.",
+          "fr": "J'oublie toujours son prénom."
+        },
+        {
+          "text": "She's always late.",
+          "fr": "Elle est toujours en retard."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.never",
+      "term": "never",
+      "pos": "adv",
+      "gloss": "jamais",
+      "note": "« Never » est déjà négatif : on ne met pas « don't » avec. « I never go » et non « I don't never go ».",
+      "examples": [
+        {
+          "text": "I never drink coffee.",
+          "fr": "Je ne bois jamais de café."
+        },
+        {
+          "text": "He's never on time.",
+          "fr": "Il n'est jamais à l'heure."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.sometimes",
+      "term": "sometimes",
+      "pos": "adv",
+      "gloss": "parfois, quelquefois",
+      "note": "Un seul mot, avec un -s. « Sometime » sans -s signifie « un de ces jours ».",
+      "examples": [
+        {
+          "text": "Sometimes I work late.",
+          "fr": "Parfois je travaille tard."
+        },
+        {
+          "text": "I sometimes forget.",
+          "fr": "Il m'arrive d'oublier."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.often",
+      "term": "often",
+      "pos": "adv",
+      "gloss": "souvent",
+      "note": "Le « t » ne se prononce généralement pas : « offen ». « How often? » = à quelle fréquence ?",
+      "examples": [
+        {
+          "text": "I often go there.",
+          "fr": "J'y vais souvent."
+        },
+        {
+          "text": "How often do you train?",
+          "fr": "Tu t'entraînes à quelle fréquence ?"
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.a-lot",
+      "term": "a lot",
+      "pos": "expr",
+      "gloss": "beaucoup",
+      "note": "En deux mots : « a lot ». « A lot of » devant un nom : « a lot of people ». Ne jamais écrire « alot ».",
+      "examples": [
+        {
+          "text": "Thanks a lot!",
+          "fr": "Merci beaucoup !"
+        },
+        {
+          "text": "There were a lot of people.",
+          "fr": "Il y avait beaucoup de monde."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.a-little",
+      "term": "a little",
+      "pos": "expr",
+      "gloss": "un peu",
+      "note": "« A little » devant ce qui ne se compte pas (a little water), « a few » devant ce qui se compte (a few days).",
+      "examples": [
+        {
+          "text": "I speak a little English.",
+          "fr": "Je parle un peu anglais."
+        },
+        {
+          "text": "Give me a few minutes.",
+          "fr": "Donne-moi quelques minutes."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.too-much",
+      "term": "too much",
+      "pos": "expr",
+      "gloss": "trop",
+      "note": "« Too much » devant ce qui ne se compte pas, « too many » devant ce qui se compte. « Too » seul veut dire « trop » devant un adjectif.",
+      "examples": [
+        {
+          "text": "That's too much for me.",
+          "fr": "C'est trop pour moi."
+        },
+        {
+          "text": "There are too many people.",
+          "fr": "Il y a trop de monde."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.enough",
+      "term": "enough",
+      "pos": "adj",
+      "gloss": "assez, suffisamment",
+      "note": "Se place APRÈS l'adjectif : « good enough », et non « enough good ». Devant un nom, en revanche : « enough time ».",
+      "examples": [
+        {
+          "text": "That's good enough.",
+          "fr": "C'est suffisant."
+        },
+        {
+          "text": "We don't have enough time.",
+          "fr": "Nous n'avons pas assez de temps."
+        }
+      ]
+    },
+    {
+      "id": "eb.tp.soon",
+      "term": "soon",
+      "pos": "adv",
+      "gloss": "bientôt",
+      "note": "« See you soon! » = à bientôt ! Ne pas confondre avec « early » (tôt).",
+      "examples": [
+        {
+          "text": "See you soon!",
+          "fr": "À bientôt !"
+        },
+        {
+          "text": "It'll be ready soon.",
+          "fr": "Ce sera prêt bientôt."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "eb.tp.today.x0",
+      "lexemeId": "eb.tp.today",
+      "fr": "Tu fais quoi aujourd'hui ?",
+      "sentence": "What are you doing ___?",
+      "accepted": [
+        "today"
+      ],
+      "hint": "t____"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.tp.today.x1",
+      "lexemeId": "eb.tp.today",
+      "prompt": "Je l'ai vue hier. →",
+      "options": [
+        "I saw her yesterday",
+        "I see her yesterday",
+        "I have see her yesterday",
+        "I saw her tomorrow"
+      ],
+      "answer": "I saw her yesterday",
+      "why": "Avec « yesterday », on emploie le passé : « saw », passé irrégulier de « see »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.always.x0",
+      "lexemeId": "eb.tp.always",
+      "fr": "J'oublie toujours son prénom.",
+      "sentence": "I ___ forget his name.",
+      "accepted": [
+        "always"
+      ],
+      "nearMisses": [
+        {
+          "word": "all the time",
+          "why": "Correct sur le sens, mais il se place en fin de phrase. Entre le sujet et le verbe, on emploie « always »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.tp.always.x1",
+      "lexemeId": "eb.tp.always",
+      "prompt": "Elle est toujours en retard. →",
+      "options": [
+        "She's always late",
+        "She always is late",
+        "Always she is late",
+        "She is late always"
+      ],
+      "answer": "She's always late",
+      "why": "Avec le verbe « be », l'adverbe se place juste après : « she is always late »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.never.x0",
+      "lexemeId": "eb.tp.never",
+      "fr": "Je ne bois jamais de café.",
+      "sentence": "I ___ drink coffee.",
+      "accepted": [
+        "never"
+      ],
+      "hint": "n____"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.tp.never.x1",
+      "lexemeId": "eb.tp.never",
+      "prompt": "Je ne vais jamais là-bas. →",
+      "options": [
+        "I never go there",
+        "I don't never go there",
+        "I not never go there",
+        "I never don't go there"
+      ],
+      "answer": "I never go there",
+      "why": "« Never » porte déjà la négation : ajouter « don't » serait une double négation."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.sometimes.x0",
+      "lexemeId": "eb.tp.sometimes",
+      "fr": "Parfois je travaille tard.",
+      "sentence": "___ I work late.",
+      "accepted": [
+        "sometimes",
+        "Sometimes"
+      ],
+      "hint": "S________s"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.tp.sometimes.x1",
+      "lexemeId": "eb.tp.sometimes",
+      "fr": "parfois, quelquefois",
+      "accepted": [
+        "sometimes"
+      ],
+      "hint": "s________s"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.often.x0",
+      "lexemeId": "eb.tp.often",
+      "fr": "J'y vais souvent.",
+      "sentence": "I ___ go there.",
+      "accepted": [
+        "often"
+      ],
+      "hint": "o____"
+    },
+    {
+      "kind": "listen",
+      "id": "eb.tp.often.x1",
+      "lexemeId": "eb.tp.often",
+      "text": "How often do you go there?",
+      "fr": "Tu y vas à quelle fréquence ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.a-lot.x0",
+      "lexemeId": "eb.tp.a-lot",
+      "fr": "Merci beaucoup !",
+      "sentence": "Thanks a ___!",
+      "accepted": [
+        "lot"
+      ],
+      "hint": "l__"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.tp.a-lot.x1",
+      "lexemeId": "eb.tp.a-lot",
+      "prompt": "Il y avait beaucoup de monde. →",
+      "options": [
+        "There were a lot of people",
+        "There were a lot of peoples",
+        "There was a lot of people's",
+        "There were alot of people"
+      ],
+      "answer": "There were a lot of people",
+      "why": "« People » est déjà un pluriel et ne prend jamais de -s."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.a-little.x0",
+      "lexemeId": "eb.tp.a-little",
+      "fr": "Je parle un peu anglais.",
+      "sentence": "I speak a ___ English.",
+      "accepted": [
+        "little",
+        "bit of"
+      ],
+      "hint": "l_____"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.tp.a-little.x1",
+      "lexemeId": "eb.tp.a-little",
+      "prompt": "Donne-moi quelques minutes. →",
+      "options": [
+        "Give me a few minutes",
+        "Give me a little minutes",
+        "Give me few minute",
+        "Give me a few minute"
+      ],
+      "answer": "Give me a few minutes",
+      "why": "« Minutes » se compte : on emploie « a few », et le nom prend un -s."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.too-much.x0",
+      "lexemeId": "eb.tp.too-much",
+      "fr": "Il y a trop de monde ici.",
+      "sentence": "There are too ___ people here.",
+      "accepted": [
+        "many"
+      ],
+      "nearMisses": [
+        {
+          "word": "much",
+          "why": "« People » se compte : on emploie « too many ». « Too much » sert pour ce qui ne se compte pas."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "eb.tp.too-much.x1",
+      "lexemeId": "eb.tp.too-much",
+      "prompt": "C'est trop cher. →",
+      "options": [
+        "It's too expensive",
+        "It's too much expensive",
+        "It's very too expensive",
+        "It's too many expensive"
+      ],
+      "answer": "It's too expensive",
+      "why": "Devant un adjectif, « too » suffit, sans « much »."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.enough.x0",
+      "lexemeId": "eb.tp.enough",
+      "fr": "Nous n'avons pas assez de temps.",
+      "sentence": "We don't have ___ time.",
+      "accepted": [
+        "enough"
+      ],
+      "hint": "e_____"
+    },
+    {
+      "kind": "choice",
+      "id": "eb.tp.enough.x1",
+      "lexemeId": "eb.tp.enough",
+      "prompt": "C'est assez bon. →",
+      "options": [
+        "It's good enough",
+        "It's enough good",
+        "It's enough of good",
+        "It's good of enough"
+      ],
+      "answer": "It's good enough",
+      "why": "« Enough » se place après l'adjectif, contrairement au français."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.soon.x0",
+      "lexemeId": "eb.tp.soon",
+      "fr": "À bientôt !",
+      "sentence": "See you ___!",
+      "accepted": [
+        "soon"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "recall",
+      "id": "eb.tp.soon.x1",
+      "lexemeId": "eb.tp.soon",
+      "fr": "bientôt",
+      "accepted": [
+        "soon"
+      ],
+      "hint": "s___"
+    }
+  ]
+}
