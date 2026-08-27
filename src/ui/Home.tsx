@@ -73,6 +73,7 @@ export function Home({
           const index = indexes.get(course.id)!
           const { due, fresh, remaining } = pendingCount(course, index, progress)
           const stats = courseStats(
+            progress,
             course.id,
             index.lexemes.map((l) => l.id),
           )

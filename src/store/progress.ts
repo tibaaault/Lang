@@ -287,6 +287,7 @@ export interface CourseStats {
 }
 
 export function courseStats(
+  progress: Progress,
   courseId: string,
   lexemeIds: string[],
   now = new Date(),
@@ -295,7 +296,7 @@ export function courseStats(
   let mastered = 0
   let due = 0
   for (const id of lexemeIds) {
-    const card = state.cards[cardKey(courseId, id)]
+    const card = progress.cards[cardKey(courseId, id)]
     if (!card) continue
     known++
     if (card.stability >= MASTERED_STABILITY_DAYS) mastered++

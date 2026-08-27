@@ -2,12 +2,19 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import {
   activateAccount,
+  cardKey,
+  courseStats,
+  emptyProgress,
   getProgress,
   hasUnclaimedAnonymousProgress,
   recordReview,
   resetProgress,
 } from '../progress'
-import { createCard } from '../../engine/fsrs'
+import {
+  MASTERED_STABILITY_DAYS,
+  createCard,
+  reviewCard,
+} from '../../engine/fsrs'
 
 function answerOneWord(courseId = 'en', lexemeId = 'w1') {
   recordReview({
@@ -96,5 +103,35 @@ describe('reprise de la progression faite sans compte', () => {
     expect(hasUnclaimedAnonymousProgress()).toBe(false)
     activateAccount('alice', true)
     expect(Object.keys(getProgress().cards)).toHaveLength(0)
+  })
+})
+
+describe('comptage des mots acquis', () => {
+  it("ne compte pas comme acquis un mot vu une seule fois", () => {
+    const p = emptyProgress()
+    p.cards[cardKey('en', 'w1')] = createCard(3)
+    // Une première réponse donne une stabilité de quelques jours seulement :
+    // le mot est en cours d'apprentissage, pas acquis.
+    expect(courseStats(p, 'en', ['w1'])).toMatchObject({ known: 1, mastered: 0 })
+  })
+
+  it("compte comme acquis un mot qui tient trois semaines en mémoire", () => {
+    const p = emptyProgress()
+    let card = createCard(3)
+    // Deuxième réussite, le jour prévu : c'est là que la stabilité franchit
+    // le seuil des trois semaines.
+    card = reviewCard(card, 3, new Date(Date.parse(card.due)))
+    expect(card.stability).toBeGreaterThanOrEqual(MASTERED_STABILITY_DAYS)
+
+    p.cards[cardKey('en', 'w1')] = card
+    expect(courseStats(p, 'en', ['w1'])).toMatchObject({ known: 1, mastered: 1 })
+  })
+
+  it('ne compte que les mots du cours interrogé', () => {
+    const p = emptyProgress()
+    p.cards[cardKey('en', 'w1')] = createCard(3)
+    p.cards[cardKey('id', 'w1')] = createCard(3)
+    expect(courseStats(p, 'en', ['w1']).known).toBe(1)
+    expect(courseStats(p, 'en', ['w1', 'w2']).total).toBe(2)
   })
 })
