@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-# Déploiement sur GitHub Pages sans passer par GitHub Actions.
+# Déploiement de secours, sans passer par GitHub Actions.
 #
-# Actions est indisponible tant que le compte est bloqué pour un problème de
-# facturation. Pages sait aussi servir le contenu d'une branche : on construit
-# ici, puis on pousse le résultat sur « gh-pages ». Le dépôt de travail n'est
-# jamais modifié — tout se passe dans un clone temporaire.
+# En temps normal, une poussée sur « main » suffit : le workflow construit et
+# publie tout seul. Ce script sert quand Actions est indisponible — compte
+# bloqué pour facturation, panne GitHub, quota épuisé. Il construit en local et
+# pousse le résultat sur la branche « gh-pages », que Pages sait servir
+# directement, à condition de basculer la source dans Settings → Pages.
+#
+# Le dépôt de travail n'est jamais modifié : tout se passe dans un clone
+# temporaire.
 set -euo pipefail
 
 REPO_URL=$(git remote get-url origin)

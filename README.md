@@ -51,6 +51,10 @@ quota d'envoi.
 3. C'est tout. Chaque poussée sur `main` reconstruit et publie le site
    automatiquement, en passant d'abord les tests.
 
+Si GitHub Actions devient indisponible (compte bloqué pour facturation, quota
+épuisé), `npm run deploy` construit en local et publie sur la branche
+`gh-pages` ; il faut alors basculer la source dans **Settings → Pages**.
+
 Le site est ensuite servi sur `https://<compte>.github.io/<dépôt>/`.
 
 > Il n'y a aucun secret à configurer : les identifiants Supabase sont dans
