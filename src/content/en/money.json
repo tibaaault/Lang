@@ -1,0 +1,421 @@
+{
+  "id": "en.money",
+  "title": "Argent et achats",
+  "subtitle": "Payer, se faire rembourser, discuter un prix",
+  "lexemes": [
+    {
+      "id": "en.mn.charge",
+      "term": "to charge",
+      "pos": "verb",
+      "gloss": "facturer, faire payer",
+      "note": "« They charged me twenty euros » = ils m'ont facturé vingt euros. Le nom « a charge » désigne des frais, pas une charge au sens français.",
+      "examples": [
+        {
+          "text": "They charged me twice.",
+          "fr": "Ils m'ont facturé deux fois."
+        },
+        {
+          "text": "There's no charge for delivery.",
+          "fr": "La livraison est gratuite."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.refund",
+      "term": "a refund",
+      "pos": "noun",
+      "gloss": "un remboursement",
+      "note": "« To get a refund » = se faire rembourser ; le verbe « to refund » existe aussi. Ne pas confondre avec « reimburse », réservé aux frais professionnels.",
+      "examples": [
+        {
+          "text": "I'd like a refund, please.",
+          "fr": "Je voudrais un remboursement, s'il vous plaît."
+        },
+        {
+          "text": "They refunded the full amount.",
+          "fr": "Ils ont remboursé la totalité."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.bargain",
+      "term": "a bargain",
+      "pos": "noun",
+      "gloss": "une bonne affaire",
+      "note": "« That's a bargain! » = c'est une affaire ! Le verbe « to bargain » signifie marchander, ce qui est un sens différent.",
+      "examples": [
+        {
+          "text": "Twenty euros? That's a bargain.",
+          "fr": "Vingt euros ? C'est une affaire."
+        },
+        {
+          "text": "I bargained him down to fifty.",
+          "fr": "Je l'ai fait descendre à cinquante."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.fee",
+      "term": "a fee",
+      "pos": "noun",
+      "gloss": "des frais, des honoraires",
+      "note": "Prix d'un service ou d'une prestation : « a booking fee », « legal fees ». Le prix d'un objet reste « a price ».",
+      "examples": [
+        {
+          "text": "There's a small booking fee.",
+          "fr": "Il y a de légers frais de réservation."
+        },
+        {
+          "text": "Legal fees were higher than expected.",
+          "fr": "Les frais d'avocat ont dépassé les prévisions."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.broke",
+      "term": "broke",
+      "pos": "adj",
+      "gloss": "fauché, sans argent",
+      "note": "Familier mais très courant : « I'm broke » = je suis fauché. Ne pas confondre avec « broken », qui veut dire cassé.",
+      "examples": [
+        {
+          "text": "I'm completely broke this month.",
+          "fr": "Je suis complètement fauché ce mois-ci."
+        },
+        {
+          "text": "We went broke after two years.",
+          "fr": "Nous avons fait faillite au bout de deux ans."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.split-bill",
+      "term": "to split the bill",
+      "pos": "expr",
+      "gloss": "partager l'addition",
+      "note": "« Shall we split it? » = on partage ? « To go halves » et « to go Dutch » sont des variantes familières.",
+      "examples": [
+        {
+          "text": "Shall we split the bill?",
+          "fr": "On partage l'addition ?"
+        },
+        {
+          "text": "Let's just split it evenly.",
+          "fr": "Partageons simplement en parts égales."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.receipt",
+      "term": "a receipt",
+      "pos": "noun",
+      "gloss": "un reçu, un ticket de caisse",
+      "note": "Le « p » est muet : on prononce « ri-SIIT ». « Keep the receipt » = garde le ticket.",
+      "examples": [
+        {
+          "text": "Keep the receipt in case.",
+          "fr": "Garde le ticket au cas où."
+        },
+        {
+          "text": "Can I have a receipt, please?",
+          "fr": "Puis-je avoir un reçu, s'il vous plaît ?"
+        }
+      ]
+    },
+    {
+      "id": "en.mn.overpriced",
+      "term": "overpriced",
+      "pos": "adj",
+      "gloss": "hors de prix, trop cher pour ce que c'est",
+      "note": "Plus précis que « expensive » : porte un jugement sur le rapport qualité-prix. « Underpriced » en est le contraire.",
+      "examples": [
+        {
+          "text": "The wine was wildly overpriced.",
+          "fr": "Le vin était scandaleusement cher."
+        },
+        {
+          "text": "It's good, but overpriced.",
+          "fr": "C'est bon, mais trop cher pour ce que c'est."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.owe",
+      "term": "to owe",
+      "pos": "verb",
+      "gloss": "devoir (de l'argent, un service)",
+      "note": "« I owe you ten euros » — jamais de préposition entre les deux compléments. « I owe you one » = je te revaudrai ça.",
+      "examples": [
+        {
+          "text": "You still owe me twenty pounds.",
+          "fr": "Tu me dois encore vingt livres."
+        },
+        {
+          "text": "I owe you one.",
+          "fr": "Je te revaudrai ça."
+        }
+      ]
+    },
+    {
+      "id": "en.mn.save-up",
+      "term": "to save up",
+      "pos": "expr",
+      "gloss": "mettre de l'argent de côté, économiser",
+      "note": "« Save up for something » = économiser en vue de. Sans « up », « save » signifie plutôt épargner en général ou sauver.",
+      "examples": [
+        {
+          "text": "I'm saving up for a trip.",
+          "fr": "Je mets de l'argent de côté pour un voyage."
+        },
+        {
+          "text": "It took a year to save up.",
+          "fr": "Il a fallu un an pour économiser."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.mn.charge.x0",
+      "lexemeId": "en.mn.charge",
+      "fr": "Ils m'ont facturé deux fois le même article.",
+      "sentence": "They ___ me twice for the same item.",
+      "accepted": [
+        "charged"
+      ],
+      "nearMisses": [
+        {
+          "word": "billed",
+          "why": "« Billed » est correct mais plus formel et plutôt réservé aux factures officielles. Le verbe courant est « charge »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.mn.charge.x1",
+      "lexemeId": "en.mn.charge",
+      "prompt": "La livraison est gratuite. → There's no ___ for delivery.",
+      "options": [
+        "charge",
+        "price",
+        "cost",
+        "fare"
+      ],
+      "answer": "charge",
+      "why": "« No charge » = sans frais. « Price » désigne le prix d'un article, « fare » celui d'un transport."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.refund.x0",
+      "lexemeId": "en.mn.refund",
+      "fr": "Je voudrais me faire rembourser, s'il vous plaît.",
+      "sentence": "I'd like a ___, please.",
+      "accepted": [
+        "refund"
+      ],
+      "hint": "r_____d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.mn.refund.x1",
+      "lexemeId": "en.mn.refund",
+      "fr": "un remboursement",
+      "accepted": [
+        "refund",
+        "a refund"
+      ],
+      "hint": "r_____d"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.bargain.x0",
+      "lexemeId": "en.mn.bargain",
+      "fr": "À ce prix-là, c'est une vraie affaire.",
+      "sentence": "At that price, it's a real ___.",
+      "accepted": [
+        "bargain"
+      ],
+      "hint": "b______n"
+    },
+    {
+      "kind": "recall",
+      "id": "en.mn.bargain.x1",
+      "lexemeId": "en.mn.bargain",
+      "fr": "une bonne affaire",
+      "accepted": [
+        "bargain",
+        "a bargain"
+      ],
+      "hint": "b______n"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.fee.x0",
+      "lexemeId": "en.mn.fee",
+      "fr": "Il y a des frais de réservation de deux euros.",
+      "sentence": "There's a two-euro booking ___.",
+      "accepted": [
+        "fee"
+      ],
+      "hint": "f__"
+    },
+    {
+      "kind": "choice",
+      "id": "en.mn.fee.x1",
+      "lexemeId": "en.mn.fee",
+      "prompt": "des frais de service → a service ___",
+      "options": [
+        "fee",
+        "price",
+        "cost",
+        "tax"
+      ],
+      "answer": "fee",
+      "why": "« Fee » désigne les frais d'un service. « Price » s'applique à un bien, « tax » à un impôt."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.broke.x0",
+      "lexemeId": "en.mn.broke",
+      "fr": "Je suis complètement fauché jusqu'à la fin du mois.",
+      "sentence": "I'm completely ___ until the end of the month.",
+      "accepted": [
+        "broke"
+      ],
+      "nearMisses": [
+        {
+          "word": "broken",
+          "why": "« Broken » veut dire cassé. Être fauché se dit « broke », sans -n."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.mn.broke.x1",
+      "lexemeId": "en.mn.broke",
+      "fr": "fauché, sans argent (familier)",
+      "accepted": [
+        "broke"
+      ],
+      "hint": "b____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.split-bill.x0",
+      "lexemeId": "en.mn.split-bill",
+      "fr": "On partage l'addition en trois ?",
+      "sentence": "Shall we ___ the bill three ways?",
+      "accepted": [
+        "split"
+      ],
+      "hint": "s____"
+    },
+    {
+      "kind": "listen",
+      "id": "en.mn.split-bill.x1",
+      "lexemeId": "en.mn.split-bill",
+      "text": "Do you want to split the bill?",
+      "fr": "Tu veux qu'on partage l'addition ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.receipt.x0",
+      "lexemeId": "en.mn.receipt",
+      "fr": "Garde le ticket au cas où tu voudrais le rendre.",
+      "sentence": "Keep the ___ in case you want to return it.",
+      "accepted": [
+        "receipt"
+      ],
+      "hint": "r______t"
+    },
+    {
+      "kind": "recall",
+      "id": "en.mn.receipt.x1",
+      "lexemeId": "en.mn.receipt",
+      "fr": "un reçu, un ticket de caisse",
+      "accepted": [
+        "receipt",
+        "a receipt"
+      ],
+      "hint": "r______t"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.overpriced.x0",
+      "lexemeId": "en.mn.overpriced",
+      "fr": "C'est bon, mais franchement trop cher pour ce que c'est.",
+      "sentence": "It's good, but seriously ___.",
+      "accepted": [
+        "overpriced"
+      ],
+      "nearMisses": [
+        {
+          "word": "expensive",
+          "why": "« Expensive » dit seulement que c'est cher. « Overpriced » ajoute que le prix n'est pas justifié, ce que dit la phrase."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.mn.overpriced.x1",
+      "lexemeId": "en.mn.overpriced",
+      "prompt": "trop cher pour ce que c'est →",
+      "options": [
+        "overpriced",
+        "overcosted",
+        "expensived",
+        "highpriced"
+      ],
+      "answer": "overpriced",
+      "why": "L'adjectif correct est « overpriced »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.owe.x0",
+      "lexemeId": "en.mn.owe",
+      "fr": "Tu me dois encore trente euros.",
+      "sentence": "You still ___ me thirty euros.",
+      "accepted": [
+        "owe"
+      ],
+      "hint": "o__"
+    },
+    {
+      "kind": "choice",
+      "id": "en.mn.owe.x1",
+      "lexemeId": "en.mn.owe",
+      "prompt": "Je te dois dix euros. →",
+      "options": [
+        "I owe you ten euros",
+        "I owe ten euros to you",
+        "I must you ten euros",
+        "I owe at you ten euros"
+      ],
+      "answer": "I owe you ten euros",
+      "why": "« Owe » se construit directement : « owe someone something », sans préposition."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.mn.save-up.x0",
+      "lexemeId": "en.mn.save-up",
+      "fr": "J'économise pour un voyage en Indonésie.",
+      "sentence": "I'm saving ___ for a trip to Indonesia.",
+      "accepted": [
+        "up"
+      ],
+      "hint": "u_"
+    },
+    {
+      "kind": "recall",
+      "id": "en.mn.save-up.x1",
+      "lexemeId": "en.mn.save-up",
+      "fr": "mettre de l'argent de côté pour quelque chose",
+      "accepted": [
+        "save up",
+        "to save up"
+      ],
+      "hint": "s___ u_"
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "id": "en.health",
+  "title": "Santé et pharmacie",
+  "subtitle": "Décrire un symptôme et se faire comprendre chez le médecin",
+  "lexemes": [
+    {
+      "id": "en.he.sore",
+      "term": "sore",
+      "pos": "adj",
+      "gloss": "douloureux, irrité",
+      "note": "L'adjectif standard pour une douleur localisée : « a sore throat » (mal de gorge), « sore muscles » (courbatures). On ne dit pas « I have mal ».",
+      "examples": [
+        {
+          "text": "I've got a sore throat.",
+          "fr": "J'ai mal à la gorge."
+        },
+        {
+          "text": "My legs are sore from running.",
+          "fr": "J'ai des courbatures aux jambes à cause de la course."
+        }
+      ]
+    },
+    {
+      "id": "en.he.dizzy",
+      "term": "dizzy",
+      "pos": "adj",
+      "gloss": "pris de vertige, étourdi",
+      "note": "« I feel dizzy » = j'ai la tête qui tourne. Le nom est « dizziness ». À distinguer de « nauseous », qui décrit l'envie de vomir.",
+      "examples": [
+        {
+          "text": "I felt dizzy when I stood up.",
+          "fr": "J'ai eu la tête qui tournait en me levant."
+        },
+        {
+          "text": "Dizziness is a common side effect.",
+          "fr": "Les vertiges sont un effet secondaire fréquent."
+        }
+      ]
+    },
+    {
+      "id": "en.he.swollen",
+      "term": "swollen",
+      "pos": "adj",
+      "gloss": "enflé, gonflé",
+      "note": "Participe irrégulier de « to swell ». « A swollen ankle » = une cheville enflée. Le nom est « swelling ».",
+      "examples": [
+        {
+          "text": "My ankle is swollen.",
+          "fr": "Ma cheville est enflée."
+        },
+        {
+          "text": "The swelling should go down overnight.",
+          "fr": "L'enflure devrait diminuer d'ici demain."
+        }
+      ]
+    },
+    {
+      "id": "en.he.sprain",
+      "term": "to sprain",
+      "pos": "verb",
+      "gloss": "se fouler, se faire une entorse",
+      "note": "« I sprained my ankle » — le possessif est obligatoire en anglais, là où le français dit « je me suis foulé la cheville ».",
+      "examples": [
+        {
+          "text": "I sprained my wrist playing tennis.",
+          "fr": "Je me suis foulé le poignet en jouant au tennis."
+        },
+        {
+          "text": "It's just a sprain, not a break.",
+          "fr": "C'est juste une entorse, pas une fracture."
+        }
+      ]
+    },
+    {
+      "id": "en.he.prescription",
+      "term": "a prescription",
+      "pos": "noun",
+      "gloss": "une ordonnance",
+      "note": "« On prescription » = sur ordonnance ; « over the counter » = en vente libre. Le verbe est « to prescribe ».",
+      "examples": [
+        {
+          "text": "You'll need a prescription for that.",
+          "fr": "Il vous faudra une ordonnance pour ça."
+        },
+        {
+          "text": "It's available over the counter.",
+          "fr": "C'est disponible en vente libre."
+        }
+      ]
+    },
+    {
+      "id": "en.he.painkiller",
+      "term": "a painkiller",
+      "pos": "noun",
+      "gloss": "un antidouleur, un analgésique",
+      "note": "Mot courant, là où « analgesic » relève du vocabulaire médical. « Take a painkiller » = prendre un antidouleur.",
+      "examples": [
+        {
+          "text": "Do you have any painkillers?",
+          "fr": "Est-ce que tu as des antidouleurs ?"
+        },
+        {
+          "text": "The painkillers wore off after four hours.",
+          "fr": "L'effet des antidouleurs s'est dissipé au bout de quatre heures."
+        }
+      ]
+    },
+    {
+      "id": "en.he.recover",
+      "term": "to recover",
+      "pos": "verb",
+      "gloss": "se remettre, guérir",
+      "note": "« Recover from an illness ». « To make a full recovery » = se rétablir complètement. Ne jamais dire « recover myself ».",
+      "examples": [
+        {
+          "text": "She's recovering from the flu.",
+          "fr": "Elle se remet de la grippe."
+        },
+        {
+          "text": "He made a full recovery.",
+          "fr": "Il s'est complètement rétabli."
+        }
+      ]
+    },
+    {
+      "id": "en.he.appointment",
+      "term": "an appointment",
+      "pos": "noun",
+      "gloss": "un rendez-vous (médical, professionnel)",
+      "note": "Faux ami à connaître : « a rendez-vous » n'existe pas en anglais courant, et « a date » signifie un rendez-vous amoureux.",
+      "examples": [
+        {
+          "text": "I've got an appointment at four.",
+          "fr": "J'ai un rendez-vous à seize heures."
+        },
+        {
+          "text": "Can I make an appointment for Monday?",
+          "fr": "Puis-je prendre rendez-vous pour lundi ?"
+        }
+      ]
+    },
+    {
+      "id": "en.he.under-weather",
+      "term": "to feel under the weather",
+      "pos": "expr",
+      "gloss": "être patraque, pas dans son assiette",
+      "note": "Formule idiomatique très courante pour un malaise léger qu'on ne veut pas détailler.",
+      "examples": [
+        {
+          "text": "I'm feeling a bit under the weather.",
+          "fr": "Je me sens un peu patraque."
+        },
+        {
+          "text": "He's been under the weather all week.",
+          "fr": "Il est patraque depuis le début de la semaine."
+        }
+      ]
+    },
+    {
+      "id": "en.he.side-effect",
+      "term": "a side effect",
+      "pos": "noun",
+      "gloss": "un effet secondaire",
+      "note": "« Side effects » au pluriel dans la plupart des emplois. S'utilise aussi hors médecine, au figuré : « an unintended side effect ».",
+      "examples": [
+        {
+          "text": "Drowsiness is a common side effect.",
+          "fr": "La somnolence est un effet secondaire fréquent."
+        },
+        {
+          "text": "Are there any side effects?",
+          "fr": "Y a-t-il des effets secondaires ?"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.he.sore.x0",
+      "lexemeId": "en.he.sore",
+      "fr": "J'ai mal à la gorge depuis hier.",
+      "sentence": "I've had a ___ throat since yesterday.",
+      "accepted": [
+        "sore"
+      ],
+      "nearMisses": [
+        {
+          "word": "painful",
+          "why": "« Painful » décrit ce qui provoque la douleur. Pour une partie du corps endolorie, on dit « sore »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.he.sore.x1",
+      "lexemeId": "en.he.sore",
+      "fr": "douloureux, irrité (gorge, muscles)",
+      "accepted": [
+        "sore"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.dizzy.x0",
+      "lexemeId": "en.he.dizzy",
+      "fr": "J'ai la tête qui tourne quand je me lève trop vite.",
+      "sentence": "I feel ___ when I stand up too fast.",
+      "accepted": [
+        "dizzy",
+        "light-headed"
+      ],
+      "hint": "d____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.he.dizzy.x1",
+      "lexemeId": "en.he.dizzy",
+      "prompt": "J'ai la nausée. → I feel ___.",
+      "options": [
+        "nauseous",
+        "dizzy",
+        "sore",
+        "swollen"
+      ],
+      "answer": "nauseous",
+      "why": "« Dizzy » désigne le vertige, « nauseous » l'envie de vomir."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.swollen.x0",
+      "lexemeId": "en.he.swollen",
+      "fr": "Mon genou est enflé depuis la chute.",
+      "sentence": "My knee has been ___ since the fall.",
+      "accepted": [
+        "swollen"
+      ],
+      "hint": "s______n"
+    },
+    {
+      "kind": "recall",
+      "id": "en.he.swollen.x1",
+      "lexemeId": "en.he.swollen",
+      "fr": "enflé, gonflé",
+      "accepted": [
+        "swollen"
+      ],
+      "hint": "s______n"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.sprain.x0",
+      "lexemeId": "en.he.sprain",
+      "fr": "Je me suis foulé la cheville hier.",
+      "sentence": "I ___ my ankle yesterday.",
+      "accepted": [
+        "sprained",
+        "twisted"
+      ],
+      "nearMisses": [
+        {
+          "word": "broke",
+          "why": "« Broke » signifie fracturé, bien plus grave. Une entorse, c'est « sprained »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.he.sprain.x1",
+      "lexemeId": "en.he.sprain",
+      "prompt": "Je me suis foulé le poignet. →",
+      "options": [
+        "I sprained my wrist",
+        "I sprained me the wrist",
+        "I sprained the wrist to me",
+        "I have sprain my wrist"
+      ],
+      "answer": "I sprained my wrist",
+      "why": "L'anglais emploie le possessif : « my wrist », jamais un pronom réfléchi comme en français."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.prescription.x0",
+      "lexemeId": "en.he.prescription",
+      "fr": "Ce médicament n'est délivré que sur ordonnance.",
+      "sentence": "This medicine is only available on ___.",
+      "accepted": [
+        "prescription"
+      ],
+      "hint": "p___________n"
+    },
+    {
+      "kind": "recall",
+      "id": "en.he.prescription.x1",
+      "lexemeId": "en.he.prescription",
+      "fr": "une ordonnance médicale",
+      "accepted": [
+        "prescription",
+        "a prescription"
+      ],
+      "hint": "p___________n"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.painkiller.x0",
+      "lexemeId": "en.he.painkiller",
+      "fr": "Vous auriez un antidouleur, s'il vous plaît ?",
+      "sentence": "Do you have a ___, please?",
+      "accepted": [
+        "painkiller"
+      ],
+      "hint": "p_________r"
+    },
+    {
+      "kind": "listen",
+      "id": "en.he.painkiller.x1",
+      "lexemeId": "en.he.painkiller",
+      "text": "I need something for a headache.",
+      "fr": "J'ai besoin de quelque chose contre le mal de tête."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.recover.x0",
+      "lexemeId": "en.he.recover",
+      "fr": "Il se remet doucement de l'opération.",
+      "sentence": "He's slowly ___ from the operation.",
+      "accepted": [
+        "recovering"
+      ],
+      "nearMisses": [
+        {
+          "word": "recovering himself",
+          "why": "« Recover » n'est pas réfléchi en anglais : on dit simplement « he's recovering from »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.he.recover.x1",
+      "lexemeId": "en.he.recover",
+      "fr": "se remettre, se rétablir",
+      "accepted": [
+        "recover",
+        "to recover"
+      ],
+      "hint": "r______r"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.appointment.x0",
+      "lexemeId": "en.he.appointment",
+      "fr": "J'aimerais prendre rendez-vous pour jeudi.",
+      "sentence": "I'd like to make an ___ for Thursday.",
+      "accepted": [
+        "appointment"
+      ],
+      "nearMisses": [
+        {
+          "word": "date",
+          "why": "« A date » désigne un rendez-vous amoureux. Un rendez-vous professionnel ou médical est « an appointment »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.he.appointment.x1",
+      "lexemeId": "en.he.appointment",
+      "prompt": "prendre rendez-vous →",
+      "options": [
+        "make an appointment",
+        "take an appointment",
+        "take a rendez-vous",
+        "do an appointment"
+      ],
+      "answer": "make an appointment",
+      "why": "Le verbe est « make » : calquer « prendre » donne « take an appointment », qui ne se dit pas."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.under-weather.x0",
+      "lexemeId": "en.he.under-weather",
+      "fr": "Je me sens un peu patraque aujourd'hui.",
+      "sentence": "I'm feeling a bit under the ___ today.",
+      "accepted": [
+        "weather"
+      ],
+      "hint": "w______r"
+    },
+    {
+      "kind": "recall",
+      "id": "en.he.under-weather.x1",
+      "lexemeId": "en.he.under-weather",
+      "fr": "être patraque, pas dans son assiette",
+      "accepted": [
+        "under the weather",
+        "feel under the weather"
+      ],
+      "hint": "u____ t__ w______r"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.he.side-effect.x0",
+      "lexemeId": "en.he.side-effect",
+      "fr": "La somnolence est un effet secondaire courant.",
+      "sentence": "Drowsiness is a common ___ effect.",
+      "accepted": [
+        "side"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.he.side-effect.x1",
+      "lexemeId": "en.he.side-effect",
+      "text": "Are there any serious side effects?",
+      "fr": "Y a-t-il des effets secondaires graves ?"
+    }
+  ]
+}

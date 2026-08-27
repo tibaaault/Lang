@@ -1,0 +1,416 @@
+{
+  "id": "en.connectors",
+  "title": "Articuler ses idées",
+  "subtitle": "Les connecteurs qui font passer un texte de correct à fluide",
+  "lexemes": [
+    {
+      "id": "en.cn.whereas",
+      "term": "whereas",
+      "pos": "adv",
+      "gloss": "alors que, tandis que (contraste)",
+      "note": "Marque un contraste entre deux faits, sans idée de temps. « While » peut aussi vouloir dire « pendant que » ; « whereas » ne se prête pas à cette ambiguïté.",
+      "examples": [
+        {
+          "text": "He prefers coffee, whereas I drink tea.",
+          "fr": "Il préfère le café, alors que moi je bois du thé."
+        },
+        {
+          "text": "Sales rose in Europe, whereas they fell in Asia.",
+          "fr": "Les ventes ont monté en Europe, alors qu'elles ont baissé en Asie."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.nonetheless",
+      "term": "nonetheless",
+      "pos": "adv",
+      "gloss": "néanmoins, malgré tout",
+      "note": "Synonyme soutenu de « nevertheless ». Se place en début de phrase ou après le verbe, entre virgules.",
+      "examples": [
+        {
+          "text": "The plan is risky; nonetheless, it's our best option.",
+          "fr": "Le plan est risqué ; néanmoins, c'est notre meilleure option."
+        },
+        {
+          "text": "It was a small change, but significant nonetheless.",
+          "fr": "C'était un petit changement, mais significatif malgré tout."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.let-alone",
+      "term": "let alone",
+      "pos": "expr",
+      "gloss": "et encore moins, sans parler de",
+      "note": "Renforce une négation : « I can't afford a car, let alone a house ». Toujours après une proposition négative.",
+      "examples": [
+        {
+          "text": "He can't cook pasta, let alone a full meal.",
+          "fr": "Il ne sait pas cuire des pâtes, et encore moins faire un repas complet."
+        },
+        {
+          "text": "I haven't read it, let alone reviewed it.",
+          "fr": "Je ne l'ai pas lu, et encore moins relu."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.provided",
+      "term": "provided that",
+      "pos": "expr",
+      "gloss": "à condition que, pourvu que",
+      "note": "Introduit une condition nécessaire. « As long as » en est l'équivalent courant, « provided that » sonne plus formel.",
+      "examples": [
+        {
+          "text": "You can come, provided that you book early.",
+          "fr": "Tu peux venir, à condition de réserver tôt."
+        },
+        {
+          "text": "It works, provided you follow the steps.",
+          "fr": "Ça marche, à condition de suivre les étapes."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.hence",
+      "term": "hence",
+      "pos": "adv",
+      "gloss": "d'où, par conséquent",
+      "note": "Introduit une conséquence, souvent sans verbe : « hence the delay » (d'où le retard). Plus concis que « therefore ».",
+      "examples": [
+        {
+          "text": "The server failed, hence the delay.",
+          "fr": "Le serveur est tombé, d'où le retard."
+        },
+        {
+          "text": "It rained all week; hence the cancellation.",
+          "fr": "Il a plu toute la semaine ; d'où l'annulation."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.regardless",
+      "term": "regardless of",
+      "pos": "expr",
+      "gloss": "indépendamment de, quel que soit",
+      "note": "« Regardless of the cost » = quel qu'en soit le coût. Employé seul, « regardless » signifie « quoi qu'il en soit ».",
+      "examples": [
+        {
+          "text": "We're going, regardless of the weather.",
+          "fr": "On y va, quel que soit le temps."
+        },
+        {
+          "text": "He did it regardless.",
+          "fr": "Il l'a fait quand même."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.albeit",
+      "term": "albeit",
+      "pos": "adv",
+      "gloss": "quoique, bien que (suivi d'un adjectif)",
+      "note": "Registre soutenu, très utile à l'écrit : « a success, albeit a modest one ». Ne s'emploie pas devant une proposition complète avec verbe conjugué.",
+      "examples": [
+        {
+          "text": "It was a win, albeit a narrow one.",
+          "fr": "C'était une victoire, quoique de justesse."
+        },
+        {
+          "text": "He agreed, albeit reluctantly.",
+          "fr": "Il a accepté, quoique à contrecœur."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.thereby",
+      "term": "thereby",
+      "pos": "adv",
+      "gloss": "ce faisant, et par là même",
+      "note": "Relie une action à sa conséquence directe, suivi d'un verbe en -ing : « thereby reducing costs ». Registre écrit.",
+      "examples": [
+        {
+          "text": "They merged the teams, thereby cutting costs.",
+          "fr": "Ils ont fusionné les équipes, réduisant ainsi les coûts."
+        },
+        {
+          "text": "She resigned, thereby ending the dispute.",
+          "fr": "Elle a démissionné, mettant ainsi fin au conflit."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.otherwise",
+      "term": "otherwise",
+      "pos": "adv",
+      "gloss": "sinon, autrement ; à part ça",
+      "note": "Deux emplois : « hurry, otherwise we'll be late » (sinon) et « otherwise, it's fine » (à part ça).",
+      "examples": [
+        {
+          "text": "Leave now, otherwise you'll miss it.",
+          "fr": "Pars maintenant, sinon tu vas le rater."
+        },
+        {
+          "text": "One small issue, but otherwise it's perfect.",
+          "fr": "Un petit souci, mais à part ça c'est parfait."
+        }
+      ]
+    },
+    {
+      "id": "en.cn.as-long-as",
+      "term": "as long as",
+      "pos": "expr",
+      "gloss": "tant que ; du moment que",
+      "note": "Exprime une condition ou une durée : « as long as it works » (du moment que ça marche). Suivi du présent, jamais du futur.",
+      "examples": [
+        {
+          "text": "You can stay as long as you like.",
+          "fr": "Tu peux rester aussi longtemps que tu veux."
+        },
+        {
+          "text": "It's fine as long as nobody complains.",
+          "fr": "Ça va, du moment que personne ne se plaint."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.cn.whereas.x0",
+      "lexemeId": "en.cn.whereas",
+      "fr": "Le premier modèle est rapide, alors que le second est fiable.",
+      "sentence": "The first model is fast, ___ the second is reliable.",
+      "accepted": [
+        "whereas",
+        "while"
+      ],
+      "nearMisses": [
+        {
+          "word": "during",
+          "why": "« During » est une préposition suivie d'un nom. Pour opposer deux propositions, il faut « whereas »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.cn.whereas.x1",
+      "lexemeId": "en.cn.whereas",
+      "fr": "alors que, tandis que (opposition)",
+      "accepted": [
+        "whereas"
+      ],
+      "hint": "w______s"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.nonetheless.x0",
+      "lexemeId": "en.cn.nonetheless",
+      "fr": "C'est cher ; néanmoins, ça vaut le coup.",
+      "sentence": "It's expensive; ___, it's worth it.",
+      "accepted": [
+        "nonetheless",
+        "nevertheless"
+      ],
+      "hint": "n__________s"
+    },
+    {
+      "kind": "choice",
+      "id": "en.cn.nonetheless.x1",
+      "lexemeId": "en.cn.nonetheless",
+      "prompt": "petit, mais significatif malgré tout → small, but significant ___",
+      "options": [
+        "nonetheless",
+        "although",
+        "despite",
+        "however than"
+      ],
+      "answer": "nonetheless",
+      "why": "« Although » et « despite » introduisent une subordonnée ; « nonetheless » peut clore la phrase seul."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.let-alone.x0",
+      "lexemeId": "en.cn.let-alone",
+      "fr": "Je n'ai pas le temps de déjeuner, et encore moins de cuisiner.",
+      "sentence": "I don't have time for lunch, ___ ___ to cook.",
+      "accepted": [
+        "let alone"
+      ],
+      "hint": "l__ a____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.cn.let-alone.x1",
+      "lexemeId": "en.cn.let-alone",
+      "fr": "et encore moins, sans parler de",
+      "accepted": [
+        "let alone"
+      ],
+      "hint": "l__ a____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.provided.x0",
+      "lexemeId": "en.cn.provided",
+      "fr": "Tu peux l'utiliser, à condition de le rendre demain.",
+      "sentence": "You can use it, ___ that you return it tomorrow.",
+      "accepted": [
+        "provided",
+        "providing"
+      ],
+      "hint": "p_______d"
+    },
+    {
+      "kind": "choice",
+      "id": "en.cn.provided.x1",
+      "lexemeId": "en.cn.provided",
+      "prompt": "à condition que tu réserves tôt →",
+      "options": [
+        "provided that you book early",
+        "provided that you will book early",
+        "provided to book early",
+        "provided you booking early"
+      ],
+      "answer": "provided that you book early",
+      "why": "Après « provided that », on emploie le présent, jamais le futur — comme après « if »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.hence.x0",
+      "lexemeId": "en.cn.hence",
+      "fr": "La route était fermée, d'où le détour.",
+      "sentence": "The road was closed, ___ the detour.",
+      "accepted": [
+        "hence"
+      ],
+      "nearMisses": [
+        {
+          "word": "because",
+          "why": "« Because » introduit la cause, pas la conséquence. Ici on annonce le résultat : c'est « hence »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.cn.hence.x1",
+      "lexemeId": "en.cn.hence",
+      "text": "The flight was full, hence the change of plan.",
+      "fr": "Le vol était complet, d'où le changement de programme."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.regardless.x0",
+      "lexemeId": "en.cn.regardless",
+      "fr": "On continue, quel que soit le résultat.",
+      "sentence": "We're going ahead, ___ of the outcome.",
+      "accepted": [
+        "regardless",
+        "irrespective"
+      ],
+      "hint": "r________s"
+    },
+    {
+      "kind": "recall",
+      "id": "en.cn.regardless.x1",
+      "lexemeId": "en.cn.regardless",
+      "fr": "indépendamment de, quel que soit",
+      "accepted": [
+        "regardless of",
+        "regardless"
+      ],
+      "hint": "r________s o_"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.albeit.x0",
+      "lexemeId": "en.cn.albeit",
+      "fr": "Il a accepté, quoique à contrecœur.",
+      "sentence": "He agreed, ___ reluctantly.",
+      "accepted": [
+        "albeit"
+      ],
+      "hint": "a_____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.cn.albeit.x1",
+      "lexemeId": "en.cn.albeit",
+      "prompt": "une réussite, quoique modeste → a success, ___ a modest one",
+      "options": [
+        "albeit",
+        "although",
+        "despite",
+        "even"
+      ],
+      "answer": "albeit",
+      "why": "« Although » exigerait une proposition avec verbe : « although it was modest ». « Albeit » se place directement devant l'adjectif."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.thereby.x0",
+      "lexemeId": "en.cn.thereby",
+      "fr": "Ils ont automatisé le processus, réduisant ainsi les erreurs.",
+      "sentence": "They automated the process, ___ reducing errors.",
+      "accepted": [
+        "thereby",
+        "thus"
+      ],
+      "hint": "t______y"
+    },
+    {
+      "kind": "recall",
+      "id": "en.cn.thereby.x1",
+      "lexemeId": "en.cn.thereby",
+      "fr": "ce faisant, et par là même",
+      "accepted": [
+        "thereby"
+      ],
+      "hint": "t______y"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.otherwise.x0",
+      "lexemeId": "en.cn.otherwise",
+      "fr": "Pars maintenant, sinon tu vas rater le train.",
+      "sentence": "Leave now, ___ you'll miss the train.",
+      "accepted": [
+        "otherwise",
+        "or"
+      ],
+      "hint": "o________e"
+    },
+    {
+      "kind": "listen",
+      "id": "en.cn.otherwise.x1",
+      "lexemeId": "en.cn.otherwise",
+      "text": "It needs polishing, but otherwise it's ready.",
+      "fr": "Il faut le peaufiner, mais à part ça c'est prêt."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.cn.as-long-as.x0",
+      "lexemeId": "en.cn.as-long-as",
+      "fr": "Ça me va, du moment que ça marche.",
+      "sentence": "That's fine with me, as long ___ it works.",
+      "accepted": [
+        "as"
+      ],
+      "hint": "a_"
+    },
+    {
+      "kind": "choice",
+      "id": "en.cn.as-long-as.x1",
+      "lexemeId": "en.cn.as-long-as",
+      "prompt": "du moment que tu arrives à l'heure →",
+      "options": [
+        "as long as you arrive on time",
+        "as long as you will arrive on time",
+        "as long you arrive on time",
+        "as long as you arriving on time"
+      ],
+      "answer": "as long as you arrive on time",
+      "why": "Après « as long as », on emploie le présent pour parler du futur, comme après « if »."
+    }
+  ]
+}

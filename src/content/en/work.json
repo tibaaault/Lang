@@ -1,0 +1,425 @@
+{
+  "id": "en.work",
+  "title": "Travail et projets",
+  "subtitle": "Le vocabulaire des réunions, des délais et des projets qui dérapent",
+  "lexemes": [
+    {
+      "id": "en.wk.roll-out",
+      "term": "to roll out",
+      "pos": "verb",
+      "gloss": "déployer, lancer progressivement",
+      "note": "S'emploie pour un produit, une fonctionnalité ou une réforme qu'on met en place par étapes. Le nom correspondant est « a rollout ».",
+      "examples": [
+        {
+          "text": "We're rolling out the feature to all users next week.",
+          "fr": "On déploie la fonctionnalité pour tous les utilisateurs la semaine prochaine."
+        },
+        {
+          "text": "The rollout was delayed by a month.",
+          "fr": "Le déploiement a été retardé d'un mois."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.deadline",
+      "term": "a deadline",
+      "pos": "noun",
+      "gloss": "une échéance, une date limite",
+      "note": "« To meet a deadline » = tenir les délais ; « to miss a deadline » = les dépasser. On ne dit pas « respect a deadline ».",
+      "examples": [
+        {
+          "text": "We missed the deadline by two days.",
+          "fr": "On a dépassé l'échéance de deux jours."
+        },
+        {
+          "text": "Can we meet that deadline?",
+          "fr": "Peut-on tenir ce délai ?"
+        }
+      ]
+    },
+    {
+      "id": "en.wk.stakeholder",
+      "term": "a stakeholder",
+      "pos": "noun",
+      "gloss": "une partie prenante",
+      "note": "Toute personne concernée par un projet : client, équipe, direction. Mot très fréquent en entreprise, sans bon équivalent court en français.",
+      "examples": [
+        {
+          "text": "We need to align all the stakeholders first.",
+          "fr": "Il faut d'abord aligner toutes les parties prenantes."
+        },
+        {
+          "text": "Key stakeholders were not consulted.",
+          "fr": "Les principales parties prenantes n'ont pas été consultées."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.iron-out",
+      "term": "to iron out",
+      "pos": "verb",
+      "gloss": "aplanir, régler (des détails, des désaccords)",
+      "note": "Image du fer à repasser : on lisse ce qui accroche. Porte sur des détails ou des frictions, jamais sur un problème majeur.",
+      "examples": [
+        {
+          "text": "There are a few details to iron out.",
+          "fr": "Il reste quelques détails à régler."
+        },
+        {
+          "text": "We ironed out our differences.",
+          "fr": "Nous avons aplani nos différends."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.workaround",
+      "term": "a workaround",
+      "pos": "noun",
+      "gloss": "une solution de contournement",
+      "note": "Solution temporaire qui évite le problème sans le résoudre. Le verbe correspondant est « to work around something ».",
+      "examples": [
+        {
+          "text": "It's not a fix, just a workaround.",
+          "fr": "Ce n'est pas un correctif, juste un contournement."
+        },
+        {
+          "text": "We found a workaround for now.",
+          "fr": "On a trouvé un contournement pour l'instant."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.milestone",
+      "term": "a milestone",
+      "pos": "noun",
+      "gloss": "un jalon, une étape clé",
+      "note": "Littéralement une borne kilométrique. Désigne une étape marquante d'un projet ou d'une vie.",
+      "examples": [
+        {
+          "text": "We hit our first milestone.",
+          "fr": "Nous avons atteint notre premier jalon."
+        },
+        {
+          "text": "This is a real milestone for the team.",
+          "fr": "C'est une véritable étape clé pour l'équipe."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.follow-up",
+      "term": "to follow up",
+      "pos": "verb",
+      "gloss": "relancer, donner suite",
+      "note": "« Follow up on something » = donner suite à ; « follow up with someone » = relancer quelqu'un. Le nom « a follow-up » désigne la relance.",
+      "examples": [
+        {
+          "text": "I'll follow up with them tomorrow.",
+          "fr": "Je les relance demain."
+        },
+        {
+          "text": "Thanks for following up on this.",
+          "fr": "Merci d'avoir donné suite."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.scope",
+      "term": "to scope",
+      "pos": "verb",
+      "gloss": "cadrer, délimiter le périmètre",
+      "note": "Le nom « scope » désigne le périmètre : « out of scope » = hors périmètre, formule très utile pour refuser poliment une demande.",
+      "examples": [
+        {
+          "text": "We need to scope the project properly.",
+          "fr": "Il faut cadrer correctement le projet."
+        },
+        {
+          "text": "That's out of scope for this phase.",
+          "fr": "C'est hors périmètre pour cette phase."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.bottleneck",
+      "term": "a bottleneck",
+      "pos": "noun",
+      "gloss": "un goulot d'étranglement",
+      "note": "L'endroit qui ralentit tout le reste, comme le col d'une bouteille. S'emploie pour un processus, une machine ou une personne.",
+      "examples": [
+        {
+          "text": "Approval is the real bottleneck here.",
+          "fr": "La validation est le vrai goulot d'étranglement ici."
+        },
+        {
+          "text": "We removed the bottleneck in the process.",
+          "fr": "Nous avons supprimé le goulot d'étranglement du processus."
+        }
+      ]
+    },
+    {
+      "id": "en.wk.hand-over",
+      "term": "to hand over",
+      "pos": "verb",
+      "gloss": "transmettre, passer le relais",
+      "note": "Passer une responsabilité ou un dossier à quelqu'un. Le nom « a handover » désigne la passation.",
+      "examples": [
+        {
+          "text": "She handed the project over to me.",
+          "fr": "Elle m'a passé le projet."
+        },
+        {
+          "text": "The handover took a week.",
+          "fr": "La passation a pris une semaine."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.wk.roll-out.x0",
+      "lexemeId": "en.wk.roll-out",
+      "fr": "Ils déploient la nouvelle version pays par pays.",
+      "sentence": "They're ___ out the new version country by country.",
+      "accepted": [
+        "rolling"
+      ],
+      "nearMisses": [
+        {
+          "word": "launching",
+          "why": "« Launching » désigne un lancement en une fois. « Roll out » insiste sur le déploiement progressif, ce que dit « pays par pays »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.wk.roll-out.x1",
+      "lexemeId": "en.wk.roll-out",
+      "fr": "déployer progressivement (un produit, une réforme)",
+      "accepted": [
+        "roll out",
+        "to roll out"
+      ],
+      "hint": "r___ o__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.deadline.x0",
+      "lexemeId": "en.wk.deadline",
+      "fr": "Je ne suis pas sûr qu'on tienne les délais.",
+      "sentence": "I'm not sure we can ___ the deadline.",
+      "accepted": [
+        "meet",
+        "make",
+        "hit"
+      ],
+      "nearMisses": [
+        {
+          "word": "respect",
+          "why": "Calque du français. En anglais on « meet » ou on « hits » une échéance ; « respect a deadline » ne se dit pas."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.wk.deadline.x1",
+      "lexemeId": "en.wk.deadline",
+      "prompt": "On a dépassé l'échéance. → We ___ the deadline.",
+      "options": [
+        "missed",
+        "lost",
+        "passed",
+        "failed"
+      ],
+      "answer": "missed",
+      "why": "« To miss a deadline » est la formule figée. « Lose » ou « pass » ne s'emploient pas ici."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.stakeholder.x0",
+      "lexemeId": "en.wk.stakeholder",
+      "fr": "Chaque partie prenante doit valider le budget.",
+      "sentence": "Every ___ has to approve the budget.",
+      "accepted": [
+        "stakeholder"
+      ],
+      "hint": "s__________r"
+    },
+    {
+      "kind": "recall",
+      "id": "en.wk.stakeholder.x1",
+      "lexemeId": "en.wk.stakeholder",
+      "fr": "une partie prenante (dans un projet)",
+      "accepted": [
+        "stakeholder",
+        "a stakeholder"
+      ],
+      "hint": "s__________r"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.iron-out.x0",
+      "lexemeId": "en.wk.iron-out",
+      "fr": "Il reste deux ou trois points à régler avant vendredi.",
+      "sentence": "We still have a couple of things to ___ out before Friday.",
+      "accepted": [
+        "iron",
+        "sort"
+      ],
+      "nearMisses": [
+        {
+          "word": "solve",
+          "why": "« Solve » ne se construit pas avec « out » et vise un vrai problème. Pour des détails, on dit « iron out » ou « sort out »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.wk.iron-out.x1",
+      "lexemeId": "en.wk.iron-out",
+      "prompt": "Nous avons aplani nos différends. → We ___ out our differences.",
+      "options": [
+        "ironed",
+        "cleaned",
+        "washed",
+        "smoothed"
+      ],
+      "answer": "ironed",
+      "why": "L'expression figée est « to iron out differences »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.workaround.x0",
+      "lexemeId": "en.wk.workaround",
+      "fr": "Ce n'est pas une vraie solution, juste un contournement.",
+      "sentence": "It's not a real fix, just a ___.",
+      "accepted": [
+        "workaround"
+      ],
+      "hint": "w_________d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.wk.workaround.x1",
+      "lexemeId": "en.wk.workaround",
+      "fr": "une solution de contournement, un palliatif",
+      "accepted": [
+        "workaround",
+        "a workaround"
+      ],
+      "hint": "w_________d"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.milestone.x0",
+      "lexemeId": "en.wk.milestone",
+      "fr": "Nous avons atteint le deuxième jalon avec deux semaines d'avance.",
+      "sentence": "We hit the second ___ two weeks early.",
+      "accepted": [
+        "milestone"
+      ],
+      "hint": "m________e"
+    },
+    {
+      "kind": "choice",
+      "id": "en.wk.milestone.x1",
+      "lexemeId": "en.wk.milestone",
+      "prompt": "un jalon, une étape marquante →",
+      "options": [
+        "a milestone",
+        "a landmark",
+        "a deadline",
+        "a benchmark"
+      ],
+      "answer": "a milestone",
+      "why": "« Landmark » est un point de repère visuel, « benchmark » un point de comparaison, « deadline » une échéance."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.follow-up.x0",
+      "lexemeId": "en.wk.follow-up",
+      "fr": "Je le relance en fin de semaine.",
+      "sentence": "I'll follow ___ with him at the end of the week.",
+      "accepted": [
+        "up"
+      ],
+      "hint": "u_"
+    },
+    {
+      "kind": "recall",
+      "id": "en.wk.follow-up.x1",
+      "lexemeId": "en.wk.follow-up",
+      "fr": "relancer quelqu'un, donner suite",
+      "accepted": [
+        "follow up",
+        "to follow up"
+      ],
+      "hint": "f_____ u_"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.scope.x0",
+      "lexemeId": "en.wk.scope",
+      "fr": "Désolé, c'est hors périmètre pour cette version.",
+      "sentence": "Sorry, that's out of ___ for this release.",
+      "accepted": [
+        "scope"
+      ],
+      "hint": "s____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.wk.scope.x1",
+      "lexemeId": "en.wk.scope",
+      "prompt": "Il faut d'abord cadrer le projet. → We need to ___ the project first.",
+      "options": [
+        "scope",
+        "frame",
+        "limit",
+        "bound"
+      ],
+      "answer": "scope",
+      "why": "« Scope a project » est la formule consacrée pour en délimiter le contenu."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.bottleneck.x0",
+      "lexemeId": "en.wk.bottleneck",
+      "fr": "La validation est le véritable goulot d'étranglement.",
+      "sentence": "Approval is the real ___.",
+      "accepted": [
+        "bottleneck"
+      ],
+      "hint": "b_________k"
+    },
+    {
+      "kind": "recall",
+      "id": "en.wk.bottleneck.x1",
+      "lexemeId": "en.wk.bottleneck",
+      "fr": "un goulot d'étranglement",
+      "accepted": [
+        "bottleneck",
+        "a bottleneck"
+      ],
+      "hint": "b_________k"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.wk.hand-over.x0",
+      "lexemeId": "en.wk.hand-over",
+      "fr": "Il m'a passé le dossier avant de partir.",
+      "sentence": "He handed the file ___ to me before leaving.",
+      "accepted": [
+        "over"
+      ],
+      "hint": "o___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.wk.hand-over.x1",
+      "lexemeId": "en.wk.hand-over",
+      "text": "Can you hand over the project before you leave?",
+      "fr": "Peux-tu passer le relais sur le projet avant de partir ?"
+    }
+  ]
+}

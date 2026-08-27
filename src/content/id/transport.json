@@ -1,0 +1,410 @@
+{
+  "id": "id.transport",
+  "title": "Se déplacer et se loger",
+  "subtitle": "Prendre un scooter, trouver une chambre, indiquer une direction",
+  "lexemes": [
+    {
+      "id": "id.dp.ke",
+      "term": "ke",
+      "pos": "adv",
+      "gloss": "vers, à (direction)",
+      "note": "Préposition de direction : « ke Bali » = vers Bali. « Dari » en est le contraire : « dari Jakarta » = depuis Jakarta.",
+      "examples": [
+        {
+          "text": "Saya mau ke pasar.",
+          "fr": "Je veux aller au marché."
+        },
+        {
+          "text": "Dari Bali ke Lombok.",
+          "fr": "De Bali à Lombok."
+        }
+      ]
+    },
+    {
+      "id": "id.dp.di",
+      "term": "di",
+      "pos": "adv",
+      "gloss": "à, dans (position)",
+      "note": "Marque le lieu où l'on est, sans mouvement : « di rumah » = à la maison. Ne pas confondre avec « ke », qui marque la direction.",
+      "examples": [
+        {
+          "text": "Saya di hotel sekarang.",
+          "fr": "Je suis à l'hôtel maintenant."
+        },
+        {
+          "text": "Di mana kamu?",
+          "fr": "Tu es où ?"
+        }
+      ]
+    },
+    {
+      "id": "id.dp.motor",
+      "term": "motor",
+      "pos": "noun",
+      "gloss": "scooter, deux-roues",
+      "note": "Le moyen de transport le plus répandu en Indonésie. « Sewa motor » = louer un scooter. La voiture se dit « mobil ».",
+      "examples": [
+        {
+          "text": "Saya mau sewa motor.",
+          "fr": "Je voudrais louer un scooter."
+        },
+        {
+          "text": "Naik motor lebih cepat.",
+          "fr": "En scooter c'est plus rapide."
+        }
+      ]
+    },
+    {
+      "id": "id.dp.naik",
+      "term": "naik",
+      "pos": "verb",
+      "gloss": "prendre (un transport) ; monter",
+      "note": "« Naik motor », « naik bus », « naik pesawat » (avion). Sens premier : monter, grimper.",
+      "examples": [
+        {
+          "text": "Kita naik bus saja.",
+          "fr": "Prenons simplement le bus."
+        },
+        {
+          "text": "Naik pesawat dua jam.",
+          "fr": "Deux heures d'avion."
+        }
+      ]
+    },
+    {
+      "id": "id.dp.sewa",
+      "term": "sewa",
+      "pos": "verb",
+      "gloss": "louer",
+      "note": "« Sewa » couvre la location d'un scooter, d'une chambre ou d'une maison. « Harga sewa » = le prix de la location.",
+      "examples": [
+        {
+          "text": "Berapa harga sewa per hari?",
+          "fr": "Combien coûte la location par jour ?"
+        },
+        {
+          "text": "Saya sewa kamar sebulan.",
+          "fr": "Je loue une chambre pour un mois."
+        }
+      ]
+    },
+    {
+      "id": "id.dp.kamar",
+      "term": "kamar",
+      "pos": "noun",
+      "gloss": "chambre, pièce",
+      "note": "« Kamar mandi » = salle de bain (littéralement chambre du bain). « Kamar kosong » = chambre libre.",
+      "examples": [
+        {
+          "text": "Ada kamar kosong?",
+          "fr": "Avez-vous une chambre libre ?"
+        },
+        {
+          "text": "Kamar mandi di mana?",
+          "fr": "Où est la salle de bain ?"
+        }
+      ]
+    },
+    {
+      "id": "id.dp.ada",
+      "term": "ada",
+      "pos": "verb",
+      "gloss": "il y a, avoir",
+      "note": "Mot très fréquent : « ada?» seul signifie « vous en avez ? ». « Tidak ada » = il n'y en a pas.",
+      "examples": [
+        {
+          "text": "Ada wifi di sini?",
+          "fr": "Il y a du wifi ici ?"
+        },
+        {
+          "text": "Tidak ada, maaf.",
+          "fr": "Il n'y en a pas, désolé."
+        }
+      ]
+    },
+    {
+      "id": "id.dp.dekat",
+      "term": "dekat",
+      "pos": "adj",
+      "gloss": "proche, près",
+      "note": "« Dekat sini » = près d'ici. Le contraire est « jauh » (loin). « Dekat dari » = près de.",
+      "examples": [
+        {
+          "text": "Ada pasar dekat sini?",
+          "fr": "Y a-t-il un marché près d'ici ?"
+        },
+        {
+          "text": "Pantainya jauh dari sini.",
+          "fr": "La plage est loin d'ici."
+        }
+      ]
+    },
+    {
+      "id": "id.dp.berhenti",
+      "term": "berhenti",
+      "pos": "verb",
+      "gloss": "s'arrêter",
+      "note": "« Berhenti di sini » = arrêtez-vous ici. Dans un transport partagé, on crie simplement « kiri! » (à gauche).",
+      "examples": [
+        {
+          "text": "Tolong berhenti di sini.",
+          "fr": "Arrêtez-vous ici, s'il vous plaît."
+        },
+        {
+          "text": "Bus berhenti di depan.",
+          "fr": "Le bus s'arrête devant."
+        }
+      ]
+    },
+    {
+      "id": "id.dp.lurus",
+      "term": "lurus",
+      "pos": "adv",
+      "gloss": "tout droit",
+      "note": "Complète « kiri » (gauche) et « kanan » (droite). « Terus lurus » = continuez tout droit.",
+      "examples": [
+        {
+          "text": "Terus lurus, lalu belok kanan.",
+          "fr": "Continuez tout droit, puis tournez à droite."
+        },
+        {
+          "text": "Lurus saja.",
+          "fr": "Tout droit, simplement."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "id.dp.ke.x0",
+      "lexemeId": "id.dp.ke",
+      "fr": "Je veux aller au marché.",
+      "sentence": "Saya mau ___ pasar.",
+      "accepted": [
+        "ke"
+      ],
+      "nearMisses": [
+        {
+          "word": "dari",
+          "why": "« Dari » veut dire « depuis ». Pour indiquer la destination, c'est « ke »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "id.dp.ke.x1",
+      "lexemeId": "id.dp.ke",
+      "prompt": "de Jakarta à Bandung →",
+      "options": [
+        "dari Jakarta ke Bandung",
+        "ke Jakarta dari Bandung",
+        "di Jakarta ke Bandung",
+        "dari Jakarta di Bandung"
+      ],
+      "answer": "dari Jakarta ke Bandung",
+      "why": "Dari = depuis, ke = vers, di = à (position fixe)."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.di.x0",
+      "lexemeId": "id.dp.di",
+      "fr": "Je suis à l'hôtel en ce moment.",
+      "sentence": "Saya ___ hotel sekarang.",
+      "accepted": [
+        "di"
+      ],
+      "nearMisses": [
+        {
+          "word": "ke",
+          "why": "« Ke » indique un déplacement vers un lieu. Pour dire où l'on se trouve, c'est « di »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "id.dp.di.x1",
+      "lexemeId": "id.dp.di",
+      "fr": "à, dans (sans mouvement)",
+      "accepted": [
+        "di"
+      ],
+      "hint": "d_"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.motor.x0",
+      "lexemeId": "id.dp.motor",
+      "fr": "Je voudrais louer un scooter pour trois jours.",
+      "sentence": "Saya mau sewa ___ untuk tiga hari.",
+      "accepted": [
+        "motor"
+      ],
+      "hint": "m____"
+    },
+    {
+      "kind": "recall",
+      "id": "id.dp.motor.x1",
+      "lexemeId": "id.dp.motor",
+      "fr": "scooter, deux-roues",
+      "accepted": [
+        "motor"
+      ],
+      "hint": "m____"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.naik.x0",
+      "lexemeId": "id.dp.naik",
+      "fr": "Prenons le bus.",
+      "sentence": "Kita ___ bus saja.",
+      "accepted": [
+        "naik"
+      ],
+      "hint": "n___"
+    },
+    {
+      "kind": "choice",
+      "id": "id.dp.naik.x1",
+      "lexemeId": "id.dp.naik",
+      "prompt": "prendre l'avion →",
+      "options": [
+        "naik pesawat",
+        "naik motor",
+        "naik mobil",
+        "naik bus"
+      ],
+      "answer": "naik pesawat",
+      "why": "Pesawat = avion, motor = scooter, mobil = voiture, bus = bus."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.sewa.x0",
+      "lexemeId": "id.dp.sewa",
+      "fr": "Combien coûte la location par jour ?",
+      "sentence": "Berapa harga ___ per hari?",
+      "accepted": [
+        "sewa"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "recall",
+      "id": "id.dp.sewa.x1",
+      "lexemeId": "id.dp.sewa",
+      "fr": "louer",
+      "accepted": [
+        "sewa"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.kamar.x0",
+      "lexemeId": "id.dp.kamar",
+      "fr": "Avez-vous une chambre libre ?",
+      "sentence": "Ada ___ kosong?",
+      "accepted": [
+        "kamar"
+      ],
+      "hint": "k____"
+    },
+    {
+      "kind": "listen",
+      "id": "id.dp.kamar.x1",
+      "lexemeId": "id.dp.kamar",
+      "text": "Ada kamar kosong untuk dua orang?",
+      "fr": "Avez-vous une chambre libre pour deux personnes ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.ada.x0",
+      "lexemeId": "id.dp.ada",
+      "fr": "Il y a du wifi ici ?",
+      "sentence": "___ wifi di sini?",
+      "accepted": [
+        "ada"
+      ],
+      "hint": "a__"
+    },
+    {
+      "kind": "recall",
+      "id": "id.dp.ada.x1",
+      "lexemeId": "id.dp.ada",
+      "fr": "il y a, avoir (disponible)",
+      "accepted": [
+        "ada"
+      ],
+      "hint": "a__"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.dekat.x0",
+      "lexemeId": "id.dp.dekat",
+      "fr": "Y a-t-il un restaurant près d'ici ?",
+      "sentence": "Ada rumah makan ___ sini?",
+      "accepted": [
+        "dekat"
+      ],
+      "nearMisses": [
+        {
+          "word": "jauh",
+          "why": "« Jauh » veut dire loin. Près se dit « dekat »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "id.dp.dekat.x1",
+      "lexemeId": "id.dp.dekat",
+      "prompt": "C'est loin d'ici. → ___ dari sini.",
+      "options": [
+        "Jauh",
+        "Dekat",
+        "Ada",
+        "Naik"
+      ],
+      "answer": "Jauh",
+      "why": "Jauh = loin, dekat = proche."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.berhenti.x0",
+      "lexemeId": "id.dp.berhenti",
+      "fr": "Arrêtez-vous ici, s'il vous plaît.",
+      "sentence": "Tolong ___ di sini.",
+      "accepted": [
+        "berhenti"
+      ],
+      "hint": "b_______i"
+    },
+    {
+      "kind": "recall",
+      "id": "id.dp.berhenti.x1",
+      "lexemeId": "id.dp.berhenti",
+      "fr": "s'arrêter",
+      "accepted": [
+        "berhenti"
+      ],
+      "hint": "b_______i"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.lurus.x0",
+      "lexemeId": "id.dp.lurus",
+      "fr": "Continuez tout droit puis tournez à gauche.",
+      "sentence": "Terus ___, lalu belok kiri.",
+      "accepted": [
+        "lurus"
+      ],
+      "hint": "l____"
+    },
+    {
+      "kind": "listen",
+      "id": "id.dp.lurus.x1",
+      "lexemeId": "id.dp.lurus",
+      "text": "Lurus saja, lalu belok kanan.",
+      "fr": "Tout droit, puis tournez à droite."
+    }
+  ]
+}

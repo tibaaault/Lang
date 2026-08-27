@@ -1,0 +1,417 @@
+{
+  "id": "en.society",
+  "title": "Société et débat public",
+  "subtitle": "Suivre une élection, une réforme ou une controverse dans la presse",
+  "lexemes": [
+    {
+      "id": "en.so.poll",
+      "term": "a poll",
+      "pos": "noun",
+      "gloss": "un sondage ; un scrutin",
+      "note": "« The polls » désigne à la fois les sondages et les bureaux de vote : « to go to the polls » = aller voter.",
+      "examples": [
+        {
+          "text": "The latest poll puts them ahead.",
+          "fr": "Le dernier sondage les place en tête."
+        },
+        {
+          "text": "Voters go to the polls on Sunday.",
+          "fr": "Les électeurs se rendent aux urnes dimanche."
+        }
+      ]
+    },
+    {
+      "id": "en.so.turnout",
+      "term": "turnout",
+      "pos": "noun",
+      "gloss": "le taux de participation, l'affluence",
+      "note": "S'emploie pour une élection comme pour un événement : « a good turnout » = une belle affluence.",
+      "examples": [
+        {
+          "text": "Turnout was unusually high.",
+          "fr": "La participation a été exceptionnellement forte."
+        },
+        {
+          "text": "We had a great turnout for the talk.",
+          "fr": "Nous avons eu une belle affluence pour la conférence."
+        }
+      ]
+    },
+    {
+      "id": "en.so.bill",
+      "term": "a bill",
+      "pos": "noun",
+      "gloss": "un projet de loi",
+      "note": "Un « bill » devient un « act » (une loi) une fois voté. Le mot désigne aussi une facture ou l'addition au restaurant.",
+      "examples": [
+        {
+          "text": "The bill passed with a large majority.",
+          "fr": "Le projet de loi a été adopté à une large majorité."
+        },
+        {
+          "text": "The bill was rejected by the Senate.",
+          "fr": "Le texte a été rejeté par le Sénat."
+        }
+      ]
+    },
+    {
+      "id": "en.so.pledge",
+      "term": "a pledge",
+      "pos": "noun",
+      "gloss": "une promesse solennelle, un engagement",
+      "note": "Plus fort qu'une simple « promise » : engage publiquement. Le verbe existe : « they pledged to cut emissions ».",
+      "examples": [
+        {
+          "text": "They broke their election pledge.",
+          "fr": "Ils ont rompu leur promesse électorale."
+        },
+        {
+          "text": "The country pledged to halve emissions.",
+          "fr": "Le pays s'est engagé à réduire de moitié ses émissions."
+        }
+      ]
+    },
+    {
+      "id": "en.so.step-down",
+      "term": "to step down",
+      "pos": "verb",
+      "gloss": "démissionner, se retirer",
+      "note": "Départ volontaire d'un poste de responsabilité. « To be sacked » signifie être renvoyé, ce qui est très différent.",
+      "examples": [
+        {
+          "text": "The minister stepped down last week.",
+          "fr": "Le ministre a démissionné la semaine dernière."
+        },
+        {
+          "text": "She's stepping down as chair.",
+          "fr": "Elle quitte la présidence."
+        }
+      ]
+    },
+    {
+      "id": "en.so.backlash",
+      "term": "a backlash",
+      "pos": "noun",
+      "gloss": "une levée de boucliers, une réaction hostile",
+      "note": "Réaction violente et collective contre une décision. « To face a backlash » = essuyer une vague de critiques.",
+      "examples": [
+        {
+          "text": "The decision sparked a huge backlash.",
+          "fr": "La décision a provoqué une levée de boucliers."
+        },
+        {
+          "text": "They faced a backlash from customers.",
+          "fr": "Ils ont essuyé une vague de critiques de leurs clients."
+        }
+      ]
+    },
+    {
+      "id": "en.so.gap",
+      "term": "a gap",
+      "pos": "noun",
+      "gloss": "un écart, un fossé",
+      "note": "« The pay gap » = l'écart de salaire ; « the gap between rich and poor ». « To bridge the gap » = combler l'écart.",
+      "examples": [
+        {
+          "text": "The gap between the two is widening.",
+          "fr": "L'écart entre les deux se creuse."
+        },
+        {
+          "text": "We need to bridge that gap.",
+          "fr": "Il faut combler cet écart."
+        }
+      ]
+    },
+    {
+      "id": "en.so.crackdown",
+      "term": "a crackdown",
+      "pos": "noun",
+      "gloss": "un tour de vis, une répression",
+      "note": "« A crackdown on something » = des mesures sévères contre. Le verbe est « to crack down on ».",
+      "examples": [
+        {
+          "text": "There's been a crackdown on speeding.",
+          "fr": "Il y a eu un tour de vis contre les excès de vitesse."
+        },
+        {
+          "text": "Police cracked down on the protests.",
+          "fr": "La police a réprimé les manifestations."
+        }
+      ]
+    },
+    {
+      "id": "en.so.affordable",
+      "term": "affordable",
+      "pos": "adj",
+      "gloss": "abordable, accessible financièrement",
+      "note": "« Affordable housing » = logement abordable. Formé sur « afford » : ce qu'on peut se permettre.",
+      "examples": [
+        {
+          "text": "Affordable housing is scarce here.",
+          "fr": "Les logements abordables sont rares ici."
+        },
+        {
+          "text": "We need a more affordable option.",
+          "fr": "Il nous faut une option plus abordable."
+        }
+      ]
+    },
+    {
+      "id": "en.so.grassroots",
+      "term": "grassroots",
+      "pos": "adj",
+      "gloss": "issu de la base, local et citoyen",
+      "note": "Décrit un mouvement parti des citoyens plutôt que des institutions : « a grassroots campaign ».",
+      "examples": [
+        {
+          "text": "It started as a grassroots movement.",
+          "fr": "Cela a commencé comme un mouvement citoyen."
+        },
+        {
+          "text": "Change came from the grassroots.",
+          "fr": "Le changement est venu de la base."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.so.poll.x0",
+      "lexemeId": "en.so.poll",
+      "fr": "Le dernier sondage les donne gagnants.",
+      "sentence": "The latest ___ puts them ahead.",
+      "accepted": [
+        "poll"
+      ],
+      "nearMisses": [
+        {
+          "word": "survey",
+          "why": "« Survey » désigne une enquête générale. Pour un sondage d'opinion politique, on dit « poll »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.so.poll.x1",
+      "lexemeId": "en.so.poll",
+      "fr": "un sondage d'opinion",
+      "accepted": [
+        "poll",
+        "a poll"
+      ],
+      "hint": "p___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.turnout.x0",
+      "lexemeId": "en.so.turnout",
+      "fr": "La participation a été particulièrement faible.",
+      "sentence": "___ was particularly low.",
+      "accepted": [
+        "turnout",
+        "Turnout"
+      ],
+      "hint": "t______t"
+    },
+    {
+      "kind": "recall",
+      "id": "en.so.turnout.x1",
+      "lexemeId": "en.so.turnout",
+      "fr": "le taux de participation",
+      "accepted": [
+        "turnout"
+      ],
+      "hint": "t______t"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.bill.x0",
+      "lexemeId": "en.so.bill",
+      "fr": "Le projet de loi a été adopté hier soir.",
+      "sentence": "The ___ passed last night.",
+      "accepted": [
+        "bill"
+      ],
+      "nearMisses": [
+        {
+          "word": "law",
+          "why": "Un texte devient « a law » une fois voté. Tant qu'il est en discussion, c'est « a bill »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.so.bill.x1",
+      "lexemeId": "en.so.bill",
+      "prompt": "Le projet de loi a été rejeté. → The bill was ___.",
+      "options": [
+        "rejected",
+        "refused",
+        "denied",
+        "declined"
+      ],
+      "answer": "rejected",
+      "why": "« Reject a bill » est la formule consacrée en matière parlementaire."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.pledge.x0",
+      "lexemeId": "en.so.pledge",
+      "fr": "Le gouvernement s'est engagé à réduire les émissions.",
+      "sentence": "The government ___ to cut emissions.",
+      "accepted": [
+        "pledged",
+        "vowed",
+        "committed"
+      ],
+      "hint": "p______d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.so.pledge.x1",
+      "lexemeId": "en.so.pledge",
+      "fr": "un engagement public solennel",
+      "accepted": [
+        "pledge",
+        "a pledge"
+      ],
+      "hint": "p_____e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.step-down.x0",
+      "lexemeId": "en.so.step-down",
+      "fr": "Le directeur a démissionné la semaine dernière.",
+      "sentence": "The director stepped ___ last week.",
+      "accepted": [
+        "down"
+      ],
+      "hint": "d___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.so.step-down.x1",
+      "lexemeId": "en.so.step-down",
+      "prompt": "Elle quitte volontairement la présidence. → She's ___ as chair.",
+      "options": [
+        "stepping down",
+        "stepping back",
+        "getting down",
+        "standing up"
+      ],
+      "answer": "stepping down",
+      "why": "« Step down » = quitter volontairement une fonction. « Step back » signifie prendre du recul."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.backlash.x0",
+      "lexemeId": "en.so.backlash",
+      "fr": "La décision a provoqué une levée de boucliers.",
+      "sentence": "The decision sparked a huge ___.",
+      "accepted": [
+        "backlash"
+      ],
+      "hint": "b_______h"
+    },
+    {
+      "kind": "recall",
+      "id": "en.so.backlash.x1",
+      "lexemeId": "en.so.backlash",
+      "fr": "une réaction hostile collective",
+      "accepted": [
+        "backlash",
+        "a backlash"
+      ],
+      "hint": "b_______h"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.gap.x0",
+      "lexemeId": "en.so.gap",
+      "fr": "L'écart entre les deux groupes se creuse.",
+      "sentence": "The ___ between the two groups is widening.",
+      "accepted": [
+        "gap",
+        "divide"
+      ],
+      "hint": "g__"
+    },
+    {
+      "kind": "listen",
+      "id": "en.so.gap.x1",
+      "lexemeId": "en.so.gap",
+      "text": "The gap has widened over the past decade.",
+      "fr": "L'écart s'est creusé au cours de la dernière décennie."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.crackdown.x0",
+      "lexemeId": "en.so.crackdown",
+      "fr": "Il y a eu un tour de vis contre la fraude fiscale.",
+      "sentence": "There's been a ___ on tax fraud.",
+      "accepted": [
+        "crackdown"
+      ],
+      "hint": "c________n"
+    },
+    {
+      "kind": "recall",
+      "id": "en.so.crackdown.x1",
+      "lexemeId": "en.so.crackdown",
+      "fr": "un tour de vis, des mesures répressives",
+      "accepted": [
+        "crackdown",
+        "a crackdown"
+      ],
+      "hint": "c________n"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.affordable.x0",
+      "lexemeId": "en.so.affordable",
+      "fr": "Les logements abordables se font rares en ville.",
+      "sentence": "___ housing is becoming scarce in the city.",
+      "accepted": [
+        "affordable",
+        "Affordable"
+      ],
+      "hint": "a_________e"
+    },
+    {
+      "kind": "choice",
+      "id": "en.so.affordable.x1",
+      "lexemeId": "en.so.affordable",
+      "prompt": "une option plus abordable → a more ___ option",
+      "options": [
+        "affordable",
+        "affording",
+        "afforded",
+        "affordible"
+      ],
+      "answer": "affordable",
+      "why": "L'adjectif s'écrit « affordable », avec -able."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.so.grassroots.x0",
+      "lexemeId": "en.so.grassroots",
+      "fr": "Tout est parti d'un mouvement citoyen local.",
+      "sentence": "It all began as a ___ movement.",
+      "accepted": [
+        "grassroots"
+      ],
+      "hint": "g_________s"
+    },
+    {
+      "kind": "recall",
+      "id": "en.so.grassroots.x1",
+      "lexemeId": "en.so.grassroots",
+      "fr": "issu de la base, citoyen et local",
+      "accepted": [
+        "grassroots"
+      ],
+      "hint": "g_________s"
+    }
+  ]
+}

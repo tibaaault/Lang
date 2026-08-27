@@ -1,0 +1,433 @@
+{
+  "id": "en.debate",
+  "title": "Opinion et débat",
+  "subtitle": "Défendre une position, concéder un point, écarter un argument",
+  "lexemes": [
+    {
+      "id": "en.db.point-out",
+      "term": "to point out",
+      "pos": "verb",
+      "gloss": "faire remarquer, souligner",
+      "note": "Sert à apporter une précision sans agressivité : « as you pointed out » reconnaît la remarque de l'autre.",
+      "examples": [
+        {
+          "text": "She pointed out that the data was outdated.",
+          "fr": "Elle a fait remarquer que les données étaient périmées."
+        },
+        {
+          "text": "As you pointed out earlier, timing matters.",
+          "fr": "Comme vous l'avez souligné, le moment compte."
+        }
+      ]
+    },
+    {
+      "id": "en.db.concede",
+      "term": "to concede",
+      "pos": "verb",
+      "gloss": "concéder, admettre (un point)",
+      "note": "Marque qu'on accorde un point à l'adversaire sans abandonner sa position. Nettement plus fort et plus élégant que « admit ».",
+      "examples": [
+        {
+          "text": "I'll concede that the first version was rushed.",
+          "fr": "Je concède que la première version a été bâclée."
+        },
+        {
+          "text": "He conceded the point but not the argument.",
+          "fr": "Il a concédé le point, mais pas l'argument."
+        }
+      ]
+    },
+    {
+      "id": "en.db.far-fetched",
+      "term": "far-fetched",
+      "pos": "adj",
+      "gloss": "tiré par les cheveux, peu plausible",
+      "note": "Se dit d'une hypothèse ou d'un scénario invraisemblable. Toujours avec le trait d'union.",
+      "examples": [
+        {
+          "text": "That explanation sounds far-fetched.",
+          "fr": "Cette explication semble tirée par les cheveux."
+        },
+        {
+          "text": "It's not as far-fetched as it sounds.",
+          "fr": "Ce n'est pas aussi invraisemblable que ça en a l'air."
+        }
+      ]
+    },
+    {
+      "id": "en.db.back-up",
+      "term": "to back up",
+      "pos": "verb",
+      "gloss": "étayer, appuyer (par des preuves)",
+      "note": "« Back up a claim with evidence » = étayer une affirmation. Sens différent de la sauvegarde informatique, qui utilise le même verbe.",
+      "examples": [
+        {
+          "text": "Can you back that up with figures?",
+          "fr": "Peux-tu étayer ça avec des chiffres ?"
+        },
+        {
+          "text": "Nothing backs up his claim.",
+          "fr": "Rien n'étaye son affirmation."
+        }
+      ]
+    },
+    {
+      "id": "en.db.stance",
+      "term": "a stance",
+      "pos": "noun",
+      "gloss": "une position, une posture (sur un sujet)",
+      "note": "« To take a stance on something » = prendre position. Plus engagé que « opinion », qui reste une simple façon de voir.",
+      "examples": [
+        {
+          "text": "They've taken a firm stance on the issue.",
+          "fr": "Ils ont pris une position ferme sur la question."
+        },
+        {
+          "text": "Her stance hasn't changed.",
+          "fr": "Sa position n'a pas changé."
+        }
+      ]
+    },
+    {
+      "id": "en.db.dismiss",
+      "term": "to dismiss",
+      "pos": "verb",
+      "gloss": "écarter, balayer (une idée)",
+      "note": "Rejeter sans examen sérieux : « dismiss out of hand » = rejeter d'emblée. Le mot porte un léger reproche.",
+      "examples": [
+        {
+          "text": "Don't dismiss the idea too quickly.",
+          "fr": "N'écarte pas l'idée trop vite."
+        },
+        {
+          "text": "The claim was dismissed out of hand.",
+          "fr": "L'affirmation a été balayée d'emblée."
+        }
+      ]
+    },
+    {
+      "id": "en.db.sound",
+      "term": "sound",
+      "pos": "adj",
+      "gloss": "solide, fondé, sensé",
+      "note": "Faux ami de l'adjectif : « a sound argument » est un argument solide, rien à voir avec le son. « Financially sound » = financièrement sain.",
+      "examples": [
+        {
+          "text": "That's a sound argument.",
+          "fr": "C'est un argument solide."
+        },
+        {
+          "text": "The company is financially sound.",
+          "fr": "L'entreprise est financièrement saine."
+        }
+      ]
+    },
+    {
+      "id": "en.db.rule-out",
+      "term": "to rule out",
+      "pos": "verb",
+      "gloss": "écarter, exclure (une possibilité)",
+      "note": "Éliminer définitivement une option. Le contraire est « to rule in », beaucoup plus rare.",
+      "examples": [
+        {
+          "text": "We can't rule out a delay.",
+          "fr": "On ne peut pas exclure un retard."
+        },
+        {
+          "text": "The police have ruled out foul play.",
+          "fr": "La police a écarté la thèse criminelle."
+        }
+      ]
+    },
+    {
+      "id": "en.db.weigh-up",
+      "term": "to weigh up",
+      "pos": "verb",
+      "gloss": "peser, soupeser (le pour et le contre)",
+      "note": "« Weigh up the pros and cons » = peser le pour et le contre. En anglais américain on dit plutôt « weigh ».",
+      "examples": [
+        {
+          "text": "Let's weigh up the options.",
+          "fr": "Pesons les différentes options."
+        },
+        {
+          "text": "She weighed up the risks before deciding.",
+          "fr": "Elle a pesé les risques avant de décider."
+        }
+      ]
+    },
+    {
+      "id": "en.db.at-odds",
+      "term": "to be at odds with",
+      "pos": "expr",
+      "gloss": "être en contradiction avec, en désaccord avec",
+      "note": "S'emploie pour deux personnes en désaccord ou deux éléments contradictoires : « the figures are at odds with the report ».",
+      "examples": [
+        {
+          "text": "His account is at odds with the evidence.",
+          "fr": "Sa version est en contradiction avec les preuves."
+        },
+        {
+          "text": "The two teams have been at odds for months.",
+          "fr": "Les deux équipes sont en désaccord depuis des mois."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.db.point-out.x0",
+      "lexemeId": "en.db.point-out",
+      "fr": "Il a fait remarquer que le budget était déjà dépassé.",
+      "sentence": "He ___ out that the budget was already over.",
+      "accepted": [
+        "pointed"
+      ],
+      "nearMisses": [
+        {
+          "word": "noticed",
+          "why": "« Notice » veut dire remarquer pour soi-même. Faire remarquer à quelqu'un, c'est « point out »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.db.point-out.x1",
+      "lexemeId": "en.db.point-out",
+      "fr": "faire remarquer, souligner (à quelqu'un)",
+      "accepted": [
+        "point out",
+        "to point out"
+      ],
+      "hint": "p____ o__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.concede.x0",
+      "lexemeId": "en.db.concede",
+      "fr": "Je concède que le calendrier était trop optimiste.",
+      "sentence": "I'll ___ that the schedule was too optimistic.",
+      "accepted": [
+        "concede",
+        "admit",
+        "grant"
+      ],
+      "nearMisses": [
+        {
+          "word": "accept",
+          "why": "« Accept » veut dire accepter une chose, pas reconnaître un tort dans un débat. On dit « concede » ou « admit »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.db.concede.x1",
+      "lexemeId": "en.db.concede",
+      "prompt": "Il a concédé ce point. → He ___ the point.",
+      "options": [
+        "conceded",
+        "accorded",
+        "agreed",
+        "confessed"
+      ],
+      "answer": "conceded",
+      "why": "« Concede a point » est la formule consacrée du débat. « Confess » suppose un aveu de faute."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.far-fetched.x0",
+      "lexemeId": "en.db.far-fetched",
+      "fr": "Son hypothèse est un peu tirée par les cheveux.",
+      "sentence": "His theory is a bit ___.",
+      "accepted": [
+        "far-fetched",
+        "farfetched"
+      ],
+      "hint": "f__-f______d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.db.far-fetched.x1",
+      "lexemeId": "en.db.far-fetched",
+      "fr": "tiré par les cheveux, peu plausible",
+      "accepted": [
+        "far-fetched",
+        "farfetched"
+      ],
+      "hint": "f__-f______d"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.back-up.x0",
+      "lexemeId": "en.db.back-up",
+      "fr": "Peux-tu étayer cette affirmation par des données ?",
+      "sentence": "Can you ___ up that claim with data?",
+      "accepted": [
+        "back"
+      ],
+      "nearMisses": [
+        {
+          "word": "support",
+          "why": "« Support » est juste, mais ne se construit pas avec « out » ou « up » : on dit « support a claim » ou « back a claim up »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.db.back-up.x1",
+      "lexemeId": "en.db.back-up",
+      "prompt": "Rien n'étaye cette théorie. → Nothing ___ up that theory.",
+      "options": [
+        "backs",
+        "holds",
+        "stands",
+        "props"
+      ],
+      "answer": "backs",
+      "why": "« Back something up » = fournir des preuves à l'appui."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.stance.x0",
+      "lexemeId": "en.db.stance",
+      "fr": "Elle a pris une position claire sur le sujet.",
+      "sentence": "She's taken a clear ___ on the subject.",
+      "accepted": [
+        "stance",
+        "position"
+      ],
+      "hint": "s_____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.db.stance.x1",
+      "lexemeId": "en.db.stance",
+      "fr": "une position prise sur un sujet",
+      "accepted": [
+        "stance",
+        "a stance"
+      ],
+      "hint": "s_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.dismiss.x0",
+      "lexemeId": "en.db.dismiss",
+      "fr": "Ils ont balayé la proposition sans même la lire.",
+      "sentence": "They ___ the proposal without even reading it.",
+      "accepted": [
+        "dismissed"
+      ],
+      "nearMisses": [
+        {
+          "word": "refused",
+          "why": "« Refuse » porte sur une demande qu'on rejette. Écarter une idée sans l'examiner, c'est « dismiss »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.db.dismiss.x1",
+      "lexemeId": "en.db.dismiss",
+      "text": "Let's not dismiss that option just yet.",
+      "fr": "N'écartons pas encore cette option."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.sound.x0",
+      "lexemeId": "en.db.sound",
+      "fr": "C'est un raisonnement parfaitement solide.",
+      "sentence": "That's a perfectly ___ argument.",
+      "accepted": [
+        "sound",
+        "valid"
+      ],
+      "nearMisses": [
+        {
+          "word": "strong",
+          "why": "« Strong » n'est pas faux, mais « sound » dit précisément que le raisonnement ne comporte pas de faille."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.db.sound.x1",
+      "lexemeId": "en.db.sound",
+      "prompt": "L'entreprise est financièrement saine. → The company is financially ___.",
+      "options": [
+        "sound",
+        "healthy",
+        "sane",
+        "solid"
+      ],
+      "answer": "sound",
+      "why": "« Financially sound » est la collocation figée. « Sane » veut dire sain d'esprit."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.rule-out.x0",
+      "lexemeId": "en.db.rule-out",
+      "fr": "On ne peut pas exclure un report.",
+      "sentence": "We can't ___ out a postponement.",
+      "accepted": [
+        "rule"
+      ],
+      "hint": "r___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.db.rule-out.x1",
+      "lexemeId": "en.db.rule-out",
+      "fr": "écarter, exclure une possibilité",
+      "accepted": [
+        "rule out",
+        "to rule out"
+      ],
+      "hint": "r___ o__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.weigh-up.x0",
+      "lexemeId": "en.db.weigh-up",
+      "fr": "Il faut peser le pour et le contre avant de signer.",
+      "sentence": "We should ___ up the pros and cons before signing.",
+      "accepted": [
+        "weigh"
+      ],
+      "hint": "w____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.db.weigh-up.x1",
+      "lexemeId": "en.db.weigh-up",
+      "prompt": "Elle a pesé les risques. → She ___ up the risks.",
+      "options": [
+        "weighed",
+        "measured",
+        "counted",
+        "balanced"
+      ],
+      "answer": "weighed",
+      "why": "« Weigh up » = évaluer en comparant. « Measure » relève d'une mesure chiffrée."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.db.at-odds.x0",
+      "lexemeId": "en.db.at-odds",
+      "fr": "Ces chiffres sont en contradiction avec le rapport.",
+      "sentence": "These figures are at ___ with the report.",
+      "accepted": [
+        "odds"
+      ],
+      "hint": "o___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.db.at-odds.x1",
+      "lexemeId": "en.db.at-odds",
+      "text": "Their version is at odds with ours.",
+      "fr": "Leur version est en contradiction avec la nôtre."
+    }
+  ]
+}

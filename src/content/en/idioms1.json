@@ -1,0 +1,398 @@
+{
+  "id": "en.idioms1",
+  "title": "Expressions courantes",
+  "subtitle": "Celles qu'on entend tous les jours et qu'on ne peut pas deviner",
+  "lexemes": [
+    {
+      "id": "en.im.hang-of",
+      "term": "to get the hang of",
+      "pos": "expr",
+      "gloss": "prendre le coup de main, attraper le truc",
+      "note": "Décrit le moment où une chose difficile devient naturelle. « You'll get the hang of it » est une phrase d'encouragement très courante.",
+      "examples": [
+        {
+          "text": "You'll get the hang of it quickly.",
+          "fr": "Tu vas vite prendre le coup de main."
+        },
+        {
+          "text": "It took me a week to get the hang of it.",
+          "fr": "Il m'a fallu une semaine pour attraper le truc."
+        }
+      ]
+    },
+    {
+      "id": "en.im.beat-bush",
+      "term": "to beat around the bush",
+      "pos": "expr",
+      "gloss": "tourner autour du pot",
+      "note": "Toujours au sens négatif : « stop beating around the bush » = viens-en au fait. Les Américains disent aussi « beat about the bush ».",
+      "examples": [
+        {
+          "text": "Stop beating around the bush.",
+          "fr": "Arrête de tourner autour du pot."
+        },
+        {
+          "text": "He beat around the bush for ten minutes.",
+          "fr": "Il a tourné autour du pot pendant dix minutes."
+        }
+      ]
+    },
+    {
+      "id": "en.im.same-page",
+      "term": "to be on the same page",
+      "pos": "expr",
+      "gloss": "être sur la même longueur d'onde",
+      "note": "Très fréquent en réunion : « let's make sure we're on the same page » = assurons-nous d'être d'accord.",
+      "examples": [
+        {
+          "text": "Are we all on the same page?",
+          "fr": "Est-ce qu'on est tous d'accord ?"
+        },
+        {
+          "text": "We weren't on the same page at all.",
+          "fr": "On n'était pas du tout sur la même longueur d'onde."
+        }
+      ]
+    },
+    {
+      "id": "en.im.call-it-day",
+      "term": "to call it a day",
+      "pos": "expr",
+      "gloss": "s'arrêter là pour aujourd'hui",
+      "note": "Marque la fin d'une séance de travail : « let's call it a day » = on s'arrête là. « Call it a night » le soir.",
+      "examples": [
+        {
+          "text": "Let's call it a day.",
+          "fr": "On va s'arrêter là."
+        },
+        {
+          "text": "After six hours, we called it a day.",
+          "fr": "Au bout de six heures, on s'est arrêtés."
+        }
+      ]
+    },
+    {
+      "id": "en.im.cut-corners",
+      "term": "to cut corners",
+      "pos": "expr",
+      "gloss": "bâcler, faire des économies au détriment de la qualité",
+      "note": "Toujours péjoratif : on rogne sur ce qu'il ne fallait pas. À ne pas confondre avec « cut costs », qui est neutre.",
+      "examples": [
+        {
+          "text": "They cut corners on safety.",
+          "fr": "Ils ont rogné sur la sécurité."
+        },
+        {
+          "text": "Don't cut corners on this one.",
+          "fr": "Ne bâcle pas celui-là."
+        }
+      ]
+    },
+    {
+      "id": "en.im.bottom-line",
+      "term": "the bottom line",
+      "pos": "expr",
+      "gloss": "l'essentiel, ce qu'il faut retenir",
+      "note": "« The bottom line is... » introduit la conclusion décisive. Vient du dernier chiffre d'un bilan comptable.",
+      "examples": [
+        {
+          "text": "The bottom line is we can't afford it.",
+          "fr": "L'essentiel, c'est qu'on n'en a pas les moyens."
+        },
+        {
+          "text": "What's the bottom line here?",
+          "fr": "Qu'est-ce qu'il faut en retenir ?"
+        }
+      ]
+    },
+    {
+      "id": "en.im.keep-eye",
+      "term": "to keep an eye on",
+      "pos": "expr",
+      "gloss": "garder un œil sur, surveiller",
+      "note": "« Keep an eye on it » = surveille ça. « Keep an eye out for » signifie plutôt guetter l'apparition de quelque chose.",
+      "examples": [
+        {
+          "text": "Can you keep an eye on my bag?",
+          "fr": "Tu peux surveiller mon sac ?"
+        },
+        {
+          "text": "Keep an eye out for a blue sign.",
+          "fr": "Guette un panneau bleu."
+        }
+      ]
+    },
+    {
+      "id": "en.im.blue-moon",
+      "term": "once in a blue moon",
+      "pos": "expr",
+      "gloss": "tous les trente-six du mois, très rarement",
+      "note": "Se place en fin de phrase : « I go there once in a blue moon ». Registre familier mais très répandu.",
+      "examples": [
+        {
+          "text": "We meet up once in a blue moon.",
+          "fr": "On se voit tous les trente-six du mois."
+        },
+        {
+          "text": "He calls once in a blue moon.",
+          "fr": "Il appelle très rarement."
+        }
+      ]
+    },
+    {
+      "id": "en.im.bite-bullet",
+      "term": "to bite the bullet",
+      "pos": "expr",
+      "gloss": "prendre son courage à deux mains, s'y résoudre",
+      "note": "S'employer à faire une chose désagréable mais nécessaire, après l'avoir repoussée.",
+      "examples": [
+        {
+          "text": "I finally bit the bullet and called them.",
+          "fr": "J'ai fini par prendre mon courage à deux mains et je les ai appelés."
+        },
+        {
+          "text": "We'll have to bite the bullet.",
+          "fr": "Il va falloir s'y résoudre."
+        }
+      ]
+    },
+    {
+      "id": "en.im.tip-iceberg",
+      "term": "the tip of the iceberg",
+      "pos": "expr",
+      "gloss": "la partie émergée de l'iceberg",
+      "note": "Presque identique au français, ce qui en fait une expression facile à retenir : ce qu'on voit ne représente qu'une infime part.",
+      "examples": [
+        {
+          "text": "That's just the tip of the iceberg.",
+          "fr": "Ce n'est que la partie émergée de l'iceberg."
+        },
+        {
+          "text": "These cases are the tip of the iceberg.",
+          "fr": "Ces cas ne sont que la partie visible."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.im.hang-of.x0",
+      "lexemeId": "en.im.hang-of",
+      "fr": "Tu vas vite prendre le coup de main.",
+      "sentence": "You'll get the ___ of it quickly.",
+      "accepted": [
+        "hang"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.im.hang-of.x1",
+      "lexemeId": "en.im.hang-of",
+      "fr": "prendre le coup de main, attraper le truc",
+      "accepted": [
+        "get the hang of",
+        "the hang of"
+      ],
+      "hint": "g__ t__ h___ o_"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.beat-bush.x0",
+      "lexemeId": "en.im.beat-bush",
+      "fr": "Arrête de tourner autour du pot et dis-le.",
+      "sentence": "Stop beating around the ___ and say it.",
+      "accepted": [
+        "bush"
+      ],
+      "hint": "b___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.im.beat-bush.x1",
+      "lexemeId": "en.im.beat-bush",
+      "prompt": "tourner autour du pot →",
+      "options": [
+        "beat around the bush",
+        "turn around the pot",
+        "walk around the pot",
+        "beat around the tree"
+      ],
+      "answer": "beat around the bush",
+      "why": "L'image anglaise est celle du buisson qu'on frappe autour, pas du pot."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.same-page.x0",
+      "lexemeId": "en.im.same-page",
+      "fr": "Assurons-nous que tout le monde est d'accord.",
+      "sentence": "Let's make sure we're all on the same ___.",
+      "accepted": [
+        "page"
+      ],
+      "hint": "p___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.im.same-page.x1",
+      "lexemeId": "en.im.same-page",
+      "text": "I want to make sure we're on the same page.",
+      "fr": "Je veux m'assurer qu'on est sur la même longueur d'onde."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.call-it-day.x0",
+      "lexemeId": "en.im.call-it-day",
+      "fr": "Il est tard, on va s'arrêter là.",
+      "sentence": "It's late, let's call it a ___.",
+      "accepted": [
+        "day"
+      ],
+      "hint": "d__"
+    },
+    {
+      "kind": "recall",
+      "id": "en.im.call-it-day.x1",
+      "lexemeId": "en.im.call-it-day",
+      "fr": "s'arrêter là pour aujourd'hui",
+      "accepted": [
+        "call it a day"
+      ],
+      "hint": "c___ i_ a d__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.cut-corners.x0",
+      "lexemeId": "en.im.cut-corners",
+      "fr": "Ils ont rogné sur la qualité pour tenir les délais.",
+      "sentence": "They cut ___ on quality to meet the deadline.",
+      "accepted": [
+        "corners"
+      ],
+      "hint": "c______s"
+    },
+    {
+      "kind": "choice",
+      "id": "en.im.cut-corners.x1",
+      "lexemeId": "en.im.cut-corners",
+      "prompt": "Ne bâcle pas ce projet. → Don't ___ on this project.",
+      "options": [
+        "cut corners",
+        "cut costs",
+        "cut short",
+        "cut down"
+      ],
+      "answer": "cut corners",
+      "why": "« Cut costs » est neutre : réduire les dépenses. « Cut corners » implique une perte de qualité."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.bottom-line.x0",
+      "lexemeId": "en.im.bottom-line",
+      "fr": "L'essentiel, c'est qu'on n'a plus le temps.",
+      "sentence": "The ___ line is that we're out of time.",
+      "accepted": [
+        "bottom"
+      ],
+      "hint": "b_____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.im.bottom-line.x1",
+      "lexemeId": "en.im.bottom-line",
+      "fr": "l'essentiel, ce qu'il faut retenir",
+      "accepted": [
+        "the bottom line",
+        "bottom line"
+      ],
+      "hint": "t__ b_____ l___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.keep-eye.x0",
+      "lexemeId": "en.im.keep-eye",
+      "fr": "Tu peux surveiller mes affaires deux minutes ?",
+      "sentence": "Can you keep an ___ on my things for a minute?",
+      "accepted": [
+        "eye"
+      ],
+      "hint": "e__"
+    },
+    {
+      "kind": "listen",
+      "id": "en.im.keep-eye.x1",
+      "lexemeId": "en.im.keep-eye",
+      "text": "Keep an eye on the time, please.",
+      "fr": "Garde un œil sur l'heure, s'il te plaît."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.blue-moon.x0",
+      "lexemeId": "en.im.blue-moon",
+      "fr": "On se voit tous les trente-six du mois.",
+      "sentence": "We meet up once in a ___ moon.",
+      "accepted": [
+        "blue"
+      ],
+      "hint": "b___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.im.blue-moon.x1",
+      "lexemeId": "en.im.blue-moon",
+      "fr": "très rarement, tous les trente-six du mois",
+      "accepted": [
+        "once in a blue moon"
+      ],
+      "hint": "o___ i_ a b___ m___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.bite-bullet.x0",
+      "lexemeId": "en.im.bite-bullet",
+      "fr": "J'ai fini par m'y résoudre et j'ai acheté le billet.",
+      "sentence": "I finally bit the ___ and bought the ticket.",
+      "accepted": [
+        "bullet"
+      ],
+      "hint": "b_____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.im.bite-bullet.x1",
+      "lexemeId": "en.im.bite-bullet",
+      "prompt": "Il va falloir s'y résoudre. → We'll have to ___.",
+      "options": [
+        "bite the bullet",
+        "eat the bullet",
+        "take the bullet",
+        "bite the ball"
+      ],
+      "answer": "bite the bullet",
+      "why": "L'expression figée est « bite the bullet ». « Take a bullet » signifie se sacrifier pour quelqu'un."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.im.tip-iceberg.x0",
+      "lexemeId": "en.im.tip-iceberg",
+      "fr": "Ce n'est que la partie émergée de l'iceberg.",
+      "sentence": "That's just the ___ of the iceberg.",
+      "accepted": [
+        "tip"
+      ],
+      "hint": "t__"
+    },
+    {
+      "kind": "recall",
+      "id": "en.im.tip-iceberg.x1",
+      "lexemeId": "en.im.tip-iceberg",
+      "fr": "la partie émergée de l'iceberg",
+      "accepted": [
+        "the tip of the iceberg",
+        "tip of the iceberg"
+      ],
+      "hint": "t__ t__ o_ t__ i______"
+    }
+  ]
+}

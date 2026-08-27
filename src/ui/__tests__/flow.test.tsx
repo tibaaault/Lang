@@ -7,6 +7,14 @@ import { courses } from '../../content'
 import { indexCourse } from '../../engine/scheduler'
 import { getProgress, resetProgress } from '../../store/progress'
 
+// Les identifiants Supabase sont désormais présents en développement : sans
+// ce leurre, chaque test ouvrirait une vraie connexion au projet.
+vi.mock('../../store/supabase', () => ({
+  getSupabase: () => Promise.resolve(null),
+  isRemoteEnabled: false,
+  DB_SCHEMA: 'lang',
+}))
+
 // La synthèse vocale n'existe pas dans jsdom.
 beforeEach(() => {
   vi.stubGlobal('speechSynthesis', {

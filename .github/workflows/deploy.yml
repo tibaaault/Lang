@@ -45,10 +45,11 @@ jobs:
           fi
 
       - name: Construire
+        # Les identifiants Supabase viennent de .env.production, versionné :
+        # la clé publishable est publique par conception. Les passer par des
+        # secrets d'Actions les écraserait par du vide s'ils manquaient.
         env:
           VITE_BASE: ${{ steps.base.outputs.path }}
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: npm run build
 
       - name: Servir index.html sur les chemins inconnus

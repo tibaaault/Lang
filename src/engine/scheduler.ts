@@ -2,9 +2,9 @@
 
 import type { Course, Exercise, Lexeme } from '../types'
 import type { CardState } from './fsrs'
-import { isDue } from './fsrs'
+import { isDue, retrievability } from './fsrs'
 import type { Progress } from '../store/progress'
-import { cardKey, today } from '../store/progress'
+import { cardKey, newWordsToday } from '../store/progress'
 
 export interface SessionItem {
   lexeme: Lexeme
@@ -102,17 +102,31 @@ function interleave<T>(reviews: T[], fresh: T[]): T[] {
   return out
 }
 
+/**
+ * `daily` respecte le rythme conseillé : ce qui est dû, plus un quota de mots
+ * neufs. `free` ignore les deux, pour qui veut travailler plus longtemps —
+ * il pioche les mots restants puis les plus fragiles, même non échus.
+ */
+export type SessionMode = 'daily' | 'free'
+
 export function buildSession(
   course: Course,
   index: CourseIndex,
   progress: Progress,
   now = new Date(),
+  mode: SessionMode = 'daily',
 ): SessionItem[] {
   const size = progress.settings.dailyGoal
-  const doneToday = progress.days[today(now)]?.newWords ?? 0
-  const newBudget = Math.max(progress.settings.newPerDay - doneToday, 0)
+  const newBudget =
+    mode === 'free'
+      ? Infinity
+      : Math.max(
+          progress.settings.newPerDay - newWordsToday(progress, course.id, now),
+          0,
+        )
 
   const dueItems: { item: SessionItem; lateness: number }[] = []
+  const earlyItems: { item: SessionItem; retention: number }[] = []
   const freshItems: SessionItem[] = []
 
   for (const lex of index.lexemes) {
@@ -139,14 +153,27 @@ export function buildSession(
         item: { ...base, isNew: false },
         lateness: now.getTime() - Date.parse(card.due),
       })
+    } else if (mode === 'free') {
+      // Mot pas encore échu : on le garde en réserve, les moins bien retenus
+      // d'abord, pour que l'entraînement libre serve vraiment à quelque chose.
+      const elapsed = (now.getTime() - Date.parse(card.lastReview)) / 86_400_000
+      earlyItems.push({
+        item: { ...base, isNew: false },
+        retention: retrievability(elapsed, card.stability),
+      })
     }
   }
 
   // Les mots les plus en retard sont les plus près d'être perdus.
   dueItems.sort((a, b) => b.lateness - a.lateness)
+  earlyItems.sort((a, b) => a.retention - b.retention)
 
-  const reviews = dueItems.slice(0, Math.max(size - freshItems.length, 0)).map((d) => d.item)
-  return interleave(reviews, freshItems).slice(0, size)
+  const reviews = [
+    ...dueItems.map((d) => d.item),
+    ...earlyItems.map((e) => e.item),
+  ].slice(0, Math.max(size - Math.min(freshItems.length, size), 0))
+
+  return interleave(reviews, freshItems.slice(0, size)).slice(0, size)
 }
 
 /** Ce qui reste à faire aujourd'hui, pour l'écran d'accueil. */
@@ -155,19 +182,25 @@ export function pendingCount(
   index: CourseIndex,
   progress: Progress,
   now = new Date(),
-): { due: number; fresh: number } {
+): { due: number; fresh: number; remaining: number } {
   let due = 0
   let fresh = 0
-  const doneToday = progress.days[today(now)]?.newWords ?? 0
-  const newBudget = Math.max(progress.settings.newPerDay - doneToday, 0)
+  let remaining = 0
+  const newBudget = Math.max(
+    progress.settings.newPerDay - newWordsToday(progress, course.id, now),
+    0,
+  )
 
   for (const lex of index.lexemes) {
     const card = progress.cards[cardKey(course.id, lex.id)]
     if (!card) {
       if (fresh < newBudget) fresh++
+      // Mots du cours encore jamais vus, quota du jour mis à part : c'est ce
+      // que l'entraînement libre peut encore offrir.
+      else remaining++
     } else if (isDue(card, now)) {
       due++
     }
   }
-  return { due, fresh }
+  return { due, fresh, remaining }
 }

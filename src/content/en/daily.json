@@ -1,0 +1,430 @@
+{
+  "id": "en.daily",
+  "title": "L'anglais de tous les jours",
+  "subtitle": "Les mots courants à l'oral qu'un francophone contourne souvent",
+  "lexemes": [
+    {
+      "id": "en.dy.bother",
+      "term": "to bother",
+      "pos": "verb",
+      "gloss": "déranger ; se donner la peine de",
+      "note": "Deux emplois : « sorry to bother you » (désolé de vous déranger) et « don't bother » (ne te donne pas cette peine). « I can't be bothered » = je n'ai pas le courage.",
+      "examples": [
+        {
+          "text": "Sorry to bother you.",
+          "fr": "Désolé de vous déranger."
+        },
+        {
+          "text": "Don't bother waiting for me.",
+          "fr": "Ne te donne pas la peine de m'attendre."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.mind",
+      "term": "to mind",
+      "pos": "verb",
+      "gloss": "voir un inconvénient à, gêner",
+      "note": "« Do you mind if...? » demande la permission ; on répond « not at all ». Attention au piège : répondre « yes » signifie que ça vous dérange.",
+      "examples": [
+        {
+          "text": "Do you mind if I open the window?",
+          "fr": "Ça vous gêne si j'ouvre la fenêtre ?"
+        },
+        {
+          "text": "I don't mind waiting.",
+          "fr": "Ça ne me dérange pas d'attendre."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.afford",
+      "term": "to afford",
+      "pos": "verb",
+      "gloss": "avoir les moyens de, pouvoir se permettre",
+      "note": "Presque toujours avec « can » ou « can't » : « I can't afford it ». S'emploie aussi pour le temps : « I can't afford to wait ».",
+      "examples": [
+        {
+          "text": "We can't afford a new car.",
+          "fr": "On n'a pas les moyens d'acheter une voiture neuve."
+        },
+        {
+          "text": "I can't afford to lose another day.",
+          "fr": "Je ne peux pas me permettre de perdre un jour de plus."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.spare",
+      "term": "spare",
+      "pos": "adj",
+      "gloss": "de rechange, en trop, disponible",
+      "note": "« A spare key » = un double de clé ; « spare time » = du temps libre. Le verbe « to spare » signifie accorder : « can you spare a minute? ».",
+      "examples": [
+        {
+          "text": "Do you have a spare charger?",
+          "fr": "Tu as un chargeur en trop ?"
+        },
+        {
+          "text": "I do it in my spare time.",
+          "fr": "Je le fais sur mon temps libre."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.manage",
+      "term": "to manage",
+      "pos": "verb",
+      "gloss": "réussir à, arriver à (malgré la difficulté)",
+      "note": "Faux ami partiel : « manage to do » veut dire réussir à faire, pas seulement gérer. « Did you manage? » = tu y es arrivé ?",
+      "examples": [
+        {
+          "text": "I managed to finish on time.",
+          "fr": "J'ai réussi à finir à temps."
+        },
+        {
+          "text": "How did you manage that?",
+          "fr": "Comment as-tu fait ?"
+        }
+      ]
+    },
+    {
+      "id": "en.dy.handy",
+      "term": "handy",
+      "pos": "adj",
+      "gloss": "pratique, commode ; à portée de main",
+      "note": "« That's handy » = c'est pratique. « To come in handy » = se révéler utile, formule très courante.",
+      "examples": [
+        {
+          "text": "This app is really handy.",
+          "fr": "Cette application est vraiment pratique."
+        },
+        {
+          "text": "It might come in handy later.",
+          "fr": "Ça pourrait servir plus tard."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.worth",
+      "term": "to be worth",
+      "pos": "expr",
+      "gloss": "valoir la peine, valoir (un prix)",
+      "note": "Toujours suivi d'un verbe en -ing : « it's worth trying », jamais « worth to try ». « Worth it » = ça en vaut la peine.",
+      "examples": [
+        {
+          "text": "It's worth trying at least once.",
+          "fr": "Ça vaut la peine d'essayer au moins une fois."
+        },
+        {
+          "text": "The detour was worth it.",
+          "fr": "Le détour en valait la peine."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.fancy",
+      "term": "to fancy",
+      "pos": "verb",
+      "gloss": "avoir envie de (britannique)",
+      "note": "Très courant au Royaume-Uni : « fancy a coffee? » = ça te dit, un café ? Suivi d'un nom ou d'un verbe en -ing. Inusité aux États-Unis.",
+      "examples": [
+        {
+          "text": "Fancy a walk?",
+          "fr": "Ça te dit, une promenade ?"
+        },
+        {
+          "text": "I don't fancy going out tonight.",
+          "fr": "Je n'ai pas envie de sortir ce soir."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.struggle",
+      "term": "to struggle",
+      "pos": "verb",
+      "gloss": "avoir du mal, peiner",
+      "note": "« Struggle with something » ou « struggle to do something ». Décrit l'effort dans la difficulté, sans idée d'échec définitif.",
+      "examples": [
+        {
+          "text": "I'm struggling with the accent.",
+          "fr": "J'ai du mal avec l'accent."
+        },
+        {
+          "text": "She struggled to explain it.",
+          "fr": "Elle a eu du mal à l'expliquer."
+        }
+      ]
+    },
+    {
+      "id": "en.dy.get-along",
+      "term": "to get along",
+      "pos": "verb",
+      "gloss": "bien s'entendre (avec quelqu'un)",
+      "note": "« Get along with someone » = bien s'entendre. En anglais britannique on dit aussi « get on with someone ». À ne pas confondre avec « get by », se débrouiller.",
+      "examples": [
+        {
+          "text": "They get along really well.",
+          "fr": "Ils s'entendent très bien."
+        },
+        {
+          "text": "I don't get along with my neighbour.",
+          "fr": "Je ne m'entends pas avec mon voisin."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.dy.bother.x0",
+      "lexemeId": "en.dy.bother",
+      "fr": "Ne te donne pas la peine de me rappeler.",
+      "sentence": "Don't ___ calling me back.",
+      "accepted": [
+        "bother"
+      ],
+      "hint": "b_____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.dy.bother.x1",
+      "lexemeId": "en.dy.bother",
+      "prompt": "Désolé de vous déranger. → Sorry to ___ you.",
+      "options": [
+        "bother",
+        "disturb",
+        "annoy",
+        "trouble"
+      ],
+      "answer": "bother",
+      "why": "« Sorry to bother you » est la formule usuelle. « Disturb » est plus formel et « annoy » signifie agacer."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.mind.x0",
+      "lexemeId": "en.dy.mind",
+      "fr": "Ça ne me dérange pas d'attendre un peu.",
+      "sentence": "I don't ___ waiting a bit.",
+      "accepted": [
+        "mind"
+      ],
+      "nearMisses": [
+        {
+          "word": "care",
+          "why": "« I don't care » veut dire « je m'en fiche » et passe pour désinvolte. Pour dire que ça ne dérange pas, c'est « I don't mind »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.dy.mind.x1",
+      "lexemeId": "en.dy.mind",
+      "fr": "voir un inconvénient à, être gêné par",
+      "accepted": [
+        "mind",
+        "to mind"
+      ],
+      "hint": "m___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.afford.x0",
+      "lexemeId": "en.dy.afford",
+      "fr": "Je ne peux pas me permettre de perdre encore du temps.",
+      "sentence": "I can't ___ to lose any more time.",
+      "accepted": [
+        "afford"
+      ],
+      "hint": "a_____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.dy.afford.x1",
+      "lexemeId": "en.dy.afford",
+      "prompt": "On n'a pas les moyens. → We can't ___ it.",
+      "options": [
+        "afford",
+        "permit",
+        "allow",
+        "support"
+      ],
+      "answer": "afford",
+      "why": "« Afford » = avoir les moyens. « Permit » et « allow » veulent dire autoriser."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.spare.x0",
+      "lexemeId": "en.dy.spare",
+      "fr": "Je le fais sur mon temps libre.",
+      "sentence": "I do it in my ___ time.",
+      "accepted": [
+        "spare",
+        "free"
+      ],
+      "hint": "s____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.dy.spare.x1",
+      "lexemeId": "en.dy.spare",
+      "fr": "de rechange, en trop, disponible",
+      "accepted": [
+        "spare"
+      ],
+      "hint": "s____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.manage.x0",
+      "lexemeId": "en.dy.manage",
+      "fr": "J'ai réussi à tout terminer avant midi.",
+      "sentence": "I ___ to finish everything before noon.",
+      "accepted": [
+        "managed"
+      ],
+      "nearMisses": [
+        {
+          "word": "succeeded",
+          "why": "« Succeed » se construit avec « in » et un verbe en -ing : « succeeded in finishing ». Le plus naturel ici est « managed to »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.dy.manage.x1",
+      "lexemeId": "en.dy.manage",
+      "text": "I managed to get there on time.",
+      "fr": "J'ai réussi à y arriver à l'heure."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.handy.x0",
+      "lexemeId": "en.dy.handy",
+      "fr": "Garde-le, ça pourrait servir plus tard.",
+      "sentence": "Keep it, it might come in ___ later.",
+      "accepted": [
+        "handy"
+      ],
+      "hint": "h____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.dy.handy.x1",
+      "lexemeId": "en.dy.handy",
+      "prompt": "Cette appli est vraiment pratique. → This app is really ___.",
+      "options": [
+        "handy",
+        "practical",
+        "comfortable",
+        "convenient"
+      ],
+      "answer": "handy",
+      "why": "« Handy » est le mot courant à l'oral. « Practical » décrit plutôt une personne pragmatique."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.worth.x0",
+      "lexemeId": "en.dy.worth",
+      "fr": "Ça vaut la peine de demander.",
+      "sentence": "It's worth ___.",
+      "accepted": [
+        "asking"
+      ],
+      "nearMisses": [
+        {
+          "word": "to ask",
+          "why": "Après « worth », le verbe prend toujours la forme en -ing : « worth asking »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.dy.worth.x1",
+      "lexemeId": "en.dy.worth",
+      "fr": "valoir la peine (de faire quelque chose)",
+      "accepted": [
+        "be worth",
+        "to be worth",
+        "worth"
+      ],
+      "hint": "b_ w____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.fancy.x0",
+      "lexemeId": "en.dy.fancy",
+      "fr": "Ça te dit d'aller boire un café ?",
+      "sentence": "___ going for a coffee?",
+      "accepted": [
+        "fancy"
+      ],
+      "hint": "f____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.dy.fancy.x1",
+      "lexemeId": "en.dy.fancy",
+      "prompt": "Je n'ai pas envie de sortir. → I don't ___ going out.",
+      "options": [
+        "fancy",
+        "envy",
+        "want",
+        "wish"
+      ],
+      "answer": "fancy",
+      "why": "« Fancy » + verbe en -ing exprime l'envie. « Want » se construit avec l'infinitif : « want to go out »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.struggle.x0",
+      "lexemeId": "en.dy.struggle",
+      "fr": "J'ai du mal à comprendre les accents écossais.",
+      "sentence": "I ___ to understand Scottish accents.",
+      "accepted": [
+        "struggle"
+      ],
+      "nearMisses": [
+        {
+          "word": "have difficulty",
+          "why": "Correct mais lourd. Le verbe naturel est « struggle to » ou « struggle with »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.dy.struggle.x1",
+      "lexemeId": "en.dy.struggle",
+      "fr": "avoir du mal, peiner à faire quelque chose",
+      "accepted": [
+        "struggle",
+        "to struggle"
+      ],
+      "hint": "s_______e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.dy.get-along.x0",
+      "lexemeId": "en.dy.get-along",
+      "fr": "Ils s'entendent très bien tous les deux.",
+      "sentence": "The two of them get ___ really well.",
+      "accepted": [
+        "along",
+        "on"
+      ],
+      "nearMisses": [
+        {
+          "word": "by",
+          "why": "« Get by » veut dire se débrouiller avec peu. Bien s'entendre, c'est « get along » ou « get on »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.dy.get-along.x1",
+      "lexemeId": "en.dy.get-along",
+      "text": "Do you get along with your colleagues?",
+      "fr": "Est-ce que tu t'entends bien avec tes collègues ?"
+    }
+  ]
+}

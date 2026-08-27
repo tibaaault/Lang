@@ -1,0 +1,429 @@
+{
+  "id": "en.collocations",
+  "title": "Make, do, take, have",
+  "subtitle": "Les associations figées : l'erreur la plus visible chez un francophone",
+  "lexemes": [
+    {
+      "id": "en.co.make-decision",
+      "term": "to make a decision",
+      "pos": "expr",
+      "gloss": "prendre une décision",
+      "note": "En français on « prend » une décision, en anglais on la « fait ». Dire « take a decision » s'entend parfois au Royaume-Uni mais reste marqué : « make » est la norme.",
+      "examples": [
+        {
+          "text": "We need to make a decision today.",
+          "fr": "Il faut prendre une décision aujourd'hui."
+        },
+        {
+          "text": "It's a hard decision to make.",
+          "fr": "C'est une décision difficile à prendre."
+        }
+      ]
+    },
+    {
+      "id": "en.co.do-research",
+      "term": "to do research",
+      "pos": "expr",
+      "gloss": "faire des recherches",
+      "note": "« Research » est indénombrable : jamais « researches ». On dit « do research » ou « carry out research », mais jamais « make research ».",
+      "examples": [
+        {
+          "text": "I did some research on the topic.",
+          "fr": "J'ai fait quelques recherches sur le sujet."
+        },
+        {
+          "text": "The research is still ongoing.",
+          "fr": "Les recherches sont toujours en cours."
+        }
+      ]
+    },
+    {
+      "id": "en.co.take-responsibility",
+      "term": "to take responsibility",
+      "pos": "expr",
+      "gloss": "assumer la responsabilité",
+      "note": "« Take responsibility for something » = en assumer la responsabilité. « Take the blame » en est la version plus familière.",
+      "examples": [
+        {
+          "text": "He took responsibility for the mistake.",
+          "fr": "Il a assumé la responsabilité de l'erreur."
+        },
+        {
+          "text": "Nobody wants to take responsibility.",
+          "fr": "Personne ne veut assumer."
+        }
+      ]
+    },
+    {
+      "id": "en.co.have-impact",
+      "term": "to have an impact",
+      "pos": "expr",
+      "gloss": "avoir un impact, un effet",
+      "note": "« Have an impact on something ». On dit aussi « make an impact », qui insiste sur l'impression produite plutôt que sur l'effet.",
+      "examples": [
+        {
+          "text": "It had a real impact on sales.",
+          "fr": "Cela a eu un véritable impact sur les ventes."
+        },
+        {
+          "text": "She made an impact from day one.",
+          "fr": "Elle a marqué les esprits dès le premier jour."
+        }
+      ]
+    },
+    {
+      "id": "en.co.make-progress",
+      "term": "to make progress",
+      "pos": "expr",
+      "gloss": "faire des progrès, avancer",
+      "note": "« Progress » est indénombrable : jamais « progresses », jamais « a progress ». On dit « make progress » ou « make good progress ».",
+      "examples": [
+        {
+          "text": "We're making good progress.",
+          "fr": "Nous avançons bien."
+        },
+        {
+          "text": "Little progress has been made.",
+          "fr": "Peu de progrès ont été réalisés."
+        }
+      ]
+    },
+    {
+      "id": "en.co.take-part",
+      "term": "to take part",
+      "pos": "expr",
+      "gloss": "participer, prendre part",
+      "note": "« Take part in something ». « Participate in » existe mais sonne plus formel. Ne jamais dire « assist to », faux ami de « assister ».",
+      "examples": [
+        {
+          "text": "Over fifty people took part.",
+          "fr": "Plus de cinquante personnes ont participé."
+        },
+        {
+          "text": "Do you want to take part in the study?",
+          "fr": "Voulez-vous participer à l'étude ?"
+        }
+      ]
+    },
+    {
+      "id": "en.co.make-sense",
+      "term": "to make sense",
+      "pos": "expr",
+      "gloss": "avoir du sens, être logique",
+      "note": "« That makes sense » est l'une des phrases les plus utiles de l'anglais courant : elle signale qu'on a compris et qu'on approuve.",
+      "examples": [
+        {
+          "text": "That makes sense.",
+          "fr": "Ça se tient."
+        },
+        {
+          "text": "It doesn't make sense to wait.",
+          "fr": "Ça n'a pas de sens d'attendre."
+        }
+      ]
+    },
+    {
+      "id": "en.co.take-look",
+      "term": "to take a look",
+      "pos": "expr",
+      "gloss": "jeter un œil, regarder",
+      "note": "« Take a look at something » = y jeter un œil. En anglais britannique on dit aussi « have a look ».",
+      "examples": [
+        {
+          "text": "Can you take a look at this?",
+          "fr": "Tu peux jeter un œil à ça ?"
+        },
+        {
+          "text": "I'll have a look tonight.",
+          "fr": "J'y jetterai un œil ce soir."
+        }
+      ]
+    },
+    {
+      "id": "en.co.have-point",
+      "term": "to have a point",
+      "pos": "expr",
+      "gloss": "ne pas avoir tort, marquer un point",
+      "note": "« You have a point » reconnaît la pertinence d'une remarque sans capituler. Formule très utile pour nuancer un désaccord.",
+      "examples": [
+        {
+          "text": "You have a point there.",
+          "fr": "Tu n'as pas tort sur ce point."
+        },
+        {
+          "text": "He does have a point.",
+          "fr": "Il n'a pas tort, en fait."
+        }
+      ]
+    },
+    {
+      "id": "en.co.do-harm",
+      "term": "to do harm",
+      "pos": "expr",
+      "gloss": "faire du mal, nuire",
+      "note": "« Do more harm than good » = faire plus de mal que de bien. On dit aussi « do damage », mais jamais « make harm ».",
+      "examples": [
+        {
+          "text": "It could do more harm than good.",
+          "fr": "Cela pourrait faire plus de mal que de bien."
+        },
+        {
+          "text": "No harm done.",
+          "fr": "Il n'y a pas de mal."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.co.make-decision.x0",
+      "lexemeId": "en.co.make-decision",
+      "fr": "Il faut prendre une décision avant vendredi.",
+      "sentence": "We need to ___ a decision before Friday.",
+      "accepted": [
+        "make"
+      ],
+      "nearMisses": [
+        {
+          "word": "take",
+          "why": "Calque du français « prendre une décision ». L'anglais standard dit « make a decision »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.co.make-decision.x1",
+      "lexemeId": "en.co.make-decision",
+      "prompt": "C'est une décision difficile à prendre. → It's a hard decision to ___.",
+      "options": [
+        "make",
+        "take",
+        "do",
+        "have"
+      ],
+      "answer": "make",
+      "why": "L'association figée est « make a decision »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.do-research.x0",
+      "lexemeId": "en.co.do-research",
+      "fr": "J'ai fait des recherches sur le sujet.",
+      "sentence": "I ___ some research on the subject.",
+      "accepted": [
+        "did"
+      ],
+      "nearMisses": [
+        {
+          "word": "made",
+          "why": "« Make research » ne se dit pas. L'anglais emploie « do research » ou « carry out research »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.co.do-research.x1",
+      "lexemeId": "en.co.do-research",
+      "fr": "faire des recherches",
+      "accepted": [
+        "do research",
+        "to do research"
+      ],
+      "hint": "d_ r_______h"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.take-responsibility.x0",
+      "lexemeId": "en.co.take-responsibility",
+      "fr": "Il a assumé la responsabilité de l'échec.",
+      "sentence": "He ___ responsibility for the failure.",
+      "accepted": [
+        "took"
+      ],
+      "hint": "t___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.co.take-responsibility.x1",
+      "lexemeId": "en.co.take-responsibility",
+      "prompt": "Personne ne veut assumer. → Nobody wants to ___ responsibility.",
+      "options": [
+        "take",
+        "make",
+        "do",
+        "have"
+      ],
+      "answer": "take",
+      "why": "L'association figée est « take responsibility »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.have-impact.x0",
+      "lexemeId": "en.co.have-impact",
+      "fr": "Cela a eu un impact réel sur les résultats.",
+      "sentence": "It ___ a real impact on the results.",
+      "accepted": [
+        "had"
+      ],
+      "hint": "h__"
+    },
+    {
+      "kind": "listen",
+      "id": "en.co.have-impact.x1",
+      "lexemeId": "en.co.have-impact",
+      "text": "That decision had a huge impact on the team.",
+      "fr": "Cette décision a eu un impact énorme sur l'équipe."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.make-progress.x0",
+      "lexemeId": "en.co.make-progress",
+      "fr": "Nous faisons de bons progrès sur ce dossier.",
+      "sentence": "We're ___ good progress on this.",
+      "accepted": [
+        "making"
+      ],
+      "nearMisses": [
+        {
+          "word": "doing",
+          "why": "« Do progress » ne se dit pas. L'association correcte est « make progress »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.co.make-progress.x1",
+      "lexemeId": "en.co.make-progress",
+      "fr": "faire des progrès, avancer",
+      "accepted": [
+        "make progress",
+        "to make progress"
+      ],
+      "hint": "m___ p_______s"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.take-part.x0",
+      "lexemeId": "en.co.take-part",
+      "fr": "Plus de cent personnes ont participé à l'enquête.",
+      "sentence": "More than a hundred people took ___ in the survey.",
+      "accepted": [
+        "part"
+      ],
+      "hint": "p___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.co.take-part.x1",
+      "lexemeId": "en.co.take-part",
+      "prompt": "Voulez-vous participer ? → Do you want to ___ part?",
+      "options": [
+        "take",
+        "make",
+        "do",
+        "have"
+      ],
+      "answer": "take",
+      "why": "L'expression figée est « take part in something »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.make-sense.x0",
+      "lexemeId": "en.co.make-sense",
+      "fr": "Ça n'a aucun sens d'attendre plus longtemps.",
+      "sentence": "It doesn't ___ sense to wait any longer.",
+      "accepted": [
+        "make"
+      ],
+      "nearMisses": [
+        {
+          "word": "have",
+          "why": "« Have sense » ne se dit pas. L'expression est « make sense »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.co.make-sense.x1",
+      "lexemeId": "en.co.make-sense",
+      "fr": "avoir du sens, être logique",
+      "accepted": [
+        "make sense",
+        "to make sense"
+      ],
+      "hint": "m___ s____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.take-look.x0",
+      "lexemeId": "en.co.take-look",
+      "fr": "Tu peux jeter un œil à ce fichier ?",
+      "sentence": "Can you take a ___ at this file?",
+      "accepted": [
+        "look"
+      ],
+      "hint": "l___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.co.take-look.x1",
+      "lexemeId": "en.co.take-look",
+      "text": "Let me take a look at it first.",
+      "fr": "Laisse-moi d'abord y jeter un œil."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.have-point.x0",
+      "lexemeId": "en.co.have-point",
+      "fr": "Tu n'as pas tort sur ce point.",
+      "sentence": "You ___ a point there.",
+      "accepted": [
+        "have",
+        "do have"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.co.have-point.x1",
+      "lexemeId": "en.co.have-point",
+      "prompt": "Il n'a pas tort. → He does ___ a point.",
+      "options": [
+        "have",
+        "make",
+        "take",
+        "do"
+      ],
+      "answer": "have",
+      "why": "« Have a point » = avoir raison sur un point. « Make a point » signifie plutôt faire valoir un argument."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.co.do-harm.x0",
+      "lexemeId": "en.co.do-harm",
+      "fr": "Ça risque de faire plus de mal que de bien.",
+      "sentence": "It could ___ more harm than good.",
+      "accepted": [
+        "do"
+      ],
+      "nearMisses": [
+        {
+          "word": "make",
+          "why": "« Make harm » ne se dit pas. L'anglais emploie « do harm » et « do damage »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.co.do-harm.x1",
+      "lexemeId": "en.co.do-harm",
+      "fr": "faire du mal, nuire",
+      "accepted": [
+        "do harm",
+        "to do harm"
+      ],
+      "hint": "d_ h___"
+    }
+  ]
+}

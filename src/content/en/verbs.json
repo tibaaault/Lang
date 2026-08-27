@@ -1,0 +1,417 @@
+{
+  "id": "en.verbs",
+  "title": "Verbes précis",
+  "subtitle": "Remplacer say, get et do par le verbe exact : le vrai saut vers le C1",
+  "lexemes": [
+    {
+      "id": "en.vb.claim",
+      "term": "to claim",
+      "pos": "verb",
+      "gloss": "affirmer, prétendre (sans preuve)",
+      "note": "Suppose une réserve du locuteur : rapporter avec « claim » plutôt que « say » suggère qu'on ne cautionne pas. Signifie aussi réclamer son dû.",
+      "examples": [
+        {
+          "text": "He claims he was never told.",
+          "fr": "Il affirme qu'on ne l'a jamais prévenu."
+        },
+        {
+          "text": "She claimed responsibility for the project.",
+          "fr": "Elle a revendiqué la responsabilité du projet."
+        }
+      ]
+    },
+    {
+      "id": "en.vb.urge",
+      "term": "to urge",
+      "pos": "verb",
+      "gloss": "exhorter, presser (quelqu'un de faire)",
+      "note": "Beaucoup plus fort que « advise ». « Urge someone to do something ». Le nom « an urge » désigne une envie pressante.",
+      "examples": [
+        {
+          "text": "Doctors urge people to get vaccinated.",
+          "fr": "Les médecins exhortent la population à se faire vacciner."
+        },
+        {
+          "text": "I'd urge you to reconsider.",
+          "fr": "Je vous invite instamment à reconsidérer."
+        }
+      ]
+    },
+    {
+      "id": "en.vb.acknowledge",
+      "term": "to acknowledge",
+      "pos": "verb",
+      "gloss": "reconnaître, admettre ; accuser réception",
+      "note": "Deux emplois : reconnaître un fait (« acknowledge the problem ») et accuser réception (« acknowledge receipt »).",
+      "examples": [
+        {
+          "text": "They acknowledged the mistake.",
+          "fr": "Ils ont reconnu l'erreur."
+        },
+        {
+          "text": "Please acknowledge receipt of this email.",
+          "fr": "Merci d'accuser réception de ce courriel."
+        }
+      ]
+    },
+    {
+      "id": "en.vb.highlight",
+      "term": "to highlight",
+      "pos": "verb",
+      "gloss": "mettre en évidence, souligner",
+      "note": "Attirer l'attention sur un élément important. « Stress » et « emphasize » en sont des synonymes proches, plus insistants.",
+      "examples": [
+        {
+          "text": "The report highlights three risks.",
+          "fr": "Le rapport met en évidence trois risques."
+        },
+        {
+          "text": "I'd like to highlight one point.",
+          "fr": "J'aimerais souligner un point."
+        }
+      ]
+    },
+    {
+      "id": "en.vb.tackle",
+      "term": "to tackle",
+      "pos": "verb",
+      "gloss": "s'attaquer à (un problème)",
+      "note": "Suppose qu'on affronte une difficulté de front. « Tackle a problem » est bien plus vivant que « deal with ».",
+      "examples": [
+        {
+          "text": "We need to tackle this head-on.",
+          "fr": "Il faut s'y attaquer de front."
+        },
+        {
+          "text": "How do we tackle the backlog?",
+          "fr": "Comment s'attaque-t-on au retard accumulé ?"
+        }
+      ]
+    },
+    {
+      "id": "en.vb.handle",
+      "term": "to handle",
+      "pos": "verb",
+      "gloss": "gérer, s'occuper de, encaisser",
+      "note": "« Can you handle it? » = tu t'en sors ? Porte sur une situation, une charge ou une émotion.",
+      "examples": [
+        {
+          "text": "I'll handle the client.",
+          "fr": "Je m'occupe du client."
+        },
+        {
+          "text": "He handled the criticism well.",
+          "fr": "Il a bien encaissé la critique."
+        }
+      ]
+    },
+    {
+      "id": "en.vb.grasp",
+      "term": "to grasp",
+      "pos": "verb",
+      "gloss": "saisir, comprendre pleinement",
+      "note": "Comprendre en profondeur, au-delà du sens littéral. Le nom « a grasp of something » désigne la maîtrise d'un sujet.",
+      "examples": [
+        {
+          "text": "It took me a while to grasp the concept.",
+          "fr": "Il m'a fallu du temps pour saisir le concept."
+        },
+        {
+          "text": "She has a good grasp of the subject.",
+          "fr": "Elle maîtrise bien le sujet."
+        }
+      ]
+    },
+    {
+      "id": "en.vb.spot",
+      "term": "to spot",
+      "pos": "verb",
+      "gloss": "repérer, remarquer",
+      "note": "Voir quelque chose qui n'était pas évident : « spot a mistake ». Plus vif que « notice ».",
+      "examples": [
+        {
+          "text": "Good spot!",
+          "fr": "Bien vu !"
+        },
+        {
+          "text": "She spotted the error straight away.",
+          "fr": "Elle a repéré l'erreur tout de suite."
+        }
+      ]
+    },
+    {
+      "id": "en.vb.reckon",
+      "term": "to reckon",
+      "pos": "verb",
+      "gloss": "estimer, penser (familier, britannique)",
+      "note": "Très courant à l'oral au Royaume-Uni : « I reckon it'll rain » = je pense qu'il va pleuvoir. À éviter à l'écrit formel.",
+      "examples": [
+        {
+          "text": "I reckon we'll be late.",
+          "fr": "Je pense qu'on va être en retard."
+        },
+        {
+          "text": "What do you reckon?",
+          "fr": "Tu en penses quoi ?"
+        }
+      ]
+    },
+    {
+      "id": "en.vb.come-up-with",
+      "term": "to come up with",
+      "pos": "verb",
+      "gloss": "trouver, imaginer (une idée, une solution)",
+      "note": "Le verbe standard pour la production d'idées : « come up with a plan ». On ne dit pas « find an idea ».",
+      "examples": [
+        {
+          "text": "She came up with a brilliant idea.",
+          "fr": "Elle a trouvé une idée brillante."
+        },
+        {
+          "text": "We need to come up with something better.",
+          "fr": "Il faut trouver mieux."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.vb.claim.x0",
+      "lexemeId": "en.vb.claim",
+      "fr": "Il prétend n'avoir jamais reçu le message.",
+      "sentence": "He ___ he never received the message.",
+      "accepted": [
+        "claims"
+      ],
+      "nearMisses": [
+        {
+          "word": "pretends",
+          "why": "Faux ami : « pretend » veut dire faire semblant. Prétendre au sens d'affirmer, c'est « claim »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.vb.claim.x1",
+      "lexemeId": "en.vb.claim",
+      "fr": "affirmer, prétendre (sans preuve)",
+      "accepted": [
+        "claim",
+        "to claim"
+      ],
+      "hint": "c____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.urge.x0",
+      "lexemeId": "en.vb.urge",
+      "fr": "Je vous invite vivement à revoir votre décision.",
+      "sentence": "I'd ___ you to reconsider your decision.",
+      "accepted": [
+        "urge"
+      ],
+      "hint": "u___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.vb.urge.x1",
+      "lexemeId": "en.vb.urge",
+      "prompt": "Les experts exhortent les gouvernements à agir. → Experts ___ governments to act.",
+      "options": [
+        "urge",
+        "advise",
+        "suggest",
+        "recommend"
+      ],
+      "answer": "urge",
+      "why": "« Urge » exprime l'insistance pressante ; « advise » et « recommend » sont bien plus tièdes."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.acknowledge.x0",
+      "lexemeId": "en.vb.acknowledge",
+      "fr": "L'entreprise a reconnu le problème publiquement.",
+      "sentence": "The company publicly ___ the problem.",
+      "accepted": [
+        "acknowledged",
+        "admitted"
+      ],
+      "hint": "a___________d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.vb.acknowledge.x1",
+      "lexemeId": "en.vb.acknowledge",
+      "fr": "reconnaître, admettre (un fait)",
+      "accepted": [
+        "acknowledge",
+        "to acknowledge"
+      ],
+      "hint": "a___________e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.highlight.x0",
+      "lexemeId": "en.vb.highlight",
+      "fr": "Le rapport met en évidence trois problèmes majeurs.",
+      "sentence": "The report ___ three major issues.",
+      "accepted": [
+        "highlights",
+        "stresses",
+        "emphasizes"
+      ],
+      "hint": "h________s"
+    },
+    {
+      "kind": "listen",
+      "id": "en.vb.highlight.x1",
+      "lexemeId": "en.vb.highlight",
+      "text": "The study highlights a worrying trend.",
+      "fr": "L'étude met en évidence une tendance inquiétante."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.tackle.x0",
+      "lexemeId": "en.vb.tackle",
+      "fr": "Il faut s'attaquer à la cause, pas aux symptômes.",
+      "sentence": "We need to ___ the cause, not the symptoms.",
+      "accepted": [
+        "tackle",
+        "address"
+      ],
+      "nearMisses": [
+        {
+          "word": "attack",
+          "why": "« Attack » suppose une agression. Pour un problème, l'anglais dit « tackle » ou « address »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.vb.tackle.x1",
+      "lexemeId": "en.vb.tackle",
+      "fr": "s'attaquer à un problème",
+      "accepted": [
+        "tackle",
+        "to tackle"
+      ],
+      "hint": "t_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.handle.x0",
+      "lexemeId": "en.vb.handle",
+      "fr": "Je m'occupe du reste, ne t'inquiète pas.",
+      "sentence": "I'll ___ the rest, don't worry.",
+      "accepted": [
+        "handle"
+      ],
+      "hint": "h_____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.vb.handle.x1",
+      "lexemeId": "en.vb.handle",
+      "prompt": "Il a bien encaissé la critique. → He ___ the criticism well.",
+      "options": [
+        "handled",
+        "supported",
+        "assumed",
+        "resisted"
+      ],
+      "answer": "handled",
+      "why": "« Support » est un faux ami : il veut dire soutenir, pas supporter. Ici c'est « handled »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.grasp.x0",
+      "lexemeId": "en.vb.grasp",
+      "fr": "Elle a une bonne maîtrise du sujet.",
+      "sentence": "She has a good ___ of the subject.",
+      "accepted": [
+        "grasp",
+        "command"
+      ],
+      "hint": "g____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.vb.grasp.x1",
+      "lexemeId": "en.vb.grasp",
+      "fr": "saisir, comprendre pleinement",
+      "accepted": [
+        "grasp",
+        "to grasp"
+      ],
+      "hint": "g____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.spot.x0",
+      "lexemeId": "en.vb.spot",
+      "fr": "Elle a repéré l'erreur immédiatement.",
+      "sentence": "She ___ the mistake straight away.",
+      "accepted": [
+        "spotted",
+        "noticed"
+      ],
+      "hint": "s______d"
+    },
+    {
+      "kind": "listen",
+      "id": "en.vb.spot.x1",
+      "lexemeId": "en.vb.spot",
+      "text": "Well spotted, I hadn't seen that.",
+      "fr": "Bien vu, je ne l'avais pas remarqué."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.reckon.x0",
+      "lexemeId": "en.vb.reckon",
+      "fr": "Je pense qu'on va arriver en retard.",
+      "sentence": "I ___ we'll be late.",
+      "accepted": [
+        "reckon",
+        "think"
+      ],
+      "hint": "r_____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.vb.reckon.x1",
+      "lexemeId": "en.vb.reckon",
+      "prompt": "Tu en penses quoi ? (familier britannique) →",
+      "options": [
+        "What do you reckon?",
+        "What do you count?",
+        "What do you calculate?",
+        "What you reckon of?"
+      ],
+      "answer": "What do you reckon?",
+      "why": "« Reckon » signifie ici « penser, estimer », pas « compter » au sens arithmétique."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.vb.come-up-with.x0",
+      "lexemeId": "en.vb.come-up-with",
+      "fr": "Il a trouvé une bien meilleure solution.",
+      "sentence": "He came up ___ a much better solution.",
+      "accepted": [
+        "with"
+      ],
+      "hint": "w___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.vb.come-up-with.x1",
+      "lexemeId": "en.vb.come-up-with",
+      "fr": "trouver, imaginer (une idée, une solution)",
+      "accepted": [
+        "come up with",
+        "to come up with"
+      ],
+      "hint": "c___ u_ w___"
+    }
+  ]
+}

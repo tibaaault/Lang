@@ -1,0 +1,415 @@
+{
+  "id": "en.feelings",
+  "title": "États d'esprit et réactions",
+  "subtitle": "Dire ce qu'on ressent autrement qu'avec happy, sad et tired",
+  "lexemes": [
+    {
+      "id": "en.fe.overwhelmed",
+      "term": "overwhelmed",
+      "pos": "adj",
+      "gloss": "débordé, submergé",
+      "note": "Se dit d'une charge de travail comme d'une émotion : « overwhelmed by the response » = submergé par les réactions.",
+      "examples": [
+        {
+          "text": "I'm completely overwhelmed at work.",
+          "fr": "Je suis complètement débordé au travail."
+        },
+        {
+          "text": "She was overwhelmed by the support.",
+          "fr": "Elle a été submergée par le soutien."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.reluctant",
+      "term": "reluctant",
+      "pos": "adj",
+      "gloss": "réticent, peu enclin",
+      "note": "« Reluctant to do something ». L'adverbe « reluctantly » = à contrecœur. Marque une hésitation, pas un refus.",
+      "examples": [
+        {
+          "text": "He was reluctant to admit it.",
+          "fr": "Il était réticent à l'admettre."
+        },
+        {
+          "text": "She agreed, though reluctantly.",
+          "fr": "Elle a accepté, mais à contrecœur."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.keen",
+      "term": "keen",
+      "pos": "adj",
+      "gloss": "enthousiaste, motivé ; désireux de",
+      "note": "« Keen on something » = passionné par ; « keen to do something » = pressé de faire. Très britannique et très courant.",
+      "examples": [
+        {
+          "text": "She's keen on photography.",
+          "fr": "Elle est passionnée de photographie."
+        },
+        {
+          "text": "I'm keen to get started.",
+          "fr": "J'ai hâte de commencer."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.upset",
+      "term": "upset",
+      "pos": "adj",
+      "gloss": "contrarié, peiné, bouleversé",
+      "note": "Couvre un large éventail, de l'agacement au chagrin. « Don't get upset » = ne le prends pas mal. Le participe passé est identique à l'infinitif.",
+      "examples": [
+        {
+          "text": "She was upset about the decision.",
+          "fr": "Elle était contrariée par la décision."
+        },
+        {
+          "text": "I didn't mean to upset you.",
+          "fr": "Je ne voulais pas te blesser."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.thrilled",
+      "term": "thrilled",
+      "pos": "adj",
+      "gloss": "ravi, enchanté",
+      "note": "Beaucoup plus fort que « happy » : marque un enthousiasme visible. « I'd be thrilled » = ça me ferait très plaisir.",
+      "examples": [
+        {
+          "text": "We're thrilled with the result.",
+          "fr": "Nous sommes ravis du résultat."
+        },
+        {
+          "text": "He was thrilled to be invited.",
+          "fr": "Il était enchanté d'être invité."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.relieved",
+      "term": "relieved",
+      "pos": "adj",
+      "gloss": "soulagé",
+      "note": "« Relieved that... » ou « relieved to hear... ». Le nom « relief » = le soulagement : « what a relief! ».",
+      "examples": [
+        {
+          "text": "I'm relieved it's over.",
+          "fr": "Je suis soulagé que ce soit fini."
+        },
+        {
+          "text": "What a relief!",
+          "fr": "Quel soulagement !"
+        }
+      ]
+    },
+    {
+      "id": "en.fe.self-conscious",
+      "term": "self-conscious",
+      "pos": "adj",
+      "gloss": "mal à l'aise, complexé (sous le regard des autres)",
+      "note": "Faux ami : rien à voir avec la conscience de soi au sens philosophique. « Self-conscious about my accent » = gêné par mon accent.",
+      "examples": [
+        {
+          "text": "I feel self-conscious speaking English.",
+          "fr": "Je me sens mal à l'aise quand je parle anglais."
+        },
+        {
+          "text": "She's self-conscious about her height.",
+          "fr": "Elle est complexée par sa taille."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.fed-up",
+      "term": "fed up",
+      "pos": "expr",
+      "gloss": "en avoir marre, être las",
+      "note": "« Fed up with something » = en avoir assez de. Registre familier mais parfaitement acceptable à l'oral.",
+      "examples": [
+        {
+          "text": "I'm fed up with waiting.",
+          "fr": "J'en ai marre d'attendre."
+        },
+        {
+          "text": "She got fed up and left.",
+          "fr": "Elle en a eu assez et elle est partie."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.frustrating",
+      "term": "frustrating",
+      "pos": "adj",
+      "gloss": "agaçant, exaspérant",
+      "note": "Piège fréquent : « I'm frustrated » (je suis agacé) décrit la personne, « it's frustrating » (c'est agaçant) décrit la cause. Ne pas les intervertir.",
+      "examples": [
+        {
+          "text": "It's frustrating to start over.",
+          "fr": "C'est agaçant de tout recommencer."
+        },
+        {
+          "text": "I get frustrated when it crashes.",
+          "fr": "Ça m'agace quand ça plante."
+        }
+      ]
+    },
+    {
+      "id": "en.fe.dread",
+      "term": "to dread",
+      "pos": "verb",
+      "gloss": "redouter, appréhender",
+      "note": "L'exact opposé de « look forward to ». Suivi d'un nom ou d'un verbe en -ing : « I dread Mondays », « I dread telling him ».",
+      "examples": [
+        {
+          "text": "I dread Monday mornings.",
+          "fr": "Je redoute les lundis matin."
+        },
+        {
+          "text": "She dreads having to explain it again.",
+          "fr": "Elle appréhende de devoir l'expliquer encore."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.fe.overwhelmed.x0",
+      "lexemeId": "en.fe.overwhelmed",
+      "fr": "Je suis complètement débordé en ce moment.",
+      "sentence": "I'm completely ___ at the moment.",
+      "accepted": [
+        "overwhelmed",
+        "swamped"
+      ],
+      "hint": "o__________d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.fe.overwhelmed.x1",
+      "lexemeId": "en.fe.overwhelmed",
+      "fr": "débordé, submergé (par le travail, une émotion)",
+      "accepted": [
+        "overwhelmed"
+      ],
+      "hint": "o__________d"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.reluctant.x0",
+      "lexemeId": "en.fe.reluctant",
+      "fr": "Il était réticent à en parler.",
+      "sentence": "He was ___ to talk about it.",
+      "accepted": [
+        "reluctant",
+        "unwilling"
+      ],
+      "hint": "r________t"
+    },
+    {
+      "kind": "choice",
+      "id": "en.fe.reluctant.x1",
+      "lexemeId": "en.fe.reluctant",
+      "prompt": "Elle a accepté à contrecœur. → She agreed ___.",
+      "options": [
+        "reluctantly",
+        "reluctant",
+        "unwillingly to",
+        "against heart"
+      ],
+      "answer": "reluctantly",
+      "why": "Après un verbe, il faut l'adverbe : « agreed reluctantly »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.keen.x0",
+      "lexemeId": "en.fe.keen",
+      "fr": "J'ai hâte de commencer ce projet.",
+      "sentence": "I'm ___ to get started on this project.",
+      "accepted": [
+        "keen",
+        "eager"
+      ],
+      "hint": "k___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.fe.keen.x1",
+      "lexemeId": "en.fe.keen",
+      "fr": "enthousiaste, motivé, désireux de",
+      "accepted": [
+        "keen"
+      ],
+      "hint": "k___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.upset.x0",
+      "lexemeId": "en.fe.upset",
+      "fr": "Elle était très contrariée par cette remarque.",
+      "sentence": "She was really ___ about that remark.",
+      "accepted": [
+        "upset"
+      ],
+      "nearMisses": [
+        {
+          "word": "angry",
+          "why": "« Angry » veut dire en colère. « Upset » couvre la contrariété et la peine, ce que dit ici « contrarié »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.fe.upset.x1",
+      "lexemeId": "en.fe.upset",
+      "text": "I hope I didn't upset anyone.",
+      "fr": "J'espère que je n'ai blessé personne."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.thrilled.x0",
+      "lexemeId": "en.fe.thrilled",
+      "fr": "Nous sommes ravis du résultat.",
+      "sentence": "We're absolutely ___ with the result.",
+      "accepted": [
+        "thrilled",
+        "delighted"
+      ],
+      "hint": "t_______d"
+    },
+    {
+      "kind": "choice",
+      "id": "en.fe.thrilled.x1",
+      "lexemeId": "en.fe.thrilled",
+      "prompt": "Il était enchanté d'être invité. → He was ___ to be invited.",
+      "options": [
+        "thrilled",
+        "thrilling",
+        "thrill",
+        "thriller"
+      ],
+      "answer": "thrilled",
+      "why": "La personne qui ressent l'émotion prend le participe en -ed ; « thrilling » qualifie ce qui la provoque."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.relieved.x0",
+      "lexemeId": "en.fe.relieved",
+      "fr": "Je suis soulagé que tout se soit bien passé.",
+      "sentence": "I'm ___ that everything went well.",
+      "accepted": [
+        "relieved"
+      ],
+      "hint": "r_______d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.fe.relieved.x1",
+      "lexemeId": "en.fe.relieved",
+      "fr": "soulagé",
+      "accepted": [
+        "relieved"
+      ],
+      "hint": "r_______d"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.self-conscious.x0",
+      "lexemeId": "en.fe.self-conscious",
+      "fr": "Je me sens mal à l'aise quand je parle en réunion.",
+      "sentence": "I feel ___ when I speak in meetings.",
+      "accepted": [
+        "self-conscious"
+      ],
+      "hint": "s___-c________s"
+    },
+    {
+      "kind": "choice",
+      "id": "en.fe.self-conscious.x1",
+      "lexemeId": "en.fe.self-conscious",
+      "prompt": "complexé par son accent → ___ about his accent",
+      "options": [
+        "self-conscious",
+        "self-aware",
+        "conscious",
+        "auto-conscious"
+      ],
+      "answer": "self-conscious",
+      "why": "« Self-aware » signifie lucide sur soi-même, ce qui est positif. « Self-conscious » décrit la gêne."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.fed-up.x0",
+      "lexemeId": "en.fe.fed-up",
+      "fr": "J'en ai marre de perdre mon temps là-dessus.",
+      "sentence": "I'm fed ___ with wasting my time on this.",
+      "accepted": [
+        "up"
+      ],
+      "hint": "u_"
+    },
+    {
+      "kind": "recall",
+      "id": "en.fe.fed-up.x1",
+      "lexemeId": "en.fe.fed-up",
+      "fr": "en avoir marre de",
+      "accepted": [
+        "fed up",
+        "be fed up",
+        "fed up with"
+      ],
+      "hint": "f__ u_"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.frustrating.x0",
+      "lexemeId": "en.fe.frustrating",
+      "fr": "C'est agaçant de devoir tout refaire.",
+      "sentence": "It's ___ to have to redo everything.",
+      "accepted": [
+        "frustrating"
+      ],
+      "nearMisses": [
+        {
+          "word": "frustrated",
+          "why": "« Frustrated » qualifie la personne qui ressent l'agacement. Ici, le sujet est la situation : « frustrating »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.fe.frustrating.x1",
+      "lexemeId": "en.fe.frustrating",
+      "prompt": "Ça m'agace quand ça plante. → I get ___ when it crashes.",
+      "options": [
+        "frustrated",
+        "frustrating",
+        "frustration",
+        "frustrate"
+      ],
+      "answer": "frustrated",
+      "why": "La personne prend le participe en -ed, la cause prend celui en -ing."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fe.dread.x0",
+      "lexemeId": "en.fe.dread",
+      "fr": "J'appréhende de devoir lui annoncer.",
+      "sentence": "I ___ having to tell him.",
+      "accepted": [
+        "dread"
+      ],
+      "hint": "d____"
+    },
+    {
+      "kind": "listen",
+      "id": "en.fe.dread.x1",
+      "lexemeId": "en.fe.dread",
+      "text": "I dread to think what that cost.",
+      "fr": "Je n'ose pas imaginer ce que ça a coûté."
+    }
+  ]
+}

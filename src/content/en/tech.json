@@ -1,0 +1,418 @@
+{
+  "id": "en.tech",
+  "title": "Numérique et technologie",
+  "subtitle": "Le vocabulaire des applications, des pannes et des mises à jour",
+  "lexemes": [
+    {
+      "id": "en.tc.glitch",
+      "term": "a glitch",
+      "pos": "noun",
+      "gloss": "un bug passager, un raté",
+      "note": "Plus léger qu'un « bug » : un dysfonctionnement bref, souvent sans cause identifiée. « A minor glitch » = un petit couac.",
+      "examples": [
+        {
+          "text": "It was just a glitch.",
+          "fr": "Ce n'était qu'un petit raté."
+        },
+        {
+          "text": "A glitch in the system delayed everything.",
+          "fr": "Un problème technique a tout retardé."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.crash",
+      "term": "to crash",
+      "pos": "verb",
+      "gloss": "planter, se bloquer",
+      "note": "« The app crashed » = l'application a planté. Ne pas confondre avec « to freeze », qui décrit un blocage sans fermeture.",
+      "examples": [
+        {
+          "text": "The app crashed again.",
+          "fr": "L'application a encore planté."
+        },
+        {
+          "text": "My laptop froze halfway through.",
+          "fr": "Mon ordinateur s'est bloqué en cours de route."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.seamless",
+      "term": "seamless",
+      "pos": "adj",
+      "gloss": "fluide, sans accroc",
+      "note": "Littéralement « sans couture ». Décrit une expérience où les transitions ne se remarquent pas : « a seamless experience ».",
+      "examples": [
+        {
+          "text": "The transition was seamless.",
+          "fr": "La transition s'est faite sans accroc."
+        },
+        {
+          "text": "It offers a seamless experience.",
+          "fr": "Cela offre une expérience fluide."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.feature",
+      "term": "a feature",
+      "pos": "noun",
+      "gloss": "une fonctionnalité",
+      "note": "Faux ami partiel : « feature » ne veut pas dire « facture ». « A new feature » = une nouvelle fonctionnalité.",
+      "examples": [
+        {
+          "text": "They added a new feature last week.",
+          "fr": "Ils ont ajouté une fonctionnalité la semaine dernière."
+        },
+        {
+          "text": "That's not a bug, it's a feature.",
+          "fr": "Ce n'est pas un bug, c'est une fonctionnalité."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.outdated",
+      "term": "outdated",
+      "pos": "adj",
+      "gloss": "obsolète, dépassé",
+      "note": "« An outdated version » = une version périmée. « Out of date » en est l'équivalent, écrit en trois mots.",
+      "examples": [
+        {
+          "text": "Your browser is outdated.",
+          "fr": "Votre navigateur est obsolète."
+        },
+        {
+          "text": "The information is out of date.",
+          "fr": "L'information n'est plus à jour."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.user-friendly",
+      "term": "user-friendly",
+      "pos": "adj",
+      "gloss": "intuitif, facile à utiliser",
+      "note": "Toujours avec le trait d'union. Le suffixe « -friendly » se combine largement : « eco-friendly », « beginner-friendly ».",
+      "examples": [
+        {
+          "text": "The interface is very user-friendly.",
+          "fr": "L'interface est très intuitive."
+        },
+        {
+          "text": "It's a beginner-friendly tool.",
+          "fr": "C'est un outil adapté aux débutants."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.troubleshoot",
+      "term": "to troubleshoot",
+      "pos": "verb",
+      "gloss": "dépanner, diagnostiquer un problème",
+      "note": "Chercher méthodiquement l'origine d'une panne. Le nom « troubleshooting » désigne la démarche de diagnostic.",
+      "examples": [
+        {
+          "text": "Let me troubleshoot the connection.",
+          "fr": "Laisse-moi diagnostiquer la connexion."
+        },
+        {
+          "text": "Basic troubleshooting solved it.",
+          "fr": "Un diagnostic de base a suffi."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.roll-back",
+      "term": "to roll back",
+      "pos": "verb",
+      "gloss": "revenir en arrière, annuler une mise à jour",
+      "note": "L'inverse de « roll out ». « Roll back the update » = revenir à la version précédente.",
+      "examples": [
+        {
+          "text": "We had to roll back the update.",
+          "fr": "Nous avons dû revenir sur la mise à jour."
+        },
+        {
+          "text": "They rolled it back within an hour.",
+          "fr": "Ils sont revenus en arrière en moins d'une heure."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.workload",
+      "term": "a workload",
+      "pos": "noun",
+      "gloss": "une charge de travail",
+      "note": "« A heavy workload » = une lourde charge. Ne pas confondre avec « workflow », qui désigne l'enchaînement des tâches.",
+      "examples": [
+        {
+          "text": "My workload has doubled.",
+          "fr": "Ma charge de travail a doublé."
+        },
+        {
+          "text": "We need to spread the workload.",
+          "fr": "Il faut répartir la charge de travail."
+        }
+      ]
+    },
+    {
+      "id": "en.tc.rely-on",
+      "term": "to rely on",
+      "pos": "verb",
+      "gloss": "compter sur, dépendre de",
+      "note": "« Rely on someone » = compter sur quelqu'un. L'adjectif « reliable » signifie fiable, et « reliance » la dépendance.",
+      "examples": [
+        {
+          "text": "We rely on that tool every day.",
+          "fr": "Nous dépendons de cet outil tous les jours."
+        },
+        {
+          "text": "Can I rely on you for this?",
+          "fr": "Puis-je compter sur toi pour ça ?"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.tc.glitch.x0",
+      "lexemeId": "en.tc.glitch",
+      "fr": "Ce n'était qu'un petit problème passager.",
+      "sentence": "It was just a minor ___.",
+      "accepted": [
+        "glitch"
+      ],
+      "hint": "g_____h"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tc.glitch.x1",
+      "lexemeId": "en.tc.glitch",
+      "fr": "un bug passager, un raté technique",
+      "accepted": [
+        "glitch",
+        "a glitch"
+      ],
+      "hint": "g_____h"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.crash.x0",
+      "lexemeId": "en.tc.crash",
+      "fr": "L'application plante dès que j'ouvre ce fichier.",
+      "sentence": "The app ___ as soon as I open that file.",
+      "accepted": [
+        "crashes"
+      ],
+      "hint": "c______s"
+    },
+    {
+      "kind": "choice",
+      "id": "en.tc.crash.x1",
+      "lexemeId": "en.tc.crash",
+      "prompt": "Mon ordinateur s'est bloqué. → My laptop ___.",
+      "options": [
+        "froze",
+        "crashed",
+        "broke",
+        "stopped"
+      ],
+      "answer": "froze",
+      "why": "« Freeze » décrit un écran figé ; « crash » implique que le programme s'est fermé."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.seamless.x0",
+      "lexemeId": "en.tc.seamless",
+      "fr": "La migration s'est faite sans le moindre accroc.",
+      "sentence": "The migration was completely ___.",
+      "accepted": [
+        "seamless"
+      ],
+      "hint": "s_______s"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tc.seamless.x1",
+      "lexemeId": "en.tc.seamless",
+      "fr": "fluide, sans accroc ni rupture",
+      "accepted": [
+        "seamless"
+      ],
+      "hint": "s_______s"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.feature.x0",
+      "lexemeId": "en.tc.feature",
+      "fr": "Ils ont ajouté une fonctionnalité très pratique.",
+      "sentence": "They added a really handy ___.",
+      "accepted": [
+        "feature"
+      ],
+      "nearMisses": [
+        {
+          "word": "functionality",
+          "why": "« Functionality » désigne l'ensemble des capacités d'un produit. Une fonctionnalité précise est « a feature »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.tc.feature.x1",
+      "lexemeId": "en.tc.feature",
+      "fr": "une fonctionnalité",
+      "accepted": [
+        "feature",
+        "a feature"
+      ],
+      "hint": "f______e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.outdated.x0",
+      "lexemeId": "en.tc.outdated",
+      "fr": "Cette version du logiciel est obsolète.",
+      "sentence": "This version of the software is ___.",
+      "accepted": [
+        "outdated"
+      ],
+      "hint": "o_______d"
+    },
+    {
+      "kind": "choice",
+      "id": "en.tc.outdated.x1",
+      "lexemeId": "en.tc.outdated",
+      "prompt": "L'information n'est plus à jour. → The information is ___.",
+      "options": [
+        "out of date",
+        "out of time",
+        "outdate",
+        "off date"
+      ],
+      "answer": "out of date",
+      "why": "« Out of date » = périmé. « Out of time » signifie à court de temps."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.user-friendly.x0",
+      "lexemeId": "en.tc.user-friendly",
+      "fr": "L'interface est vraiment intuitive.",
+      "sentence": "The interface is really ___.",
+      "accepted": [
+        "user-friendly"
+      ],
+      "hint": "u___-f______y"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tc.user-friendly.x1",
+      "lexemeId": "en.tc.user-friendly",
+      "fr": "intuitif, facile à prendre en main",
+      "accepted": [
+        "user-friendly"
+      ],
+      "hint": "u___-f______y"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.troubleshoot.x0",
+      "lexemeId": "en.tc.troubleshoot",
+      "fr": "Je vais essayer de diagnostiquer le problème.",
+      "sentence": "I'll try to ___ the problem.",
+      "accepted": [
+        "troubleshoot"
+      ],
+      "hint": "t___________t"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tc.troubleshoot.x1",
+      "lexemeId": "en.tc.troubleshoot",
+      "fr": "diagnostiquer et régler une panne",
+      "accepted": [
+        "troubleshoot",
+        "to troubleshoot"
+      ],
+      "hint": "t___________t"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.roll-back.x0",
+      "lexemeId": "en.tc.roll-back",
+      "fr": "Ils ont dû revenir sur la mise à jour.",
+      "sentence": "They had to roll ___ the update.",
+      "accepted": [
+        "back"
+      ],
+      "nearMisses": [
+        {
+          "word": "out",
+          "why": "« Roll out » signifie déployer. Revenir en arrière, c'est « roll back » — le contraire exact."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.tc.roll-back.x1",
+      "lexemeId": "en.tc.roll-back",
+      "text": "We rolled back the change immediately.",
+      "fr": "Nous sommes revenus sur la modification immédiatement."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.workload.x0",
+      "lexemeId": "en.tc.workload",
+      "fr": "Ma charge de travail a doublé ce trimestre.",
+      "sentence": "My ___ has doubled this quarter.",
+      "accepted": [
+        "workload"
+      ],
+      "nearMisses": [
+        {
+          "word": "workflow",
+          "why": "« Workflow » désigne l'organisation des étapes de travail, pas son volume. La charge, c'est « workload »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.tc.workload.x1",
+      "lexemeId": "en.tc.workload",
+      "fr": "une charge de travail",
+      "accepted": [
+        "workload",
+        "a workload"
+      ],
+      "hint": "w_______d"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tc.rely-on.x0",
+      "lexemeId": "en.tc.rely-on",
+      "fr": "On dépend beaucoup trop de ce seul service.",
+      "sentence": "We ___ far too much on that one service.",
+      "accepted": [
+        "rely",
+        "depend"
+      ],
+      "hint": "r___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.tc.rely-on.x1",
+      "lexemeId": "en.tc.rely-on",
+      "prompt": "Puis-je compter sur toi ? →",
+      "options": [
+        "Can I rely on you?",
+        "Can I rely you?",
+        "Can I count you?",
+        "Can I rely to you?"
+      ],
+      "answer": "Can I rely on you?",
+      "why": "« Rely » et « count » se construisent tous deux avec « on »."
+    }
+  ]
+}

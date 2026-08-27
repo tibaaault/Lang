@@ -1,0 +1,401 @@
+{
+  "id": "en.idioms2",
+  "title": "Expressions du travail et de la décision",
+  "subtitle": "Hésiter, s'engager, temporiser : les tournures des réunions et des choix difficiles",
+  "lexemes": [
+    {
+      "id": "en.i2.worth-shot",
+      "term": "to be worth a shot",
+      "pos": "expr",
+      "gloss": "valoir le coup d'essayer",
+      "note": "« It's worth a shot » = on peut toujours essayer. « Give it a shot » = tente le coup.",
+      "examples": [
+        {
+          "text": "It's worth a shot.",
+          "fr": "Ça vaut le coup d'essayer."
+        },
+        {
+          "text": "Give it a shot and see.",
+          "fr": "Tente le coup et on verra."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.cold-feet",
+      "term": "to get cold feet",
+      "pos": "expr",
+      "gloss": "se dégonfler, avoir la trouille au dernier moment",
+      "note": "S'emploie surtout juste avant un engagement important : un mariage, un contrat, un départ.",
+      "examples": [
+        {
+          "text": "He got cold feet at the last minute.",
+          "fr": "Il s'est dégonflé à la dernière minute."
+        },
+        {
+          "text": "Don't get cold feet now.",
+          "fr": "Ne te dégonfle pas maintenant."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.touch-base",
+      "term": "to touch base",
+      "pos": "expr",
+      "gloss": "faire un point rapide avec quelqu'un",
+      "note": "Vocabulaire d'entreprise, venu du baseball : « let's touch base next week » = on refait un point la semaine prochaine.",
+      "examples": [
+        {
+          "text": "Let's touch base on Friday.",
+          "fr": "On refait un point vendredi."
+        },
+        {
+          "text": "I just wanted to touch base.",
+          "fr": "Je voulais juste faire un point."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.play-by-ear",
+      "term": "to play it by ear",
+      "pos": "expr",
+      "gloss": "improviser, aviser sur le moment",
+      "note": "Vient du fait de jouer de la musique sans partition. « Let's play it by ear » = on verra sur le moment.",
+      "examples": [
+        {
+          "text": "Let's play it by ear.",
+          "fr": "On verra sur le moment."
+        },
+        {
+          "text": "We played it by ear and it worked.",
+          "fr": "On a improvisé et ça a marché."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.long-shot",
+      "term": "a long shot",
+      "pos": "expr",
+      "gloss": "un coup à tenter, avec peu de chances",
+      "note": "« It's a long shot, but... » introduit une demande peu susceptible d'aboutir. « Not by a long shot » = loin de là.",
+      "examples": [
+        {
+          "text": "It's a long shot, but worth trying.",
+          "fr": "Il y a peu de chances, mais ça vaut le coup."
+        },
+        {
+          "text": "He's not ready, not by a long shot.",
+          "fr": "Il n'est pas prêt, loin de là."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.extra-mile",
+      "term": "to go the extra mile",
+      "pos": "expr",
+      "gloss": "se donner du mal, faire plus que le nécessaire",
+      "note": "Toujours positif : marque un effort supplémentaire volontaire, souvent au service de quelqu'un.",
+      "examples": [
+        {
+          "text": "She always goes the extra mile.",
+          "fr": "Elle se donne toujours du mal."
+        },
+        {
+          "text": "They went the extra mile for us.",
+          "fr": "Ils se sont donné du mal pour nous."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.jump-gun",
+      "term": "to jump the gun",
+      "pos": "expr",
+      "gloss": "brûler les étapes, agir trop tôt",
+      "note": "Image du coureur qui part avant le coup de pistolet. « I may be jumping the gun, but... » sert à s'excuser d'anticiper.",
+      "examples": [
+        {
+          "text": "I think we jumped the gun on this.",
+          "fr": "Je crois qu'on a brûlé les étapes."
+        },
+        {
+          "text": "Don't jump the gun, wait for confirmation.",
+          "fr": "Ne brûle pas les étapes, attends la confirmation."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.off-hook",
+      "term": "to be off the hook",
+      "pos": "expr",
+      "gloss": "être tiré d'affaire, ne plus être inquiété",
+      "note": "« You're off the hook » = tu es dispensé, on ne t'en veut plus. « Let someone off the hook » = laisser quelqu'un s'en tirer.",
+      "examples": [
+        {
+          "text": "You're off the hook this time.",
+          "fr": "Tu es tiré d'affaire, cette fois."
+        },
+        {
+          "text": "They let him off the hook.",
+          "fr": "Ils l'ont laissé s'en tirer."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.pinch-salt",
+      "term": "to take something with a pinch of salt",
+      "pos": "expr",
+      "gloss": "prendre avec des pincettes",
+      "note": "« With a pinch of salt » au Royaume-Uni, « with a grain of salt » aux États-Unis. Signifie : ne pas prendre pour argent comptant.",
+      "examples": [
+        {
+          "text": "Take that figure with a pinch of salt.",
+          "fr": "Prends ce chiffre avec des pincettes."
+        },
+        {
+          "text": "I'd take his version with a grain of salt.",
+          "fr": "Je prendrais sa version avec des pincettes."
+        }
+      ]
+    },
+    {
+      "id": "en.i2.up-in-air",
+      "term": "to be up in the air",
+      "pos": "expr",
+      "gloss": "ne pas être encore décidé, rester en suspens",
+      "note": "« It's still up in the air » = rien n'est encore fixé. Décrit une situation en attente, pas une hésitation personnelle.",
+      "examples": [
+        {
+          "text": "The date is still up in the air.",
+          "fr": "La date n'est pas encore fixée."
+        },
+        {
+          "text": "Everything's up in the air right now.",
+          "fr": "Tout est en suspens pour l'instant."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.i2.worth-shot.x0",
+      "lexemeId": "en.i2.worth-shot",
+      "fr": "Ça ne coûte rien, ça vaut le coup d'essayer.",
+      "sentence": "It costs nothing, it's worth a ___.",
+      "accepted": [
+        "shot",
+        "try",
+        "go"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.i2.worth-shot.x1",
+      "lexemeId": "en.i2.worth-shot",
+      "fr": "valoir le coup d'essayer",
+      "accepted": [
+        "worth a shot",
+        "be worth a shot"
+      ],
+      "hint": "w____ a s___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.cold-feet.x0",
+      "lexemeId": "en.i2.cold-feet",
+      "fr": "Il s'est dégonflé la veille de la signature.",
+      "sentence": "He got cold ___ the day before signing.",
+      "accepted": [
+        "feet"
+      ],
+      "hint": "f___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.i2.cold-feet.x1",
+      "lexemeId": "en.i2.cold-feet",
+      "prompt": "se dégonfler au dernier moment →",
+      "options": [
+        "get cold feet",
+        "have cold feet's",
+        "get cold foot",
+        "take cold feet"
+      ],
+      "answer": "get cold feet",
+      "why": "L'expression est figée au pluriel avec « get » : « get cold feet »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.touch-base.x0",
+      "lexemeId": "en.i2.touch-base",
+      "fr": "On refait un point rapide en fin de semaine.",
+      "sentence": "Let's touch ___ at the end of the week.",
+      "accepted": [
+        "base"
+      ],
+      "hint": "b___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.i2.touch-base.x1",
+      "lexemeId": "en.i2.touch-base",
+      "text": "I'll touch base with you tomorrow.",
+      "fr": "Je fais un point avec toi demain."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.play-by-ear.x0",
+      "lexemeId": "en.i2.play-by-ear",
+      "fr": "On n'a rien prévu, on verra sur le moment.",
+      "sentence": "Nothing's planned, let's play it by ___.",
+      "accepted": [
+        "ear"
+      ],
+      "hint": "e__"
+    },
+    {
+      "kind": "recall",
+      "id": "en.i2.play-by-ear.x1",
+      "lexemeId": "en.i2.play-by-ear",
+      "fr": "improviser, aviser sur le moment",
+      "accepted": [
+        "play it by ear"
+      ],
+      "hint": "p___ i_ b_ e__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.long-shot.x0",
+      "lexemeId": "en.i2.long-shot",
+      "fr": "Il y a peu de chances, mais tentons quand même.",
+      "sentence": "It's a long ___, but let's try anyway.",
+      "accepted": [
+        "shot"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.i2.long-shot.x1",
+      "lexemeId": "en.i2.long-shot",
+      "fr": "un coup à tenter, avec peu de chances",
+      "accepted": [
+        "a long shot",
+        "long shot"
+      ],
+      "hint": "a l___ s___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.extra-mile.x0",
+      "lexemeId": "en.i2.extra-mile",
+      "fr": "Elle en fait toujours plus que ce qu'on lui demande.",
+      "sentence": "She always goes the ___ mile.",
+      "accepted": [
+        "extra"
+      ],
+      "hint": "e____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.i2.extra-mile.x1",
+      "lexemeId": "en.i2.extra-mile",
+      "prompt": "faire plus que le nécessaire →",
+      "options": [
+        "go the extra mile",
+        "make the extra mile",
+        "do the extra mile",
+        "take the extra mile"
+      ],
+      "answer": "go the extra mile",
+      "why": "Le verbe de cette expression figée est « go »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.jump-gun.x0",
+      "lexemeId": "en.i2.jump-gun",
+      "fr": "On a brûlé les étapes en annonçant si tôt.",
+      "sentence": "We jumped the ___ by announcing so early.",
+      "accepted": [
+        "gun"
+      ],
+      "hint": "g__"
+    },
+    {
+      "kind": "recall",
+      "id": "en.i2.jump-gun.x1",
+      "lexemeId": "en.i2.jump-gun",
+      "fr": "brûler les étapes, agir trop tôt",
+      "accepted": [
+        "jump the gun"
+      ],
+      "hint": "j___ t__ g__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.off-hook.x0",
+      "lexemeId": "en.i2.off-hook",
+      "fr": "Tu es tiré d'affaire pour cette fois.",
+      "sentence": "You're off the ___ this time.",
+      "accepted": [
+        "hook"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.i2.off-hook.x1",
+      "lexemeId": "en.i2.off-hook",
+      "text": "Looks like we're off the hook.",
+      "fr": "On dirait qu'on est tirés d'affaire."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.pinch-salt.x0",
+      "lexemeId": "en.i2.pinch-salt",
+      "fr": "Prends ce chiffre avec des pincettes.",
+      "sentence": "Take that figure with a pinch of ___.",
+      "accepted": [
+        "salt"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.i2.pinch-salt.x1",
+      "lexemeId": "en.i2.pinch-salt",
+      "fr": "prendre avec des pincettes, ne pas prendre pour argent comptant",
+      "accepted": [
+        "with a pinch of salt",
+        "take with a pinch of salt",
+        "with a grain of salt"
+      ],
+      "hint": "w___ a p____ o_ s___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.i2.up-in-air.x0",
+      "lexemeId": "en.i2.up-in-air",
+      "fr": "La date n'est toujours pas fixée.",
+      "sentence": "The date is still up in the ___.",
+      "accepted": [
+        "air"
+      ],
+      "hint": "a__"
+    },
+    {
+      "kind": "choice",
+      "id": "en.i2.up-in-air.x1",
+      "lexemeId": "en.i2.up-in-air",
+      "prompt": "Rien n'est encore décidé. → It's still ___.",
+      "options": [
+        "up in the air",
+        "in the air up",
+        "on the air",
+        "up to the air"
+      ],
+      "answer": "up in the air",
+      "why": "« On the air » signifie être à l'antenne, en direct. L'expression pour « en suspens » est « up in the air »."
+    }
+  ]
+}

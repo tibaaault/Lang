@@ -7,7 +7,7 @@
 
 import { useSyncExternalStore } from 'react'
 import type { User } from '@supabase/supabase-js'
-import { supabase, isRemoteEnabled } from './supabase'
+import { getSupabase, isRemoteEnabled } from './supabase'
 import {
   getProgress,
   replaceProgress,
@@ -127,13 +127,14 @@ export function publicSummary(p: Progress) {
 let pushTimer: ReturnType<typeof setTimeout> | null = null
 
 function schedulePush(progress: Progress) {
-  if (!supabase || !snapshot.user) return
+  if (!snapshot.user) return
   if (pushTimer) clearTimeout(pushTimer)
   // On écrit une fois la salve de réponses terminée, pas à chaque question.
   pushTimer = setTimeout(() => void push(progress), 4000)
 }
 
 async function push(progress: Progress) {
+  const supabase = await getSupabase()
   if (!supabase || !snapshot.user) return
   set({ sync: 'syncing', error: null })
   const { error } = await supabase.from('progress').upsert({
@@ -157,6 +158,7 @@ async function push(progress: Progress) {
 }
 
 async function pullAndMerge(user: User) {
+  const supabase = await getSupabase()
   if (!supabase) return
   set({ sync: 'syncing', error: null })
 
@@ -189,6 +191,7 @@ async function pullAndMerge(user: User) {
  * n'inscrire dans la liste que les comptes ayant réellement ouvert Lang.
  */
 async function ensureProfile(user: User): Promise<string | null> {
+  const supabase = await getSupabase()
   if (!supabase) return null
   const pseudo =
     (user.user_metadata?.pseudo as string | undefined)?.trim() ||
@@ -202,6 +205,7 @@ async function ensureProfile(user: User): Promise<string | null> {
 }
 
 export async function initAuth() {
+  const supabase = await getSupabase()
   if (!supabase) return
   setProgressListener(schedulePush)
 
@@ -219,6 +223,7 @@ export async function initAuth() {
 }
 
 export async function signUp(email: string, password: string, pseudo: string) {
+  const supabase = await getSupabase()
   if (!supabase) throw new Error('Synchronisation non configurée.')
   // Le pseudo est aussi rangé dans les métadonnées du compte : si la création
   // du profil échoue juste après (réseau coupé, inscription à confirmer par
@@ -238,18 +243,21 @@ export async function signUp(email: string, password: string, pseudo: string) {
 }
 
 export async function signIn(email: string, password: string) {
+  const supabase = await getSupabase()
   if (!supabase) throw new Error('Synchronisation non configurée.')
   const { error } = await supabase.auth.signInWithPassword({ email, password })
   if (error) throw error
 }
 
 export async function signOut() {
+  const supabase = await getSupabase()
   if (!supabase) return
   await supabase.auth.signOut()
   set({ user: null, pseudo: null, sync: 'signed-out' })
 }
 
 export async function fetchProfiles(): Promise<PublicProfile[]> {
+  const supabase = await getSupabase()
   if (!supabase) return []
   const { data, error } = await supabase
     .from('profiles')

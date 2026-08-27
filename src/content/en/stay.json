@@ -1,0 +1,403 @@
+{
+  "id": "en.stay",
+  "title": "Se loger et s'orienter",
+  "subtitle": "Hôtels, quartiers et directions sur place",
+  "lexemes": [
+    {
+      "id": "en.st.check-out",
+      "term": "to check out",
+      "pos": "verb",
+      "gloss": "libérer la chambre, quitter l'hôtel",
+      "note": "« Check-out is at eleven » = la chambre doit être libérée à onze heures. Signifie aussi jeter un œil : « check this out! ».",
+      "examples": [
+        {
+          "text": "Check-out is at eleven.",
+          "fr": "Le départ se fait à onze heures."
+        },
+        {
+          "text": "We checked out early.",
+          "fr": "Nous avons libéré la chambre tôt."
+        }
+      ]
+    },
+    {
+      "id": "en.st.deposit",
+      "term": "a deposit",
+      "pos": "noun",
+      "gloss": "une caution ; un acompte",
+      "note": "Deux sens : la caution rendue au départ, et l'acompte versé à la réservation. « A security deposit » lève l'ambiguïté.",
+      "examples": [
+        {
+          "text": "They ask for a fifty-euro deposit.",
+          "fr": "Ils demandent une caution de cinquante euros."
+        },
+        {
+          "text": "The deposit is refundable.",
+          "fr": "La caution est remboursable."
+        }
+      ]
+    },
+    {
+      "id": "en.st.amenities",
+      "term": "amenities",
+      "pos": "noun",
+      "gloss": "les équipements, les prestations",
+      "note": "Presque toujours au pluriel. Désigne tout ce qu'un logement met à disposition : wifi, piscine, cuisine.",
+      "examples": [
+        {
+          "text": "The flat has all the usual amenities.",
+          "fr": "L'appartement dispose de tous les équipements habituels."
+        },
+        {
+          "text": "Amenities include a shared kitchen.",
+          "fr": "Les prestations comprennent une cuisine commune."
+        }
+      ]
+    },
+    {
+      "id": "en.st.en-suite",
+      "term": "en suite",
+      "pos": "adj",
+      "gloss": "avec salle de bain privative",
+      "note": "Emprunt au français, mais le sens est propre à l'anglais : « an en suite room » possède sa propre salle de bain.",
+      "examples": [
+        {
+          "text": "Is the room en suite?",
+          "fr": "La chambre a-t-elle une salle de bain privative ?"
+        },
+        {
+          "text": "All rooms are en suite.",
+          "fr": "Toutes les chambres ont leur salle de bain."
+        }
+      ]
+    },
+    {
+      "id": "en.st.walking-distance",
+      "term": "within walking distance",
+      "pos": "expr",
+      "gloss": "accessible à pied",
+      "note": "« Within walking distance of the station » = à distance de marche de la gare. Formule figée, très fréquente dans les annonces.",
+      "examples": [
+        {
+          "text": "It's within walking distance of the beach.",
+          "fr": "C'est à distance de marche de la plage."
+        },
+        {
+          "text": "Everything is within walking distance.",
+          "fr": "Tout est accessible à pied."
+        }
+      ]
+    },
+    {
+      "id": "en.st.off-beaten-track",
+      "term": "off the beaten track",
+      "pos": "expr",
+      "gloss": "hors des sentiers battus",
+      "note": "« Off the beaten path » aux États-Unis. Décrit un lieu peu fréquenté par les touristes.",
+      "examples": [
+        {
+          "text": "We stayed somewhere off the beaten track.",
+          "fr": "Nous avons logé hors des sentiers battus."
+        },
+        {
+          "text": "It's off the beaten path, but worth it.",
+          "fr": "C'est à l'écart, mais ça vaut le détour."
+        }
+      ]
+    },
+    {
+      "id": "en.st.landmark",
+      "term": "a landmark",
+      "pos": "noun",
+      "gloss": "un monument, un point de repère",
+      "note": "Un bâtiment ou un lieu qui sert de repère visuel. Au figuré : « a landmark decision » = une décision historique.",
+      "examples": [
+        {
+          "text": "The tower is the city's best-known landmark.",
+          "fr": "La tour est le monument le plus connu de la ville."
+        },
+        {
+          "text": "It was a landmark ruling.",
+          "fr": "Ce fut une décision historique."
+        }
+      ]
+    },
+    {
+      "id": "en.st.wander",
+      "term": "to wander",
+      "pos": "verb",
+      "gloss": "flâner, se promener sans but",
+      "note": "Ne pas confondre avec « to wonder » (se demander), qui se prononce différemment : « WON-der » contre « WAN-der ».",
+      "examples": [
+        {
+          "text": "We spent the afternoon wandering around.",
+          "fr": "Nous avons passé l'après-midi à flâner."
+        },
+        {
+          "text": "I wonder where they went.",
+          "fr": "Je me demande où ils sont allés."
+        }
+      ]
+    },
+    {
+      "id": "en.st.run-late",
+      "term": "to be running late",
+      "pos": "expr",
+      "gloss": "être en retard, avoir du retard",
+      "note": "« I'm running late » est la formule courante pour prévenir qu'on arrivera en retard, plus naturelle que « I'm late ».",
+      "examples": [
+        {
+          "text": "Sorry, I'm running late.",
+          "fr": "Désolé, je suis en retard."
+        },
+        {
+          "text": "We're running about ten minutes late.",
+          "fr": "Nous avons une dizaine de minutes de retard."
+        }
+      ]
+    },
+    {
+      "id": "en.st.crowded",
+      "term": "crowded",
+      "pos": "adj",
+      "gloss": "bondé, très fréquenté",
+      "note": "« Packed » en est la version familière et plus forte. « Crowded with tourists » = bondé de touristes.",
+      "examples": [
+        {
+          "text": "The beach was crowded.",
+          "fr": "La plage était bondée."
+        },
+        {
+          "text": "It gets packed at weekends.",
+          "fr": "C'est bondé le week-end."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.st.check-out.x0",
+      "lexemeId": "en.st.check-out",
+      "fr": "Le départ de la chambre est à midi.",
+      "sentence": "Check-___ is at noon.",
+      "accepted": [
+        "out"
+      ],
+      "hint": "o__"
+    },
+    {
+      "kind": "recall",
+      "id": "en.st.check-out.x1",
+      "lexemeId": "en.st.check-out",
+      "fr": "libérer la chambre d'hôtel",
+      "accepted": [
+        "check out",
+        "to check out"
+      ],
+      "hint": "c____ o__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.deposit.x0",
+      "lexemeId": "en.st.deposit",
+      "fr": "Ils demandent une caution de cent euros.",
+      "sentence": "They ask for a hundred-euro ___.",
+      "accepted": [
+        "deposit"
+      ],
+      "hint": "d______t"
+    },
+    {
+      "kind": "choice",
+      "id": "en.st.deposit.x1",
+      "lexemeId": "en.st.deposit",
+      "prompt": "La caution est remboursable. → The deposit is ___.",
+      "options": [
+        "refundable",
+        "refoundable",
+        "returnable to",
+        "refunded able"
+      ],
+      "answer": "refundable",
+      "why": "L'adjectif est « refundable », formé sur « refund »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.amenities.x0",
+      "lexemeId": "en.st.amenities",
+      "fr": "Le logement dispose de tous les équipements habituels.",
+      "sentence": "The place has all the usual ___.",
+      "accepted": [
+        "amenities"
+      ],
+      "hint": "a________s"
+    },
+    {
+      "kind": "recall",
+      "id": "en.st.amenities.x1",
+      "lexemeId": "en.st.amenities",
+      "fr": "les équipements et prestations d'un logement",
+      "accepted": [
+        "amenities"
+      ],
+      "hint": "a________s"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.en-suite.x0",
+      "lexemeId": "en.st.en-suite",
+      "fr": "La chambre dispose-t-elle d'une salle de bain privative ?",
+      "sentence": "Is the room ___ suite?",
+      "accepted": [
+        "en"
+      ],
+      "hint": "e_"
+    },
+    {
+      "kind": "recall",
+      "id": "en.st.en-suite.x1",
+      "lexemeId": "en.st.en-suite",
+      "fr": "avec salle de bain privative",
+      "accepted": [
+        "en suite",
+        "ensuite"
+      ],
+      "hint": "e_ s____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.walking-distance.x0",
+      "lexemeId": "en.st.walking-distance",
+      "fr": "C'est accessible à pied depuis la gare.",
+      "sentence": "It's within walking ___ of the station.",
+      "accepted": [
+        "distance"
+      ],
+      "hint": "d_______e"
+    },
+    {
+      "kind": "listen",
+      "id": "en.st.walking-distance.x1",
+      "lexemeId": "en.st.walking-distance",
+      "text": "The old town is within walking distance.",
+      "fr": "La vieille ville est accessible à pied."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.off-beaten-track.x0",
+      "lexemeId": "en.st.off-beaten-track",
+      "fr": "Nous cherchions un endroit hors des sentiers battus.",
+      "sentence": "We were looking for somewhere off the beaten ___.",
+      "accepted": [
+        "track",
+        "path"
+      ],
+      "hint": "t____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.st.off-beaten-track.x1",
+      "lexemeId": "en.st.off-beaten-track",
+      "fr": "hors des sentiers battus",
+      "accepted": [
+        "off the beaten track",
+        "off the beaten path"
+      ],
+      "hint": "o__ t__ b_____ t____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.landmark.x0",
+      "lexemeId": "en.st.landmark",
+      "fr": "La cathédrale est le principal point de repère de la ville.",
+      "sentence": "The cathedral is the city's main ___.",
+      "accepted": [
+        "landmark"
+      ],
+      "hint": "l_______k"
+    },
+    {
+      "kind": "recall",
+      "id": "en.st.landmark.x1",
+      "lexemeId": "en.st.landmark",
+      "fr": "un monument servant de point de repère",
+      "accepted": [
+        "landmark",
+        "a landmark"
+      ],
+      "hint": "l_______k"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.wander.x0",
+      "lexemeId": "en.st.wander",
+      "fr": "Nous avons passé la journée à flâner dans la vieille ville.",
+      "sentence": "We spent the day ___ around the old town.",
+      "accepted": [
+        "wandering"
+      ],
+      "nearMisses": [
+        {
+          "word": "wondering",
+          "why": "« Wonder » veut dire se demander. Flâner s'écrit « wander », avec un a."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.st.wander.x1",
+      "lexemeId": "en.st.wander",
+      "prompt": "Je me demande s'ils viendront. → I ___ if they'll come.",
+      "options": [
+        "wonder",
+        "wander",
+        "ask me",
+        "demand"
+      ],
+      "answer": "wonder",
+      "why": "« Wonder » = se demander. « Wander » = flâner."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.run-late.x0",
+      "lexemeId": "en.st.run-late",
+      "fr": "Désolé, j'ai une dizaine de minutes de retard.",
+      "sentence": "Sorry, I'm ___ about ten minutes late.",
+      "accepted": [
+        "running"
+      ],
+      "hint": "r______g"
+    },
+    {
+      "kind": "listen",
+      "id": "en.st.run-late.x1",
+      "lexemeId": "en.st.run-late",
+      "text": "I'm running a bit late, sorry.",
+      "fr": "J'ai un peu de retard, désolé."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.st.crowded.x0",
+      "lexemeId": "en.st.crowded",
+      "fr": "Le marché était bondé le samedi matin.",
+      "sentence": "The market was ___ on Saturday morning.",
+      "accepted": [
+        "crowded",
+        "packed"
+      ],
+      "hint": "c______d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.st.crowded.x1",
+      "lexemeId": "en.st.crowded",
+      "fr": "bondé, très fréquenté",
+      "accepted": [
+        "crowded",
+        "packed"
+      ],
+      "hint": "c______d"
+    }
+  ]
+}

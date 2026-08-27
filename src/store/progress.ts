@@ -13,7 +13,14 @@ export interface DayStats {
   correct: number
   /** Secondes réellement passées à répondre. */
   seconds: number
+  /** Total de mots découverts, toutes langues confondues. */
   newWords: number
+  /**
+   * Mots découverts aujourd'hui, par cours.
+   * Le budget quotidien doit se compter langue par langue : apprendre huit
+   * mots d'anglais ne doit pas épuiser le quota d'indonésien.
+   */
+  newByCourse?: Record<string, number>
 }
 
 export interface Progress {
@@ -146,7 +153,13 @@ export function recordReview(opts: {
     })
     stats.reviews += 1
     if (opts.correct) stats.correct += 1
-    if (opts.isNew) stats.newWords += 1
+    if (opts.isNew) {
+      stats.newWords += 1
+      stats.newByCourse = {
+        ...stats.newByCourse,
+        [opts.courseId]: (stats.newByCourse?.[opts.courseId] ?? 0) + 1,
+      }
+    }
     // Une réponse qui prend plus de deux minutes est une pause, pas du travail.
     stats.seconds += Math.min(opts.seconds, 120)
 
@@ -157,6 +170,28 @@ export function recordReview(opts: {
       p.streak.lastDay = day
     }
   })
+}
+
+/**
+ * Mots découverts aujourd'hui dans ce cours précis.
+ * La progression est passée en argument plutôt que lue dans l'état du module :
+ * les fonctions de planification doivent pouvoir être appelées sur n'importe
+ * quelle progression, y compris dans les tests.
+ */
+export function newWordsToday(
+  progress: Progress,
+  courseId: string,
+  now = new Date(),
+): number {
+  const stats = progress.days[today(now)]
+  if (!stats) return 0
+  // Le repli se décide journée par journée, jamais cours par cours : dès que
+  // le détail existe, une langue absente de ce détail vaut zéro. L'imputer au
+  // total ferait épuiser le quota d'une langue par le travail d'une autre.
+  if (stats.newByCourse) return stats.newByCourse[courseId] ?? 0
+  // Journées enregistrées avant l'introduction du compteur par cours : seul le
+  // total est connu, on l'impute au cours interrogé, ce qui est prudent.
+  return stats.newWords
 }
 
 export function updateSettings(patch: Partial<Progress['settings']>) {

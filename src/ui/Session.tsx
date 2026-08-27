@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { Course, Exercise, Lexeme } from '../types'
-import type { CourseIndex, SessionItem } from '../engine/scheduler'
+import type { CourseIndex, SessionItem, SessionMode } from '../engine/scheduler'
 import { buildSession } from '../engine/scheduler'
 import { checkAnswer, type Verdict } from '../engine/grade'
 import { createCard, gradeFromAnswer, reviewCard } from '../engine/fsrs'
@@ -11,6 +11,7 @@ import { Button, Card, ProgressBar, SpeakButton, Stat } from './components'
 interface Props {
   course: Course
   index: CourseIndex
+  mode: SessionMode
   onExit: () => void
 }
 
@@ -19,11 +20,11 @@ interface Tally {
   correct: number
 }
 
-export function Session({ course, index, onExit }: Props) {
+export function Session({ course, index, mode, onExit }: Props) {
   // La file est construite une seule fois : les mots répondus pendant la
   // session ne doivent pas la faire changer sous les pieds de l'utilisateur.
   const [queue, setQueue] = useState<SessionItem[]>(() =>
-    buildSession(course, index, getProgress()),
+    buildSession(course, index, getProgress(), new Date(), mode),
   )
   const [pos, setPos] = useState(0)
   const [verdict, setVerdict] = useState<Verdict | null>(null)
@@ -83,9 +84,17 @@ export function Session({ course, index, onExit }: Props) {
       // écraser la planification déjà calculée à la première tentative.
       const alreadyAnsweredThisSession = item.replay === true
       if (!alreadyAnsweredThisSession) {
-        const card = existing
-          ? reviewCard(existing, grade)
-          : createCard(grade)
+        // En entraînement libre, une réussite sur un mot pas encore échu ne
+        // repousse pas sa révision : s'entraîner davantage ne doit pas gonfler
+        // artificiellement la mémorisation estimée. Un échec, lui, compte
+        // toujours — il révèle une lacune réelle.
+        const keepSchedule =
+          mode === 'free' && existing !== undefined && result.correct
+        const card = keepSchedule
+          ? existing
+          : existing
+            ? reviewCard(existing, grade)
+            : createCard(grade)
         recordReview({
           courseId: course.id,
           lexemeId: item.lexeme.id,
@@ -107,7 +116,7 @@ export function Session({ course, index, onExit }: Props) {
         setQueue((q) => [...q, { ...item, replay: true }])
       }
     },
-    [course.id, item, usedHint, verdict],
+    [course.id, item, mode, usedHint, verdict],
   )
 
   const next = useCallback(() => setPos((p) => p + 1), [])
@@ -441,7 +450,7 @@ function Summary({
       <h2 className="font-serif text-3xl">Session terminée</h2>
       <p className="mt-2 text-muted">
         {total === 0
-          ? "Rien à réviser pour l'instant. Revenez demain, ou augmentez le nombre de mots nouveaux par jour dans les réglages."
+          ? "Plus rien à proposer dans cette langue : tous les mots ont été vus récemment. Revenez demain, ou passez à l'autre langue."
           : 'Les mots ratés reviendront plus tôt que les autres.'}
       </p>
       {total > 0 && (

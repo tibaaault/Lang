@@ -1,0 +1,396 @@
+{
+  "id": "id.nombres",
+  "title": "Nombres et temps",
+  "subtitle": "Compter, dire l'heure et situer dans le temps",
+  "lexemes": [
+    {
+      "id": "id.nb.satu-lima",
+      "term": "satu, dua, tiga, empat, lima",
+      "pos": "noun",
+      "gloss": "un, deux, trois, quatre, cinq",
+      "note": "Se prononcent « sa-tou, dou-a, ti-ga, eum-pat, li-ma ». Le « u » se dit toujours « ou ».",
+      "examples": [
+        {
+          "text": "Dua kopi, tolong.",
+          "fr": "Deux cafés, s'il vous plaît."
+        },
+        {
+          "text": "Untuk tiga orang.",
+          "fr": "Pour trois personnes."
+        }
+      ]
+    },
+    {
+      "id": "id.nb.enam-sepuluh",
+      "term": "enam, tujuh, delapan, sembilan, sepuluh",
+      "pos": "noun",
+      "gloss": "six, sept, huit, neuf, dix",
+      "note": "« Sepuluh » (dix) sert de base : onze se dit « sebelas », vingt « dua puluh », cent « seratus ».",
+      "examples": [
+        {
+          "text": "Sepuluh ribu rupiah.",
+          "fr": "Dix mille roupies."
+        },
+        {
+          "text": "Jam tujuh pagi.",
+          "fr": "Sept heures du matin."
+        }
+      ]
+    },
+    {
+      "id": "id.nb.ribu",
+      "term": "ribu",
+      "pos": "noun",
+      "gloss": "mille",
+      "note": "Indispensable : les prix indonésiens se comptent en milliers de roupies. « Lima puluh ribu » = cinquante mille.",
+      "examples": [
+        {
+          "text": "Dua puluh ribu rupiah.",
+          "fr": "Vingt mille roupies."
+        },
+        {
+          "text": "Berapa ribu?",
+          "fr": "Combien de milliers ?"
+        }
+      ]
+    },
+    {
+      "id": "id.nb.jam",
+      "term": "jam",
+      "pos": "noun",
+      "gloss": "heure ; montre",
+      "note": "« Jam berapa? » = quelle heure est-il ? « Jam delapan » = huit heures. Le mot désigne aussi la montre.",
+      "examples": [
+        {
+          "text": "Jam berapa sekarang?",
+          "fr": "Quelle heure est-il maintenant ?"
+        },
+        {
+          "text": "Jam delapan malam.",
+          "fr": "Huit heures du soir."
+        }
+      ]
+    },
+    {
+      "id": "id.nb.sekarang",
+      "term": "sekarang",
+      "pos": "adv",
+      "gloss": "maintenant",
+      "note": "Se prononce « seu-ka-rang ». Souvent raccourci en « skarang » à l'oral.",
+      "examples": [
+        {
+          "text": "Sekarang atau nanti?",
+          "fr": "Maintenant ou plus tard ?"
+        },
+        {
+          "text": "Saya sibuk sekarang.",
+          "fr": "Je suis occupé maintenant."
+        }
+      ]
+    },
+    {
+      "id": "id.nb.nanti",
+      "term": "nanti",
+      "pos": "adv",
+      "gloss": "plus tard, tout à l'heure",
+      "note": "« Nanti malam » = ce soir. « Sampai nanti » = à tout à l'heure.",
+      "examples": [
+        {
+          "text": "Nanti saja.",
+          "fr": "Plus tard, tout simplement."
+        },
+        {
+          "text": "Sampai nanti!",
+          "fr": "À tout à l'heure !"
+        }
+      ]
+    },
+    {
+      "id": "id.nb.besok",
+      "term": "besok",
+      "pos": "adv",
+      "gloss": "demain",
+      "note": "« Besok pagi » = demain matin. « Lusa » signifie après-demain.",
+      "examples": [
+        {
+          "text": "Sampai besok!",
+          "fr": "À demain !"
+        },
+        {
+          "text": "Besok pagi jam tujuh.",
+          "fr": "Demain matin à sept heures."
+        }
+      ]
+    },
+    {
+      "id": "id.nb.kemarin",
+      "term": "kemarin",
+      "pos": "adv",
+      "gloss": "hier",
+      "note": "Se prononce « keu-ma-rin ». « Kemarin malam » = hier soir.",
+      "examples": [
+        {
+          "text": "Saya tiba kemarin.",
+          "fr": "Je suis arrivé hier."
+        },
+        {
+          "text": "Kemarin hujan.",
+          "fr": "Hier il a plu."
+        }
+      ]
+    },
+    {
+      "id": "id.nb.hari",
+      "term": "hari",
+      "pos": "noun",
+      "gloss": "jour",
+      "note": "« Hari ini » = aujourd'hui, littéralement « ce jour ». « Setiap hari » = tous les jours.",
+      "examples": [
+        {
+          "text": "Hari ini panas sekali.",
+          "fr": "Aujourd'hui il fait très chaud."
+        },
+        {
+          "text": "Setiap hari saya belajar.",
+          "fr": "Tous les jours j'étudie."
+        }
+      ]
+    },
+    {
+      "id": "id.nb.lama",
+      "term": "lama",
+      "pos": "adj",
+      "gloss": "long (durée) ; ancien",
+      "note": "« Berapa lama? » = combien de temps ? « Sudah lama » = ça fait longtemps. Le contraire est « sebentar » (un instant).",
+      "examples": [
+        {
+          "text": "Berapa lama dari sini?",
+          "fr": "C'est à combien de temps d'ici ?"
+        },
+        {
+          "text": "Tunggu sebentar.",
+          "fr": "Attendez un instant."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "id.nb.satu-lima.x0",
+      "lexemeId": "id.nb.satu-lima",
+      "fr": "Deux cafés, s'il vous plaît.",
+      "sentence": "___ kopi, tolong.",
+      "accepted": [
+        "dua"
+      ],
+      "hint": "d__"
+    },
+    {
+      "kind": "choice",
+      "id": "id.nb.satu-lima.x1",
+      "lexemeId": "id.nb.satu-lima",
+      "prompt": "Pour trois personnes →",
+      "options": [
+        "untuk tiga orang",
+        "untuk dua orang",
+        "untuk lima orang",
+        "untuk empat orang"
+      ],
+      "answer": "untuk tiga orang",
+      "why": "Tiga = trois. Dua = deux, empat = quatre, lima = cinq."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.enam-sepuluh.x0",
+      "lexemeId": "id.nb.enam-sepuluh",
+      "fr": "Dix mille roupies.",
+      "sentence": "___ ribu rupiah.",
+      "accepted": [
+        "sepuluh"
+      ],
+      "hint": "s______h"
+    },
+    {
+      "kind": "recall",
+      "id": "id.nb.enam-sepuluh.x1",
+      "lexemeId": "id.nb.enam-sepuluh",
+      "fr": "dix",
+      "accepted": [
+        "sepuluh"
+      ],
+      "hint": "s______h"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.ribu.x0",
+      "lexemeId": "id.nb.ribu",
+      "fr": "Vingt mille roupies.",
+      "sentence": "Dua puluh ___ rupiah.",
+      "accepted": [
+        "ribu"
+      ],
+      "hint": "r___"
+    },
+    {
+      "kind": "recall",
+      "id": "id.nb.ribu.x1",
+      "lexemeId": "id.nb.ribu",
+      "fr": "mille (pour les prix)",
+      "accepted": [
+        "ribu"
+      ],
+      "hint": "r___"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.jam.x0",
+      "lexemeId": "id.nb.jam",
+      "fr": "Quelle heure est-il ?",
+      "sentence": "___ berapa sekarang?",
+      "accepted": [
+        "jam"
+      ],
+      "hint": "j__"
+    },
+    {
+      "kind": "listen",
+      "id": "id.nb.jam.x1",
+      "lexemeId": "id.nb.jam",
+      "text": "Jam berapa sekarang?",
+      "fr": "Quelle heure est-il maintenant ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.sekarang.x0",
+      "lexemeId": "id.nb.sekarang",
+      "fr": "Maintenant ou plus tard ?",
+      "sentence": "___ atau nanti?",
+      "accepted": [
+        "sekarang"
+      ],
+      "hint": "s_______g"
+    },
+    {
+      "kind": "recall",
+      "id": "id.nb.sekarang.x1",
+      "lexemeId": "id.nb.sekarang",
+      "fr": "maintenant",
+      "accepted": [
+        "sekarang"
+      ],
+      "hint": "s_______g"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.nanti.x0",
+      "lexemeId": "id.nb.nanti",
+      "fr": "À tout à l'heure !",
+      "sentence": "Sampai ___!",
+      "accepted": [
+        "nanti"
+      ],
+      "hint": "n____"
+    },
+    {
+      "kind": "recall",
+      "id": "id.nb.nanti.x1",
+      "lexemeId": "id.nb.nanti",
+      "fr": "plus tard, tout à l'heure",
+      "accepted": [
+        "nanti"
+      ],
+      "hint": "n____"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.besok.x0",
+      "lexemeId": "id.nb.besok",
+      "fr": "À demain !",
+      "sentence": "Sampai ___!",
+      "accepted": [
+        "besok"
+      ],
+      "hint": "b____"
+    },
+    {
+      "kind": "choice",
+      "id": "id.nb.besok.x1",
+      "lexemeId": "id.nb.besok",
+      "prompt": "demain matin →",
+      "options": [
+        "besok pagi",
+        "kemarin pagi",
+        "nanti pagi",
+        "besok malam"
+      ],
+      "answer": "besok pagi",
+      "why": "Besok = demain, kemarin = hier, pagi = matin, malam = soir."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.kemarin.x0",
+      "lexemeId": "id.nb.kemarin",
+      "fr": "Je suis arrivé hier.",
+      "sentence": "Saya tiba ___.",
+      "accepted": [
+        "kemarin"
+      ],
+      "nearMisses": [
+        {
+          "word": "besok",
+          "why": "« Besok » veut dire demain. Hier se dit « kemarin »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "id.nb.kemarin.x1",
+      "lexemeId": "id.nb.kemarin",
+      "fr": "hier",
+      "accepted": [
+        "kemarin"
+      ],
+      "hint": "k______n"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.hari.x0",
+      "lexemeId": "id.nb.hari",
+      "fr": "Aujourd'hui il fait très chaud.",
+      "sentence": "___ ini panas sekali.",
+      "accepted": [
+        "hari"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "recall",
+      "id": "id.nb.hari.x1",
+      "lexemeId": "id.nb.hari",
+      "fr": "jour",
+      "accepted": [
+        "hari"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.lama.x0",
+      "lexemeId": "id.nb.lama",
+      "fr": "C'est à combien de temps d'ici ?",
+      "sentence": "Berapa ___ dari sini?",
+      "accepted": [
+        "lama"
+      ],
+      "hint": "l___"
+    },
+    {
+      "kind": "listen",
+      "id": "id.nb.lama.x1",
+      "lexemeId": "id.nb.lama",
+      "text": "Berapa lama ke Bali?",
+      "fr": "Combien de temps jusqu'à Bali ?"
+    }
+  ]
+}

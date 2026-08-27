@@ -1,0 +1,402 @@
+{
+  "id": "id.rencontre",
+  "title": "Rencontrer et discuter",
+  "subtitle": "Engager la conversation, se présenter, comprendre les questions qu'on vous pose",
+  "lexemes": [
+    {
+      "id": "id.rc.apa-kabar",
+      "term": "apa kabar?",
+      "pos": "expr",
+      "gloss": "comment ça va ?",
+      "note": "Réponse habituelle : « baik » (bien) ou « baik-baik saja » (ça va bien). Littéralement « quelles nouvelles ? ».",
+      "examples": [
+        {
+          "text": "Apa kabar?",
+          "fr": "Comment ça va ?"
+        },
+        {
+          "text": "Baik, terima kasih.",
+          "fr": "Bien, merci."
+        }
+      ]
+    },
+    {
+      "id": "id.rc.siapa",
+      "term": "siapa",
+      "pos": "adv",
+      "gloss": "qui",
+      "note": "« Siapa nama Anda? » = comment vous appelez-vous ? Littéralement « qui est votre nom ? », tournure propre à l'indonésien.",
+      "examples": [
+        {
+          "text": "Siapa nama Anda?",
+          "fr": "Comment vous appelez-vous ?"
+        },
+        {
+          "text": "Siapa itu?",
+          "fr": "Qui est-ce ?"
+        }
+      ]
+    },
+    {
+      "id": "id.rc.nama",
+      "term": "nama",
+      "pos": "noun",
+      "gloss": "nom, prénom",
+      "note": "« Nama saya... » = je m'appelle... C'est la présentation de base, à retenir en priorité.",
+      "examples": [
+        {
+          "text": "Nama saya Thibault.",
+          "fr": "Je m'appelle Thibault."
+        },
+        {
+          "text": "Nama panggilan saya Tib.",
+          "fr": "Mon surnom est Tib."
+        }
+      ]
+    },
+    {
+      "id": "id.rc.dari-mana",
+      "term": "dari mana?",
+      "pos": "expr",
+      "gloss": "d'où venez-vous ?",
+      "note": "Question posée systématiquement aux étrangers. Réponse : « saya dari Prancis » (je viens de France).",
+      "examples": [
+        {
+          "text": "Anda dari mana?",
+          "fr": "Vous venez d'où ?"
+        },
+        {
+          "text": "Saya dari Prancis.",
+          "fr": "Je viens de France."
+        }
+      ]
+    },
+    {
+      "id": "id.rc.tinggal",
+      "term": "tinggal",
+      "pos": "verb",
+      "gloss": "habiter, rester",
+      "note": "« Saya tinggal di Paris » = j'habite à Paris. Toujours suivi de « di » pour le lieu.",
+      "examples": [
+        {
+          "text": "Saya tinggal di Paris.",
+          "fr": "J'habite à Paris."
+        },
+        {
+          "text": "Berapa lama tinggal di sini?",
+          "fr": "Combien de temps restez-vous ici ?"
+        }
+      ]
+    },
+    {
+      "id": "id.rc.kerja",
+      "term": "kerja",
+      "pos": "verb",
+      "gloss": "travailler ; travail",
+      "note": "« Kerja apa? » = vous faites quoi comme travail ? « Bekerja » est la forme verbale complète, plus soutenue.",
+      "examples": [
+        {
+          "text": "Anda kerja apa?",
+          "fr": "Vous faites quoi comme travail ?"
+        },
+        {
+          "text": "Saya kerja di kantor.",
+          "fr": "Je travaille dans un bureau."
+        }
+      ]
+    },
+    {
+      "id": "id.rc.senang",
+      "term": "senang",
+      "pos": "adj",
+      "gloss": "content, heureux",
+      "note": "« Senang bertemu Anda » = enchanté de vous rencontrer. Formule de politesse à connaître.",
+      "examples": [
+        {
+          "text": "Senang bertemu Anda.",
+          "fr": "Enchanté de vous rencontrer."
+        },
+        {
+          "text": "Saya senang di sini.",
+          "fr": "Je me plais ici."
+        }
+      ]
+    },
+    {
+      "id": "id.rc.teman",
+      "term": "teman",
+      "pos": "noun",
+      "gloss": "ami",
+      "note": "« Teman saya » = mon ami. Le possessif se place après le nom, contrairement au français.",
+      "examples": [
+        {
+          "text": "Ini teman saya.",
+          "fr": "Voici mon ami."
+        },
+        {
+          "text": "Saya datang dengan teman.",
+          "fr": "Je viens avec un ami."
+        }
+      ]
+    },
+    {
+      "id": "id.rc.mengerti",
+      "term": "mengerti",
+      "pos": "verb",
+      "gloss": "comprendre",
+      "note": "« Saya tidak mengerti » = je ne comprends pas, l'une des phrases les plus utiles du voyage. « Paham » en est un synonyme courant.",
+      "examples": [
+        {
+          "text": "Saya tidak mengerti.",
+          "fr": "Je ne comprends pas."
+        },
+        {
+          "text": "Anda mengerti bahasa Inggris?",
+          "fr": "Vous comprenez l'anglais ?"
+        }
+      ]
+    },
+    {
+      "id": "id.rc.pelan",
+      "term": "pelan-pelan",
+      "pos": "adv",
+      "gloss": "lentement, doucement",
+      "note": "« Tolong bicara pelan-pelan » = parlez lentement, s'il vous plaît. Le redoublement du mot renforce le sens, procédé très fréquent en indonésien.",
+      "examples": [
+        {
+          "text": "Tolong bicara pelan-pelan.",
+          "fr": "Parlez lentement, s'il vous plaît."
+        },
+        {
+          "text": "Pelan-pelan saja.",
+          "fr": "Doucement, sans se presser."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "id.rc.apa-kabar.x0",
+      "lexemeId": "id.rc.apa-kabar",
+      "fr": "Comment ça va ?",
+      "sentence": "Apa ___?",
+      "accepted": [
+        "kabar"
+      ],
+      "hint": "k____"
+    },
+    {
+      "kind": "choice",
+      "id": "id.rc.apa-kabar.x1",
+      "lexemeId": "id.rc.apa-kabar",
+      "prompt": "Bien, merci. →",
+      "options": [
+        "Baik, terima kasih.",
+        "Maaf, terima kasih.",
+        "Ada, terima kasih.",
+        "Nanti, terima kasih."
+      ],
+      "answer": "Baik, terima kasih.",
+      "why": "« Baik » signifie bien, en bonne santé."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.siapa.x0",
+      "lexemeId": "id.rc.siapa",
+      "fr": "Comment vous appelez-vous ?",
+      "sentence": "___ nama Anda?",
+      "accepted": [
+        "siapa"
+      ],
+      "nearMisses": [
+        {
+          "word": "apa",
+          "why": "« Apa » veut dire « quoi ». Pour demander un nom, l'indonésien emploie « siapa », littéralement « qui »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "id.rc.siapa.x1",
+      "lexemeId": "id.rc.siapa",
+      "fr": "qui",
+      "accepted": [
+        "siapa"
+      ],
+      "hint": "s____"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.nama.x0",
+      "lexemeId": "id.rc.nama",
+      "fr": "Je m'appelle Thibault.",
+      "sentence": "___ saya Thibault.",
+      "accepted": [
+        "nama"
+      ],
+      "hint": "n___"
+    },
+    {
+      "kind": "listen",
+      "id": "id.rc.nama.x1",
+      "lexemeId": "id.rc.nama",
+      "text": "Siapa nama Anda?",
+      "fr": "Comment vous appelez-vous ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.dari-mana.x0",
+      "lexemeId": "id.rc.dari-mana",
+      "fr": "Je viens de France.",
+      "sentence": "Saya ___ Prancis.",
+      "accepted": [
+        "dari"
+      ],
+      "hint": "d___"
+    },
+    {
+      "kind": "recall",
+      "id": "id.rc.dari-mana.x1",
+      "lexemeId": "id.rc.dari-mana",
+      "fr": "d'où (venez-vous)",
+      "accepted": [
+        "dari mana",
+        "dari mana?"
+      ],
+      "hint": "d___ m___"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.tinggal.x0",
+      "lexemeId": "id.rc.tinggal",
+      "fr": "J'habite à Paris.",
+      "sentence": "Saya ___ di Paris.",
+      "accepted": [
+        "tinggal"
+      ],
+      "hint": "t______l"
+    },
+    {
+      "kind": "recall",
+      "id": "id.rc.tinggal.x1",
+      "lexemeId": "id.rc.tinggal",
+      "fr": "habiter, résider",
+      "accepted": [
+        "tinggal"
+      ],
+      "hint": "t______l"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.kerja.x0",
+      "lexemeId": "id.rc.kerja",
+      "fr": "Je travaille dans un bureau.",
+      "sentence": "Saya ___ di kantor.",
+      "accepted": [
+        "kerja",
+        "bekerja"
+      ],
+      "hint": "k____"
+    },
+    {
+      "kind": "choice",
+      "id": "id.rc.kerja.x1",
+      "lexemeId": "id.rc.kerja",
+      "prompt": "Vous faites quoi comme travail ? →",
+      "options": [
+        "Anda kerja apa?",
+        "Anda kerja siapa?",
+        "Anda kerja mana?",
+        "Anda kerja berapa?"
+      ],
+      "answer": "Anda kerja apa?",
+      "why": "« Apa » = quoi. « Siapa » = qui, « mana » = où, « berapa » = combien."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.senang.x0",
+      "lexemeId": "id.rc.senang",
+      "fr": "Enchanté de vous rencontrer.",
+      "sentence": "___ bertemu Anda.",
+      "accepted": [
+        "senang"
+      ],
+      "hint": "s_____g"
+    },
+    {
+      "kind": "listen",
+      "id": "id.rc.senang.x1",
+      "lexemeId": "id.rc.senang",
+      "text": "Senang bertemu Anda.",
+      "fr": "Enchanté de vous rencontrer."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.teman.x0",
+      "lexemeId": "id.rc.teman",
+      "fr": "Voici mon ami.",
+      "sentence": "Ini ___ saya.",
+      "accepted": [
+        "teman"
+      ],
+      "hint": "t____"
+    },
+    {
+      "kind": "choice",
+      "id": "id.rc.teman.x1",
+      "lexemeId": "id.rc.teman",
+      "prompt": "mon ami →",
+      "options": [
+        "teman saya",
+        "saya teman",
+        "teman aku saya",
+        "saya punya teman"
+      ],
+      "answer": "teman saya",
+      "why": "En indonésien, le possesseur se place après le nom : « teman saya », littéralement « ami de moi »."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.mengerti.x0",
+      "lexemeId": "id.rc.mengerti",
+      "fr": "Je ne comprends pas, désolé.",
+      "sentence": "Maaf, saya tidak ___.",
+      "accepted": [
+        "mengerti",
+        "paham"
+      ],
+      "hint": "m_______i"
+    },
+    {
+      "kind": "recall",
+      "id": "id.rc.mengerti.x1",
+      "lexemeId": "id.rc.mengerti",
+      "fr": "comprendre",
+      "accepted": [
+        "mengerti",
+        "paham"
+      ],
+      "hint": "m_______i"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.pelan.x0",
+      "lexemeId": "id.rc.pelan",
+      "fr": "Parlez lentement, s'il vous plaît.",
+      "sentence": "Tolong bicara ___.",
+      "accepted": [
+        "pelan-pelan",
+        "pelan"
+      ],
+      "hint": "p____-p____"
+    },
+    {
+      "kind": "listen",
+      "id": "id.rc.pelan.x1",
+      "lexemeId": "id.rc.pelan",
+      "text": "Tolong bicara pelan-pelan.",
+      "fr": "Parlez lentement, s'il vous plaît."
+    }
+  ]
+}

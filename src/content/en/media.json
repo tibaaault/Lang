@@ -1,0 +1,421 @@
+{
+  "id": "en.media",
+  "title": "Médias et actualité",
+  "subtitle": "Lire la presse anglophone sans buter tous les trois mots",
+  "lexemes": [
+    {
+      "id": "en.md.headline",
+      "term": "a headline",
+      "pos": "noun",
+      "gloss": "un titre de presse, une manchette",
+      "note": "Le titre d'un article, pas son intitulé général. « To make the headlines » = faire la une.",
+      "examples": [
+        {
+          "text": "The story made the headlines everywhere.",
+          "fr": "L'affaire a fait la une partout."
+        },
+        {
+          "text": "Don't judge from the headline alone.",
+          "fr": "Ne juge pas d'après le seul titre."
+        }
+      ]
+    },
+    {
+      "id": "en.md.outlet",
+      "term": "an outlet",
+      "pos": "noun",
+      "gloss": "un organe de presse, un média",
+      "note": "« A news outlet » désigne un journal, une chaîne ou un site. Le mot désigne par ailleurs une prise électrique aux États-Unis.",
+      "examples": [
+        {
+          "text": "Several outlets reported the same figure.",
+          "fr": "Plusieurs médias ont rapporté le même chiffre."
+        },
+        {
+          "text": "It's an independent news outlet.",
+          "fr": "C'est un média indépendant."
+        }
+      ]
+    },
+    {
+      "id": "en.md.coverage",
+      "term": "coverage",
+      "pos": "noun",
+      "gloss": "la couverture médiatique",
+      "note": "Indénombrable : jamais « coverages ». « Extensive coverage » = une couverture importante. Désigne aussi la couverture réseau.",
+      "examples": [
+        {
+          "text": "The trial got extensive coverage.",
+          "fr": "Le procès a bénéficié d'une large couverture."
+        },
+        {
+          "text": "There was little coverage of the strike.",
+          "fr": "La grève a été peu couverte."
+        }
+      ]
+    },
+    {
+      "id": "en.md.break-story",
+      "term": "to break a story",
+      "pos": "expr",
+      "gloss": "révéler une information en premier",
+      "note": "« Breaking news » = information de dernière minute. Le verbe « break » garde ici l'idée de rompre le silence.",
+      "examples": [
+        {
+          "text": "The paper broke the story last night.",
+          "fr": "Le journal a révélé l'affaire hier soir."
+        },
+        {
+          "text": "This just in: breaking news.",
+          "fr": "Dernière minute : information urgente."
+        }
+      ]
+    },
+    {
+      "id": "en.md.biased",
+      "term": "biased",
+      "pos": "adj",
+      "gloss": "partial, orienté",
+      "note": "« Biased towards » ou « biased against ». Le nom « a bias » désigne le parti pris. En anglais britannique on écrit parfois « biassed ».",
+      "examples": [
+        {
+          "text": "The article is clearly biased.",
+          "fr": "L'article est clairement orienté."
+        },
+        {
+          "text": "Everyone has their own biases.",
+          "fr": "Chacun a ses propres partis pris."
+        }
+      ]
+    },
+    {
+      "id": "en.md.fact-check",
+      "term": "to fact-check",
+      "pos": "verb",
+      "gloss": "vérifier les faits",
+      "note": "Toujours avec le trait d'union. Le nom « a fact-checker » désigne la personne ou le service qui s'en charge.",
+      "examples": [
+        {
+          "text": "Someone should fact-check that claim.",
+          "fr": "Quelqu'un devrait vérifier cette affirmation."
+        },
+        {
+          "text": "The piece was fact-checked twice.",
+          "fr": "L'article a été vérifié deux fois."
+        }
+      ]
+    },
+    {
+      "id": "en.md.op-ed",
+      "term": "an op-ed",
+      "pos": "noun",
+      "gloss": "une tribune, une chronique d'opinion",
+      "note": "Abréviation de « opposite the editorial page ». « An editorial » est la position du journal ; « an op-ed » celle d'un auteur extérieur.",
+      "examples": [
+        {
+          "text": "She wrote an op-ed on the reform.",
+          "fr": "Elle a signé une tribune sur la réforme."
+        },
+        {
+          "text": "The editorial took the opposite view.",
+          "fr": "L'éditorial défendait la position inverse."
+        }
+      ]
+    },
+    {
+      "id": "en.md.hype",
+      "term": "hype",
+      "pos": "noun",
+      "gloss": "le battage médiatique, l'emballement",
+      "note": "Souvent péjoratif : « it's all hype » = tout ça n'est que du vent. Le verbe existe : « to hype something up ».",
+      "examples": [
+        {
+          "text": "The film didn't live up to the hype.",
+          "fr": "Le film n'était pas à la hauteur du battage."
+        },
+        {
+          "text": "Don't believe the hype.",
+          "fr": "Ne crois pas au battage."
+        }
+      ]
+    },
+    {
+      "id": "en.md.claim-source",
+      "term": "a source",
+      "pos": "noun",
+      "gloss": "une source (d'information)",
+      "note": "« According to sources close to... » = selon des sources proches de. « An anonymous source » est une source anonyme.",
+      "examples": [
+        {
+          "text": "According to sources close to the case...",
+          "fr": "Selon des sources proches du dossier..."
+        },
+        {
+          "text": "The report cites two anonymous sources.",
+          "fr": "Le rapport cite deux sources anonymes."
+        }
+      ]
+    },
+    {
+      "id": "en.md.misleading",
+      "term": "misleading",
+      "pos": "adj",
+      "gloss": "trompeur, qui induit en erreur",
+      "note": "Moins accusateur que « false » : le fait peut être exact mais présenté de façon à tromper. Le verbe est « to mislead ».",
+      "examples": [
+        {
+          "text": "The graph is misleading.",
+          "fr": "Le graphique est trompeur."
+        },
+        {
+          "text": "That headline is deliberately misleading.",
+          "fr": "Ce titre est délibérément trompeur."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.md.headline.x0",
+      "lexemeId": "en.md.headline",
+      "fr": "L'affaire a fait la une de tous les journaux.",
+      "sentence": "The story made the ___ in every paper.",
+      "accepted": [
+        "headlines"
+      ],
+      "hint": "h________s"
+    },
+    {
+      "kind": "recall",
+      "id": "en.md.headline.x1",
+      "lexemeId": "en.md.headline",
+      "fr": "un titre de presse, une manchette",
+      "accepted": [
+        "headline",
+        "a headline"
+      ],
+      "hint": "h_______e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.outlet.x0",
+      "lexemeId": "en.md.outlet",
+      "fr": "Plusieurs médias ont repris l'information.",
+      "sentence": "Several news ___ picked up the story.",
+      "accepted": [
+        "outlets"
+      ],
+      "hint": "o_____s"
+    },
+    {
+      "kind": "choice",
+      "id": "en.md.outlet.x1",
+      "lexemeId": "en.md.outlet",
+      "prompt": "un média indépendant → an independent news ___",
+      "options": [
+        "outlet",
+        "canal",
+        "organ",
+        "media"
+      ],
+      "answer": "outlet",
+      "why": "« Media » est un collectif pluriel ; pour désigner un seul titre, on dit « a news outlet »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.coverage.x0",
+      "lexemeId": "en.md.coverage",
+      "fr": "Le sujet a reçu très peu de couverture médiatique.",
+      "sentence": "The topic got very little ___.",
+      "accepted": [
+        "coverage"
+      ],
+      "nearMisses": [
+        {
+          "word": "coverages",
+          "why": "« Coverage » est indénombrable et ne prend jamais de -s."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.md.coverage.x1",
+      "lexemeId": "en.md.coverage",
+      "fr": "la couverture médiatique d'un sujet",
+      "accepted": [
+        "coverage"
+      ],
+      "hint": "c_______e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.break-story.x0",
+      "lexemeId": "en.md.break-story",
+      "fr": "C'est ce journal qui a révélé l'affaire en premier.",
+      "sentence": "That paper ___ the story first.",
+      "accepted": [
+        "broke"
+      ],
+      "nearMisses": [
+        {
+          "word": "published",
+          "why": "« Published » dit seulement qu'on a publié. Révéler une information en primeur, c'est « break a story »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.md.break-story.x1",
+      "lexemeId": "en.md.break-story",
+      "text": "They broke the story before anyone else.",
+      "fr": "Ils ont révélé l'affaire avant tout le monde."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.biased.x0",
+      "lexemeId": "en.md.biased",
+      "fr": "Ce reportage est manifestement orienté.",
+      "sentence": "This report is clearly ___.",
+      "accepted": [
+        "biased"
+      ],
+      "nearMisses": [
+        {
+          "word": "partial",
+          "why": "« Partial » existe mais signifie surtout « partiel ». Pour un parti pris, l'anglais dit « biased »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.md.biased.x1",
+      "lexemeId": "en.md.biased",
+      "fr": "partial, orienté (dans son traitement)",
+      "accepted": [
+        "biased"
+      ],
+      "hint": "b_____d"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.fact-check.x0",
+      "lexemeId": "en.md.fact-check",
+      "fr": "Quelqu'un devrait vérifier cette affirmation.",
+      "sentence": "Someone should ___ that claim.",
+      "accepted": [
+        "fact-check",
+        "factcheck"
+      ],
+      "hint": "f___-c____"
+    },
+    {
+      "kind": "choice",
+      "id": "en.md.fact-check.x1",
+      "lexemeId": "en.md.fact-check",
+      "prompt": "L'article a été vérifié. → The piece was ___.",
+      "options": [
+        "fact-checked",
+        "fact-checking",
+        "verified of facts",
+        "controlled"
+      ],
+      "answer": "fact-checked",
+      "why": "« Control » est un faux ami : il veut dire maîtriser, pas contrôler au sens de vérifier."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.op-ed.x0",
+      "lexemeId": "en.md.op-ed",
+      "fr": "Il a signé une tribune dans le journal de dimanche.",
+      "sentence": "He wrote an ___ in the Sunday paper.",
+      "accepted": [
+        "op-ed",
+        "oped"
+      ],
+      "hint": "o_-e_"
+    },
+    {
+      "kind": "recall",
+      "id": "en.md.op-ed.x1",
+      "lexemeId": "en.md.op-ed",
+      "fr": "une tribune d'opinion signée par un auteur extérieur",
+      "accepted": [
+        "op-ed",
+        "an op-ed"
+      ],
+      "hint": "o_-e_"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.hype.x0",
+      "lexemeId": "en.md.hype",
+      "fr": "Le produit n'était pas à la hauteur du battage médiatique.",
+      "sentence": "The product didn't live up to the ___.",
+      "accepted": [
+        "hype"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "listen",
+      "id": "en.md.hype.x1",
+      "lexemeId": "en.md.hype",
+      "text": "There's a lot of hype around it.",
+      "fr": "Il y a beaucoup de battage autour de ça."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.claim-source.x0",
+      "lexemeId": "en.md.claim-source",
+      "fr": "Selon des sources proches du dossier, l'accord est signé.",
+      "sentence": "___ to sources close to the case, the deal is signed.",
+      "accepted": [
+        "according",
+        "According"
+      ],
+      "hint": "a________g"
+    },
+    {
+      "kind": "recall",
+      "id": "en.md.claim-source.x1",
+      "lexemeId": "en.md.claim-source",
+      "fr": "une source d'information",
+      "accepted": [
+        "source",
+        "a source"
+      ],
+      "hint": "s_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.md.misleading.x0",
+      "lexemeId": "en.md.misleading",
+      "fr": "Ce graphique est trompeur sans être faux.",
+      "sentence": "That graph is ___ without being false.",
+      "accepted": [
+        "misleading"
+      ],
+      "nearMisses": [
+        {
+          "word": "wrong",
+          "why": "« Wrong » dit que c'est faux. « Misleading » désigne ce qui induit en erreur tout en restant exact, ce que dit la phrase."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.md.misleading.x1",
+      "lexemeId": "en.md.misleading",
+      "prompt": "un titre délibérément trompeur → a deliberately ___ headline",
+      "options": [
+        "misleading",
+        "misled",
+        "mistaken",
+        "missing"
+      ],
+      "answer": "misleading",
+      "why": "« Misled » est le participe passé, « mistaken » signifie dans l'erreur."
+    }
+  ]
+}

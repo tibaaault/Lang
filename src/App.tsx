@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { courses, courseById } from './content'
-import { indexCourse } from './engine/scheduler'
+import { indexCourse, type SessionMode } from './engine/scheduler'
 import { initAuth } from './store/sync'
 import { Home } from './ui/Home'
 import { Session } from './ui/Session'
@@ -10,13 +10,16 @@ import { Settings } from './ui/Settings'
 
 type View =
   | { name: 'home' }
-  | { name: 'session'; courseId: string }
+  | { name: 'session'; courseId: string; mode: SessionMode }
   | { name: 'stats' }
   | { name: 'account' }
   | { name: 'settings' }
 
 export default function App() {
   const [view, setView] = useState<View>({ name: 'home' })
+  // Change à chaque lancement : deux sessions libres d'affilée doivent
+  // reconstruire leur file, pas reprendre l'ancienne.
+  const [sessionStamp, setSessionStamp] = useState(0)
 
   useEffect(() => {
     void initAuth()
@@ -35,9 +38,10 @@ export default function App() {
     return (
       <Session
         // Remonter le composant à chaque session repart d'une file propre.
-        key={`${sessionCourse.id}-${view.name}`}
+        key={`${sessionCourse.id}-${view.mode}-${sessionStamp}`}
         course={sessionCourse}
         index={sessionIndex}
+        mode={view.mode}
         onExit={home}
       />
     )
@@ -49,7 +53,10 @@ export default function App() {
   return (
     <Home
       courses={courses}
-      onStart={(courseId) => setView({ name: 'session', courseId })}
+      onStart={(courseId, mode) => {
+        setSessionStamp((n) => n + 1)
+        setView({ name: 'session', courseId, mode })
+      }}
       onOpen={(name) => setView({ name } as View)}
     />
   )

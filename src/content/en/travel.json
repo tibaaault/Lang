@@ -1,0 +1,423 @@
+{
+  "id": "en.travel",
+  "title": "Voyage et transport",
+  "subtitle": "Aéroports, retards et correspondances : le vocabulaire qui sert vraiment en déplacement",
+  "lexemes": [
+    {
+      "id": "en.tv.board",
+      "term": "to board",
+      "pos": "verb",
+      "gloss": "embarquer, monter à bord",
+      "note": "S'emploie pour l'avion, le train et le bateau. « Boarding » désigne l'embarquement, « a boarding pass » la carte d'embarquement.",
+      "examples": [
+        {
+          "text": "We start boarding in ten minutes.",
+          "fr": "L'embarquement commence dans dix minutes."
+        },
+        {
+          "text": "He boarded the wrong train.",
+          "fr": "Il est monté dans le mauvais train."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.delayed",
+      "term": "to be delayed",
+      "pos": "expr",
+      "gloss": "être retardé, avoir du retard",
+      "note": "On dit « the flight is delayed », jamais « has late ». Le nom est « a delay » : « a two-hour delay ».",
+      "examples": [
+        {
+          "text": "Our flight was delayed by three hours.",
+          "fr": "Notre vol a eu trois heures de retard."
+        },
+        {
+          "text": "There's a slight delay on the line.",
+          "fr": "Il y a un léger retard sur la ligne."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.layover",
+      "term": "a layover",
+      "pos": "noun",
+      "gloss": "une escale, un temps d'attente entre deux vols",
+      "note": "« Layover » est américain, « stopover » britannique. On dit « a four-hour layover in Dubai ».",
+      "examples": [
+        {
+          "text": "We have a long layover in Doha.",
+          "fr": "Nous avons une longue escale à Doha."
+        },
+        {
+          "text": "It's a direct flight, no stopover.",
+          "fr": "C'est un vol direct, sans escale."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.check-in",
+      "term": "to check in",
+      "pos": "verb",
+      "gloss": "s'enregistrer (vol, hôtel)",
+      "note": "« Check in » à l'arrivée, « check out » au départ de l'hôtel. Le nom s'écrit avec un trait d'union : « the check-in desk ».",
+      "examples": [
+        {
+          "text": "You can check in online.",
+          "fr": "Vous pouvez vous enregistrer en ligne."
+        },
+        {
+          "text": "Check-in closes forty minutes before departure.",
+          "fr": "L'enregistrement ferme quarante minutes avant le départ."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.hand-luggage",
+      "term": "hand luggage",
+      "pos": "noun",
+      "gloss": "bagage à main",
+      "note": "« Hand luggage » au Royaume-Uni, « carry-on » aux États-Unis. « Luggage » est indénombrable : jamais « luggages ».",
+      "examples": [
+        {
+          "text": "Is that within the hand luggage limit?",
+          "fr": "Est-ce dans la limite du bagage à main ?"
+        },
+        {
+          "text": "I only travel with carry-on.",
+          "fr": "Je ne voyage qu'avec un bagage cabine."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.fare",
+      "term": "a fare",
+      "pos": "noun",
+      "gloss": "un tarif, le prix du billet (transport)",
+      "note": "Réservé aux transports : « a train fare », « taxi fare ». Le prix d'un objet est « a price », celui d'un service « a fee ».",
+      "examples": [
+        {
+          "text": "The fare has gone up again.",
+          "fr": "Le tarif a encore augmenté."
+        },
+        {
+          "text": "Return fares start at thirty pounds.",
+          "fr": "Les allers-retours démarrent à trente livres."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.commute",
+      "term": "to commute",
+      "pos": "verb",
+      "gloss": "faire la navette domicile-travail",
+      "note": "Le nom « a commute » désigne le trajet quotidien : « my commute takes an hour ». Sans équivalent court en français.",
+      "examples": [
+        {
+          "text": "I commute by train every day.",
+          "fr": "Je fais la navette en train tous les jours."
+        },
+        {
+          "text": "My commute takes about an hour.",
+          "fr": "Mon trajet quotidien prend environ une heure."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.rush-hour",
+      "term": "rush hour",
+      "pos": "noun",
+      "gloss": "l'heure de pointe",
+      "note": "Toujours au singulier, même si la période dure plusieurs heures : « in rush hour », « at rush hour ».",
+      "examples": [
+        {
+          "text": "Avoid the motorway at rush hour.",
+          "fr": "Évite l'autoroute à l'heure de pointe."
+        },
+        {
+          "text": "Rush hour lasts until nine.",
+          "fr": "L'heure de pointe dure jusqu'à neuf heures."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.miss-connection",
+      "term": "to miss a connection",
+      "pos": "expr",
+      "gloss": "rater une correspondance",
+      "note": "« A connection » est la correspondance ; « a connecting flight » le vol de correspondance. Le verbe est toujours « miss ».",
+      "examples": [
+        {
+          "text": "We missed our connection in Amsterdam.",
+          "fr": "Nous avons raté notre correspondance à Amsterdam."
+        },
+        {
+          "text": "There's a tight connection in Zurich.",
+          "fr": "La correspondance est serrée à Zurich."
+        }
+      ]
+    },
+    {
+      "id": "en.tv.motion-sick",
+      "term": "to get motion sick",
+      "pos": "expr",
+      "gloss": "avoir le mal des transports",
+      "note": "« Carsick » en voiture, « seasick » en bateau, « airsick » en avion. « Motion sickness » est le terme général.",
+      "examples": [
+        {
+          "text": "I get carsick on winding roads.",
+          "fr": "J'ai le mal des transports sur les routes sinueuses."
+        },
+        {
+          "text": "Take something for motion sickness.",
+          "fr": "Prends quelque chose contre le mal des transports."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.tv.board.x0",
+      "lexemeId": "en.tv.board",
+      "fr": "L'embarquement commence dans vingt minutes.",
+      "sentence": "We start ___ in twenty minutes.",
+      "accepted": [
+        "boarding"
+      ],
+      "hint": "b_______g"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tv.board.x1",
+      "lexemeId": "en.tv.board",
+      "fr": "embarquer, monter à bord",
+      "accepted": [
+        "board",
+        "to board"
+      ],
+      "hint": "b____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.delayed.x0",
+      "lexemeId": "en.tv.delayed",
+      "fr": "Notre vol a deux heures de retard.",
+      "sentence": "Our flight is ___ by two hours.",
+      "accepted": [
+        "delayed"
+      ],
+      "nearMisses": [
+        {
+          "word": "late",
+          "why": "« The flight is late » se dit, mais pour préciser la durée, la tournure est « delayed by two hours »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.tv.delayed.x1",
+      "lexemeId": "en.tv.delayed",
+      "prompt": "un retard de trois heures →",
+      "options": [
+        "a three-hour delay",
+        "a delay of three hours long",
+        "three hours of delay",
+        "a three hours delay"
+      ],
+      "answer": "a three-hour delay",
+      "why": "Devant un nom, la mesure reste au singulier et prend un trait d'union : « a three-hour delay »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.layover.x0",
+      "lexemeId": "en.tv.layover",
+      "fr": "Nous avons une escale de six heures à Singapour.",
+      "sentence": "We have a six-hour ___ in Singapore.",
+      "accepted": [
+        "layover",
+        "stopover"
+      ],
+      "hint": "l______r"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tv.layover.x1",
+      "lexemeId": "en.tv.layover",
+      "fr": "une escale entre deux vols",
+      "accepted": [
+        "layover",
+        "stopover",
+        "a layover"
+      ],
+      "hint": "l______r"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.check-in.x0",
+      "lexemeId": "en.tv.check-in",
+      "fr": "Tu peux t'enregistrer en ligne la veille.",
+      "sentence": "You can check ___ online the day before.",
+      "accepted": [
+        "in"
+      ],
+      "hint": "i_"
+    },
+    {
+      "kind": "listen",
+      "id": "en.tv.check-in.x1",
+      "lexemeId": "en.tv.check-in",
+      "text": "Check-in closes one hour before departure.",
+      "fr": "L'enregistrement ferme une heure avant le départ."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.hand-luggage.x0",
+      "lexemeId": "en.tv.hand-luggage",
+      "fr": "Je ne voyage qu'avec un bagage à main.",
+      "sentence": "I only travel with hand ___.",
+      "accepted": [
+        "luggage",
+        "baggage"
+      ],
+      "nearMisses": [
+        {
+          "word": "luggages",
+          "why": "« Luggage » est indénombrable et ne prend jamais de -s. Pour compter, on dit « two pieces of luggage »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.tv.hand-luggage.x1",
+      "lexemeId": "en.tv.hand-luggage",
+      "prompt": "trois bagages →",
+      "options": [
+        "three pieces of luggage",
+        "three luggages",
+        "three luggage",
+        "three baggages"
+      ],
+      "answer": "three pieces of luggage",
+      "why": "« Luggage » ne se compte pas directement : on passe par « pieces of »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.fare.x0",
+      "lexemeId": "en.tv.fare",
+      "fr": "Le prix du billet a encore augmenté.",
+      "sentence": "The ___ has gone up again.",
+      "accepted": [
+        "fare"
+      ],
+      "nearMisses": [
+        {
+          "word": "price",
+          "why": "« Price » est correct en général, mais le mot propre au transport est « fare »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.tv.fare.x1",
+      "lexemeId": "en.tv.fare",
+      "fr": "le prix d'un billet de transport",
+      "accepted": [
+        "fare",
+        "a fare"
+      ],
+      "hint": "f___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.commute.x0",
+      "lexemeId": "en.tv.commute",
+      "fr": "Mon trajet quotidien prend une heure et demie.",
+      "sentence": "My ___ takes an hour and a half.",
+      "accepted": [
+        "commute"
+      ],
+      "hint": "c______e"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tv.commute.x1",
+      "lexemeId": "en.tv.commute",
+      "fr": "faire la navette domicile-travail",
+      "accepted": [
+        "commute",
+        "to commute"
+      ],
+      "hint": "c______e"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.rush-hour.x0",
+      "lexemeId": "en.tv.rush-hour",
+      "fr": "Évite le centre-ville à l'heure de pointe.",
+      "sentence": "Avoid the city centre at ___ hour.",
+      "accepted": [
+        "rush"
+      ],
+      "hint": "r___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.tv.rush-hour.x1",
+      "lexemeId": "en.tv.rush-hour",
+      "prompt": "aux heures de pointe →",
+      "options": [
+        "at rush hour",
+        "at rush hours",
+        "in the rush hours",
+        "at the peak hours"
+      ],
+      "answer": "at rush hour",
+      "why": "L'expression est figée au singulier et sans article : « at rush hour »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.miss-connection.x0",
+      "lexemeId": "en.tv.miss-connection",
+      "fr": "Nous avons raté notre correspondance à Francfort.",
+      "sentence": "We ___ our connection in Frankfurt.",
+      "accepted": [
+        "missed"
+      ],
+      "nearMisses": [
+        {
+          "word": "lost",
+          "why": "« Lose » veut dire perdre un objet. Rater un transport, c'est toujours « miss »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.tv.miss-connection.x1",
+      "lexemeId": "en.tv.miss-connection",
+      "text": "We might miss our connection.",
+      "fr": "On risque de rater notre correspondance."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tv.motion-sick.x0",
+      "lexemeId": "en.tv.motion-sick",
+      "fr": "J'ai le mal de mer dès qu'il y a des vagues.",
+      "sentence": "I get ___ as soon as there are waves.",
+      "accepted": [
+        "seasick"
+      ],
+      "hint": "s_____k"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tv.motion-sick.x1",
+      "lexemeId": "en.tv.motion-sick",
+      "fr": "avoir le mal des transports en voiture",
+      "accepted": [
+        "carsick",
+        "get carsick"
+      ],
+      "hint": "c______k"
+    }
+  ]
+}

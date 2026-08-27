@@ -21,20 +21,22 @@ application. Tout ce qu'il crée vit dans un schéma séparé nommé `lang` : au
 table, aucune fonction et aucun déclencheur de l'application existante n'est
 touché, et l'ensemble se retire d'un seul `drop schema lang cascade`.
 
+**Cette étape est déjà faite.** Elle est conservée ici pour mémoire, ou pour
+reconstruire le projet ailleurs :
+
 1. Ouvrir le projet Supabase, puis **SQL Editor → New query**, coller tout le
    contenu de [`supabase/schema.sql`](supabase/schema.sql), puis **Run**.
 2. Aller dans **Project Settings → API** (rubrique *Data API*) et ajouter
    `lang` à la liste **Exposed schemas**, à côté de `public`. Sans cette
    étape, l'API répond `PGRST106` et la synchronisation échoue.
-3. Relever sur la même page les deux valeurs `Project URL` et `anon public`.
+3. Reporter `Project URL` et la clé *publishable* dans
+   [`.env.production`](.env.production). L'URL est la racine du projet, sans
+   le suffixe `/rest/v1/`.
 
 **Ne pas modifier les réglages d'authentification du projet** : ils sont
-communs aux deux applications, et désactiver la confirmation par email pour
-Lang l'affaiblirait aussi pour l'autre. Le quota d'emails de l'offre gratuite
-(quelques envois par heure) suffit largement à inscrire deux ou trois
-personnes. Si la confirmation par email est active, il faut simplement ajouter
-l'adresse du site publié dans **Authentication → URL Configuration →
-Redirect URLs**.
+communs aux deux applications. La confirmation par email y est déjà
+désactivée, donc les inscriptions sont immédiates et ne consomment aucun
+quota d'envoi.
 
 > Les comptes (`auth.users`) sont communs aux deux applications : une personne
 > inscrite sur l'autre pourrait se connecter à Lang avec les mêmes
@@ -46,17 +48,18 @@ Redirect URLs**.
 1. Créer un dépôt **public** (GitHub Pages n'est gratuit que sur un dépôt
    public) et y pousser ce projet.
 2. Dans **Settings → Pages**, choisir **Source : GitHub Actions**.
-3. Dans **Settings → Secrets and variables → Actions → New repository
-   secret**, ajouter les deux secrets :
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-4. Chaque poussée sur `main` reconstruit et publie le site automatiquement.
+3. C'est tout. Chaque poussée sur `main` reconstruit et publie le site
+   automatiquement, en passant d'abord les tests.
 
 Le site est ensuite servi sur `https://<compte>.github.io/<dépôt>/`.
 
-> La clé `anon` se retrouve dans le code publié : c'est prévu ainsi. Elle
-> identifie le projet sans autoriser quoi que ce soit. Ce sont les politiques
-> RLS du fichier SQL qui garantissent que chacun ne lit que ses données.
+> Il n'y a aucun secret à configurer : les identifiants Supabase sont dans
+> [`.env.production`](.env.production), versionné. La clé *publishable* part
+> de toute façon dans le JavaScript envoyé à chaque visiteur ; la ranger dans
+> un secret d'Actions n'en donnerait que l'illusion. Elle identifie le projet
+> sans autoriser quoi que ce soit : ce sont les politiques RLS du fichier SQL
+> qui garantissent que chacun ne lit que ses données. En revanche, une clé
+> `sb_secret_...` ou `service_role` ne doit jamais figurer dans le dépôt.
 
 ### 3. Installer sur le téléphone
 

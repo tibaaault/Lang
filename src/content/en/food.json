@@ -1,0 +1,425 @@
+{
+  "id": "en.food",
+  "title": "Au restaurant",
+  "subtitle": "Commander, décrire un plat, demander l'addition",
+  "lexemes": [
+    {
+      "id": "en.fd.starter",
+      "term": "a starter",
+      "pos": "noun",
+      "gloss": "une entrée",
+      "note": "« Starter » au Royaume-Uni, « appetizer » aux États-Unis. Attention : « entrée » en anglais américain désigne le plat principal.",
+      "examples": [
+        {
+          "text": "I'll just have a starter.",
+          "fr": "Je prendrai seulement une entrée."
+        },
+        {
+          "text": "The starters are excellent here.",
+          "fr": "Les entrées sont excellentes ici."
+        }
+      ]
+    },
+    {
+      "id": "en.fd.rare",
+      "term": "rare",
+      "pos": "adj",
+      "gloss": "saignant (cuisson)",
+      "note": "L'échelle complète : rare (saignant), medium rare (à point saignant), medium, well done (bien cuit). « Bloody » ne se dit jamais.",
+      "examples": [
+        {
+          "text": "I'd like it medium rare.",
+          "fr": "Je le voudrais à point, plutôt saignant."
+        },
+        {
+          "text": "He always orders his steak well done.",
+          "fr": "Il commande toujours son steak bien cuit."
+        }
+      ]
+    },
+    {
+      "id": "en.fd.takeaway",
+      "term": "a takeaway",
+      "pos": "noun",
+      "gloss": "un plat à emporter",
+      "note": "« Takeaway » au Royaume-Uni, « takeout » aux États-Unis. Au comptoir on demande : « to eat in or take away? ».",
+      "examples": [
+        {
+          "text": "Let's get a takeaway tonight.",
+          "fr": "On prend à emporter ce soir ?"
+        },
+        {
+          "text": "Eat in or take away?",
+          "fr": "Sur place ou à emporter ?"
+        }
+      ]
+    },
+    {
+      "id": "en.fd.bland",
+      "term": "bland",
+      "pos": "adj",
+      "gloss": "fade, sans goût",
+      "note": "Ne pas confondre avec « blank » (vide) ni avec « blond ». « The sauce was bland » = la sauce manquait de goût.",
+      "examples": [
+        {
+          "text": "The soup was a bit bland.",
+          "fr": "La soupe était un peu fade."
+        },
+        {
+          "text": "It needs salt, it's too bland.",
+          "fr": "Il manque du sel, c'est trop fade."
+        }
+      ]
+    },
+    {
+      "id": "en.fd.filling",
+      "term": "filling",
+      "pos": "adj",
+      "gloss": "nourrissant, bourratif",
+      "note": "« That was filling » = ça cale bien. Ne pas confondre avec « fulfilling », qui signifie épanouissant.",
+      "examples": [
+        {
+          "text": "That was surprisingly filling.",
+          "fr": "C'était étonnamment nourrissant."
+        },
+        {
+          "text": "It's cheap and filling.",
+          "fr": "C'est bon marché et ça cale."
+        }
+      ]
+    },
+    {
+      "id": "en.fd.allergic",
+      "term": "to be allergic to",
+      "pos": "expr",
+      "gloss": "être allergique à",
+      "note": "Toujours avec « to » : « allergic to nuts ». Phrase de survie au restaurant à l'étranger.",
+      "examples": [
+        {
+          "text": "I'm allergic to peanuts.",
+          "fr": "Je suis allergique aux cacahuètes."
+        },
+        {
+          "text": "Does it contain any nuts?",
+          "fr": "Est-ce que ça contient des fruits à coque ?"
+        }
+      ]
+    },
+    {
+      "id": "en.fd.tip",
+      "term": "a tip",
+      "pos": "noun",
+      "gloss": "un pourboire ; un conseil",
+      "note": "Deux sens à connaître : « leave a tip » (laisser un pourboire) et « a useful tip » (un conseil utile).",
+      "examples": [
+        {
+          "text": "We left a ten percent tip.",
+          "fr": "Nous avons laissé dix pour cent de pourboire."
+        },
+        {
+          "text": "Here's a useful tip.",
+          "fr": "Voici un conseil utile."
+        }
+      ]
+    },
+    {
+      "id": "en.fd.leftovers",
+      "term": "leftovers",
+      "pos": "noun",
+      "gloss": "les restes (d'un repas)",
+      "note": "Toujours au pluriel. « I'll have the leftovers tomorrow » = je mangerai les restes demain.",
+      "examples": [
+        {
+          "text": "We'll eat the leftovers tomorrow.",
+          "fr": "On mangera les restes demain."
+        },
+        {
+          "text": "There weren't many leftovers.",
+          "fr": "Il n'est pas resté grand-chose."
+        }
+      ]
+    },
+    {
+      "id": "en.fd.book-table",
+      "term": "to book a table",
+      "pos": "expr",
+      "gloss": "réserver une table",
+      "note": "« Book » au Royaume-Uni, « reserve » aux États-Unis. « Do you have a reservation? » = vous avez réservé ?",
+      "examples": [
+        {
+          "text": "I'd like to book a table for two.",
+          "fr": "Je voudrais réserver une table pour deux."
+        },
+        {
+          "text": "Do you have a reservation?",
+          "fr": "Avez-vous réservé ?"
+        }
+      ]
+    },
+    {
+      "id": "en.fd.the-bill",
+      "term": "the bill",
+      "pos": "noun",
+      "gloss": "l'addition",
+      "note": "« The bill » au Royaume-Uni, « the check » aux États-Unis. « Could we get the bill, please? » est la formule polie.",
+      "examples": [
+        {
+          "text": "Could we have the bill, please?",
+          "fr": "Pourrions-nous avoir l'addition, s'il vous plaît ?"
+        },
+        {
+          "text": "The bill came to sixty euros.",
+          "fr": "L'addition s'élevait à soixante euros."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.fd.starter.x0",
+      "lexemeId": "en.fd.starter",
+      "fr": "Je vais prendre une entrée et un plat.",
+      "sentence": "I'll have a ___ and a main course.",
+      "accepted": [
+        "starter",
+        "appetizer"
+      ],
+      "nearMisses": [
+        {
+          "word": "entrance",
+          "why": "« Entrance » désigne la porte d'entrée d'un bâtiment. L'entrée d'un repas est « a starter »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.fd.starter.x1",
+      "lexemeId": "en.fd.starter",
+      "fr": "une entrée (au restaurant)",
+      "accepted": [
+        "starter",
+        "a starter",
+        "appetizer"
+      ],
+      "hint": "s______r"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.rare.x0",
+      "lexemeId": "en.fd.rare",
+      "fr": "Je voudrais mon steak saignant.",
+      "sentence": "I'd like my steak ___.",
+      "accepted": [
+        "rare"
+      ],
+      "nearMisses": [
+        {
+          "word": "bloody",
+          "why": "Calque du français « saignant ». En anglais, la cuisson saignante se dit « rare »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.fd.rare.x1",
+      "lexemeId": "en.fd.rare",
+      "prompt": "bien cuit →",
+      "options": [
+        "well done",
+        "well cooked",
+        "very cooked",
+        "hard done"
+      ],
+      "answer": "well done",
+      "why": "L'expression consacrée pour la cuisson est « well done »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.takeaway.x0",
+      "lexemeId": "en.fd.takeaway",
+      "fr": "Sur place ou à emporter ?",
+      "sentence": "Eat in or ___ away?",
+      "accepted": [
+        "take"
+      ],
+      "hint": "t___"
+    },
+    {
+      "kind": "recall",
+      "id": "en.fd.takeaway.x1",
+      "lexemeId": "en.fd.takeaway",
+      "fr": "un plat à emporter",
+      "accepted": [
+        "takeaway",
+        "a takeaway",
+        "takeout"
+      ],
+      "hint": "t_______y"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.bland.x0",
+      "lexemeId": "en.fd.bland",
+      "fr": "La sauce était vraiment fade.",
+      "sentence": "The sauce was really ___.",
+      "accepted": [
+        "bland",
+        "tasteless"
+      ],
+      "nearMisses": [
+        {
+          "word": "blank",
+          "why": "« Blank » veut dire vide ou vierge. Fade au goût se dit « bland »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.fd.bland.x1",
+      "lexemeId": "en.fd.bland",
+      "fr": "fade, sans goût",
+      "accepted": [
+        "bland",
+        "tasteless"
+      ],
+      "hint": "b____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.filling.x0",
+      "lexemeId": "en.fd.filling",
+      "fr": "C'était petit mais étonnamment nourrissant.",
+      "sentence": "It was small but surprisingly ___.",
+      "accepted": [
+        "filling"
+      ],
+      "hint": "f______g"
+    },
+    {
+      "kind": "choice",
+      "id": "en.fd.filling.x1",
+      "lexemeId": "en.fd.filling",
+      "prompt": "un plat qui cale bien → a ___ dish",
+      "options": [
+        "filling",
+        "fulfilling",
+        "full",
+        "filled"
+      ],
+      "answer": "filling",
+      "why": "« Fulfilling » signifie épanouissant, au sens moral ou professionnel."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.allergic.x0",
+      "lexemeId": "en.fd.allergic",
+      "fr": "Je suis allergique aux fruits de mer.",
+      "sentence": "I'm allergic ___ shellfish.",
+      "accepted": [
+        "to"
+      ],
+      "hint": "t_"
+    },
+    {
+      "kind": "listen",
+      "id": "en.fd.allergic.x1",
+      "lexemeId": "en.fd.allergic",
+      "text": "I'm allergic to nuts, is that a problem?",
+      "fr": "Je suis allergique aux fruits à coque, est-ce un problème ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.tip.x0",
+      "lexemeId": "en.fd.tip",
+      "fr": "Nous avons laissé un pourboire de dix pour cent.",
+      "sentence": "We left a ten percent ___.",
+      "accepted": [
+        "tip"
+      ],
+      "hint": "t__"
+    },
+    {
+      "kind": "recall",
+      "id": "en.fd.tip.x1",
+      "lexemeId": "en.fd.tip",
+      "fr": "un pourboire",
+      "accepted": [
+        "tip",
+        "a tip"
+      ],
+      "hint": "t__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.leftovers.x0",
+      "lexemeId": "en.fd.leftovers",
+      "fr": "On mangera les restes demain midi.",
+      "sentence": "We'll have the ___ for lunch tomorrow.",
+      "accepted": [
+        "leftovers"
+      ],
+      "hint": "l________s"
+    },
+    {
+      "kind": "recall",
+      "id": "en.fd.leftovers.x1",
+      "lexemeId": "en.fd.leftovers",
+      "fr": "les restes d'un repas",
+      "accepted": [
+        "leftovers"
+      ],
+      "hint": "l________s"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.book-table.x0",
+      "lexemeId": "en.fd.book-table",
+      "fr": "Je voudrais réserver une table pour quatre à vingt heures.",
+      "sentence": "I'd like to ___ a table for four at eight.",
+      "accepted": [
+        "book",
+        "reserve"
+      ],
+      "hint": "b___"
+    },
+    {
+      "kind": "choice",
+      "id": "en.fd.book-table.x1",
+      "lexemeId": "en.fd.book-table",
+      "prompt": "Avez-vous réservé ? →",
+      "options": [
+        "Do you have a reservation?",
+        "Have you a reserve?",
+        "Did you book you?",
+        "Are you reserved?"
+      ],
+      "answer": "Do you have a reservation?",
+      "why": "La formule d'accueil consacrée est « Do you have a reservation? »."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.fd.the-bill.x0",
+      "lexemeId": "en.fd.the-bill",
+      "fr": "Pourrions-nous avoir l'addition, s'il vous plaît ?",
+      "sentence": "Could we have the ___, please?",
+      "accepted": [
+        "bill",
+        "check"
+      ],
+      "nearMisses": [
+        {
+          "word": "addition",
+          "why": "Faux ami : « addition » en anglais désigne l'opération mathématique. L'addition du restaurant est « the bill »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.fd.the-bill.x1",
+      "lexemeId": "en.fd.the-bill",
+      "text": "Could we get the bill, please?",
+      "fr": "Pourrions-nous avoir l'addition, s'il vous plaît ?"
+    }
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "id": "en.trends",
+  "title": "Tendances et chiffres",
+  "subtitle": "Décrire une évolution avec précision : monter, chuter, se stabiliser",
+  "lexemes": [
+    {
+      "id": "en.tr.soar",
+      "term": "to soar",
+      "pos": "verb",
+      "gloss": "grimper en flèche, s'envoler",
+      "note": "Réservé aux hausses fortes et rapides : prix, températures, demande. Trop fort pour une hausse modérée.",
+      "examples": [
+        {
+          "text": "Prices soared after the announcement.",
+          "fr": "Les prix se sont envolés après l'annonce."
+        },
+        {
+          "text": "Demand has soared this year.",
+          "fr": "La demande a grimpé en flèche cette année."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.plummet",
+      "term": "to plummet",
+      "pos": "verb",
+      "gloss": "s'effondrer, chuter brutalement",
+      "note": "L'exact opposé de « soar ». Suppose une chute rapide et marquée. « Plunge » en est un synonyme proche.",
+      "examples": [
+        {
+          "text": "Sales plummeted last quarter.",
+          "fr": "Les ventes se sont effondrées le trimestre dernier."
+        },
+        {
+          "text": "Temperatures plummeted overnight.",
+          "fr": "Les températures ont chuté brutalement pendant la nuit."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.steady",
+      "term": "steady",
+      "pos": "adj",
+      "gloss": "régulier, constant, stable",
+      "note": "« A steady increase » est une hausse régulière, sans à-coups. Ne pas confondre avec « stable », qui signifie sans changement.",
+      "examples": [
+        {
+          "text": "There's been a steady increase since March.",
+          "fr": "Il y a une hausse régulière depuis mars."
+        },
+        {
+          "text": "Growth remained steady all year.",
+          "fr": "La croissance est restée régulière toute l'année."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.marginal",
+      "term": "marginal",
+      "pos": "adj",
+      "gloss": "négligeable, très léger",
+      "note": "En anglais courant, « marginal » qualifie un écart minime. Attention : ne signifie pas « marginal » au sens de « en marge de la société ».",
+      "examples": [
+        {
+          "text": "The difference is marginal.",
+          "fr": "La différence est négligeable."
+        },
+        {
+          "text": "There was only a marginal improvement.",
+          "fr": "Il n'y a eu qu'une amélioration très légère."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.level-off",
+      "term": "to level off",
+      "pos": "verb",
+      "gloss": "se stabiliser, plafonner",
+      "note": "Décrit une courbe qui monte puis s'aplatit. « To plateau » est un synonyme plus soutenu.",
+      "examples": [
+        {
+          "text": "Sales rose sharply, then levelled off.",
+          "fr": "Les ventes ont fortement monté, puis se sont stabilisées."
+        },
+        {
+          "text": "The curve levels off after June.",
+          "fr": "La courbe se stabilise après juin."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.spike",
+      "term": "a spike",
+      "pos": "noun",
+      "gloss": "un pic (bref et marqué)",
+      "note": "Une hausse soudaine et temporaire. Le verbe existe aussi : « prices spiked in July ».",
+      "examples": [
+        {
+          "text": "There was a spike in demand in December.",
+          "fr": "Il y a eu un pic de demande en décembre."
+        },
+        {
+          "text": "Prices spiked and then fell back.",
+          "fr": "Les prix ont connu un pic puis sont redescendus."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.sharp",
+      "term": "sharp",
+      "pos": "adj",
+      "gloss": "brusque, net, marqué (variation)",
+      "note": "L'adjectif standard pour qualifier une variation forte : « a sharp rise », « a sharp fall ». L'adverbe est « sharply ».",
+      "examples": [
+        {
+          "text": "There was a sharp fall in November.",
+          "fr": "Il y a eu une baisse marquée en novembre."
+        },
+        {
+          "text": "Numbers rose sharply after the launch.",
+          "fr": "Les chiffres ont fortement augmenté après le lancement."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.lag-behind",
+      "term": "to lag behind",
+      "pos": "verb",
+      "gloss": "être à la traîne, accuser un retard",
+      "note": "Se dit d'un pays, d'une entreprise ou d'un indicateur en retard sur les autres. Le nom « a lag » désigne un décalage.",
+      "examples": [
+        {
+          "text": "Europe lags behind on this technology.",
+          "fr": "L'Europe est à la traîne sur cette technologie."
+        },
+        {
+          "text": "Wages have lagged behind inflation.",
+          "fr": "Les salaires ont pris du retard sur l'inflation."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.outpace",
+      "term": "to outpace",
+      "pos": "verb",
+      "gloss": "dépasser, distancer (en rythme)",
+      "note": "« Demand outpaced supply » = la demande a dépassé l'offre. Le préfixe « out- » sert à former beaucoup de verbes de dépassement : outperform, outnumber, outlast.",
+      "examples": [
+        {
+          "text": "Demand has outpaced supply.",
+          "fr": "La demande a dépassé l'offre."
+        },
+        {
+          "text": "Costs are outpacing revenue.",
+          "fr": "Les coûts progressent plus vite que les recettes."
+        }
+      ]
+    },
+    {
+      "id": "en.tr.account-for",
+      "term": "to account for",
+      "pos": "verb",
+      "gloss": "représenter (une part) ; expliquer",
+      "note": "Deux sens à connaître : « exports account for 30% » (représentent 30 %) et « that accounts for the delay » (cela explique le retard).",
+      "examples": [
+        {
+          "text": "Exports account for a third of revenue.",
+          "fr": "Les exportations représentent un tiers du chiffre d'affaires."
+        },
+        {
+          "text": "That accounts for the delay.",
+          "fr": "Cela explique le retard."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "en.tr.soar.x0",
+      "lexemeId": "en.tr.soar",
+      "fr": "Les prix se sont envolés en quelques semaines.",
+      "sentence": "Prices ___ within a few weeks.",
+      "accepted": [
+        "soared"
+      ],
+      "nearMisses": [
+        {
+          "word": "increased",
+          "why": "« Increased » est neutre et ne dit rien de l'ampleur. « Soared » traduit l'envolée que décrit le français."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.tr.soar.x1",
+      "lexemeId": "en.tr.soar",
+      "fr": "grimper en flèche, s'envoler (prix, demande)",
+      "accepted": [
+        "soar",
+        "to soar"
+      ],
+      "hint": "s___"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.plummet.x0",
+      "lexemeId": "en.tr.plummet",
+      "fr": "Les ventes se sont effondrées après le scandale.",
+      "sentence": "Sales ___ after the scandal.",
+      "accepted": [
+        "plummeted",
+        "plunged",
+        "collapsed"
+      ],
+      "nearMisses": [
+        {
+          "word": "decreased",
+          "why": "« Decreased » décrit une baisse neutre. Pour une chute brutale, on dit « plummeted » ou « plunged »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.tr.plummet.x1",
+      "lexemeId": "en.tr.plummet",
+      "prompt": "Les températures ont chuté brutalement. → Temperatures ___.",
+      "options": [
+        "plummeted",
+        "soared",
+        "levelled off",
+        "edged up"
+      ],
+      "answer": "plummeted",
+      "why": "« Plummet » = chuter brutalement. « Soar » est son contraire exact."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.steady.x0",
+      "lexemeId": "en.tr.steady",
+      "fr": "On observe une progression régulière depuis janvier.",
+      "sentence": "There's been a ___ rise since January.",
+      "accepted": [
+        "steady"
+      ],
+      "nearMisses": [
+        {
+          "word": "stable",
+          "why": "« Stable » veut dire qui ne bouge pas. Ici, la valeur augmente régulièrement : c'est « steady »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "en.tr.steady.x1",
+      "lexemeId": "en.tr.steady",
+      "fr": "régulier, sans à-coups (croissance)",
+      "accepted": [
+        "steady"
+      ],
+      "hint": "s_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.marginal.x0",
+      "lexemeId": "en.tr.marginal",
+      "fr": "L'écart entre les deux méthodes est négligeable.",
+      "sentence": "The gap between the two methods is ___.",
+      "accepted": [
+        "marginal",
+        "negligible"
+      ],
+      "hint": "m_______l"
+    },
+    {
+      "kind": "choice",
+      "id": "en.tr.marginal.x1",
+      "lexemeId": "en.tr.marginal",
+      "prompt": "une amélioration très légère → a ___ improvement",
+      "options": [
+        "marginal",
+        "major",
+        "massive",
+        "sharp"
+      ],
+      "answer": "marginal",
+      "why": "« Marginal » désigne ici un écart minime, pas quelque chose d'exclu ou de périphérique."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.level-off.x0",
+      "lexemeId": "en.tr.level-off",
+      "fr": "La croissance a fortement augmenté puis s'est stabilisée.",
+      "sentence": "Growth rose sharply and then ___ off.",
+      "accepted": [
+        "levelled",
+        "leveled"
+      ],
+      "hint": "l_______d"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tr.level-off.x1",
+      "lexemeId": "en.tr.level-off",
+      "fr": "se stabiliser après une hausse",
+      "accepted": [
+        "level off",
+        "to level off"
+      ],
+      "hint": "l____ o__"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.spike.x0",
+      "lexemeId": "en.tr.spike",
+      "fr": "On observe un pic de trafic en fin de journée.",
+      "sentence": "There's a ___ in traffic at the end of the day.",
+      "accepted": [
+        "spike",
+        "peak",
+        "surge"
+      ],
+      "nearMisses": [
+        {
+          "word": "summit",
+          "why": "« Summit » désigne un sommet géographique ou une réunion au sommet, jamais un pic sur une courbe."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.tr.spike.x1",
+      "lexemeId": "en.tr.spike",
+      "text": "There was a sharp spike in demand.",
+      "fr": "Il y a eu un pic de demande très marqué."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.sharp.x0",
+      "lexemeId": "en.tr.sharp",
+      "fr": "Les chiffres ont fortement chuté au premier trimestre.",
+      "sentence": "The figures fell ___ in the first quarter.",
+      "accepted": [
+        "sharply"
+      ],
+      "nearMisses": [
+        {
+          "word": "sharp",
+          "why": "Ici le mot qualifie le verbe « fell » : il faut l'adverbe « sharply ». « Sharp » s'emploie devant un nom : « a sharp fall »."
+        }
+      ]
+    },
+    {
+      "kind": "choice",
+      "id": "en.tr.sharp.x1",
+      "lexemeId": "en.tr.sharp",
+      "prompt": "une hausse brutale → a ___ rise",
+      "options": [
+        "sharp",
+        "sharply",
+        "strong",
+        "hard"
+      ],
+      "answer": "sharp",
+      "why": "Devant un nom on emploie l'adjectif « sharp » ; l'adverbe « sharply » accompagne un verbe."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.lag-behind.x0",
+      "lexemeId": "en.tr.lag-behind",
+      "fr": "Les salaires ont pris du retard sur l'inflation.",
+      "sentence": "Wages have lagged ___ inflation.",
+      "accepted": [
+        "behind"
+      ],
+      "hint": "b_____"
+    },
+    {
+      "kind": "recall",
+      "id": "en.tr.lag-behind.x1",
+      "lexemeId": "en.tr.lag-behind",
+      "fr": "être à la traîne, accuser un retard sur",
+      "accepted": [
+        "lag behind",
+        "to lag behind"
+      ],
+      "hint": "l__ b_____"
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.outpace.x0",
+      "lexemeId": "en.tr.outpace",
+      "fr": "Les coûts augmentent plus vite que les recettes.",
+      "sentence": "Costs are ___ revenue.",
+      "accepted": [
+        "outpacing",
+        "outstripping"
+      ],
+      "hint": "o________g"
+    },
+    {
+      "kind": "choice",
+      "id": "en.tr.outpace.x1",
+      "lexemeId": "en.tr.outpace",
+      "prompt": "La demande a dépassé l'offre. → Demand has ___ supply.",
+      "options": [
+        "outpaced",
+        "overpassed",
+        "surpassed by",
+        "overcome"
+      ],
+      "answer": "outpaced",
+      "why": "« Outpace » = progresser plus vite que. « Overpass » n'existe pas comme verbe courant."
+    },
+    {
+      "kind": "cloze",
+      "id": "en.tr.account-for.x0",
+      "lexemeId": "en.tr.account-for",
+      "fr": "Les exportations représentent un tiers du chiffre d'affaires.",
+      "sentence": "Exports ___ for a third of revenue.",
+      "accepted": [
+        "account"
+      ],
+      "nearMisses": [
+        {
+          "word": "represent",
+          "why": "« Represent » existe, mais la formule usuelle pour une part chiffrée est « account for »."
+        }
+      ]
+    },
+    {
+      "kind": "listen",
+      "id": "en.tr.account-for.x1",
+      "lexemeId": "en.tr.account-for",
+      "text": "Online sales account for most of our growth.",
+      "fr": "Les ventes en ligne représentent l'essentiel de notre croissance."
+    }
+  ]
+}
