@@ -107,3 +107,68 @@ describe('réglages à travers le cycle de connexion', () => {
     expect(Object.keys(getProgress().cards)).toHaveLength(0)
   })
 })
+
+describe('sauvegarde des réglages sans attendre', () => {
+  it('envoie un réglage en ligne sans attendre le délai groupé', async () => {
+    await initAuth()
+    await signIn('thibault@example.com', 'xxxxxx')
+    await settle()
+
+    updateSettings({ newPerDay: 12, courses: ['en'] })
+    // Aucune minuterie n'est avancée : la sauvegarde doit déjà être partie.
+    await vi.waitFor(() => {
+      const row = fake.db.progress.get('uid-thibault@example.com') as {
+        payload: { settings: { newPerDay: number } }
+      }
+      expect(row.payload.settings.newPerDay).toBe(12)
+    })
+  })
+
+  it('retrouve ses réglages depuis un autre contexte du même téléphone', async () => {
+    await initAuth()
+    await signIn('thibault@example.com', 'xxxxxx')
+    await settle()
+    updateSettings({ newPerDay: 12, courses: ['en'] })
+    await vi.waitFor(() => {
+      expect(fake.db.progress.get('uid-thibault@example.com')).toBeDefined()
+    })
+
+    // Safari et l'application installée sur l'écran d'accueil ont chacun leur
+    // stockage local : ce qui n'a pas été sauvegardé en ligne est invisible de
+    // l'autre côté. C'est le cas qui faisait revenir les anciens réglages.
+    localStorage.clear()
+    activateAccount(null)
+    await signIn('thibault@example.com', 'xxxxxx')
+    await settle()
+
+    expect(getProgress().settings.newPerDay).toBe(12)
+    expect(getProgress().settings.courses).toEqual(['en'])
+  })
+
+  it('sauvegarde ce qui restait en attente avant de déconnecter', async () => {
+    await initAuth()
+    await signIn('thibault@example.com', 'xxxxxx')
+    await settle()
+
+    // Une réponse d'exercice, elle, reste groupée : sa sauvegarde attend.
+    const { recordReview } = await import('../progress')
+    const { createCard } = await import('../../engine/fsrs')
+    recordReview({
+      courseId: 'en',
+      lexemeId: 'w1',
+      card: createCard(3),
+      correct: true,
+      isNew: true,
+      seconds: 4,
+      exerciseId: 'w1.x0',
+    })
+
+    await signOut()
+    await settle()
+
+    const row = fake.db.progress.get('uid-thibault@example.com') as {
+      payload: { cards: Record<string, unknown> }
+    }
+    expect(Object.keys(row.payload.cards)).toContain('en:w1')
+  })
+})

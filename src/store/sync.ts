@@ -143,9 +143,16 @@ export async function pushNow(): Promise<void> {
   await push(getProgress())
 }
 
-function schedulePush(progress: Progress) {
+function schedulePush(progress: Progress, immediate = false) {
   if (!snapshot.user) return
-  if (pushTimer) clearTimeout(pushTimer)
+  if (pushTimer) {
+    clearTimeout(pushTimer)
+    pushTimer = null
+  }
+  if (immediate) {
+    void push(progress)
+    return
+  }
   // On écrit une fois la salve de réponses terminée, pas à chaque question.
   pushTimer = setTimeout(() => void push(progress), 4000)
 }
@@ -241,6 +248,19 @@ export async function initAuth() {
   if (!supabase) return
   setProgressListener(schedulePush)
 
+  // Une sauvegarde différée est perdue si l'application passe en arrière-plan :
+  // les minuteries y sont gelées, et sur mobile la fermeture peut suivre sans
+  // que le code ne tourne à nouveau. On vide donc la file au moment précis où
+  // la page cesse d'être visible.
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden' && pushTimer) void pushNow()
+    })
+    window.addEventListener('pagehide', () => {
+      if (pushTimer) void pushNow()
+    })
+  }
+
   const { data } = await supabase.auth.getSession()
   if (data.session?.user) {
     set({ user: data.session.user })
@@ -292,6 +312,9 @@ export async function signIn(email: string, password: string) {
 export async function signOut() {
   const supabase = await getSupabase()
   if (!supabase) return
+  // Toute sauvegarde encore en attente part avant la déconnexion : sinon elle
+  // serait perdue, et la prochaine connexion ramènerait une version périmée.
+  if (pushTimer) await pushNow()
   await supabase.auth.signOut()
   // On revient à l'espace anonyme : laisser la progression du compte à
   // l'écran la donnerait au prochain qui se connecte sur cet appareil.

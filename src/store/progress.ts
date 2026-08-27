@@ -99,20 +99,28 @@ function load(key = activeKey): Progress {
 
 let state: Progress = load()
 const listeners = new Set<() => void>()
-let onChange: ((p: Progress) => void) | null = null
+let onChange: ((p: Progress, immediate: boolean) => void) | null = null
 
-function emit() {
+function emit(immediate = false) {
   try {
     localStorage.setItem(activeKey, JSON.stringify(state))
   } catch {
     // Quota plein ou mode privé : on continue en mémoire plutôt que planter.
   }
   for (const l of listeners) l()
-  onChange?.(state)
+  onChange?.(state, immediate)
 }
 
-/** Branche la synchronisation distante (voir store/sync.ts). */
-export function setProgressListener(fn: ((p: Progress) => void) | null) {
+/**
+ * Branche la synchronisation distante (voir store/sync.ts).
+ * `immediate` demande une sauvegarde sans attendre le délai habituel : les
+ * réponses aux exercices s'enchaînent et supportent d'être regroupées, mais un
+ * réglage est suivi d'une sortie d'écran, souvent d'une mise en arrière-plan
+ * qui gèle les minuteries et ferait perdre la sauvegarde différée.
+ */
+export function setProgressListener(
+  fn: ((p: Progress, immediate: boolean) => void) | null,
+) {
   onChange = fn
 }
 
@@ -174,12 +182,12 @@ export function replaceProgress(next: Progress) {
   emit()
 }
 
-function update(fn: (draft: Progress) => void) {
+function update(fn: (draft: Progress) => void, immediate = false) {
   const next: Progress = structuredClone(state)
   fn(next)
   next.updatedAt = new Date().toISOString()
   state = next
-  emit()
+  emit(immediate)
 }
 
 export function useProgress(): Progress {
@@ -270,7 +278,7 @@ export function newWordsToday(
 export function updateSettings(patch: Partial<Progress['settings']>) {
   update((p) => {
     p.settings = { ...p.settings, ...patch }
-  })
+  }, true)
 }
 
 export function resetProgress() {
