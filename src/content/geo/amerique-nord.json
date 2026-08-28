@@ -1,0 +1,144 @@
+{
+ "id": "amerique-nord",
+ "title": "Amérique du Nord et Caraïbes",
+ "subtitle": "Du Canada aux petites îles des Antilles",
+ "countries": [
+  [
+   "Antigua-et-Barbuda",
+   "Saint John's",
+   null,
+   [
+    "Saint Johns",
+    "St John's"
+   ]
+  ],
+  [
+   "Bahamas",
+   "Nassau"
+  ],
+  [
+   "Barbade",
+   "Bridgetown"
+  ],
+  [
+   "Belize",
+   "Belmopan",
+   "Seul pays d'Amérique centrale dont l'anglais est la langue officielle."
+  ],
+  [
+   "Canada",
+   "Ottawa",
+   "Ottawa a été choisie en 1857 comme compromis entre Toronto et Montréal, ni l'une ni l'autre ne voulant céder à sa rivale."
+  ],
+  [
+   "Costa Rica",
+   "San José"
+  ],
+  [
+   "Cuba",
+   "La Havane"
+  ],
+  [
+   "Dominique",
+   "Roseau",
+   "À ne pas confondre avec la République dominicaine : ce sont deux pays distincts."
+  ],
+  [
+   "États-Unis",
+   "Washington",
+   null,
+   [
+    "Washington DC",
+    "Washington D.C."
+   ]
+  ],
+  [
+   "Grenade",
+   "Saint-Georges",
+   null,
+   [
+    "Saint Georges",
+    "St George's"
+   ]
+  ],
+  [
+   "Guatemala",
+   "Guatemala",
+   null,
+   [
+    "Guatemala City",
+    "Ciudad de Guatemala"
+   ]
+  ],
+  [
+   "Haïti",
+   "Port-au-Prince"
+  ],
+  [
+   "Honduras",
+   "Tegucigalpa"
+  ],
+  [
+   "Jamaïque",
+   "Kingston"
+  ],
+  [
+   "Mexique",
+   "Mexico",
+   "En français, la ville se dit Mexico et le pays Mexique — un piège classique, l'espagnol et l'anglais ne faisant pas cette distinction.",
+   [
+    "Mexico City"
+   ]
+  ],
+  [
+   "Nicaragua",
+   "Managua"
+  ],
+  [
+   "Panama",
+   "Panama",
+   null,
+   [
+    "Panama City",
+    "Ciudad de Panamá"
+   ]
+  ],
+  [
+   "République dominicaine",
+   "Saint-Domingue",
+   null,
+   [
+    "Santo Domingo"
+   ]
+  ],
+  [
+   "Saint-Christophe-et-Niévès",
+   "Basseterre",
+   null,
+   [
+    "Basse-Terre"
+   ]
+  ],
+  [
+   "Saint-Vincent-et-les-Grenadines",
+   "Kingstown"
+  ],
+  [
+   "Sainte-Lucie",
+   "Castries"
+  ],
+  [
+   "Salvador",
+   "San Salvador"
+  ],
+  [
+   "Trinité-et-Tobago",
+   "Port-d'Espagne",
+   null,
+   [
+    "Port of Spain",
+    "Port d'Espagne"
+   ]
+  ]
+ ]
+}

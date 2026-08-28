@@ -33,6 +33,13 @@ import ebQuotidien from './eb/quotidien.json'
 import ebGens from './eb/gens.json'
 import ebConversation from './eb/conversation.json'
 import ebTemps from './eb/temps.json'
+import { buildCapitalsUnit, type CapitalsData } from './geo/build'
+import geoEurope from './geo/europe.json'
+import geoAfrique from './geo/afrique.json'
+import geoAsie from './geo/asie.json'
+import geoAmeriqueNord from './geo/amerique-nord.json'
+import geoAmeriqueSud from './geo/amerique-sud.json'
+import geoOceanie from './geo/oceanie.json'
 import idPremiersMots from './id/premiers-mots.json'
 import idMangerAcheter from './id/manger-acheter.json'
 import idNombres from './id/nombres.json'
@@ -103,7 +110,33 @@ const englishBasics: Course = {
   ] as Unit[],
 }
 
-export const courses: Course[] = [english, englishBasics, indonesian]
+// Cours de connaissances plutôt que de langue : pas de synthèse vocale, et
+// la possibilité de se limiter à un continent, les unités n'ayant pas ici
+// d'ordre pédagogique.
+const capitals: Course = {
+  id: 'geo-capitals',
+  lang: 'fr',
+  voice: 'fr-FR',
+  silent: true,
+  filterByUnit: true,
+  title: 'Capitales du monde',
+  // Les exercices sont dérivés des données au chargement : voir geo/build.ts.
+  units: [
+    geoEurope,
+    geoAfrique,
+    geoAsie,
+    geoAmeriqueNord,
+    geoAmeriqueSud,
+    geoOceanie,
+  ].map((data) => buildCapitalsUnit(data as CapitalsData)),
+}
+
+export const courses: Course[] = [
+  english,
+  englishBasics,
+  indonesian,
+  capitals,
+]
 
 export function courseById(id: string): Course | undefined {
   return courses.find((c) => c.id === id)

@@ -1,0 +1,84 @@
+{
+ "id": "oceanie",
+ "title": "Océanie",
+ "subtitle": "Quatorze pays dispersés sur un tiers de la planète",
+ "countries": [
+  [
+   "Australie",
+   "Canberra",
+   "Canberra a été créée de toutes pièces pour trancher la rivalité entre Sydney et Melbourne, qui se disputaient le titre."
+  ],
+  [
+   "Fidji",
+   "Suva"
+  ],
+  [
+   "Îles Marshall",
+   "Majuro"
+  ],
+  [
+   "Îles Salomon",
+   "Honiara"
+  ],
+  [
+   "Kiribati",
+   "Tarawa-Sud",
+   null,
+   [
+    "Tarawa",
+    "South Tarawa"
+   ]
+  ],
+  [
+   "Micronésie",
+   "Palikir"
+  ],
+  [
+   "Nauru",
+   "Yaren",
+   "Nauru n'a pas de capitale officielle : Yaren est le district où siège le gouvernement. C'est le plus petit État insulaire du monde."
+  ],
+  [
+   "Nouvelle-Zélande",
+   "Wellington",
+   "Wellington est la capitale, mais Auckland est bien plus peuplée."
+  ],
+  [
+   "Palaos",
+   "Ngerulmud",
+   "L'une des capitales les moins peuplées du monde, avec quelques centaines d'habitants."
+  ],
+  [
+   "Papouasie-Nouvelle-Guinée",
+   "Port Moresby",
+   null,
+   [
+    "Port-Moresby"
+   ]
+  ],
+  [
+   "Samoa",
+   "Apia"
+  ],
+  [
+   "Tonga",
+   "Nuku'alofa",
+   null,
+   [
+    "Nukualofa"
+   ]
+  ],
+  [
+   "Tuvalu",
+   "Funafuti"
+  ],
+  [
+   "Vanuatu",
+   "Port-Vila",
+   null,
+   [
+    "Port Vila"
+   ]
+  ]
+ ]
+}

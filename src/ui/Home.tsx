@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { Course } from '../types'
 import { indexCourse, pendingCount, type SessionMode } from '../engine/scheduler'
-import { courseStats, today, useProgress } from '../store/progress'
+import { courseStats, today, updateSettings, useProgress } from '../store/progress'
 import { Button, Card, Stat } from './components'
 
 export function Home({
@@ -71,7 +71,14 @@ export function Home({
       <div className="space-y-3">
         {visibleCourses.map((course) => {
           const index = indexes.get(course.id)!
-          const { due, fresh, remaining } = pendingCount(course, index, progress)
+          const unit = progress.settings.unitFilter?.[course.id] || undefined
+          const { due, fresh, remaining } = pendingCount(
+            course,
+            index,
+            progress,
+            new Date(),
+            unit,
+          )
           const stats = courseStats(
             progress,
             course.id,
@@ -89,6 +96,36 @@ export function Home({
                   {stats.mastered} acquis sur {stats.total}
                 </p>
               </div>
+
+              {/* Les unités d'un cours de connaissances n'ont pas d'ordre
+                  pédagogique : on peut se limiter à l'une d'elles. */}
+              {course.filterByUnit && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {[null, ...course.units.map((u) => u.title)].map((title) => {
+                    const active = (unit ?? null) === title
+                    return (
+                      <button
+                        key={title ?? 'tous'}
+                        onClick={() =>
+                          updateSettings({
+                            unitFilter: {
+                              ...progress.settings.unitFilter,
+                              [course.id]: title ?? '',
+                            },
+                          })
+                        }
+                        className={`rounded-full border px-3 py-1.5 text-xs ${
+                          active
+                            ? 'border-accent bg-accent-soft text-accent'
+                            : 'border-line text-muted'
+                        }`}
+                      >
+                        {title ?? 'Tous'}
+                      </button>
+                    )
+                  })}
+                </div>
+              )}
 
               <Button
                 className="mt-4 w-full"

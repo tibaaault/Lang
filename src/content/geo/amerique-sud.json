@@ -1,0 +1,77 @@
+{
+ "id": "amerique-sud",
+ "title": "Amérique du Sud",
+ "subtitle": "Douze pays, plusieurs capitales en altitude",
+ "countries": [
+  [
+   "Argentine",
+   "Buenos Aires"
+  ],
+  [
+   "Bolivie",
+   "Sucre",
+   "Sucre est la capitale constitutionnelle, mais le gouvernement et le parlement siègent à La Paz, plus haute capitale de fait du monde à 3 600 mètres.",
+   [
+    "La Paz"
+   ]
+  ],
+  [
+   "Brésil",
+   "Brasilia",
+   "Brasilia a été construite en quatre ans et inaugurée en 1960, pour déplacer le centre du pays vers l'intérieur des terres.",
+   [
+    "Brasília"
+   ]
+  ],
+  [
+   "Chili",
+   "Santiago",
+   null,
+   [
+    "Santiago du Chili"
+   ]
+  ],
+  [
+   "Colombie",
+   "Bogota",
+   null,
+   [
+    "Bogotá"
+   ]
+  ],
+  [
+   "Équateur",
+   "Quito"
+  ],
+  [
+   "Guyana",
+   "Georgetown",
+   "À ne pas confondre avec la Guyane française, qui est un département français et non un pays."
+  ],
+  [
+   "Paraguay",
+   "Asuncion",
+   null,
+   [
+    "Asunción"
+   ]
+  ],
+  [
+   "Pérou",
+   "Lima"
+  ],
+  [
+   "Suriname",
+   "Paramaribo",
+   "Ancienne Guyane néerlandaise : le néerlandais y est encore la langue officielle."
+  ],
+  [
+   "Uruguay",
+   "Montevideo"
+  ],
+  [
+   "Venezuela",
+   "Caracas"
+  ]
+ ]
+}

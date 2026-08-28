@@ -75,6 +75,9 @@ function pickExercise(
         return stability >= 4 ? 3 : 0
       case 'cloze':
         return stability < 1 ? 1 : 0
+      case 'flip':
+        // Intermédiaire : reconnaître sans choix proposé, mais sans écrire.
+        return stability < 1 ? 2 : 1
       case 'recall':
         return stability < 2 ? 2 : 0
       case 'listen':
@@ -168,6 +171,8 @@ export function buildSession(
   progress: Progress,
   now = new Date(),
   mode: SessionMode = 'daily',
+  /** Restreint la session à une unité — un continent, par exemple. */
+  unitTitle?: string,
 ): SessionItem[] {
   const size = progress.settings.dailyGoal
   const newBudget =
@@ -183,6 +188,7 @@ export function buildSession(
   const freshItems: SessionItem[] = []
 
   for (const lex of index.lexemes) {
+    if (unitTitle && index.unitOf.get(lex.id) !== unitTitle) continue
     const card = progress.cards[cardKey(course.id, lex.id)]
     const exercise = pickExercise(
       index.exercisesOf.get(lex.id) ?? [],
@@ -198,10 +204,9 @@ export function buildSession(
     }
 
     if (!card) {
-      if (freshItems.length < newBudget) {
-        // Un mot inconnu commence par être montré ; son test suit plus loin.
-        freshItems.push({ ...base, isNew: true, phase: 'introduce' })
-      }
+      // On collecte tous les candidats : le plafond est appliqué plus bas,
+      // après un éventuel brassage entre unités.
+      freshItems.push({ ...base, isNew: true, phase: 'introduce' })
     } else if (isDue(card, now)) {
       dueItems.push({
         item: { ...base, isNew: false, phase: 'test' },
@@ -222,15 +227,50 @@ export function buildSession(
   dueItems.sort((a, b) => b.lateness - a.lateness)
   earlyItems.sort((a, b) => a.retention - b.retention)
 
+  // Sans continent choisi, un cours de connaissances doit brasser ses unités :
+  // en suivant leur ordre, on passerait des semaines sur l'Europe avant de
+  // voir un seul pays d'Afrique. Les cours de langue, eux, gardent leur ordre,
+  // qui est pédagogique.
+  const fresh = (
+    course.filterByUnit && !unitTitle
+      ? roundRobinByUnit(freshItems)
+      : freshItems
+  ).slice(0, Math.min(newBudget, size))
+
+  // La place restante revient aux révisions : c'est le nombre de mots neufs
+  // retenus qui compte ici, pas celui des candidats.
   const reviews = [
     ...dueItems.map((d) => d.item),
     ...earlyItems.map((e) => e.item),
-  ].slice(0, Math.max(size - Math.min(freshItems.length, size), 0))
+  ].slice(0, Math.max(size - fresh.length, 0))
 
   // Le plafond porte sur les questions de fond ; les présentations, qui ne
   // demandent aucune réponse, s'y ajoutent.
-  const base = interleave(reviews, freshItems.slice(0, size)).slice(0, size)
+  const base = interleave(reviews, fresh).slice(0, size)
   return scheduleIntroductions(base)
+}
+
+/** Alterne les unités : un pays d'Europe, un d'Afrique, un d'Asie, etc. */
+function roundRobinByUnit(items: SessionItem[]): SessionItem[] {
+  const groups = new Map<string, SessionItem[]>()
+  for (const item of items) {
+    const group = groups.get(item.unitTitle)
+    if (group) group.push(item)
+    else groups.set(item.unitTitle, [item])
+  }
+  const queues = [...groups.values()]
+  const out: SessionItem[] = []
+  let remaining = items.length
+  while (remaining > 0) {
+    for (const queue of queues) {
+      const next = queue.shift()
+      if (next) {
+        out.push(next)
+        remaining--
+      }
+    }
+  }
+  return out
 }
 
 /** Ce qui reste à faire aujourd'hui, pour l'écran d'accueil. */
@@ -239,6 +279,7 @@ export function pendingCount(
   index: CourseIndex,
   progress: Progress,
   now = new Date(),
+  unitTitle?: string,
 ): { due: number; fresh: number; remaining: number } {
   let due = 0
   let fresh = 0
@@ -249,6 +290,7 @@ export function pendingCount(
   )
 
   for (const lex of index.lexemes) {
+    if (unitTitle && index.unitOf.get(lex.id) !== unitTitle) continue
     const card = progress.cards[cardKey(course.id, lex.id)]
     if (!card) {
       if (fresh < newBudget) fresh++

@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { Course, Exercise, Lexeme } from '../types'
+import type { Course, Exercise, FlipExercise, Lexeme } from '../types'
 import type { CourseIndex, SessionItem, SessionMode } from '../engine/scheduler'
 import { buildSession } from '../engine/scheduler'
 import { checkAnswer, type Verdict } from '../engine/grade'
+import type { Grade } from '../engine/fsrs'
 import { createCard, gradeFromAnswer, reviewCard } from '../engine/fsrs'
 import { getCard, getProgress, recordReview } from '../store/progress'
 import { speak, stopSpeaking } from '../audio'
@@ -23,9 +24,17 @@ interface Tally {
 export function Session({ course, index, mode, onExit }: Props) {
   // La file est construite une seule fois : les mots répondus pendant la
   // session ne doivent pas la faire changer sous les pieds de l'utilisateur.
-  const [queue, setQueue] = useState<SessionItem[]>(() =>
-    buildSession(course, index, getProgress(), new Date(), mode),
-  )
+  const [queue, setQueue] = useState<SessionItem[]>(() => {
+    const progress = getProgress()
+    return buildSession(
+      course,
+      index,
+      progress,
+      new Date(),
+      mode,
+      progress.settings.unitFilter?.[course.id] || undefined,
+    )
+  })
   const [pos, setPos] = useState(0)
   const [verdict, setVerdict] = useState<Verdict | null>(null)
   const [input, setInput] = useState('')
@@ -51,35 +60,15 @@ export function Session({ course, index, mode, onExit }: Props) {
     return stopSpeaking
   }, [pos, item, course.voice])
 
-  const submit = useCallback(
-    (raw: string) => {
-      if (!item || verdict || item.phase === 'introduce') return
-      const ex = item.exercise
-      const accepted =
-        ex.kind === 'choice'
-          ? [ex.answer]
-          : ex.kind === 'listen'
-            ? [ex.text]
-            : ex.accepted
-      const nearMisses = ex.kind === 'cloze' ? (ex.nearMisses ?? []) : []
-      const result = checkAnswer(raw, accepted, nearMisses)
-
-      if (ex.kind === 'choice' && !result.correct && ex.why) {
-        result.feedback = ex.why
-      }
-      if (ex.kind === 'choice' && result.correct && ex.why) {
-        result.feedback = ex.why
-      }
-      setVerdict(result)
-
-      const elapsedMs = Date.now() - startedAt.current
+  /**
+   * Enregistre le résultat d'une réponse, quelle que soit la forme prise par
+   * l'exercice. La planification et les statistiques suivent les mêmes règles
+   * pour une phrase à trou et pour une carte retournée.
+   */
+  const commit = useCallback(
+    (correct: boolean, grade: Grade) => {
+      if (!item) return
       const existing = getCard(course.id, item.lexeme.id)
-      const grade = gradeFromAnswer({
-        correct: result.correct,
-        fuzzy: result.fuzzy,
-        usedHint,
-        elapsedMs,
-      })
       // Un mot rejoué en fin de session sert de renforcement : il ne doit pas
       // écraser la planification déjà calculée à la première tentative.
       const alreadyAnsweredThisSession = item.replay === true
@@ -89,7 +78,7 @@ export function Session({ course, index, mode, onExit }: Props) {
         // artificiellement la mémorisation estimée. Un échec, lui, compte
         // toujours — il révèle une lacune réelle.
         const keepSchedule =
-          mode === 'free' && existing !== undefined && result.correct
+          mode === 'free' && existing !== undefined && correct
         const card = keepSchedule
           ? existing
           : existing
@@ -99,24 +88,70 @@ export function Session({ course, index, mode, onExit }: Props) {
           courseId: course.id,
           lexemeId: item.lexeme.id,
           card,
-          correct: result.correct,
+          correct,
           isNew: !existing,
-          seconds: Math.round(elapsedMs / 1000),
-          exerciseId: ex.id,
+          seconds: Math.round((Date.now() - startedAt.current) / 1000),
+          exerciseId: item.exercise.id,
         })
         setTally((t) => ({
           answered: t.answered + 1,
-          correct: t.correct + (result.correct ? 1 : 0),
+          correct: t.correct + (correct ? 1 : 0),
         }))
       }
 
-      if (!result.correct) {
+      if (!correct) {
         // Une réponse ratée revient avant la fin : c'est le moment où la
         // correction est encore fraîche et où elle s'ancre le mieux.
         setQueue((q) => [...q, { ...item, replay: true }])
       }
     },
-    [course.id, item, mode, usedHint, verdict],
+    [course.id, item, mode],
+  )
+
+  const submit = useCallback(
+    (raw: string) => {
+      if (!item || verdict || item.phase === 'introduce') return
+      const ex = item.exercise
+      // La carte à retourner a son propre chemin : rien n'y est saisi.
+      if (ex.kind === 'flip') return
+
+      const accepted =
+        ex.kind === 'choice'
+          ? [ex.answer]
+          : ex.kind === 'listen'
+            ? [ex.text]
+            : ex.accepted
+      const nearMisses = ex.kind === 'cloze' ? (ex.nearMisses ?? []) : []
+      const result = checkAnswer(raw, accepted, nearMisses)
+
+      if (ex.kind === 'choice' && ex.why) result.feedback = ex.why
+      setVerdict(result)
+
+      commit(
+        result.correct,
+        gradeFromAnswer({
+          correct: result.correct,
+          fuzzy: result.fuzzy,
+          usedHint,
+          elapsedMs: Date.now() - startedAt.current,
+        }),
+      )
+    },
+    [commit, item, usedHint, verdict],
+  )
+
+  /**
+   * Réponse à une carte retournée. L'utilisateur est seul juge : c'est le
+   * compromis accepté pour éviter d'écrire une réponse au pouce. Se déclarer
+   * savant à tort ne trompe que soi.
+   */
+  const answerFlip = useCallback(
+    (knew: boolean) => {
+      if (!item || item.phase === 'introduce') return
+      commit(knew, knew ? 3 : 1)
+      setPos((p) => p + 1)
+    },
+    [commit, item],
   )
 
   const next = useCallback(() => setPos((p) => p + 1), [])
@@ -158,8 +193,15 @@ export function Session({ course, index, mode, onExit }: Props) {
         {item.phase === 'introduce' ? (
           <Introduction
             lexeme={item.lexeme}
-            voice={course.voice}
+            voice={course.silent ? '' : course.voice}
             onNext={next}
+          />
+        ) : item.exercise.kind === 'flip' ? (
+          <FlipCard
+            // Remonter le composant remet la carte face avant.
+            key={`${item.exercise.id}-${pos}`}
+            exercise={item.exercise}
+            onAnswer={answerFlip}
           />
         ) : (
           <>
@@ -182,7 +224,7 @@ export function Session({ course, index, mode, onExit }: Props) {
           <Feedback
             verdict={verdict}
             lexeme={item.lexeme}
-            voice={course.voice}
+            voice={course.silent ? '' : course.voice}
             onNext={next}
           />
         ) : (
@@ -252,7 +294,7 @@ function Prompt({
       {exercise.kind === 'recall' && (
         <>
           <p className="text-xs uppercase tracking-wide text-muted">
-            Comment dit-on ?
+            {exercise.prompt ?? 'Comment dit-on ?'}
           </p>
           <p className="font-serif text-2xl leading-snug">{exercise.fr}</p>
         </>
@@ -339,6 +381,69 @@ function Prompt({
 }
 
 /**
+ * Carte à retourner. On cherche de tête, on retourne, on se juge.
+ *
+ * La réponse n'apparaît qu'après le retournement : c'est tout l'intérêt de
+ * l'exercice, et la raison pour laquelle les deux boutons de jugement ne
+ * s'affichent pas avant.
+ */
+function FlipCard({
+  exercise,
+  onAnswer,
+}: {
+  exercise: FlipExercise
+  onAnswer: (knew: boolean) => void
+}) {
+  const [revealed, setRevealed] = useState(false)
+
+  return (
+    <>
+      <button
+        onClick={() => setRevealed(true)}
+        disabled={revealed}
+        className="mt-2 w-full rounded-2xl border border-line bg-surface px-6 py-12 text-center transition-colors active:bg-accent-soft disabled:active:bg-surface"
+      >
+        <span className="block font-serif text-3xl leading-tight">
+          {exercise.front}
+        </span>
+        {revealed ? (
+          <>
+            <span className="mx-auto mt-6 block h-px w-16 bg-line" />
+            <span className="mt-6 block font-serif text-3xl leading-tight text-accent">
+              {exercise.back}
+            </span>
+            {exercise.note && (
+              <span className="mt-4 block text-sm leading-relaxed text-muted">
+                {exercise.note}
+              </span>
+            )}
+          </>
+        ) : (
+          <span className="mt-8 block text-sm text-muted">
+            Touchez pour retourner
+          </span>
+        )}
+      </button>
+
+      <div className="flex-1" />
+
+      {revealed ? (
+        <div className="grid grid-cols-2 gap-3">
+          <Button variant="ghost" onClick={() => onAnswer(false)}>
+            Je ne savais pas
+          </Button>
+          <Button onClick={() => onAnswer(true)}>Je savais</Button>
+        </div>
+      ) : (
+        <Button className="w-full" onClick={() => setRevealed(true)}>
+          Retourner
+        </Button>
+      )}
+    </>
+  )
+}
+
+/**
  * Présentation d'un mot inconnu : on montre, on ne teste pas.
  * Le test du même mot revient quelques questions plus loin, une fois cet
  * écran disparu — sans quoi il suffirait de recopier la réponse.
@@ -368,13 +473,15 @@ function Introduction({
               {lexeme.note}
             </p>
           )}
-          <div className="mt-3">
-            <SpeakButton onClick={() => speak(lexeme.term, voice)} />
-          </div>
+          {voice && (
+            <div className="mt-3">
+              <SpeakButton onClick={() => speak(lexeme.term, voice)} />
+            </div>
+          )}
         </Card>
 
         <div className="space-y-3">
-          {lexeme.examples.map((ex) => (
+          {lexeme.examples?.map((ex) => (
             <div key={ex.text} className="border-l-2 border-line pl-3">
               <p className="font-serif text-lg leading-snug">{ex.text}</p>
               <p className="mt-0.5 text-sm text-muted">{ex.fr}</p>
@@ -383,8 +490,7 @@ function Introduction({
         </div>
 
         <p className="text-xs text-muted">
-          Lisez-le une fois. La question sur ce mot arrive dans quelques
-          écrans.
+          Lisez-le une fois. La question arrive dans quelques écrans.
         </p>
       </div>
 
@@ -440,7 +546,7 @@ function Feedback({
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [armed, onNext])
 
-  const example = lexeme.examples[0]
+  const example = lexeme.examples?.[0]
 
   return (
     <div className="space-y-4 pt-4">
@@ -463,9 +569,11 @@ function Feedback({
           <div className="mt-3 border-t border-line/60 pt-3">
             <p className="font-serif text-base">{example.text}</p>
             <p className="mt-0.5 text-sm text-muted">{example.fr}</p>
-            <div className="mt-2">
-              <SpeakButton onClick={() => speak(example.text, voice)} />
-            </div>
+            {voice && (
+              <div className="mt-2">
+                <SpeakButton onClick={() => speak(example.text, voice)} />
+              </div>
+            )}
           </div>
         )}
       </div>

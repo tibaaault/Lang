@@ -41,6 +41,11 @@ export interface Progress {
      * décourage plus qu'il ne motive.
      */
     courses?: string[]
+    /**
+     * Unité à réviser, par cours — un continent pour les capitales.
+     * Absent ou vide signifie « tout le cours ».
+     */
+    unitFilter?: Record<string, string>
   }
   /** Horodatage de la dernière écriture, pour arbitrer la synchronisation. */
   updatedAt: string

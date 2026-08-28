@@ -1,0 +1,276 @@
+{
+ "id": "asie",
+ "title": "Asie",
+ "subtitle": "Quarante-huit pays, du Proche-Orient au Pacifique",
+ "countries": [
+  [
+   "Afghanistan",
+   "Kaboul"
+  ],
+  [
+   "Arabie saoudite",
+   "Riyad"
+  ],
+  [
+   "Arménie",
+   "Erevan"
+  ],
+  [
+   "Azerbaïdjan",
+   "Bakou"
+  ],
+  [
+   "Bahreïn",
+   "Manama"
+  ],
+  [
+   "Bangladesh",
+   "Dacca",
+   null,
+   [
+    "Dhaka"
+   ]
+  ],
+  [
+   "Bhoutan",
+   "Thimphou",
+   null,
+   [
+    "Thimphu"
+   ]
+  ],
+  [
+   "Birmanie",
+   "Naypyidaw",
+   "Le pays s'appelle aussi Myanmar. La capitale a été transférée de Rangoun à Naypyidaw en 2006, une ville construite pour cela.",
+   [
+    "Nay Pyi Taw"
+   ]
+  ],
+  [
+   "Brunei",
+   "Bandar Seri Begawan"
+  ],
+  [
+   "Cambodge",
+   "Phnom Penh"
+  ],
+  [
+   "Chine",
+   "Pékin",
+   null,
+   [
+    "Beijing"
+   ]
+  ],
+  [
+   "Corée du Nord",
+   "Pyongyang"
+  ],
+  [
+   "Corée du Sud",
+   "Séoul"
+  ],
+  [
+   "Émirats arabes unis",
+   "Abou Dabi",
+   "Abou Dabi est la capitale fédérale, mais Dubaï est la ville la plus connue et la plus peuplée.",
+   [
+    "Abu Dhabi"
+   ]
+  ],
+  [
+   "Géorgie",
+   "Tbilissi"
+  ],
+  [
+   "Inde",
+   "New Delhi",
+   "New Delhi est un district à l'intérieur de la ville de Delhi : les deux noms ne désignent pas la même chose.",
+   [
+    "New-Delhi"
+   ]
+  ],
+  [
+   "Indonésie",
+   "Jakarta",
+   "L'Indonésie construit une nouvelle capitale, Nusantara, sur l'île de Bornéo ; le transfert est en cours mais Jakarta reste la capitale en titre."
+  ],
+  [
+   "Irak",
+   "Bagdad"
+  ],
+  [
+   "Iran",
+   "Téhéran"
+  ],
+  [
+   "Israël",
+   "Jérusalem",
+   "Israël proclame Jérusalem comme sa capitale, mais ce statut n'est pas reconnu par la majorité des États : la plupart des ambassades sont installées à Tel-Aviv."
+  ],
+  [
+   "Japon",
+   "Tokyo"
+  ],
+  [
+   "Jordanie",
+   "Amman"
+  ],
+  [
+   "Kazakhstan",
+   "Astana",
+   "La ville a porté le nom de Noursoultan de 2019 à 2022, en l'honneur de l'ancien président, avant de reprendre le nom d'Astana.",
+   [
+    "Noursoultan"
+   ]
+  ],
+  [
+   "Kirghizistan",
+   "Bichkek"
+  ],
+  [
+   "Koweït",
+   "Koweït",
+   null,
+   [
+    "Koweït City"
+   ]
+  ],
+  [
+   "Laos",
+   "Vientiane"
+  ],
+  [
+   "Liban",
+   "Beyrouth"
+  ],
+  [
+   "Malaisie",
+   "Kuala Lumpur",
+   "Kuala Lumpur reste la capitale, mais le gouvernement a déménagé à Putrajaya, ville administrative construite dans les années 1990.",
+   [
+    "Putrajaya"
+   ]
+  ],
+  [
+   "Maldives",
+   "Malé"
+  ],
+  [
+   "Mongolie",
+   "Oulan-Bator",
+   null,
+   [
+    "Oulan Bator",
+    "Ulaanbaatar"
+   ]
+  ],
+  [
+   "Népal",
+   "Katmandou",
+   null,
+   [
+    "Kathmandou"
+   ]
+  ],
+  [
+   "Oman",
+   "Mascate",
+   null,
+   [
+    "Muscat"
+   ]
+  ],
+  [
+   "Ouzbékistan",
+   "Tachkent"
+  ],
+  [
+   "Pakistan",
+   "Islamabad",
+   "Islamabad a été construite dans les années 1960 pour remplacer Karachi, jugée trop excentrée."
+  ],
+  [
+   "Palestine",
+   "Ramallah",
+   "État reconnu par environ cent quarante pays et observateur à l'ONU. Ramallah est le siège de l'Autorité palestinienne ; Jérusalem-Est est revendiquée comme capitale."
+  ],
+  [
+   "Philippines",
+   "Manille"
+  ],
+  [
+   "Qatar",
+   "Doha"
+  ],
+  [
+   "Singapour",
+   "Singapour",
+   "Cité-État : le pays tient tout entier dans son agglomération."
+  ],
+  [
+   "Sri Lanka",
+   "Sri Jayawardenapura Kotte",
+   "Capitale officielle depuis 1985, mais Colombo, toute proche, reste le centre économique et abrite encore de nombreuses institutions.",
+   [
+    "Colombo",
+    "Kotte"
+   ]
+  ],
+  [
+   "Syrie",
+   "Damas"
+  ],
+  [
+   "Tadjikistan",
+   "Douchanbé",
+   null,
+   [
+    "Dushanbe"
+   ]
+  ],
+  [
+   "Taïwan",
+   "Taipei",
+   "Taipei est le siège du gouvernement. Le statut international de Taïwan est disputé et la plupart des États n'entretiennent pas de relations diplomatiques officielles avec elle."
+  ],
+  [
+   "Thaïlande",
+   "Bangkok"
+  ],
+  [
+   "Timor oriental",
+   "Dili"
+  ],
+  [
+   "Turkménistan",
+   "Achgabat",
+   null,
+   [
+    "Ashgabat"
+   ]
+  ],
+  [
+   "Turquie",
+   "Ankara",
+   "Ankara est la capitale depuis 1923, mais Istanbul reste la plus grande ville et l'ancienne capitale impériale."
+  ],
+  [
+   "Viêt Nam",
+   "Hanoï",
+   null,
+   [
+    "Hanoi"
+   ]
+  ],
+  [
+   "Yémen",
+   "Sanaa",
+   null,
+   [
+    "Sana'a"
+   ]
+  ]
+ ]
+}

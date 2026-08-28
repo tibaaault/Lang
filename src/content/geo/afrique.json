@@ -1,0 +1,279 @@
+{
+ "id": "afrique",
+ "title": "Afrique",
+ "subtitle": "Cinquante-quatre pays, et beaucoup de capitales méconnues",
+ "countries": [
+  [
+   "Afrique du Sud",
+   "Pretoria",
+   "Seul pays à avoir trois capitales : Pretoria pour l'exécutif, Le Cap pour le parlement, Bloemfontein pour la Cour suprême.",
+   [
+    "Le Cap",
+    "Bloemfontein"
+   ]
+  ],
+  [
+   "Algérie",
+   "Alger"
+  ],
+  [
+   "Angola",
+   "Luanda"
+  ],
+  [
+   "Bénin",
+   "Porto-Novo",
+   "Porto-Novo est la capitale officielle, mais le gouvernement et l'essentiel de l'activité se trouvent à Cotonou.",
+   [
+    "Cotonou"
+   ]
+  ],
+  [
+   "Botswana",
+   "Gaborone"
+  ],
+  [
+   "Burkina Faso",
+   "Ouagadougou"
+  ],
+  [
+   "Burundi",
+   "Gitega",
+   "Le Burundi a transféré sa capitale politique de Bujumbura à Gitega en 2019.",
+   [
+    "Bujumbura"
+   ]
+  ],
+  [
+   "Cameroun",
+   "Yaoundé"
+  ],
+  [
+   "Cap-Vert",
+   "Praia"
+  ],
+  [
+   "Centrafrique",
+   "Bangui"
+  ],
+  [
+   "Comores",
+   "Moroni"
+  ],
+  [
+   "Congo",
+   "Brazzaville",
+   "À ne pas confondre avec la République démocratique du Congo : Brazzaville et Kinshasa se font face, séparées par le fleuve, seul cas au monde de deux capitales aussi proches."
+  ],
+  [
+   "Côte d'Ivoire",
+   "Yamoussoukro",
+   "Capitale officielle depuis 1983, mais Abidjan reste le siège du gouvernement et la ville principale.",
+   [
+    "Abidjan"
+   ]
+  ],
+  [
+   "Djibouti",
+   "Djibouti"
+  ],
+  [
+   "Égypte",
+   "Le Caire",
+   null,
+   [
+    "Caire"
+   ]
+  ],
+  [
+   "Érythrée",
+   "Asmara"
+  ],
+  [
+   "Eswatini",
+   "Mbabane",
+   "Le pays s'appelait Swaziland jusqu'en 2018. Mbabane est la capitale administrative, Lobamba la capitale royale et législative.",
+   [
+    "Lobamba"
+   ]
+  ],
+  [
+   "Éthiopie",
+   "Addis-Abeba",
+   null,
+   [
+    "Addis Abeba"
+   ]
+  ],
+  [
+   "Gabon",
+   "Libreville"
+  ],
+  [
+   "Gambie",
+   "Banjul"
+  ],
+  [
+   "Ghana",
+   "Accra"
+  ],
+  [
+   "Guinée",
+   "Conakry"
+  ],
+  [
+   "Guinée équatoriale",
+   "Malabo",
+   "Seul pays d'Afrique dont l'espagnol est langue officielle. Une nouvelle capitale, Ciudad de la Paz, est en construction dans l'intérieur des terres."
+  ],
+  [
+   "Guinée-Bissau",
+   "Bissau"
+  ],
+  [
+   "Kenya",
+   "Nairobi"
+  ],
+  [
+   "Lesotho",
+   "Maseru",
+   "Entièrement entouré par l'Afrique du Sud, c'est l'un des trois seuls pays au monde enclavés dans un seul autre."
+  ],
+  [
+   "Liberia",
+   "Monrovia",
+   "La ville doit son nom au président américain James Monroe, le pays ayant été fondé par des esclaves affranchis."
+  ],
+  [
+   "Libye",
+   "Tripoli"
+  ],
+  [
+   "Madagascar",
+   "Antananarivo",
+   null,
+   [
+    "Tananarive"
+   ]
+  ],
+  [
+   "Malawi",
+   "Lilongwe"
+  ],
+  [
+   "Mali",
+   "Bamako"
+  ],
+  [
+   "Maroc",
+   "Rabat",
+   "Rabat est la capitale, mais Casablanca est de loin la plus grande ville du pays."
+  ],
+  [
+   "Maurice",
+   "Port-Louis"
+  ],
+  [
+   "Mauritanie",
+   "Nouakchott"
+  ],
+  [
+   "Mozambique",
+   "Maputo"
+  ],
+  [
+   "Namibie",
+   "Windhoek"
+  ],
+  [
+   "Niger",
+   "Niamey"
+  ],
+  [
+   "Nigeria",
+   "Abuja",
+   "Abuja a été bâtie de toutes pièces et a remplacé Lagos en 1991, pour une position plus centrale et neutre entre les régions."
+  ],
+  [
+   "Ouganda",
+   "Kampala"
+  ],
+  [
+   "République démocratique du Congo",
+   "Kinshasa"
+  ],
+  [
+   "Rwanda",
+   "Kigali"
+  ],
+  [
+   "Sao Tomé-et-Principe",
+   "Sao Tomé",
+   null,
+   [
+    "São Tomé"
+   ]
+  ],
+  [
+   "Sénégal",
+   "Dakar"
+  ],
+  [
+   "Seychelles",
+   "Victoria"
+  ],
+  [
+   "Sierra Leone",
+   "Freetown"
+  ],
+  [
+   "Somalie",
+   "Mogadiscio"
+  ],
+  [
+   "Soudan",
+   "Khartoum"
+  ],
+  [
+   "Soudan du Sud",
+   "Djouba",
+   "Pays le plus jeune du monde, indépendant du Soudan en 2011.",
+   [
+    "Juba"
+   ]
+  ],
+  [
+   "Tanzanie",
+   "Dodoma",
+   "Dodoma est la capitale officielle depuis 1996, mais Dar es Salaam reste la capitale économique et la plus grande ville.",
+   [
+    "Dar es Salaam"
+   ]
+  ],
+  [
+   "Tchad",
+   "N'Djaména",
+   null,
+   [
+    "Ndjamena",
+    "N'Djamena"
+   ]
+  ],
+  [
+   "Togo",
+   "Lomé"
+  ],
+  [
+   "Tunisie",
+   "Tunis"
+  ],
+  [
+   "Zambie",
+   "Lusaka"
+  ],
+  [
+   "Zimbabwe",
+   "Harare"
+  ]
+ ]
+}
