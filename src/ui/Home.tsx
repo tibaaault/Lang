@@ -7,10 +7,12 @@ import { Button, Card, Stat } from './components'
 export function Home({
   courses,
   onStart,
+  onLexicon,
   onOpen,
 }: {
   courses: Course[]
   onStart: (courseId: string, mode: SessionMode) => void
+  onLexicon: (courseId: string) => void
   onOpen: (view: 'stats' | 'account' | 'settings') => void
 }) {
   const progress = useProgress()
@@ -145,15 +147,27 @@ export function Home({
                 </p>
               )}
 
-              {canTrain && (
+              <div className="mt-3 flex items-center justify-between gap-3 text-sm text-muted">
+                {canTrain ? (
+                  <button
+                    onClick={() => onStart(course.id, 'free')}
+                    className="py-2 underline underline-offset-4"
+                  >
+                    Entraînement libre
+                    {remaining > 0 && ` · ${remaining} en réserve`}
+                  </button>
+                ) : (
+                  <span />
+                )}
+                {/* Consulter sans être interrogé : relire un kit de voyage
+                    avant un départ, ou vérifier un mot au passage. */}
                 <button
-                  onClick={() => onStart(course.id, 'free')}
-                  className="mt-3 w-full py-2 text-sm text-muted underline underline-offset-4"
+                  onClick={() => onLexicon(course.id)}
+                  className="shrink-0 py-2 underline underline-offset-4"
                 >
-                  Entraînement libre
-                  {remaining > 0 && ` · ${remaining} mots en réserve`}
+                  Lexique
                 </button>
-              )}
+              </div>
             </Card>
           )
         })}
