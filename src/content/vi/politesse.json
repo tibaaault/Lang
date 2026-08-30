@@ -1,0 +1,432 @@
+{
+  "id": "vi.politesse",
+  "title": "Premiers mots",
+  "subtitle": "Saluer, remercier, s'excuser — et comprendre les tons",
+  "lexemes": [
+    {
+      "id": "vi.po.xin-chao",
+      "term": "xin chào",
+      "pos": "expr",
+      "gloss": "bonjour",
+      "note": "Salutation passe-partout, à toute heure. À l'oral, on dit souvent simplement « chào » suivi du pronom : « chào anh », « chào chị ».",
+      "examples": [
+        {
+          "text": "Xin chào!",
+          "fr": "Bonjour !"
+        },
+        {
+          "text": "Chào anh, khỏe không?",
+          "fr": "Bonjour, comment allez-vous ?"
+        }
+      ],
+      "roman": "sin tchao"
+    },
+    {
+      "id": "vi.po.cam-on",
+      "term": "cảm ơn",
+      "pos": "expr",
+      "gloss": "merci",
+      "note": "Souvent suivi du pronom de l'interlocuteur : « cảm ơn anh ». On répond « không có gì » (de rien, littéralement « il n'y a rien »).",
+      "examples": [
+        {
+          "text": "Cảm ơn anh nhiều.",
+          "fr": "Merci beaucoup."
+        },
+        {
+          "text": "Không có gì.",
+          "fr": "De rien."
+        }
+      ],
+      "roman": "kam eune"
+    },
+    {
+      "id": "vi.po.xin-loi",
+      "term": "xin lỗi",
+      "pos": "expr",
+      "gloss": "pardon, excusez-moi",
+      "note": "Sert à s'excuser comme à aborder quelqu'un : « xin lỗi, cho hỏi... » (excusez-moi, puis-je demander).",
+      "examples": [
+        {
+          "text": "Xin lỗi, tôi không hiểu.",
+          "fr": "Désolé, je ne comprends pas."
+        },
+        {
+          "text": "Xin lỗi, cho hỏi...",
+          "fr": "Excusez-moi, puis-je demander..."
+        }
+      ],
+      "roman": "sin loy"
+    },
+    {
+      "id": "vi.po.khong",
+      "term": "không",
+      "pos": "adv",
+      "gloss": "non ; ne... pas",
+      "note": "Mot à tout faire : il nie un verbe (« tôi không hiểu ») et sert de « non ». Placé en fin de phrase, il la transforme en question : « được không? » = c'est possible ?",
+      "examples": [
+        {
+          "text": "Tôi không hiểu.",
+          "fr": "Je ne comprends pas."
+        },
+        {
+          "text": "Ngon không?",
+          "fr": "C'est bon ?"
+        }
+      ],
+      "roman": "khong"
+    },
+    {
+      "id": "vi.po.da",
+      "term": "dạ",
+      "pos": "expr",
+      "gloss": "oui ; marque de politesse",
+      "note": "« Dạ » adoucit toute réponse et marque le respect, surtout dans le Sud. « Vâng » joue le même rôle dans le Nord. Répondre sèchement sans l'un des deux paraît brusque.",
+      "examples": [
+        {
+          "text": "Dạ, em hiểu.",
+          "fr": "Oui, je comprends."
+        },
+        {
+          "text": "Dạ vâng.",
+          "fr": "Oui, bien sûr."
+        }
+      ],
+      "roman": "ya (Sud) / za (Nord)"
+    },
+    {
+      "id": "vi.po.toi",
+      "term": "tôi",
+      "pos": "noun",
+      "gloss": "je, moi (neutre)",
+      "note": "« Tôi » est neutre et sûr avec un inconnu, mais un peu distant. Entre proches, on emploie plutôt le pronom qui correspond à son âge relatif : em, anh, chị.",
+      "examples": [
+        {
+          "text": "Tôi là người Pháp.",
+          "fr": "Je suis français."
+        },
+        {
+          "text": "Tôi không biết.",
+          "fr": "Je ne sais pas."
+        }
+      ],
+      "roman": "toy"
+    },
+    {
+      "id": "vi.po.anh-chi-em",
+      "term": "anh, chị, em",
+      "pos": "noun",
+      "gloss": "vous / tu, selon l'âge",
+      "note": "Le point le plus déroutant du vietnamien : on ne dit pas « vous » mais le mot de parenté correspondant. « Anh » pour un homme un peu plus âgé, « chị » pour une femme un peu plus âgée, « em » pour quelqu'un de plus jeune, « ông » et « bà » pour une personne âgée. Se tromper est plus gênant qu'une faute de vocabulaire.",
+      "examples": [
+        {
+          "text": "Chào chị!",
+          "fr": "Bonjour (à une femme un peu plus âgée) !"
+        },
+        {
+          "text": "Em cảm ơn anh.",
+          "fr": "Merci (dit par une personne plus jeune à un homme plus âgé)."
+        }
+      ],
+      "roman": "agne / tchi / èm"
+    },
+    {
+      "id": "vi.po.duoc-khong",
+      "term": "được không?",
+      "pos": "expr",
+      "gloss": "est-ce possible ? d'accord ?",
+      "note": "Formule de survie : on la colle à la fin de n'importe quelle demande. « Rẻ hơn được không? » = ça peut être moins cher ?",
+      "examples": [
+        {
+          "text": "Được không?",
+          "fr": "C'est possible ?"
+        },
+        {
+          "text": "Chụp ảnh được không?",
+          "fr": "Je peux prendre une photo ?"
+        }
+      ],
+      "roman": "deuoc khong"
+    },
+    {
+      "id": "vi.po.tam-biet",
+      "term": "tạm biệt",
+      "pos": "expr",
+      "gloss": "au revoir",
+      "note": "Un peu formel. À l'oral, on dit plus souvent « chào anh » ou « hẹn gặp lại » (à bientôt).",
+      "examples": [
+        {
+          "text": "Tạm biệt!",
+          "fr": "Au revoir !"
+        },
+        {
+          "text": "Hẹn gặp lại.",
+          "fr": "À bientôt."
+        }
+      ],
+      "roman": "tam biét"
+    },
+    {
+      "id": "vi.po.tons",
+      "term": "sáu thanh",
+      "pos": "noun",
+      "gloss": "les six tons",
+      "note": "Le vietnamien distingue six tons, et changer de ton change le mot : « ma » (fantôme), « mà » (mais), « má » (mère), « mả » (tombe), « mã » (cheval), « mạ » (jeune pousse). Les accents écrits notent ces tons ; les ignorer à l'oral rend souvent incompréhensible.",
+      "examples": [
+        {
+          "text": "ma, mà, má, mả, mã, mạ",
+          "fr": "six mots différents, une seule syllabe"
+        },
+        {
+          "text": "Tôi nói tiếng Việt chưa tốt.",
+          "fr": "Je ne parle pas encore bien vietnamien."
+        }
+      ],
+      "roman": "saou thanh"
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "choice",
+      "id": "vi.po.xin-chao.x0",
+      "lexemeId": "vi.po.xin-chao",
+      "prompt": "Bonjour →",
+      "options": [
+        "xin chào",
+        "tạm biệt",
+        "cảm ơn",
+        "xin lỗi"
+      ],
+      "answer": "xin chào",
+      "why": "« Tạm biệt » veut dire au revoir, « cảm ơn » merci, « xin lỗi » pardon."
+    },
+    {
+      "kind": "recall",
+      "id": "vi.po.xin-chao.x1",
+      "lexemeId": "vi.po.xin-chao",
+      "fr": "bonjour",
+      "accepted": [
+        "xin chào",
+        "chào"
+      ],
+      "hint": "x__ c___"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.cam-on.x0",
+      "lexemeId": "vi.po.cam-on",
+      "fr": "Merci beaucoup.",
+      "sentence": "___ ơn anh nhiều.",
+      "accepted": [
+        "cảm",
+        "cam"
+      ],
+      "hint": "c__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.po.cam-on.x1",
+      "lexemeId": "vi.po.cam-on",
+      "fr": "merci",
+      "accepted": [
+        "cảm ơn",
+        "cam on"
+      ],
+      "hint": "c__ ơ_"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.xin-loi.x0",
+      "lexemeId": "vi.po.xin-loi",
+      "fr": "Désolé, je ne comprends pas.",
+      "sentence": "___ lỗi, tôi không hiểu.",
+      "accepted": [
+        "xin"
+      ],
+      "hint": "x__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.po.xin-loi.x1",
+      "lexemeId": "vi.po.xin-loi",
+      "fr": "pardon, excusez-moi",
+      "accepted": [
+        "xin lỗi",
+        "xin loi"
+      ],
+      "hint": "x__ l__"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.khong.x0",
+      "lexemeId": "vi.po.khong",
+      "fr": "Je ne comprends pas.",
+      "sentence": "Tôi ___ hiểu.",
+      "accepted": [
+        "không",
+        "khong"
+      ],
+      "hint": "k____"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.po.khong.x1",
+      "lexemeId": "vi.po.khong",
+      "prompt": "C'est bon ? (question) →",
+      "options": [
+        "Ngon không?",
+        "Không ngon?",
+        "Ngon có?",
+        "Có ngon."
+      ],
+      "answer": "Ngon không?",
+      "why": "« Không » placé en fin de phrase la transforme en question fermée."
+    },
+    {
+      "kind": "recall",
+      "id": "vi.po.da.x0",
+      "lexemeId": "vi.po.da",
+      "fr": "oui (poli)",
+      "accepted": [
+        "dạ",
+        "da",
+        "vâng",
+        "vang"
+      ],
+      "hint": "d_"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.po.da.x1",
+      "lexemeId": "vi.po.da",
+      "prompt": "Quelle réponse est la plus polie ?",
+      "options": [
+        "Dạ, em hiểu.",
+        "Hiểu.",
+        "Không dạ.",
+        "Em dạ không."
+      ],
+      "answer": "Dạ, em hiểu.",
+      "why": "Commencer par « dạ » marque le respect ; répondre par le seul verbe paraît brusque."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.toi.x0",
+      "lexemeId": "vi.po.toi",
+      "fr": "Je suis français.",
+      "sentence": "___ là người Pháp.",
+      "accepted": [
+        "tôi",
+        "toi"
+      ],
+      "hint": "t__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.po.toi.x1",
+      "lexemeId": "vi.po.toi",
+      "fr": "je, moi (neutre)",
+      "accepted": [
+        "tôi",
+        "toi"
+      ],
+      "hint": "t__"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.po.anh-chi-em.x0",
+      "lexemeId": "vi.po.anh-chi-em",
+      "prompt": "Vous vous adressez à un homme d'une trentaine d'années. Vous dites :",
+      "options": [
+        "Chào anh",
+        "Chào chị",
+        "Chào em",
+        "Chào bà"
+      ],
+      "answer": "Chào anh",
+      "why": "« Anh » s'adresse à un homme un peu plus âgé ou du même âge. « Chị » est son équivalent féminin."
+    },
+    {
+      "kind": "choice",
+      "id": "vi.po.anh-chi-em.x1",
+      "lexemeId": "vi.po.anh-chi-em",
+      "prompt": "Vous parlez à une femme âgée. Vous dites :",
+      "options": [
+        "Chào bà",
+        "Chào em",
+        "Chào anh",
+        "Chào tôi"
+      ],
+      "answer": "Chào bà",
+      "why": "« Bà » marque le respect dû à une femme âgée ; « ông » est son équivalent masculin."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.duoc-khong.x0",
+      "lexemeId": "vi.po.duoc-khong",
+      "fr": "Je peux prendre une photo ?",
+      "sentence": "Chụp ảnh ___ không?",
+      "accepted": [
+        "được",
+        "duoc"
+      ],
+      "hint": "đ___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.po.duoc-khong.x1",
+      "lexemeId": "vi.po.duoc-khong",
+      "fr": "est-ce possible ?",
+      "accepted": [
+        "được không",
+        "duoc khong"
+      ],
+      "hint": "đ___ k____"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.po.tam-biet.x0",
+      "lexemeId": "vi.po.tam-biet",
+      "fr": "au revoir",
+      "accepted": [
+        "tạm biệt",
+        "tam biet"
+      ],
+      "hint": "t__ b___"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.po.tam-biet.x1",
+      "lexemeId": "vi.po.tam-biet",
+      "text": "Tạm biệt, hẹn gặp lại!",
+      "fr": "Au revoir, à bientôt !"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.po.tons.x0",
+      "lexemeId": "vi.po.tons",
+      "prompt": "Combien de tons distingue le vietnamien ?",
+      "options": [
+        "six",
+        "deux",
+        "quatre",
+        "aucun"
+      ],
+      "answer": "six",
+      "why": "Six tons, notés par des accents à l'écrit. Le mandarin en compte quatre, le thaï cinq."
+    },
+    {
+      "kind": "choice",
+      "id": "vi.po.tons.x1",
+      "lexemeId": "vi.po.tons",
+      "prompt": "« má » et « mà » sont :",
+      "options": [
+        "deux mots différents",
+        "le même mot",
+        "deux orthographes du même mot",
+        "deux temps du même verbe"
+      ],
+      "answer": "deux mots différents",
+      "why": "Le ton fait partie du mot : « má » veut dire mère, « mà » veut dire mais."
+    }
+  ]
+}

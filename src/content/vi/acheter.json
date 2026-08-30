@@ -1,0 +1,422 @@
+{
+  "id": "vi.acheter",
+  "title": "Acheter et négocier",
+  "subtitle": "Demander un prix, marchander, comprendre les montants",
+  "lexemes": [
+    {
+      "id": "vi.ac.bao-nhieu",
+      "term": "bao nhiêu",
+      "pos": "adv",
+      "gloss": "combien",
+      "note": "« Bao nhiêu tiền? » = combien ça coûte ? C'est la phrase la plus utile du marché.",
+      "examples": [
+        {
+          "text": "Cái này bao nhiêu?",
+          "fr": "Ça coûte combien ?"
+        },
+        {
+          "text": "Bao nhiêu tiền?",
+          "fr": "Combien d'argent ?"
+        }
+      ],
+      "roman": "bao nieou"
+    },
+    {
+      "id": "vi.ac.tien",
+      "term": "tiền",
+      "pos": "noun",
+      "gloss": "argent",
+      "note": "« Tiền » se retrouve partout : « bao nhiêu tiền » (combien d'argent), « tính tiền » (l'addition), « đổi tiền » (changer de l'argent).",
+      "examples": [
+        {
+          "text": "Tôi không có tiền mặt.",
+          "fr": "Je n'ai pas d'espèces."
+        },
+        {
+          "text": "Đổi tiền ở đâu?",
+          "fr": "Où changer de l'argent ?"
+        }
+      ],
+      "roman": "tienne"
+    },
+    {
+      "id": "vi.ac.dat",
+      "term": "đắt",
+      "pos": "adj",
+      "gloss": "cher",
+      "note": "« Đắt quá! » (trop cher) ouvre la négociation, avec le sourire. Dans le Sud, on dit plutôt « mắc ».",
+      "examples": [
+        {
+          "text": "Đắt quá!",
+          "fr": "C'est trop cher !"
+        },
+        {
+          "text": "Cái này đắt lắm.",
+          "fr": "C'est vraiment cher."
+        }
+      ],
+      "roman": "dat / mak (Sud)"
+    },
+    {
+      "id": "vi.ac.re",
+      "term": "rẻ",
+      "pos": "adj",
+      "gloss": "bon marché, pas cher",
+      "note": "« Rẻ hơn được không? » = ça peut être moins cher ? C'est la contre-proposition à formuler après « đắt quá ».",
+      "examples": [
+        {
+          "text": "Rẻ hơn được không?",
+          "fr": "Ça peut être moins cher ?"
+        },
+        {
+          "text": "Ở đây rẻ hơn.",
+          "fr": "C'est moins cher ici."
+        }
+      ],
+      "roman": "ré"
+    },
+    {
+      "id": "vi.ac.mua",
+      "term": "mua",
+      "pos": "verb",
+      "gloss": "acheter",
+      "note": "« Mua » (acheter) et « bán » (vendre) forment le mot « mua bán », le commerce.",
+      "examples": [
+        {
+          "text": "Tôi muốn mua cái này.",
+          "fr": "Je veux acheter ceci."
+        },
+        {
+          "text": "Mua ở đâu?",
+          "fr": "Où l'acheter ?"
+        }
+      ],
+      "roman": "moua"
+    },
+    {
+      "id": "vi.ac.cai-nay",
+      "term": "cái này",
+      "pos": "expr",
+      "gloss": "ceci, celui-ci",
+      "note": "Formule de survie au marché : on montre du doigt en disant « cái này bao nhiêu? ». « Cái kia » = celui-là, plus loin.",
+      "examples": [
+        {
+          "text": "Cái này bao nhiêu?",
+          "fr": "Combien coûte celui-ci ?"
+        },
+        {
+          "text": "Cho tôi cái kia.",
+          "fr": "Donnez-moi celui-là."
+        }
+      ],
+      "roman": "kaï naï"
+    },
+    {
+      "id": "vi.ac.dong",
+      "term": "đồng",
+      "pos": "noun",
+      "gloss": "dong (la monnaie)",
+      "note": "Les montants sont énormes : un café coûte environ 25 000 đồng. À l'oral, on abrège souvent en milliers — « hai lăm » pour 25 000.",
+      "examples": [
+        {
+          "text": "Năm mươi nghìn đồng.",
+          "fr": "Cinquante mille dongs."
+        },
+        {
+          "text": "Hai trăm nghìn.",
+          "fr": "Deux cent mille."
+        }
+      ],
+      "roman": "dongue"
+    },
+    {
+      "id": "vi.ac.co-khong",
+      "term": "có ... không?",
+      "pos": "expr",
+      "gloss": "avez-vous... ?",
+      "note": "Structure de question la plus courante : on encadre le mot par « có » et « không ». « Có phòng không? » = avez-vous une chambre ?",
+      "examples": [
+        {
+          "text": "Có phòng không?",
+          "fr": "Avez-vous une chambre ?"
+        },
+        {
+          "text": "Có wifi không?",
+          "fr": "Y a-t-il du wifi ?"
+        }
+      ],
+      "roman": "ko"
+    },
+    {
+      "id": "vi.ac.qua",
+      "term": "quá",
+      "pos": "adv",
+      "gloss": "trop, très",
+      "note": "Se place après l'adjectif : « đắt quá » (trop cher), « ngon quá » (très bon). Selon le ton, il exprime l'excès ou l'admiration.",
+      "examples": [
+        {
+          "text": "Đẹp quá!",
+          "fr": "C'est très beau !"
+        },
+        {
+          "text": "Xa quá.",
+          "fr": "C'est trop loin."
+        }
+      ],
+      "roman": "koua"
+    },
+    {
+      "id": "vi.ac.khong-can",
+      "term": "không cần",
+      "pos": "expr",
+      "gloss": "pas besoin, non merci",
+      "note": "Refus poli face à un vendeur insistant : « không cần, cảm ơn ». Plus doux qu'un simple « không ».",
+      "examples": [
+        {
+          "text": "Không cần, cảm ơn.",
+          "fr": "Pas besoin, merci."
+        },
+        {
+          "text": "Tôi không cần túi.",
+          "fr": "Je n'ai pas besoin de sac."
+        }
+      ],
+      "roman": "khong kane"
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "vi.ac.bao-nhieu.x0",
+      "lexemeId": "vi.ac.bao-nhieu",
+      "fr": "Ça coûte combien ?",
+      "sentence": "Cái này ___ ___?",
+      "accepted": [
+        "bao nhiêu",
+        "bao nhieu"
+      ],
+      "hint": "b__ n____"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.bao-nhieu.x1",
+      "lexemeId": "vi.ac.bao-nhieu",
+      "fr": "combien",
+      "accepted": [
+        "bao nhiêu",
+        "bao nhieu"
+      ],
+      "hint": "b__ n____"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.tien.x0",
+      "lexemeId": "vi.ac.tien",
+      "fr": "Où changer de l'argent ?",
+      "sentence": "Đổi ___ ở đâu?",
+      "accepted": [
+        "tiền",
+        "tien"
+      ],
+      "hint": "t___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.tien.x1",
+      "lexemeId": "vi.ac.tien",
+      "fr": "argent",
+      "accepted": [
+        "tiền",
+        "tien"
+      ],
+      "hint": "t___"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.dat.x0",
+      "lexemeId": "vi.ac.dat",
+      "fr": "C'est trop cher !",
+      "sentence": "___ quá!",
+      "accepted": [
+        "đắt",
+        "dat",
+        "mắc",
+        "mac"
+      ],
+      "hint": "đ__"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.ac.dat.x1",
+      "lexemeId": "vi.ac.dat",
+      "prompt": "Le contraire de « đắt » est :",
+      "options": [
+        "rẻ",
+        "ngon",
+        "cay",
+        "tiền"
+      ],
+      "answer": "rẻ",
+      "why": "« Rẻ » veut dire bon marché ; « ngon » bon au goût, « cay » épicé, « tiền » argent."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.re.x0",
+      "lexemeId": "vi.ac.re",
+      "fr": "Ça peut être moins cher ?",
+      "sentence": "___ hơn được không?",
+      "accepted": [
+        "rẻ",
+        "re"
+      ],
+      "hint": "r_"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.re.x1",
+      "lexemeId": "vi.ac.re",
+      "fr": "bon marché, pas cher",
+      "accepted": [
+        "rẻ",
+        "re"
+      ],
+      "hint": "r_"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.mua.x0",
+      "lexemeId": "vi.ac.mua",
+      "fr": "Je veux acheter ceci.",
+      "sentence": "Tôi muốn ___ cái này.",
+      "accepted": [
+        "mua"
+      ],
+      "hint": "m__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.mua.x1",
+      "lexemeId": "vi.ac.mua",
+      "fr": "acheter",
+      "accepted": [
+        "mua"
+      ],
+      "hint": "m__"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.cai-nay.x0",
+      "lexemeId": "vi.ac.cai-nay",
+      "fr": "Combien coûte celui-ci ?",
+      "sentence": "___ ___ bao nhiêu?",
+      "accepted": [
+        "cái này",
+        "cai nay"
+      ],
+      "hint": "c__ n__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.cai-nay.x1",
+      "lexemeId": "vi.ac.cai-nay",
+      "fr": "ceci, celui-ci",
+      "accepted": [
+        "cái này",
+        "cai nay"
+      ],
+      "hint": "c__ n__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.dong.x0",
+      "lexemeId": "vi.ac.dong",
+      "fr": "la monnaie vietnamienne",
+      "accepted": [
+        "đồng",
+        "dong"
+      ],
+      "hint": "đ___"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.ac.dong.x1",
+      "lexemeId": "vi.ac.dong",
+      "prompt": "« nghìn » signifie :",
+      "options": [
+        "mille",
+        "cent",
+        "dix",
+        "million"
+      ],
+      "answer": "mille",
+      "why": "« Nghìn » (ou « ngàn » dans le Sud) veut dire mille ; « trăm » veut dire cent."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.co-khong.x0",
+      "lexemeId": "vi.ac.co-khong",
+      "fr": "Y a-t-il du wifi ?",
+      "sentence": "___ wifi không?",
+      "accepted": [
+        "có",
+        "co"
+      ],
+      "hint": "c_"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.ac.co-khong.x1",
+      "lexemeId": "vi.ac.co-khong",
+      "prompt": "Avez-vous une chambre ? →",
+      "options": [
+        "Có phòng không?",
+        "Phòng có không?",
+        "Không có phòng?",
+        "Có không phòng?"
+      ],
+      "answer": "Có phòng không?",
+      "why": "La structure est « có + chose + không? »."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.qua.x0",
+      "lexemeId": "vi.ac.qua",
+      "fr": "C'est trop loin.",
+      "sentence": "Xa ___.",
+      "accepted": [
+        "quá",
+        "qua"
+      ],
+      "hint": "q__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.qua.x1",
+      "lexemeId": "vi.ac.qua",
+      "fr": "trop, très (après l'adjectif)",
+      "accepted": [
+        "quá",
+        "qua"
+      ],
+      "hint": "q__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ac.khong-can.x0",
+      "lexemeId": "vi.ac.khong-can",
+      "fr": "pas besoin, non merci",
+      "accepted": [
+        "không cần",
+        "khong can"
+      ],
+      "hint": "k____ c__"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.ac.khong-can.x1",
+      "lexemeId": "vi.ac.khong-can",
+      "text": "Không cần, cảm ơn.",
+      "fr": "Pas besoin, merci."
+    }
+  ]
+}

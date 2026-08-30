@@ -1,0 +1,414 @@
+{
+  "id": "vi.manger",
+  "title": "Manger et boire",
+  "subtitle": "Commander dans la rue, demander sans piment, payer",
+  "lexemes": [
+    {
+      "id": "vi.ma.an",
+      "term": "ăn",
+      "pos": "verb",
+      "gloss": "manger",
+      "note": "« Ăn cơm » (manger du riz) signifie simplement prendre un repas. « Ăn chay » = manger végétarien.",
+      "examples": [
+        {
+          "text": "Tôi muốn ăn.",
+          "fr": "Je veux manger."
+        },
+        {
+          "text": "Ăn cơm chưa?",
+          "fr": "Tu as déjà mangé ?"
+        }
+      ],
+      "roman": "ann"
+    },
+    {
+      "id": "vi.ma.uong",
+      "term": "uống",
+      "pos": "verb",
+      "gloss": "boire",
+      "note": "« Uống nước » = boire de l'eau. Ne pas confondre avec « ăn », manger : les deux verbes ne sont jamais interchangeables, même pour une soupe.",
+      "examples": [
+        {
+          "text": "Tôi muốn uống nước.",
+          "fr": "Je veux boire de l'eau."
+        },
+        {
+          "text": "Uống bia không?",
+          "fr": "Tu bois une bière ?"
+        }
+      ],
+      "roman": "ououngue"
+    },
+    {
+      "id": "vi.ma.nuoc",
+      "term": "nước",
+      "pos": "noun",
+      "gloss": "eau ; pays",
+      "note": "Deux sens pour le même mot : « nước » désigne l'eau, mais aussi le pays — « nước Pháp » = la France. « Nước suối » est l'eau minérale en bouteille.",
+      "examples": [
+        {
+          "text": "Cho tôi nước suối.",
+          "fr": "De l'eau minérale, s'il vous plaît."
+        },
+        {
+          "text": "Anh ở nước nào?",
+          "fr": "Vous venez de quel pays ?"
+        }
+      ],
+      "roman": "neuoc"
+    },
+    {
+      "id": "vi.ma.ca-phe",
+      "term": "cà phê",
+      "pos": "noun",
+      "gloss": "café",
+      "note": "Le Vietnam est le deuxième producteur mondial. « Cà phê sữa đá » — café glacé au lait concentré — est la boisson emblématique du pays.",
+      "examples": [
+        {
+          "text": "Cho tôi một cà phê sữa đá.",
+          "fr": "Un café glacé au lait, s'il vous plaît."
+        },
+        {
+          "text": "Cà phê đen nóng.",
+          "fr": "Un café noir chaud."
+        }
+      ],
+      "roman": "ka fé"
+    },
+    {
+      "id": "vi.ma.pho",
+      "term": "phở",
+      "pos": "noun",
+      "gloss": "soupe de nouilles au bœuf ou au poulet",
+      "note": "Le plat national, mangé surtout au petit-déjeuner. « Phở bò » au bœuf, « phở gà » au poulet. Se prononce à peu près « feu », pas « fo ».",
+      "examples": [
+        {
+          "text": "Một tô phở bò.",
+          "fr": "Un bol de phở au bœuf."
+        },
+        {
+          "text": "Phở gà ngon lắm.",
+          "fr": "Le phở au poulet est très bon."
+        }
+      ],
+      "roman": "feu"
+    },
+    {
+      "id": "vi.ma.ngon",
+      "term": "ngon",
+      "pos": "adj",
+      "gloss": "bon, délicieux",
+      "note": "Compliment universel sur la nourriture. « Ngon lắm! » = c'est très bon ! Le « ng » initial n'existe pas en français : il se prononce comme la fin de « parking ».",
+      "examples": [
+        {
+          "text": "Ngon lắm!",
+          "fr": "C'est très bon !"
+        },
+        {
+          "text": "Món này ngon không?",
+          "fr": "Ce plat est bon ?"
+        }
+      ],
+      "roman": "ngonne"
+    },
+    {
+      "id": "vi.ma.cay",
+      "term": "cay",
+      "pos": "adj",
+      "gloss": "épicé, piquant",
+      "note": "« Không cay » (pas épicé) est la formule à retenir avant tout le reste. Le piment est servi à part le plus souvent, mais pas toujours.",
+      "examples": [
+        {
+          "text": "Không cay nhé.",
+          "fr": "Pas épicé, s'il vous plaît."
+        },
+        {
+          "text": "Món này cay quá.",
+          "fr": "Ce plat est trop épicé."
+        }
+      ],
+      "roman": "kaï"
+    },
+    {
+      "id": "vi.ma.chay",
+      "term": "chay",
+      "pos": "adj",
+      "gloss": "végétarien",
+      "note": "« Ăn chay » = manger végétarien, pratique courante liée au bouddhisme, notamment les jours de pleine lune. « Cơm chay » = repas végétarien.",
+      "examples": [
+        {
+          "text": "Tôi ăn chay.",
+          "fr": "Je suis végétarien."
+        },
+        {
+          "text": "Có món chay không?",
+          "fr": "Avez-vous des plats végétariens ?"
+        }
+      ],
+      "roman": "tchaï"
+    },
+    {
+      "id": "vi.ma.tinh-tien",
+      "term": "tính tiền",
+      "pos": "expr",
+      "gloss": "l'addition, régler",
+      "note": "« Tính tiền! » suffit pour demander l'addition. On dit aussi « thanh toán », plus formel.",
+      "examples": [
+        {
+          "text": "Tính tiền!",
+          "fr": "L'addition, s'il vous plaît !"
+        },
+        {
+          "text": "Bao nhiêu tiền?",
+          "fr": "Ça fait combien ?"
+        }
+      ],
+      "roman": "tinh tienne"
+    },
+    {
+      "id": "vi.ma.mot-hai",
+      "term": "một, hai, ba",
+      "pos": "noun",
+      "gloss": "un, deux, trois",
+      "note": "Les nombres servent surtout à commander : « một tô » (un bol), « hai cái » (deux unités). La suite : bốn (4), năm (5), sáu (6), bảy (7), tám (8), chín (9), mười (10).",
+      "examples": [
+        {
+          "text": "Cho tôi hai cà phê.",
+          "fr": "Deux cafés, s'il vous plaît."
+        },
+        {
+          "text": "Một, hai, ba!",
+          "fr": "Un, deux, trois !"
+        }
+      ],
+      "roman": "moat / haï / ba"
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "vi.ma.an.x0",
+      "lexemeId": "vi.ma.an",
+      "fr": "Je veux manger.",
+      "sentence": "Tôi muốn ___.",
+      "accepted": [
+        "ăn",
+        "an"
+      ],
+      "hint": "ă_"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.an.x1",
+      "lexemeId": "vi.ma.an",
+      "fr": "manger",
+      "accepted": [
+        "ăn",
+        "an"
+      ],
+      "hint": "ă_"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.uong.x0",
+      "lexemeId": "vi.ma.uong",
+      "fr": "Je veux boire de l'eau.",
+      "sentence": "Tôi muốn ___ nước.",
+      "accepted": [
+        "uống",
+        "uong"
+      ],
+      "hint": "u___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.uong.x1",
+      "lexemeId": "vi.ma.uong",
+      "fr": "boire",
+      "accepted": [
+        "uống",
+        "uong"
+      ],
+      "hint": "u___"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.nuoc.x0",
+      "lexemeId": "vi.ma.nuoc",
+      "fr": "De l'eau minérale, s'il vous plaît.",
+      "sentence": "Cho tôi ___ suối.",
+      "accepted": [
+        "nước",
+        "nuoc"
+      ],
+      "hint": "n___"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.ma.nuoc.x1",
+      "lexemeId": "vi.ma.nuoc",
+      "prompt": "Vous venez de quel pays ? →",
+      "options": [
+        "Anh ở nước nào?",
+        "Anh ở nước không?",
+        "Anh nước nào ở?",
+        "Nào nước anh ở?"
+      ],
+      "answer": "Anh ở nước nào?",
+      "why": "« Nào » (quel) se place après le nom, contrairement au français."
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.ca-phe.x0",
+      "lexemeId": "vi.ma.ca-phe",
+      "fr": "café",
+      "accepted": [
+        "cà phê",
+        "ca phe"
+      ],
+      "hint": "c_ p__"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.ma.ca-phe.x1",
+      "lexemeId": "vi.ma.ca-phe",
+      "text": "Cho tôi một cà phê sữa đá.",
+      "fr": "Un café glacé au lait, s'il vous plaît."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.pho.x0",
+      "lexemeId": "vi.ma.pho",
+      "fr": "Un bol de phở au bœuf.",
+      "sentence": "Một tô ___ bò.",
+      "accepted": [
+        "phở",
+        "pho"
+      ],
+      "hint": "p__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.pho.x1",
+      "lexemeId": "vi.ma.pho",
+      "fr": "soupe de nouilles vietnamienne",
+      "accepted": [
+        "phở",
+        "pho"
+      ],
+      "hint": "p__"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.ngon.x0",
+      "lexemeId": "vi.ma.ngon",
+      "fr": "C'est très bon !",
+      "sentence": "___ lắm!",
+      "accepted": [
+        "ngon"
+      ],
+      "hint": "n___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.ngon.x1",
+      "lexemeId": "vi.ma.ngon",
+      "fr": "bon, délicieux (au goût)",
+      "accepted": [
+        "ngon"
+      ],
+      "hint": "n___"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.cay.x0",
+      "lexemeId": "vi.ma.cay",
+      "fr": "Pas épicé, s'il vous plaît.",
+      "sentence": "Không ___ nhé.",
+      "accepted": [
+        "cay"
+      ],
+      "hint": "c__"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.ma.cay.x1",
+      "lexemeId": "vi.ma.cay",
+      "prompt": "Ce plat est trop épicé. →",
+      "options": [
+        "Món này cay quá.",
+        "Món này quá cay không.",
+        "Cay này món quá.",
+        "Món này không cay."
+      ],
+      "answer": "Món này cay quá.",
+      "why": "« Quá » (trop) se place après l'adjectif : « cay quá »."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.chay.x0",
+      "lexemeId": "vi.ma.chay",
+      "fr": "Je suis végétarien.",
+      "sentence": "Tôi ăn ___.",
+      "accepted": [
+        "chay"
+      ],
+      "hint": "c___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.chay.x1",
+      "lexemeId": "vi.ma.chay",
+      "fr": "végétarien",
+      "accepted": [
+        "chay",
+        "ăn chay",
+        "an chay"
+      ],
+      "hint": "c___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.tinh-tien.x0",
+      "lexemeId": "vi.ma.tinh-tien",
+      "fr": "l'addition (demander à payer)",
+      "accepted": [
+        "tính tiền",
+        "tinh tien"
+      ],
+      "hint": "t___ t___"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.ma.tinh-tien.x1",
+      "lexemeId": "vi.ma.tinh-tien",
+      "text": "Cho tôi tính tiền.",
+      "fr": "L'addition, s'il vous plaît."
+    },
+    {
+      "kind": "choice",
+      "id": "vi.ma.mot-hai.x0",
+      "lexemeId": "vi.ma.mot-hai",
+      "prompt": "Deux cafés →",
+      "options": [
+        "hai cà phê",
+        "một cà phê",
+        "ba cà phê",
+        "bốn cà phê"
+      ],
+      "answer": "hai cà phê",
+      "why": "Một = un, hai = deux, ba = trois, bốn = quatre."
+    },
+    {
+      "kind": "recall",
+      "id": "vi.ma.mot-hai.x1",
+      "lexemeId": "vi.ma.mot-hai",
+      "fr": "un (le nombre)",
+      "accepted": [
+        "một",
+        "mot"
+      ],
+      "hint": "m__"
+    }
+  ]
+}

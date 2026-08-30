@@ -146,3 +146,22 @@ describe('fusion entre appareils', () => {
     expect(mergeProgress(local, remote).days['2026-03-02'].reviews).toBe(20)
   })
 })
+
+describe('saisie du vietnamien', () => {
+  it('accepte une réponse tapée sans tons ni d barré', () => {
+    // Aucun clavier français ne permet de saisir « đ » ni les tons : les
+    // exiger rendrait tout exercice écrit impossible à réussir.
+    expect(checkAnswer('duoc khong', ['được không']).correct).toBe(true)
+    expect(checkAnswer('cam on', ['cảm ơn']).correct).toBe(true)
+    expect(checkAnswer('di', ['đi']).correct).toBe(true)
+    expect(checkAnswer('pho', ['phở']).correct).toBe(true)
+    expect(checkAnswer('nguoi', ['người']).correct).toBe(true)
+  })
+
+  it('distingue toujours des mots réellement différents', () => {
+    // La tolérance porte sur les accents, pas sur les consonnes : « cay »
+    // (épicé) et « chay » (végétarien) doivent rester distincts.
+    expect(checkAnswer('chay', ['cay']).correct).toBe(false)
+    expect(checkAnswer('xa', ['xe']).correct).toBe(false)
+  })
+})

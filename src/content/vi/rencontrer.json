@@ -1,0 +1,413 @@
+{
+  "id": "vi.rencontrer",
+  "title": "Rencontrer et discuter",
+  "subtitle": "Se présenter, dire qu'on ne comprend pas, demander de l'aide",
+  "lexemes": [
+    {
+      "id": "vi.re.ten",
+      "term": "tên",
+      "pos": "noun",
+      "gloss": "nom, prénom",
+      "note": "« Tên tôi là... » = je m'appelle... On demande « Tên anh là gì? » (quel est votre nom ?).",
+      "examples": [
+        {
+          "text": "Tên tôi là Thibault.",
+          "fr": "Je m'appelle Thibault."
+        },
+        {
+          "text": "Tên anh là gì?",
+          "fr": "Comment vous appelez-vous ?"
+        }
+      ],
+      "roman": "tenne"
+    },
+    {
+      "id": "vi.re.khoe-khong",
+      "term": "khỏe không?",
+      "pos": "expr",
+      "gloss": "comment ça va ?",
+      "note": "Littéralement « en bonne santé ? ». On répond « khỏe, cảm ơn » (ça va, merci). Toujours précédé du pronom : « Anh khỏe không? ».",
+      "examples": [
+        {
+          "text": "Anh khỏe không?",
+          "fr": "Comment allez-vous ?"
+        },
+        {
+          "text": "Khỏe, cảm ơn.",
+          "fr": "Ça va, merci."
+        }
+      ],
+      "roman": "khouè khong"
+    },
+    {
+      "id": "vi.re.nguoi",
+      "term": "người",
+      "pos": "noun",
+      "gloss": "personne, gens",
+      "note": "Sert à former les nationalités : « người Pháp » (français), « người Việt » (vietnamien). « Người nước ngoài » = étranger.",
+      "examples": [
+        {
+          "text": "Tôi là người Pháp.",
+          "fr": "Je suis français."
+        },
+        {
+          "text": "Anh là người nước nào?",
+          "fr": "Vous êtes de quelle nationalité ?"
+        }
+      ],
+      "roman": "ngueuil"
+    },
+    {
+      "id": "vi.re.hieu",
+      "term": "hiểu",
+      "pos": "verb",
+      "gloss": "comprendre",
+      "note": "« Tôi không hiểu » (je ne comprends pas) est la phrase à connaître avant toutes les autres.",
+      "examples": [
+        {
+          "text": "Tôi không hiểu.",
+          "fr": "Je ne comprends pas."
+        },
+        {
+          "text": "Anh hiểu không?",
+          "fr": "Vous comprenez ?"
+        }
+      ],
+      "roman": "hiéou"
+    },
+    {
+      "id": "vi.re.noi",
+      "term": "nói",
+      "pos": "verb",
+      "gloss": "parler, dire",
+      "note": "« Nói tiếng Việt » = parler vietnamien. « Tiếng » désigne la langue : tiếng Pháp, tiếng Anh.",
+      "examples": [
+        {
+          "text": "Tôi nói tiếng Việt một chút.",
+          "fr": "Je parle un peu vietnamien."
+        },
+        {
+          "text": "Anh nói tiếng Anh không?",
+          "fr": "Vous parlez anglais ?"
+        }
+      ],
+      "roman": "noï"
+    },
+    {
+      "id": "vi.re.cham",
+      "term": "chậm",
+      "pos": "adj",
+      "gloss": "lent, lentement",
+      "note": "« Nói chậm hơn được không? » = pouvez-vous parler plus lentement ? Phrase indispensable pour un débutant.",
+      "examples": [
+        {
+          "text": "Nói chậm hơn được không?",
+          "fr": "Pouvez-vous parler plus lentement ?"
+        },
+        {
+          "text": "Xin nói chậm.",
+          "fr": "Parlez lentement, s'il vous plaît."
+        }
+      ],
+      "roman": "tcheume"
+    },
+    {
+      "id": "vi.re.biet",
+      "term": "biết",
+      "pos": "verb",
+      "gloss": "savoir, connaître",
+      "note": "« Tôi không biết » = je ne sais pas. À distinguer de « hiểu » (comprendre) : on peut comprendre une question sans en savoir la réponse.",
+      "examples": [
+        {
+          "text": "Tôi không biết.",
+          "fr": "Je ne sais pas."
+        },
+        {
+          "text": "Anh biết chỗ này không?",
+          "fr": "Vous connaissez cet endroit ?"
+        }
+      ],
+      "roman": "biéte"
+    },
+    {
+      "id": "vi.re.giup",
+      "term": "giúp",
+      "pos": "verb",
+      "gloss": "aider",
+      "note": "« Giúp tôi với! » = aidez-moi ! Le « gi » se prononce « z » dans le Nord et « y » dans le Sud.",
+      "examples": [
+        {
+          "text": "Anh giúp tôi được không?",
+          "fr": "Pouvez-vous m'aider ?"
+        },
+        {
+          "text": "Giúp tôi với!",
+          "fr": "Aidez-moi !"
+        }
+      ],
+      "roman": "zioup / yioup"
+    },
+    {
+      "id": "vi.re.rat-vui",
+      "term": "rất vui",
+      "pos": "expr",
+      "gloss": "enchanté, ravi",
+      "note": "« Rất vui được gặp anh » = enchanté de vous rencontrer. « Vui » seul veut dire joyeux.",
+      "examples": [
+        {
+          "text": "Rất vui được gặp anh.",
+          "fr": "Enchanté de vous rencontrer."
+        },
+        {
+          "text": "Vui quá!",
+          "fr": "C'est super !"
+        }
+      ],
+      "roman": "reut vouï"
+    },
+    {
+      "id": "vi.re.mot-chut",
+      "term": "một chút",
+      "pos": "expr",
+      "gloss": "un peu",
+      "note": "« Tôi nói tiếng Việt một chút » = je parle un peu vietnamien. Dans le Sud, on dit plutôt « một ít ».",
+      "examples": [
+        {
+          "text": "Một chút thôi.",
+          "fr": "Juste un peu."
+        },
+        {
+          "text": "Tôi hiểu một chút.",
+          "fr": "Je comprends un peu."
+        }
+      ],
+      "roman": "moat tchout"
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "vi.re.ten.x0",
+      "lexemeId": "vi.re.ten",
+      "fr": "Je m'appelle Thibault.",
+      "sentence": "___ tôi là Thibault.",
+      "accepted": [
+        "tên",
+        "ten"
+      ],
+      "hint": "t__"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.re.ten.x1",
+      "lexemeId": "vi.re.ten",
+      "prompt": "Comment vous appelez-vous ? →",
+      "options": [
+        "Tên anh là gì?",
+        "Tên anh ở đâu?",
+        "Tên anh bao nhiêu?",
+        "Anh tên không?"
+      ],
+      "answer": "Tên anh là gì?",
+      "why": "« Gì » veut dire quoi ; « ở đâu » où ; « bao nhiêu » combien."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.khoe-khong.x0",
+      "lexemeId": "vi.re.khoe-khong",
+      "fr": "Comment allez-vous ?",
+      "sentence": "Anh ___ không?",
+      "accepted": [
+        "khỏe",
+        "khoe"
+      ],
+      "hint": "k___"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.re.khoe-khong.x1",
+      "lexemeId": "vi.re.khoe-khong",
+      "text": "Chào anh, anh khỏe không?",
+      "fr": "Bonjour, comment allez-vous ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.nguoi.x0",
+      "lexemeId": "vi.re.nguoi",
+      "fr": "Je suis français.",
+      "sentence": "Tôi là ___ Pháp.",
+      "accepted": [
+        "người",
+        "nguoi"
+      ],
+      "hint": "n____"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.re.nguoi.x1",
+      "lexemeId": "vi.re.nguoi",
+      "fr": "personne, gens",
+      "accepted": [
+        "người",
+        "nguoi"
+      ],
+      "hint": "n____"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.hieu.x0",
+      "lexemeId": "vi.re.hieu",
+      "fr": "Je ne comprends pas.",
+      "sentence": "Tôi không ___.",
+      "accepted": [
+        "hiểu",
+        "hieu"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.re.hieu.x1",
+      "lexemeId": "vi.re.hieu",
+      "fr": "comprendre",
+      "accepted": [
+        "hiểu",
+        "hieu"
+      ],
+      "hint": "h___"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.noi.x0",
+      "lexemeId": "vi.re.noi",
+      "fr": "Vous parlez anglais ?",
+      "sentence": "Anh ___ tiếng Anh không?",
+      "accepted": [
+        "nói",
+        "noi"
+      ],
+      "hint": "n__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.re.noi.x1",
+      "lexemeId": "vi.re.noi",
+      "fr": "parler, dire",
+      "accepted": [
+        "nói",
+        "noi"
+      ],
+      "hint": "n__"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.cham.x0",
+      "lexemeId": "vi.re.cham",
+      "fr": "Pouvez-vous parler plus lentement ?",
+      "sentence": "Nói ___ hơn được không?",
+      "accepted": [
+        "chậm",
+        "cham"
+      ],
+      "hint": "c___"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.re.cham.x1",
+      "lexemeId": "vi.re.cham",
+      "text": "Xin nói chậm hơn.",
+      "fr": "Parlez plus lentement, s'il vous plaît."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.biet.x0",
+      "lexemeId": "vi.re.biet",
+      "fr": "Je ne sais pas.",
+      "sentence": "Tôi không ___.",
+      "accepted": [
+        "biết",
+        "biet"
+      ],
+      "hint": "b___"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.re.biet.x1",
+      "lexemeId": "vi.re.biet",
+      "prompt": "« Je ne comprends pas » se dit :",
+      "options": [
+        "Tôi không hiểu.",
+        "Tôi không biết.",
+        "Tôi không nói.",
+        "Tôi không cần."
+      ],
+      "answer": "Tôi không hiểu.",
+      "why": "« Biết » veut dire savoir ; « hiểu » veut dire comprendre."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.giup.x0",
+      "lexemeId": "vi.re.giup",
+      "fr": "Pouvez-vous m'aider ?",
+      "sentence": "Anh ___ tôi được không?",
+      "accepted": [
+        "giúp",
+        "giup"
+      ],
+      "hint": "g___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.re.giup.x1",
+      "lexemeId": "vi.re.giup",
+      "fr": "aider",
+      "accepted": [
+        "giúp",
+        "giup"
+      ],
+      "hint": "g___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.re.rat-vui.x0",
+      "lexemeId": "vi.re.rat-vui",
+      "fr": "enchanté, ravi",
+      "accepted": [
+        "rất vui",
+        "rat vui"
+      ],
+      "hint": "r__ v__"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.re.rat-vui.x1",
+      "lexemeId": "vi.re.rat-vui",
+      "text": "Rất vui được gặp anh.",
+      "fr": "Enchanté de vous rencontrer."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.mot-chut.x0",
+      "lexemeId": "vi.re.mot-chut",
+      "fr": "Je comprends un peu.",
+      "sentence": "Tôi hiểu ___ ___.",
+      "accepted": [
+        "một chút",
+        "mot chut"
+      ],
+      "hint": "m__ c___"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.re.mot-chut.x1",
+      "lexemeId": "vi.re.mot-chut",
+      "fr": "un peu",
+      "accepted": [
+        "một chút",
+        "mot chut",
+        "một ít"
+      ],
+      "hint": "m__ c___"
+    }
+  ]
+}

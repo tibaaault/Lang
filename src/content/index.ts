@@ -40,6 +40,11 @@ import geoAsie from './geo/asie.json'
 import geoAmeriqueNord from './geo/amerique-nord.json'
 import geoAmeriqueSud from './geo/amerique-sud.json'
 import geoOceanie from './geo/oceanie.json'
+import viPolitesse from './vi/politesse.json'
+import viManger from './vi/manger.json'
+import viAcheter from './vi/acheter.json'
+import viDeplacer from './vi/deplacer.json'
+import viRencontrer from './vi/rencontrer.json'
 import idPremiersMots from './id/premiers-mots.json'
 import idMangerAcheter from './id/manger-acheter.json'
 import idNombres from './id/nombres.json'
@@ -131,10 +136,19 @@ const capitals: Course = {
   ].map((data) => buildCapitalsUnit(data as CapitalsData)),
 }
 
+const vietnamese: Course = {
+  id: 'vi',
+  lang: 'vi',
+  voice: 'vi-VN',
+  title: 'Vietnamien — kit de voyage',
+  units: [viPolitesse, viManger, viAcheter, viDeplacer, viRencontrer] as Unit[],
+}
+
 export const courses: Course[] = [
   english,
   englishBasics,
   indonesian,
+  vietnamese,
   capitals,
 ]
 

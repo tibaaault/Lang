@@ -1,0 +1,421 @@
+{
+  "id": "vi.deplacer",
+  "title": "Se déplacer et se loger",
+  "subtitle": "Demander son chemin, prendre un scooter, trouver une chambre",
+  "lexemes": [
+    {
+      "id": "vi.de.di",
+      "term": "đi",
+      "pos": "verb",
+      "gloss": "aller",
+      "note": "« Đi đâu? » = où vas-tu ? Sert aussi pour les moyens de transport : « đi xe máy » (aller en scooter), « đi bộ » (aller à pied).",
+      "examples": [
+        {
+          "text": "Tôi muốn đi Hà Nội.",
+          "fr": "Je veux aller à Hanoï."
+        },
+        {
+          "text": "Đi bộ được không?",
+          "fr": "On peut y aller à pied ?"
+        }
+      ],
+      "roman": "di"
+    },
+    {
+      "id": "vi.de.o-dau",
+      "term": "ở đâu",
+      "pos": "expr",
+      "gloss": "où",
+      "note": "Se place à la fin de la phrase, contrairement au français : « Nhà vệ sinh ở đâu? » = où sont les toilettes ?",
+      "examples": [
+        {
+          "text": "Nhà vệ sinh ở đâu?",
+          "fr": "Où sont les toilettes ?"
+        },
+        {
+          "text": "Khách sạn ở đâu?",
+          "fr": "Où est l'hôtel ?"
+        }
+      ],
+      "roman": "eu daou"
+    },
+    {
+      "id": "vi.de.xe-may",
+      "term": "xe máy",
+      "pos": "noun",
+      "gloss": "scooter, moto",
+      "note": "Le moyen de transport dominant. « Xe ôm » désigne le taxi-moto, omniprésent et souvent commandé par application.",
+      "examples": [
+        {
+          "text": "Thuê xe máy bao nhiêu?",
+          "fr": "Combien coûte la location d'un scooter ?"
+        },
+        {
+          "text": "Đi xe ôm nhanh hơn.",
+          "fr": "En taxi-moto, c'est plus rapide."
+        }
+      ],
+      "roman": "sè maï"
+    },
+    {
+      "id": "vi.de.khach-san",
+      "term": "khách sạn",
+      "pos": "noun",
+      "gloss": "hôtel",
+      "note": "« Nhà nghỉ » désigne une pension plus modeste, très répandue et bon marché.",
+      "examples": [
+        {
+          "text": "Khách sạn này tốt.",
+          "fr": "Cet hôtel est bien."
+        },
+        {
+          "text": "Có phòng trống không?",
+          "fr": "Avez-vous une chambre libre ?"
+        }
+      ],
+      "roman": "khak sane"
+    },
+    {
+      "id": "vi.de.phong",
+      "term": "phòng",
+      "pos": "noun",
+      "gloss": "chambre, pièce",
+      "note": "« Phòng đôi » = chambre double, « phòng đơn » = chambre simple, « phòng tắm » = salle de bain.",
+      "examples": [
+        {
+          "text": "Có phòng đôi không?",
+          "fr": "Avez-vous une chambre double ?"
+        },
+        {
+          "text": "Phòng bao nhiêu một đêm?",
+          "fr": "Combien coûte la chambre par nuit ?"
+        }
+      ],
+      "roman": "fongue"
+    },
+    {
+      "id": "vi.de.gan",
+      "term": "gần",
+      "pos": "adj",
+      "gloss": "proche, près",
+      "note": "« Gần đây » = près d'ici. Son contraire est « xa » (loin).",
+      "examples": [
+        {
+          "text": "Có gần đây không?",
+          "fr": "C'est près d'ici ?"
+        },
+        {
+          "text": "Chợ gần đây không?",
+          "fr": "Le marché est près d'ici ?"
+        }
+      ],
+      "roman": "gane"
+    },
+    {
+      "id": "vi.de.xa",
+      "term": "xa",
+      "pos": "adj",
+      "gloss": "loin",
+      "note": "« Xa quá » = c'est trop loin. Utile pour refuser une course de taxi-moto.",
+      "examples": [
+        {
+          "text": "Xa không?",
+          "fr": "C'est loin ?"
+        },
+        {
+          "text": "Không xa lắm.",
+          "fr": "Pas très loin."
+        }
+      ],
+      "roman": "sa"
+    },
+    {
+      "id": "vi.de.trai-phai",
+      "term": "trái, phải",
+      "pos": "noun",
+      "gloss": "gauche, droite",
+      "note": "« Rẽ trái » = tournez à gauche, « rẽ phải » = tournez à droite, « đi thẳng » = tout droit. Attention : « phải » veut aussi dire « devoir ».",
+      "examples": [
+        {
+          "text": "Rẽ trái ở đây.",
+          "fr": "Tournez à gauche ici."
+        },
+        {
+          "text": "Đi thẳng rồi rẽ phải.",
+          "fr": "Tout droit puis à droite."
+        }
+      ],
+      "roman": "traï / faï"
+    },
+    {
+      "id": "vi.de.dung-lai",
+      "term": "dừng lại",
+      "pos": "verb",
+      "gloss": "s'arrêter",
+      "note": "« Dừng lại ở đây » = arrêtez-vous ici. Indispensable en taxi ou en taxi-moto.",
+      "examples": [
+        {
+          "text": "Dừng lại ở đây.",
+          "fr": "Arrêtez-vous ici."
+        },
+        {
+          "text": "Cho tôi xuống đây.",
+          "fr": "Déposez-moi ici."
+        }
+      ],
+      "roman": "zeung laï"
+    },
+    {
+      "id": "vi.de.nha-ve-sinh",
+      "term": "nhà vệ sinh",
+      "pos": "noun",
+      "gloss": "toilettes",
+      "note": "Littéralement « maison d'hygiène ». On dit aussi « toilet », compris partout.",
+      "examples": [
+        {
+          "text": "Nhà vệ sinh ở đâu?",
+          "fr": "Où sont les toilettes ?"
+        },
+        {
+          "text": "Cho hỏi nhà vệ sinh.",
+          "fr": "Excusez-moi, les toilettes ?"
+        }
+      ],
+      "roman": "gna vé sine"
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "cloze",
+      "id": "vi.de.di.x0",
+      "lexemeId": "vi.de.di",
+      "fr": "Je veux aller à Hanoï.",
+      "sentence": "Tôi muốn ___ Hà Nội.",
+      "accepted": [
+        "đi",
+        "di"
+      ],
+      "hint": "đ_"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.di.x1",
+      "lexemeId": "vi.de.di",
+      "fr": "aller",
+      "accepted": [
+        "đi",
+        "di"
+      ],
+      "hint": "đ_"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.o-dau.x0",
+      "lexemeId": "vi.de.o-dau",
+      "fr": "Où est l'hôtel ?",
+      "sentence": "Khách sạn ___ ___?",
+      "accepted": [
+        "ở đâu",
+        "o dau"
+      ],
+      "hint": "ở đ__"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.de.o-dau.x1",
+      "lexemeId": "vi.de.o-dau",
+      "prompt": "Où sont les toilettes ? →",
+      "options": [
+        "Nhà vệ sinh ở đâu?",
+        "Ở đâu nhà vệ sinh?",
+        "Nhà vệ sinh đâu ở?",
+        "Đâu ở nhà vệ sinh?"
+      ],
+      "answer": "Nhà vệ sinh ở đâu?",
+      "why": "« Ở đâu » se place toujours à la fin de la question."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.xe-may.x0",
+      "lexemeId": "vi.de.xe-may",
+      "fr": "Combien coûte la location d'un scooter ?",
+      "sentence": "Thuê ___ ___ bao nhiêu?",
+      "accepted": [
+        "xe máy",
+        "xe may"
+      ],
+      "hint": "x_ m__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.xe-may.x1",
+      "lexemeId": "vi.de.xe-may",
+      "fr": "scooter, moto",
+      "accepted": [
+        "xe máy",
+        "xe may"
+      ],
+      "hint": "x_ m__"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.khach-san.x0",
+      "lexemeId": "vi.de.khach-san",
+      "fr": "hôtel",
+      "accepted": [
+        "khách sạn",
+        "khach san"
+      ],
+      "hint": "k____ s__"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.de.khach-san.x1",
+      "lexemeId": "vi.de.khach-san",
+      "text": "Khách sạn ở đâu?",
+      "fr": "Où est l'hôtel ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.phong.x0",
+      "lexemeId": "vi.de.phong",
+      "fr": "Avez-vous une chambre double ?",
+      "sentence": "Có ___ đôi không?",
+      "accepted": [
+        "phòng",
+        "phong"
+      ],
+      "hint": "p____"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.phong.x1",
+      "lexemeId": "vi.de.phong",
+      "fr": "chambre",
+      "accepted": [
+        "phòng",
+        "phong"
+      ],
+      "hint": "p____"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.gan.x0",
+      "lexemeId": "vi.de.gan",
+      "fr": "C'est près d'ici ?",
+      "sentence": "Có ___ đây không?",
+      "accepted": [
+        "gần",
+        "gan"
+      ],
+      "nearMisses": [
+        {
+          "word": "xa",
+          "why": "« Xa » veut dire loin. Près se dit « gần »."
+        }
+      ]
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.gan.x1",
+      "lexemeId": "vi.de.gan",
+      "fr": "proche, près",
+      "accepted": [
+        "gần",
+        "gan"
+      ],
+      "hint": "g__"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.xa.x0",
+      "lexemeId": "vi.de.xa",
+      "fr": "C'est loin ?",
+      "sentence": "___ không?",
+      "accepted": [
+        "xa"
+      ],
+      "hint": "x_"
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.xa.x1",
+      "lexemeId": "vi.de.xa",
+      "fr": "loin",
+      "accepted": [
+        "xa"
+      ],
+      "hint": "x_"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.de.trai-phai.x0",
+      "lexemeId": "vi.de.trai-phai",
+      "prompt": "Tournez à gauche →",
+      "options": [
+        "rẽ trái",
+        "rẽ phải",
+        "đi thẳng",
+        "dừng lại"
+      ],
+      "answer": "rẽ trái",
+      "why": "Trái = gauche, phải = droite, thẳng = tout droit."
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.trai-phai.x1",
+      "lexemeId": "vi.de.trai-phai",
+      "fr": "gauche",
+      "accepted": [
+        "trái",
+        "trai"
+      ],
+      "hint": "t___"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.dung-lai.x0",
+      "lexemeId": "vi.de.dung-lai",
+      "fr": "Arrêtez-vous ici.",
+      "sentence": "___ ___ ở đây.",
+      "accepted": [
+        "dừng lại",
+        "dung lai"
+      ],
+      "hint": "d___ l__"
+    },
+    {
+      "kind": "listen",
+      "id": "vi.de.dung-lai.x1",
+      "lexemeId": "vi.de.dung-lai",
+      "text": "Dừng lại ở đây, cảm ơn.",
+      "fr": "Arrêtez-vous ici, merci."
+    },
+    {
+      "kind": "recall",
+      "id": "vi.de.nha-ve-sinh.x0",
+      "lexemeId": "vi.de.nha-ve-sinh",
+      "fr": "toilettes",
+      "accepted": [
+        "nhà vệ sinh",
+        "nha ve sinh",
+        "toilet"
+      ],
+      "hint": "n__ v_ s___"
+    },
+    {
+      "kind": "choice",
+      "id": "vi.de.nha-ve-sinh.x1",
+      "lexemeId": "vi.de.nha-ve-sinh",
+      "prompt": "Où sont les toilettes ? →",
+      "options": [
+        "Nhà vệ sinh ở đâu?",
+        "Nhà vệ sinh bao nhiêu?",
+        "Nhà vệ sinh không?",
+        "Nhà vệ sinh quá."
+      ],
+      "answer": "Nhà vệ sinh ở đâu?",
+      "why": "« Ở đâu » pose la question du lieu ; « bao nhiêu » celle du prix."
+    }
+  ]
+}

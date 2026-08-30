@@ -18,6 +18,11 @@ export function normalize(s: string): string {
     .normalize('NFD')
     // Retire les accents latins : « repondre » vaut « répondre ».
     .replace(/[̀-ͯ]/g, '')
+    // Le d barré vietnamien est une lettre à part entière, que la
+    // décomposition Unicode ne ramène pas à un d : sans cette ligne, taper
+    // « di » pour « đi » serait compté faux, alors qu'aucun clavier français
+    // ne permet de saisir ce caractère.
+    .replace(/đ/g, 'd')
     .replace(ARABIC_DIACRITICS, '')
     .replace(/['’`]/g, "'")
     .replace(/[.,!?;:"“”()]/g, '')
