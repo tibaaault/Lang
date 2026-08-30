@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 import type { Course } from '../types'
 import { indexCourse, pendingCount, type SessionMode } from '../engine/scheduler'
 import { courseStats, today, updateSettings, useProgress } from '../store/progress'
+import { useAuth } from '../store/sync'
+import { isRemoteEnabled } from '../store/supabase'
 import { Button, Card, Stat } from './components'
 
 export function Home({
@@ -16,6 +18,7 @@ export function Home({
   onOpen: (view: 'stats' | 'account' | 'settings') => void
 }) {
   const progress = useProgress()
+  const auth = useAuth()
   const day = progress.days[today()]
   const doneToday = day?.reviews ?? 0
   const goal = progress.settings.dailyGoal
@@ -56,6 +59,26 @@ export function Home({
           ⚙
         </button>
       </header>
+
+      {/* Un état qui change silencieusement le comportement doit rester
+          visible : c'est en travaillant sans le savoir hors connexion qu'on
+          perd une série entière. */}
+      {isRemoteEnabled && !auth.user && (
+        <button
+          onClick={() => onOpen('account')}
+          className="mb-4 flex w-full items-center gap-3 rounded-xl border border-wrong/40 bg-wrong-soft px-4 py-3 text-left"
+        >
+          <span aria-hidden className="text-lg">
+            ⚠
+          </span>
+          <span className="text-sm leading-snug text-wrong">
+            Hors connexion — cette progression reste sur cet appareil.
+            <span className="mt-0.5 block underline underline-offset-4">
+              Se connecter
+            </span>
+          </span>
+        </button>
+      )}
 
       <Card className="mb-6">
         <div className="grid grid-cols-3 gap-3">

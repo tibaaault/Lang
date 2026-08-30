@@ -11,7 +11,16 @@ import {
 } from '../store/sync'
 import { Button, Card, Screen } from './components'
 
-export function Account({ onBack }: { onBack: () => void }) {
+export function Account({
+  onBack,
+  gate = false,
+  onContinueOffline,
+}: {
+  onBack?: () => void
+  /** Écran d'entrée : on ne peut pas le quitter sans choisir. */
+  gate?: boolean
+  onContinueOffline?: () => void
+}) {
   const auth = useAuth()
   const [mode, setMode] = useState<'signin' | 'signup'>('signin')
   const [email, setEmail] = useState('')
@@ -58,7 +67,7 @@ export function Account({ onBack }: { onBack: () => void }) {
         }
         await signUp(email.trim(), password, pseudo.trim(), adoptLocal)
       } else {
-        await signIn(email.trim(), password)
+        await signIn(email.trim(), password, adoptLocal)
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Connexion impossible.')
@@ -69,7 +78,14 @@ export function Account({ onBack }: { onBack: () => void }) {
 
   if (!auth.user) {
     return (
-      <Screen title="Comptes" onBack={onBack}>
+      <Screen title={gate ? 'Connexion' : 'Comptes'} onBack={onBack}>
+        {gate && (
+          <p className="mb-4 px-1 text-sm leading-relaxed text-muted">
+            Connectez-vous avant de réviser : sans compte, la progression reste
+            sur cet appareil et n'est comptée nulle part. C'est ce qui fait
+            perdre une série sans s'en apercevoir.
+          </p>
+        )}
         <Card>
           <div className="mb-4 flex gap-2">
             <button
@@ -118,7 +134,7 @@ export function Account({ onBack }: { onBack: () => void }) {
               }
               className="w-full rounded-xl border border-line bg-surface px-4 py-3.5 outline-none focus:border-accent"
             />
-            {mode === 'signup' && canAdopt && (
+            {canAdopt && (
               <button
                 type="button"
                 onClick={() => setAdoptLocal((v) => !v)}
@@ -137,9 +153,11 @@ export function Account({ onBack }: { onBack: () => void }) {
                   {adoptLocal ? '✓' : ''}
                 </span>
                 <span>
-                  Reprendre la progression déjà faite sur cet appareil
+                  {mode === 'signup'
+                    ? 'Reprendre la progression déjà faite sur cet appareil'
+                    : 'Rattacher le travail fait sans être connecté'}
                   <span className="mt-0.5 block text-xs text-muted">
-                    À cocher seulement si c'est vous qui l'avez faite. Un compte
+                    À cocher seulement si c'est vous qui l'avez fait. Un compte
                     créé pour quelqu'un d'autre doit partir de zéro.
                   </span>
                 </span>
@@ -162,6 +180,15 @@ export function Account({ onBack }: { onBack: () => void }) {
           compris sur un appareil partagé. Seuls le pseudo, la série de jours et
           le nombre de mots acquis sont visibles des autres.
         </p>
+
+        {gate && onContinueOffline && (
+          <button
+            onClick={onContinueOffline}
+            className="mt-6 w-full py-3 text-center text-sm text-muted underline underline-offset-4"
+          >
+            Continuer sans compte, sur cet appareil seulement
+          </button>
+        )}
       </Screen>
     )
   }

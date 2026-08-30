@@ -26,7 +26,13 @@ export interface PublicProfile {
   lastActive: string | null
 }
 
-export type SyncState = 'off' | 'signed-out' | 'idle' | 'syncing' | 'error'
+export type SyncState =
+  | 'off'
+  | 'checking'
+  | 'signed-out'
+  | 'idle'
+  | 'syncing'
+  | 'error'
 
 interface AuthSnapshot {
   user: User | null
@@ -38,7 +44,7 @@ interface AuthSnapshot {
 let snapshot: AuthSnapshot = {
   user: null,
   pseudo: null,
-  sync: isRemoteEnabled ? 'signed-out' : 'off',
+  sync: isRemoteEnabled ? 'checking' : 'off',
   error: null,
 }
 
@@ -265,6 +271,8 @@ export async function initAuth() {
   if (data.session?.user) {
     set({ user: data.session.user })
     await pullAndMerge(data.session.user)
+  } else {
+    set({ sync: 'signed-out' })
   }
 
   supabase.auth.onAuthStateChange((_event, session) => {
@@ -302,11 +310,21 @@ export async function signUp(
   }
 }
 
-export async function signIn(email: string, password: string) {
+export async function signIn(
+  email: string,
+  password: string,
+  adoptLocalProgress = false,
+) {
+  // Le travail fait avant de se connecter peut être rattaché au compte : sans
+  // cela, une session entière faite hors connexion resterait invisible.
+  adoptAnonymousOnNextLogin = adoptLocalProgress
   const supabase = await getSupabase()
   if (!supabase) throw new Error('Synchronisation non configurée.')
   const { error } = await supabase.auth.signInWithPassword({ email, password })
-  if (error) throw error
+  if (error) {
+    adoptAnonymousOnNextLogin = false
+    throw error
+  }
 }
 
 export async function signOut() {

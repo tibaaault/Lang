@@ -154,6 +154,38 @@ export function hasUnclaimedAnonymousProgress(): boolean {
  * rattachée à ce compte, et à lui seul. Tout autre compte démarre vierge,
  * même sur le même téléphone.
  */
+/**
+ * Fusionne deux progressions locales en gardant, pour chaque mot, la révision
+ * la plus récente. Sert à rattacher à un compte le travail fait avant de s'y
+ * connecter, sans effacer ce que le compte contenait déjà.
+ */
+function mergeCards(base: Progress, extra: Progress): Progress {
+  const merged: Progress = structuredClone(base)
+  for (const [key, card] of Object.entries(extra.cards)) {
+    const existing = merged.cards[key]
+    if (
+      !existing ||
+      Date.parse(card.lastReview) > Date.parse(existing.lastReview)
+    ) {
+      merged.cards[key] = card
+    }
+  }
+  for (const [day, stats] of Object.entries(extra.days)) {
+    const other = merged.days[day]
+    if (!other || stats.reviews > other.reviews) merged.days[day] = stats
+  }
+  merged.streak = {
+    current: Math.max(base.streak.current, extra.streak.current),
+    longest: Math.max(base.streak.longest, extra.streak.longest),
+    lastDay:
+      (base.streak.lastDay ?? '') > (extra.streak.lastDay ?? '')
+        ? base.streak.lastDay
+        : extra.streak.lastDay,
+  }
+  merged.updatedAt = new Date().toISOString()
+  return merged
+}
+
 export function activateAccount(
   userId: string | null,
   adoptAnonymous = false,
@@ -162,16 +194,19 @@ export function activateAccount(
   const stored = localStorage.getItem(key)
 
   let next: Progress
-  if (stored) {
-    next = load(key)
-  } else if (userId && adoptAnonymous && hasUnclaimedAnonymousProgress()) {
-    next = load(STORAGE_KEY)
+  if (userId && adoptAnonymous && hasUnclaimedAnonymousProgress()) {
+    // La reprise demandée l'emporte sur l'espace déjà présent : c'est le cas
+    // d'un compte existant qui récupère une session faite hors connexion.
+    const anonymous = load(STORAGE_KEY)
+    next = stored ? mergeCards(load(key), anonymous) : anonymous
     try {
       localStorage.setItem(CLAIM_KEY, userId)
     } catch {
       // Sans trace de reprise, la progression anonyme pourrait être reprise
       // une seconde fois : on continue, mais le cas reste rare.
     }
+  } else if (stored) {
+    next = load(key)
   } else {
     next = emptyProgress()
   }

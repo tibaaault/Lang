@@ -172,3 +172,58 @@ describe('sauvegarde des réglages sans attendre', () => {
     expect(Object.keys(row.payload.cards)).toContain('en:w1')
   })
 })
+
+describe('travail fait avant de se connecter', () => {
+  it('le rattache au compte quand on le demande', async () => {
+    const { recordReview } = await import('../progress')
+    const { createCard } = await import('../../engine/fsrs')
+    await initAuth()
+
+    // Une session entière faite sans compte, comme un jour où l'on n'avait
+    // pas remarqué qu'on était déconnecté.
+    for (const id of ['w1', 'w2', 'w3']) {
+      recordReview({
+        courseId: 'en',
+        lexemeId: id,
+        card: createCard(3),
+        correct: true,
+        isNew: true,
+        seconds: 5,
+        exerciseId: `${id}.x0`,
+      })
+    }
+    expect(getProgress().streak.current).toBe(1)
+
+    await signIn('thibault@example.com', 'xxxxxx', true)
+    await settle()
+
+    expect(Object.keys(getProgress().cards)).toHaveLength(3)
+    expect(getProgress().streak.current).toBe(1)
+    const row = fake.db.progress.get('uid-thibault@example.com') as {
+      payload: { cards: Record<string, unknown> }
+    }
+    // Et le rattachement doit être sauvegardé en ligne, pas seulement local.
+    expect(Object.keys(row.payload.cards)).toHaveLength(3)
+  })
+
+  it('ne le rattache pas si on ne le demande pas', async () => {
+    const { recordReview } = await import('../progress')
+    const { createCard } = await import('../../engine/fsrs')
+    await initAuth()
+    recordReview({
+      courseId: 'en',
+      lexemeId: 'w1',
+      card: createCard(3),
+      correct: true,
+      isNew: true,
+      seconds: 5,
+      exerciseId: 'w1.x0',
+    })
+
+    await signIn('soeur@example.com', 'xxxxxx')
+    await settle()
+
+    // Le compte d'une autre personne ne doit pas hériter de ce travail.
+    expect(Object.keys(getProgress().cards)).toHaveLength(0)
+  })
+})
