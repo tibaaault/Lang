@@ -421,6 +421,119 @@
         "soon"
       ],
       "hint": "s___"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.today.c1",
+      "lexemeId": "eb.tp.today",
+      "fr": "Il fait beau aujourd'hui.",
+      "sentence": "It's sunny ___.",
+      "accepted": [
+        "today"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.always.c1",
+      "lexemeId": "eb.tp.always",
+      "fr": "Elle arrive toujours en avance.",
+      "sentence": "She ___ arrives early.",
+      "accepted": [
+        "always"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.never.c1",
+      "lexemeId": "eb.tp.never",
+      "fr": "Je ne regarde jamais la télévision.",
+      "sentence": "I ___ watch television.",
+      "accepted": [
+        "never"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.sometimes.c1",
+      "lexemeId": "eb.tp.sometimes",
+      "fr": "Il pleut parfois en été.",
+      "sentence": "It ___ rains in summer.",
+      "accepted": [
+        "sometimes"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.often.c1",
+      "lexemeId": "eb.tp.often",
+      "fr": "On se voit souvent le week-end.",
+      "sentence": "We ___ meet at weekends.",
+      "accepted": [
+        "often"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.a-lot.c1",
+      "lexemeId": "eb.tp.a-lot",
+      "fr": "Il y avait beaucoup de bruit.",
+      "sentence": "There was a ___ of noise.",
+      "accepted": [
+        "lot"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.a-little.c1",
+      "lexemeId": "eb.tp.a-little",
+      "fr": "Je voudrais un peu de lait.",
+      "sentence": "I'd like a ___ milk.",
+      "accepted": [
+        "little bit of",
+        "little"
+      ],
+      "nearMisses": [
+        {
+          "word": "few",
+          "why": "« Few » s'emploie devant ce qui se compte. Le lait ne se compte pas : c'est « a little »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.too-much.c1",
+      "lexemeId": "eb.tp.too-much",
+      "fr": "Il y a trop de voitures ici.",
+      "sentence": "There are too ___ cars here.",
+      "accepted": [
+        "many"
+      ],
+      "nearMisses": [
+        {
+          "word": "much",
+          "why": "« Cars » se compte : on emploie « too many »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.enough.c1",
+      "lexemeId": "eb.tp.enough",
+      "fr": "Ce n'est pas assez grand.",
+      "sentence": "It's not big ___.",
+      "accepted": [
+        "enough"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.tp.soon.c1",
+      "lexemeId": "eb.tp.soon",
+      "fr": "On se voit bientôt.",
+      "sentence": "See you ___.",
+      "accepted": [
+        "soon"
+      ]
     }
   ]
 }

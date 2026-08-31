@@ -166,3 +166,36 @@ describe('kit de voyage vietnamien', () => {
     expect(pronouns?.note).toMatch(/plus jeune/)
   })
 })
+
+describe('parcours débutant', () => {
+  const basics = courseById('en-basics')!
+
+  it('donne au moins deux phrases à trou par mot', () => {
+    // C'est la forme demandée à l'usage : écrire le mot manquant dans une
+    // phrase. Avec une seule par mot, elle revenait trop vite à l'identique.
+    const index = indexCourse(basics)
+    for (const lex of index.lexemes) {
+      const clozes = (index.exercisesOf.get(lex.id) ?? []).filter(
+        (e) => e.kind === 'cloze',
+      )
+      expect(clozes.length, lex.term).toBeGreaterThanOrEqual(2)
+    }
+  })
+
+  it('fait des phrases à trou la forme dominante', () => {
+    const kinds = basics.units.flatMap((u) => u.exercises.map((e) => e.kind))
+    const clozes = kinds.filter((k) => k === 'cloze').length
+    expect(clozes / kinds.length).toBeGreaterThan(0.5)
+  })
+
+  it('place bien un trou dans chaque phrase, avec une réponse', () => {
+    for (const unit of basics.units) {
+      for (const ex of unit.exercises) {
+        if (ex.kind !== 'cloze') continue
+        expect(ex.sentence, ex.id).toContain('___')
+        expect(ex.accepted.length, ex.id).toBeGreaterThan(0)
+        expect(ex.fr.length, ex.id).toBeGreaterThan(0)
+      }
+    }
+  })
+})

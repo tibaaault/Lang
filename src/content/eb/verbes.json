@@ -452,6 +452,138 @@
       ],
       "answer": "I can swim",
       "why": "Après « can », le verbe reste à l'infinitif nu, sans « to » ni -ing."
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.be.c1",
+      "lexemeId": "eb.vb.be",
+      "fr": "Ils sont en retard.",
+      "sentence": "They ___ late.",
+      "accepted": [
+        "are"
+      ],
+      "nearMisses": [
+        {
+          "word": "is",
+          "why": "« Is » va avec he, she ou it. Avec « they », il faut « are »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.have.c1",
+      "lexemeId": "eb.vb.have",
+      "fr": "Nous avons deux enfants.",
+      "sentence": "We ___ two children.",
+      "accepted": [
+        "have"
+      ],
+      "nearMisses": [
+        {
+          "word": "has",
+          "why": "« Has » ne s'emploie qu'avec he, she ou it."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.go.c1",
+      "lexemeId": "eb.vb.go",
+      "fr": "Elle va à l'école en bus.",
+      "sentence": "She ___ to school by bus.",
+      "accepted": [
+        "goes"
+      ],
+      "nearMisses": [
+        {
+          "word": "go",
+          "why": "Avec « she », le verbe prend -es : « goes »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.want.c1",
+      "lexemeId": "eb.vb.want",
+      "fr": "Ils veulent rentrer à la maison.",
+      "sentence": "They want ___ go home.",
+      "accepted": [
+        "to"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.need.c1",
+      "lexemeId": "eb.vb.need",
+      "fr": "J'ai besoin d'un peu de temps.",
+      "sentence": "I ___ a little time.",
+      "accepted": [
+        "need"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.like.c1",
+      "lexemeId": "eb.vb.like",
+      "fr": "Nous aimons bien ce restaurant.",
+      "sentence": "We ___ this restaurant.",
+      "accepted": [
+        "like"
+      ],
+      "nearMisses": [
+        {
+          "word": "likes",
+          "why": "« Likes » s'emploie avec he, she ou it. Avec « we », c'est « like »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.know.c1",
+      "lexemeId": "eb.vb.know",
+      "fr": "Elle ne sait pas où c'est.",
+      "sentence": "She doesn't ___ where it is.",
+      "accepted": [
+        "know"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.get.c1",
+      "lexemeId": "eb.vb.get",
+      "fr": "Je reçois beaucoup de messages.",
+      "sentence": "I ___ a lot of messages.",
+      "accepted": [
+        "get"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.think.c1",
+      "lexemeId": "eb.vb.think",
+      "fr": "Que penses-tu de ce film ?",
+      "sentence": "What do you ___ about this film?",
+      "accepted": [
+        "think"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.vb.can.c1",
+      "lexemeId": "eb.vb.can",
+      "fr": "Elle ne peut pas venir ce soir.",
+      "sentence": "She ___ come tonight.",
+      "accepted": [
+        "can't",
+        "cannot",
+        "cant"
+      ],
+      "nearMisses": [
+        {
+          "word": "can not",
+          "why": "On écrit « cannot » en un mot, ou « can't »."
+        }
+      ]
     }
   ]
 }

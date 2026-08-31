@@ -406,6 +406,114 @@
         "together"
       ],
       "hint": "t______r"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.friend.c1",
+      "lexemeId": "eb.gn.friend",
+      "fr": "C'est un ami d'enfance.",
+      "sentence": "He's a childhood ___.",
+      "accepted": [
+        "friend"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.family.c1",
+      "lexemeId": "eb.gn.family",
+      "fr": "Toute ma famille vient dimanche.",
+      "sentence": "My whole ___ is coming on Sunday.",
+      "accepted": [
+        "family"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.happy.c1",
+      "lexemeId": "eb.gn.happy",
+      "fr": "Elle a l'air contente aujourd'hui.",
+      "sentence": "She looks ___ today.",
+      "accepted": [
+        "happy",
+        "glad"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.sad.c1",
+      "lexemeId": "eb.gn.sad",
+      "fr": "Ce film est vraiment triste.",
+      "sentence": "That film is really ___.",
+      "accepted": [
+        "sad"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.angry.c1",
+      "lexemeId": "eb.gn.angry",
+      "fr": "Ne sois pas fâché contre lui.",
+      "sentence": "Don't be ___ with him.",
+      "accepted": [
+        "angry",
+        "mad"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.love.c1",
+      "lexemeId": "eb.gn.love",
+      "fr": "Ils adorent voyager.",
+      "sentence": "They ___ travelling.",
+      "accepted": [
+        "love"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.miss.c1",
+      "lexemeId": "eb.gn.miss",
+      "fr": "Ma sœur me manque.",
+      "sentence": "I ___ my sister.",
+      "accepted": [
+        "miss"
+      ],
+      "nearMisses": [
+        {
+          "word": "misses",
+          "why": "Avec « I », le verbe ne prend pas de -s."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.feel.c1",
+      "lexemeId": "eb.gn.feel",
+      "fr": "Je ne me sens pas très bien.",
+      "sentence": "I don't ___ very well.",
+      "accepted": [
+        "feel"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.nice.c1",
+      "lexemeId": "eb.gn.nice",
+      "fr": "C'était une soirée très agréable.",
+      "sentence": "It was a very ___ evening.",
+      "accepted": [
+        "nice"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.gn.together.c1",
+      "lexemeId": "eb.gn.together",
+      "fr": "On peut y aller ensemble.",
+      "sentence": "We can go ___.",
+      "accepted": [
+        "together"
+      ]
     }
   ]
 }

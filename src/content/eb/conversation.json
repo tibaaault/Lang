@@ -405,6 +405,125 @@
         "take care"
       ],
       "hint": "t___ c___"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.i-dont-know.c1",
+      "lexemeId": "eb.cv.i-dont-know",
+      "fr": "Ils ne savent pas encore.",
+      "sentence": "They ___ know yet.",
+      "accepted": [
+        "don't",
+        "dont",
+        "do not"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.never-mind.c1",
+      "lexemeId": "eb.cv.never-mind",
+      "fr": "Tant pis, on fera autrement.",
+      "sentence": "Never ___, we'll do it differently.",
+      "accepted": [
+        "mind"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.it-depends.c1",
+      "lexemeId": "eb.cv.it-depends",
+      "fr": "Ça dépend de toi.",
+      "sentence": "It ___ on you.",
+      "accepted": [
+        "depends"
+      ],
+      "nearMisses": [
+        {
+          "word": "depend",
+          "why": "Avec « it », le verbe prend un -s : « it depends »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.no-worries.c1",
+      "lexemeId": "eb.cv.no-worries",
+      "fr": "Pas de souci, j'ai le temps.",
+      "sentence": "No ___, I have time.",
+      "accepted": [
+        "worries"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.hold-on.c1",
+      "lexemeId": "eb.cv.hold-on",
+      "fr": "Attends, je cherche.",
+      "sentence": "___ on, I'm looking.",
+      "accepted": [
+        "hold",
+        "Hold",
+        "hang",
+        "Hang"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.i-guess.c1",
+      "lexemeId": "eb.cv.i-guess",
+      "fr": "Je suppose que oui.",
+      "sentence": "I ___ so.",
+      "accepted": [
+        "guess"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.what-about.c1",
+      "lexemeId": "eb.cv.what-about",
+      "fr": "Et si on se voyait demain ?",
+      "sentence": "What about ___ tomorrow?",
+      "accepted": [
+        "meeting"
+      ],
+      "nearMisses": [
+        {
+          "word": "meet",
+          "why": "Après « what about », le verbe prend toujours -ing."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.by-the-way.c1",
+      "lexemeId": "eb.cv.by-the-way",
+      "fr": "Au fait, merci pour hier.",
+      "sentence": "___ the way, thanks for yesterday.",
+      "accepted": [
+        "by",
+        "By"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.i-mean.c1",
+      "lexemeId": "eb.cv.i-mean",
+      "fr": "Enfin, je voulais dire demain.",
+      "sentence": "I ___, tomorrow.",
+      "accepted": [
+        "mean"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.cv.take-care.c1",
+      "lexemeId": "eb.cv.take-care",
+      "fr": "Prends soin de toi, à bientôt.",
+      "sentence": "___ care, see you soon.",
+      "accepted": [
+        "take",
+        "Take"
+      ]
     }
   ]
 }

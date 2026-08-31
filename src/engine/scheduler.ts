@@ -68,20 +68,26 @@ function pickExercise(
   if (!candidates.length) return null
 
   const stability = card?.stability ?? 0
+  // Première interrogation sur ce mot : la fiche n'existe pas encore.
+  const firstTest = card === undefined
+
   const rank = (ex: Exercise): number => {
     switch (ex.kind) {
       case 'choice':
-        // Devient trop facile dès que le mot tient quelques jours.
-        return stability >= 4 ? 3 : 0
+        // Reconnaître avant de produire : le choix multiple convient à la
+        // toute première interrogation, mais devient vite trop facile — on le
+        // relègue ensuite derrière les exercices où l'on écrit.
+        return firstTest ? 0 : stability >= 2 ? 3 : 2
       case 'cloze':
-        return stability < 1 ? 1 : 0
+      case 'recall':
+        // Écrire la réponse est ce qui fixe le mieux le souvenir : les deux
+        // formes restent à égalité et alternent selon la moins vue.
+        return firstTest ? 1 : 0
       case 'flip':
         // Intermédiaire : reconnaître sans choix proposé, mais sans écrire.
-        return stability < 1 ? 2 : 1
-      case 'recall':
-        return stability < 2 ? 2 : 0
+        return firstTest ? 1 : 1
       case 'listen':
-        return stability < 3 ? 2 : 1
+        return firstTest ? 2 : 1
     }
   }
 

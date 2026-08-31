@@ -169,3 +169,61 @@ describe('présentation avant test', () => {
     }
   })
 })
+
+describe('choix de la forme d’exercice', () => {
+  function courseWithForms(): Course {
+    return {
+      id: 'mix',
+      lang: 'en',
+      voice: 'en-GB',
+      title: 'mix',
+      units: [
+        {
+          id: 'u',
+          title: 'Unité',
+          lexemes: [{ id: 'w', term: 'word', gloss: 'mot', examples: [] }],
+          exercises: [
+            { kind: 'choice', id: 'e.q', lexemeId: 'w', prompt: 'p', options: ['a', 'b'], answer: 'a' },
+            { kind: 'cloze', id: 'e.c', lexemeId: 'w', fr: 'mot', sentence: '___', accepted: ['word'] },
+            { kind: 'recall', id: 'e.r', lexemeId: 'w', fr: 'mot', accepted: ['word'] },
+            { kind: 'listen', id: 'e.l', lexemeId: 'w', text: 'word', fr: 'mot' },
+          ],
+        },
+      ],
+    }
+  }
+
+  const course = courseWithForms()
+
+  it('commence par un choix multiple, plus accessible', () => {
+    const p = emptyProgress()
+    const session = buildSession(course, indexCourse(course), p)
+    const test = session.find((i) => i.phase === 'test')!
+    expect(test.exercise.kind).toBe('choice')
+  })
+
+  it('passe ensuite aux exercices où l’on écrit', () => {
+    const p = emptyProgress()
+    const past = new Date(Date.now() - 5 * 86_400_000)
+    p.cards[cardKey('mix', 'w')] = {
+      ...createCard(3, past),
+      due: past.toISOString(),
+    }
+    const session = buildSession(course, indexCourse(course), p)
+    // Une fois le mot rencontré, on ne se contente plus de le reconnaître.
+    expect(['cloze', 'recall']).toContain(session[0].exercise.kind)
+  })
+
+  it('alterne entre la phrase à trou et la production', () => {
+    const p = emptyProgress()
+    const past = new Date(Date.now() - 5 * 86_400_000)
+    p.cards[cardKey('mix', 'w')] = {
+      ...createCard(3, past),
+      due: past.toISOString(),
+    }
+    // La forme déjà vue passe derrière celle qui ne l'a pas été.
+    p.seen['e.c'] = 3
+    const session = buildSession(course, indexCourse(course), p)
+    expect(session[0].exercise.kind).toBe('recall')
+  })
+})

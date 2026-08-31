@@ -419,6 +419,126 @@
         "which"
       ],
       "hint": "w____"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.what.c1",
+      "lexemeId": "eb.qu.what",
+      "fr": "Qu'est-ce que tu fais ?",
+      "sentence": "___ are you doing?",
+      "accepted": [
+        "what",
+        "What"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.where.c1",
+      "lexemeId": "eb.qu.where",
+      "fr": "Où sont mes clés ?",
+      "sentence": "___ are my keys?",
+      "accepted": [
+        "where",
+        "Where"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.when.c1",
+      "lexemeId": "eb.qu.when",
+      "fr": "Quand est-ce qu'on part ?",
+      "sentence": "___ are we leaving?",
+      "accepted": [
+        "when",
+        "When"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.who.c1",
+      "lexemeId": "eb.qu.who",
+      "fr": "Qui a dit ça ?",
+      "sentence": "___ said that?",
+      "accepted": [
+        "who",
+        "Who"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.why.c1",
+      "lexemeId": "eb.qu.why",
+      "fr": "Pourquoi tu ris ?",
+      "sentence": "___ are you laughing?",
+      "accepted": [
+        "why",
+        "Why"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.how.c1",
+      "lexemeId": "eb.qu.how",
+      "fr": "Comment ça marche ?",
+      "sentence": "___ does it work?",
+      "accepted": [
+        "how",
+        "How"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.do-question.c1",
+      "lexemeId": "eb.qu.do-question",
+      "fr": "Est-ce qu'il travaille ici ?",
+      "sentence": "___ he work here?",
+      "accepted": [
+        "does",
+        "Does"
+      ],
+      "nearMisses": [
+        {
+          "word": "do",
+          "why": "Avec « he », la question se forme avec « does »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.is-there.c1",
+      "lexemeId": "eb.qu.is-there",
+      "fr": "Y a-t-il un problème ?",
+      "sentence": "___ there a problem?",
+      "accepted": [
+        "is",
+        "Is"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.can-you.c1",
+      "lexemeId": "eb.qu.can-you",
+      "fr": "Peux-tu m'aider une seconde ?",
+      "sentence": "___ you help me a second?",
+      "accepted": [
+        "can",
+        "Can",
+        "could",
+        "Could"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qu.which.c1",
+      "lexemeId": "eb.qu.which",
+      "fr": "Quelle couleur préfères-tu ?",
+      "sentence": "___ colour do you prefer?",
+      "accepted": [
+        "which",
+        "Which",
+        "what",
+        "What"
+      ]
     }
   ]
 }

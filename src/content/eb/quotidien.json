@@ -417,6 +417,112 @@
         "every day"
       ],
       "hint": "e____ d__"
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.wake-up.c1",
+      "lexemeId": "eb.qt.wake-up",
+      "fr": "Je me réveille tôt le samedi.",
+      "sentence": "I ___ up early on Saturdays.",
+      "accepted": [
+        "wake"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.breakfast.c1",
+      "lexemeId": "eb.qt.breakfast",
+      "fr": "Elle ne prend jamais de petit-déjeuner.",
+      "sentence": "She never has ___.",
+      "accepted": [
+        "breakfast"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.work.c1",
+      "lexemeId": "eb.qt.work",
+      "fr": "Où est-ce que tu travailles ?",
+      "sentence": "Where do you ___?",
+      "accepted": [
+        "work"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.tired.c1",
+      "lexemeId": "eb.qt.tired",
+      "fr": "Ils avaient l'air fatigués hier soir.",
+      "sentence": "They looked ___ last night.",
+      "accepted": [
+        "tired"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.hungry.c1",
+      "lexemeId": "eb.qt.hungry",
+      "fr": "Tu as faim ?",
+      "sentence": "Are you ___?",
+      "accepted": [
+        "hungry"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.busy.c1",
+      "lexemeId": "eb.qt.busy",
+      "fr": "Je suis très occupée cette semaine.",
+      "sentence": "I'm very ___ this week.",
+      "accepted": [
+        "busy"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.late.c1",
+      "lexemeId": "eb.qt.late",
+      "fr": "Le train a dix minutes de retard.",
+      "sentence": "The train is ten minutes ___.",
+      "accepted": [
+        "late"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.watch.c1",
+      "lexemeId": "eb.qt.watch",
+      "fr": "On regarde un film ce soir ?",
+      "sentence": "Shall we ___ a film tonight?",
+      "accepted": [
+        "watch"
+      ],
+      "nearMisses": [
+        {
+          "word": "look",
+          "why": "« Look » se construit avec « at » et désigne un regard bref. Pour un film, c'est « watch »."
+        }
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.sleep.c1",
+      "lexemeId": "eb.qt.sleep",
+      "fr": "Tu as bien dormi ?",
+      "sentence": "Did you ___ well?",
+      "accepted": [
+        "sleep"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "eb.qt.every-day.c1",
+      "lexemeId": "eb.qt.every-day",
+      "fr": "Il court tous les jours.",
+      "sentence": "He runs every ___.",
+      "accepted": [
+        "day"
+      ]
     }
   ]
 }
