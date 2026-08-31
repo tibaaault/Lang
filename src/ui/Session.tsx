@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Course, Exercise, FlipExercise, Lexeme } from '../types'
 import type { CourseIndex, SessionItem, SessionMode } from '../engine/scheduler'
 import { buildSession } from '../engine/scheduler'
 import { checkAnswer, type Verdict } from '../engine/grade'
+import { shuffle } from '../engine/shuffle'
 import type { Grade } from '../engine/fsrs'
 import { createCard, gradeFromAnswer, reviewCard } from '../engine/fsrs'
 import { getCard, getProgress, recordReview } from '../store/progress'
@@ -207,7 +208,8 @@ export function Session({ course, index, mode, onExit }: Props) {
           <>
         <Prompt
           exercise={item.exercise}
-          voice={course.voice}
+          shuffleKey={pos}
+          voice={course.silent ? '' : course.voice}
           locked={verdict !== null}
           input={input}
           setInput={setInput}
@@ -247,6 +249,7 @@ export function Session({ course, index, mode, onExit }: Props) {
 
 function Prompt({
   exercise,
+  shuffleKey,
   voice,
   locked,
   input,
@@ -258,6 +261,8 @@ function Prompt({
   verdict,
 }: {
   exercise: Exercise
+  /** Change à chaque question : redonne un ordre neuf aux options. */
+  shuffleKey: number
   voice: string
   locked: boolean
   input: string
@@ -270,6 +275,12 @@ function Prompt({
 }) {
   const hint =
     'hint' in exercise && exercise.hint ? (exercise.hint as string) : null
+
+  const options = useMemo(
+    () => (exercise.kind === 'choice' ? shuffle(exercise.options) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [exercise, shuffleKey],
+  )
 
   return (
     <div className="space-y-4">
@@ -317,7 +328,7 @@ function Prompt({
         <div className="space-y-2 pt-2">
           <p className="font-serif text-xl leading-snug">{exercise.prompt}</p>
           <div className="grid gap-2 pt-2">
-            {exercise.options.map((opt) => {
+            {options.map((opt) => {
               const chosen = verdict && input === opt
               const isAnswer = verdict && opt === exercise.answer
               return (
