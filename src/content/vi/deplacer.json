@@ -416,6 +416,150 @@
       ],
       "answer": "Nhà vệ sinh ở đâu?",
       "why": "« Ở đâu » pose la question du lieu ; « bao nhiêu » celle du prix."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.di.c1",
+      "lexemeId": "vi.de.di",
+      "fr": "On peut y aller à pied ?",
+      "sentence": "___ bộ được không?",
+      "accepted": [
+        "đi",
+        "di",
+        "Đi"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.o-dau.c1",
+      "lexemeId": "vi.de.o-dau",
+      "fr": "Où sont les toilettes ?",
+      "sentence": "Nhà vệ sinh ___ ___?",
+      "accepted": [
+        "ở đâu",
+        "o dau"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.xe-may.c1",
+      "lexemeId": "vi.de.xe-may",
+      "fr": "En taxi-moto, c'est plus rapide.",
+      "sentence": "Đi ___ ôm nhanh hơn.",
+      "accepted": [
+        "xe"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.khach-san.c1",
+      "lexemeId": "vi.de.khach-san",
+      "fr": "Cet hôtel est bien.",
+      "sentence": "___ ___ này tốt.",
+      "accepted": [
+        "khách sạn",
+        "khach san",
+        "Khách sạn"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.khach-san.c2",
+      "lexemeId": "vi.de.khach-san",
+      "fr": "Où est l'hôtel ?",
+      "sentence": "Khách ___ ở đâu?",
+      "accepted": [
+        "sạn",
+        "san"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.phong.c1",
+      "lexemeId": "vi.de.phong",
+      "fr": "Combien coûte la chambre par nuit ?",
+      "sentence": "___ bao nhiêu một đêm?",
+      "accepted": [
+        "phòng",
+        "phong",
+        "Phòng"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.gan.c1",
+      "lexemeId": "vi.de.gan",
+      "fr": "Le marché est près d'ici ?",
+      "sentence": "Chợ ___ đây không?",
+      "accepted": [
+        "gần",
+        "gan"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.xa.c1",
+      "lexemeId": "vi.de.xa",
+      "fr": "Pas très loin.",
+      "sentence": "Không ___ lắm.",
+      "accepted": [
+        "xa"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.trai-phai.c1",
+      "lexemeId": "vi.de.trai-phai",
+      "fr": "Tournez à gauche ici.",
+      "sentence": "Rẽ ___ ở đây.",
+      "accepted": [
+        "trái",
+        "trai"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.trai-phai.c2",
+      "lexemeId": "vi.de.trai-phai",
+      "fr": "Tout droit puis à droite.",
+      "sentence": "Đi thẳng rồi rẽ ___.",
+      "accepted": [
+        "phải",
+        "phai"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.dung-lai.c1",
+      "lexemeId": "vi.de.dung-lai",
+      "fr": "Déposez-moi ici.",
+      "sentence": "Cho tôi ___ đây.",
+      "accepted": [
+        "xuống",
+        "xuong"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.nha-ve-sinh.c1",
+      "lexemeId": "vi.de.nha-ve-sinh",
+      "fr": "Excusez-moi, les toilettes ?",
+      "sentence": "Cho hỏi ___ ___ ___.",
+      "accepted": [
+        "nhà vệ sinh",
+        "nha ve sinh"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.de.nha-ve-sinh.c2",
+      "lexemeId": "vi.de.nha-ve-sinh",
+      "fr": "Où sont les toilettes ?",
+      "sentence": "Nhà ___ sinh ở đâu?",
+      "accepted": [
+        "vệ",
+        "ve"
+      ]
     }
   ]
 }

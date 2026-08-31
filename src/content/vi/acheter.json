@@ -417,6 +417,142 @@
       "lexemeId": "vi.ac.khong-can",
       "text": "Không cần, cảm ơn.",
       "fr": "Pas besoin, merci."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.bao-nhieu.c1",
+      "lexemeId": "vi.ac.bao-nhieu",
+      "fr": "Combien d'argent ?",
+      "sentence": "___ ___ tiền?",
+      "accepted": [
+        "bao nhiêu",
+        "bao nhieu",
+        "Bao nhiêu"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.tien.c1",
+      "lexemeId": "vi.ac.tien",
+      "fr": "Je n'ai pas d'espèces.",
+      "sentence": "Tôi không có ___ mặt.",
+      "accepted": [
+        "tiền",
+        "tien"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.dat.c1",
+      "lexemeId": "vi.ac.dat",
+      "fr": "C'est vraiment cher.",
+      "sentence": "Cái này ___ lắm.",
+      "accepted": [
+        "đắt",
+        "dat",
+        "mắc",
+        "mac"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.re.c1",
+      "lexemeId": "vi.ac.re",
+      "fr": "C'est moins cher ici.",
+      "sentence": "Ở đây ___ hơn.",
+      "accepted": [
+        "rẻ",
+        "re"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.mua.c1",
+      "lexemeId": "vi.ac.mua",
+      "fr": "Où l'acheter ?",
+      "sentence": "___ ở đâu?",
+      "accepted": [
+        "mua",
+        "Mua"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.cai-nay.c1",
+      "lexemeId": "vi.ac.cai-nay",
+      "fr": "Donnez-moi celui-là.",
+      "sentence": "Cho tôi ___ ___.",
+      "accepted": [
+        "cái kia",
+        "cai kia"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.dong.c1",
+      "lexemeId": "vi.ac.dong",
+      "fr": "Cinquante mille dongs.",
+      "sentence": "Năm mươi nghìn ___.",
+      "accepted": [
+        "đồng",
+        "dong"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.dong.c2",
+      "lexemeId": "vi.ac.dong",
+      "fr": "Deux cent mille.",
+      "sentence": "Hai ___ nghìn.",
+      "accepted": [
+        "trăm",
+        "tram"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.co-khong.c1",
+      "lexemeId": "vi.ac.co-khong",
+      "fr": "Avez-vous une chambre ?",
+      "sentence": "___ phòng không?",
+      "accepted": [
+        "có",
+        "co",
+        "Có"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.qua.c1",
+      "lexemeId": "vi.ac.qua",
+      "fr": "C'est très beau !",
+      "sentence": "Đẹp ___!",
+      "accepted": [
+        "quá",
+        "qua"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.khong-can.c1",
+      "lexemeId": "vi.ac.khong-can",
+      "fr": "Pas besoin, merci.",
+      "sentence": "Không ___, cảm ơn.",
+      "accepted": [
+        "cần",
+        "can"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ac.khong-can.c2",
+      "lexemeId": "vi.ac.khong-can",
+      "fr": "Je n'ai pas besoin de sac.",
+      "sentence": "Tôi không cần ___.",
+      "accepted": [
+        "túi",
+        "tui"
+      ]
     }
   ]
 }

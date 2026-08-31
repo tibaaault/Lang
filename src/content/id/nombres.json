@@ -391,6 +391,110 @@
       "lexemeId": "id.nb.lama",
       "text": "Berapa lama ke Bali?",
       "fr": "Combien de temps jusqu'à Bali ?"
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.satu-lima.c1",
+      "lexemeId": "id.nb.satu-lima",
+      "fr": "Pour trois personnes.",
+      "sentence": "Untuk ___ orang.",
+      "accepted": [
+        "tiga"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.enam-sepuluh.c1",
+      "lexemeId": "id.nb.enam-sepuluh",
+      "fr": "Sept heures du matin.",
+      "sentence": "Jam ___ pagi.",
+      "accepted": [
+        "tujuh"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.ribu.c1",
+      "lexemeId": "id.nb.ribu",
+      "fr": "Cinquante mille roupies.",
+      "sentence": "Lima puluh ___ rupiah.",
+      "accepted": [
+        "ribu"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.jam.c1",
+      "lexemeId": "id.nb.jam",
+      "fr": "Huit heures du soir.",
+      "sentence": "___ delapan malam.",
+      "accepted": [
+        "jam",
+        "Jam"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.sekarang.c1",
+      "lexemeId": "id.nb.sekarang",
+      "fr": "Je suis occupé maintenant.",
+      "sentence": "Saya sibuk ___.",
+      "accepted": [
+        "sekarang"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.nanti.c1",
+      "lexemeId": "id.nb.nanti",
+      "fr": "Plus tard, tout simplement.",
+      "sentence": "___ saja.",
+      "accepted": [
+        "nanti",
+        "Nanti"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.besok.c1",
+      "lexemeId": "id.nb.besok",
+      "fr": "Demain matin à sept heures.",
+      "sentence": "___ pagi jam tujuh.",
+      "accepted": [
+        "besok",
+        "Besok"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.kemarin.c1",
+      "lexemeId": "id.nb.kemarin",
+      "fr": "Hier il a plu.",
+      "sentence": "___ hujan.",
+      "accepted": [
+        "kemarin",
+        "Kemarin"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.hari.c1",
+      "lexemeId": "id.nb.hari",
+      "fr": "Tous les jours j'étudie.",
+      "sentence": "Setiap ___ saya belajar.",
+      "accepted": [
+        "hari"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.nb.lama.c1",
+      "lexemeId": "id.nb.lama",
+      "fr": "Attendez un instant.",
+      "sentence": "Tunggu ___.",
+      "accepted": [
+        "sebentar"
+      ]
     }
   ]
 }

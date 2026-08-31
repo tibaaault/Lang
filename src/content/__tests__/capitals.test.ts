@@ -167,34 +167,44 @@ describe('kit de voyage vietnamien', () => {
   })
 })
 
-describe('parcours débutant', () => {
-  const basics = courseById('en-basics')!
+describe('densité des phrases à trou', () => {
+  // Parcours où cette forme a été demandée à l'usage : écrire le mot manquant
+  // dans une phrase. Avec une seule phrase par mot, elle revenait à
+  // l'identique dès la deuxième révision.
+  const denseCourses = ['en-basics', 'id', 'vi']
 
-  it('donne au moins deux phrases à trou par mot', () => {
-    // C'est la forme demandée à l'usage : écrire le mot manquant dans une
-    // phrase. Avec une seule par mot, elle revenait trop vite à l'identique.
-    const index = indexCourse(basics)
+  it.each(denseCourses)('donne au moins deux phrases par mot : %s', (id) => {
+    const index = indexCourse(courseById(id)!)
     for (const lex of index.lexemes) {
       const clozes = (index.exercisesOf.get(lex.id) ?? []).filter(
         (e) => e.kind === 'cloze',
       )
-      expect(clozes.length, lex.term).toBeGreaterThanOrEqual(2)
+      expect(clozes.length, `${id} · ${lex.term}`).toBeGreaterThanOrEqual(2)
     }
   })
 
-  it('fait des phrases à trou la forme dominante', () => {
-    const kinds = basics.units.flatMap((u) => u.exercises.map((e) => e.kind))
+  it.each(denseCourses)('en fait la forme dominante : %s', (id) => {
+    const kinds = courseById(id)!.units.flatMap((u) =>
+      u.exercises.map((e) => e.kind),
+    )
     const clozes = kinds.filter((k) => k === 'cloze').length
     expect(clozes / kinds.length).toBeGreaterThan(0.5)
   })
+})
 
-  it('place bien un trou dans chaque phrase, avec une réponse', () => {
-    for (const unit of basics.units) {
-      for (const ex of unit.exercises) {
-        if (ex.kind !== 'cloze') continue
-        expect(ex.sentence, ex.id).toContain('___')
-        expect(ex.accepted.length, ex.id).toBeGreaterThan(0)
-        expect(ex.fr.length, ex.id).toBeGreaterThan(0)
+describe('bonne formation des phrases à trou', () => {
+  it('met autant de trous que la réponse compte de mots', () => {
+    // Un trou unique devant une réponse de deux mots laisse croire qu'il n'en
+    // faut qu'un : l'exercice devient impossible à réussir tel qu'il s'affiche.
+    for (const course of courses) {
+      for (const unit of course.units) {
+        for (const ex of unit.exercises) {
+          if (ex.kind !== 'cloze') continue
+          const blanks = (ex.sentence.match(/___/g) ?? []).length
+          const words = ex.accepted[0].trim().split(/\s+/).length
+          expect(blanks, `${ex.id} : « ${ex.accepted[0]} »`).toBe(words)
+          expect(ex.fr.length, ex.id).toBeGreaterThan(0)
+        }
       }
     }
   })

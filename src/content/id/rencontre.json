@@ -397,6 +397,114 @@
       "lexemeId": "id.rc.pelan",
       "text": "Tolong bicara pelan-pelan.",
       "fr": "Parlez lentement, s'il vous plaît."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.apa-kabar.c1",
+      "lexemeId": "id.rc.apa-kabar",
+      "fr": "Bien, merci.",
+      "sentence": "___, terima kasih.",
+      "accepted": [
+        "baik",
+        "Baik"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.siapa.c1",
+      "lexemeId": "id.rc.siapa",
+      "fr": "Qui est-ce ?",
+      "sentence": "___ itu?",
+      "accepted": [
+        "siapa",
+        "Siapa"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.nama.c1",
+      "lexemeId": "id.rc.nama",
+      "fr": "Mon surnom est Tib.",
+      "sentence": "___ panggilan saya Tib.",
+      "accepted": [
+        "nama",
+        "Nama"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.dari-mana.c1",
+      "lexemeId": "id.rc.dari-mana",
+      "fr": "Vous venez d'où ?",
+      "sentence": "Anda dari ___?",
+      "accepted": [
+        "mana"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.tinggal.c1",
+      "lexemeId": "id.rc.tinggal",
+      "fr": "Combien de temps restez-vous ici ?",
+      "sentence": "Berapa lama ___ di sini?",
+      "accepted": [
+        "tinggal"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.kerja.c1",
+      "lexemeId": "id.rc.kerja",
+      "fr": "Je travaille dans un bureau.",
+      "sentence": "Saya ___ di kantor.",
+      "accepted": [
+        "kerja",
+        "bekerja"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.senang.c1",
+      "lexemeId": "id.rc.senang",
+      "fr": "Je me plais ici.",
+      "sentence": "Saya ___ di sini.",
+      "accepted": [
+        "senang"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.teman.c1",
+      "lexemeId": "id.rc.teman",
+      "fr": "Je viens avec un ami.",
+      "sentence": "Saya datang dengan ___.",
+      "accepted": [
+        "teman"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.mengerti.c1",
+      "lexemeId": "id.rc.mengerti",
+      "fr": "Vous comprenez l'anglais ?",
+      "sentence": "Anda ___ bahasa Inggris?",
+      "accepted": [
+        "mengerti",
+        "paham"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.rc.pelan.c1",
+      "lexemeId": "id.rc.pelan",
+      "fr": "Doucement, sans se presser.",
+      "sentence": "___ saja.",
+      "accepted": [
+        "pelan-pelan",
+        "Pelan-pelan",
+        "pelan",
+        "Pelan"
+      ]
     }
   ]
 }

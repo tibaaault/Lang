@@ -408,6 +408,132 @@
         "một ít"
       ],
       "hint": "m__ c___"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.ten.c1",
+      "lexemeId": "vi.re.ten",
+      "fr": "Comment vous appelez-vous ?",
+      "sentence": "___ anh là gì?",
+      "accepted": [
+        "tên",
+        "ten",
+        "Tên"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.khoe-khong.c1",
+      "lexemeId": "vi.re.khoe-khong",
+      "fr": "Ça va, merci.",
+      "sentence": "___, cảm ơn.",
+      "accepted": [
+        "khỏe",
+        "khoe",
+        "Khỏe"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.nguoi.c1",
+      "lexemeId": "vi.re.nguoi",
+      "fr": "Vous êtes de quelle nationalité ?",
+      "sentence": "Anh là ___ nước nào?",
+      "accepted": [
+        "người",
+        "nguoi"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.hieu.c1",
+      "lexemeId": "vi.re.hieu",
+      "fr": "Vous comprenez ?",
+      "sentence": "Anh ___ không?",
+      "accepted": [
+        "hiểu",
+        "hieu"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.noi.c1",
+      "lexemeId": "vi.re.noi",
+      "fr": "Je parle un peu vietnamien.",
+      "sentence": "Tôi ___ tiếng Việt một chút.",
+      "accepted": [
+        "nói",
+        "noi"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.cham.c1",
+      "lexemeId": "vi.re.cham",
+      "fr": "Parlez lentement, s'il vous plaît.",
+      "sentence": "Xin nói ___.",
+      "accepted": [
+        "chậm",
+        "cham"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.biet.c1",
+      "lexemeId": "vi.re.biet",
+      "fr": "Vous connaissez cet endroit ?",
+      "sentence": "Anh ___ chỗ này không?",
+      "accepted": [
+        "biết",
+        "biet"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.giup.c1",
+      "lexemeId": "vi.re.giup",
+      "fr": "Aidez-moi !",
+      "sentence": "___ tôi với!",
+      "accepted": [
+        "giúp",
+        "giup",
+        "Giúp"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.rat-vui.c1",
+      "lexemeId": "vi.re.rat-vui",
+      "fr": "Enchanté de vous rencontrer.",
+      "sentence": "___ ___ được gặp anh.",
+      "accepted": [
+        "rất vui",
+        "rat vui",
+        "Rất vui"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.rat-vui.c2",
+      "lexemeId": "vi.re.rat-vui",
+      "fr": "C'est super !",
+      "sentence": "___ quá!",
+      "accepted": [
+        "vui",
+        "Vui"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.re.mot-chut.c1",
+      "lexemeId": "vi.re.mot-chut",
+      "fr": "Juste un peu.",
+      "sentence": "___ ___ thôi.",
+      "accepted": [
+        "một chút",
+        "mot chut",
+        "Một chút"
+      ]
     }
   ]
 }

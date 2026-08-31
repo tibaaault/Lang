@@ -489,7 +489,6 @@
       "fr": "Je voudrais un peu de lait.",
       "sentence": "I'd like a ___ milk.",
       "accepted": [
-        "little bit of",
         "little"
       ],
       "nearMisses": [

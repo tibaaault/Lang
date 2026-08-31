@@ -427,6 +427,174 @@
       ],
       "answer": "deux mots différents",
       "why": "Le ton fait partie du mot : « má » veut dire mère, « mà » veut dire mais."
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.xin-chao.c1",
+      "lexemeId": "vi.po.xin-chao",
+      "fr": "Bonjour !",
+      "sentence": "___ chào!",
+      "accepted": [
+        "xin",
+        "Xin"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.xin-chao.c2",
+      "lexemeId": "vi.po.xin-chao",
+      "fr": "Bonjour (à un homme un peu plus âgé).",
+      "sentence": "Chào ___!",
+      "accepted": [
+        "anh"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.cam-on.c1",
+      "lexemeId": "vi.po.cam-on",
+      "fr": "Merci beaucoup.",
+      "sentence": "Cảm ___ anh nhiều.",
+      "accepted": [
+        "ơn",
+        "on"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.xin-loi.c1",
+      "lexemeId": "vi.po.xin-loi",
+      "fr": "Excusez-moi, puis-je demander ?",
+      "sentence": "Xin ___, cho hỏi...",
+      "accepted": [
+        "lỗi",
+        "loi"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.khong.c1",
+      "lexemeId": "vi.po.khong",
+      "fr": "C'est bon ?",
+      "sentence": "Ngon ___?",
+      "accepted": [
+        "không",
+        "khong"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.da.c1",
+      "lexemeId": "vi.po.da",
+      "fr": "Oui, je comprends.",
+      "sentence": "___, em hiểu.",
+      "accepted": [
+        "dạ",
+        "da",
+        "Dạ",
+        "vâng",
+        "vang"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.da.c2",
+      "lexemeId": "vi.po.da",
+      "fr": "Oui, bien sûr.",
+      "sentence": "Dạ ___.",
+      "accepted": [
+        "vâng",
+        "vang"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.toi.c1",
+      "lexemeId": "vi.po.toi",
+      "fr": "Je ne sais pas.",
+      "sentence": "___ không biết.",
+      "accepted": [
+        "tôi",
+        "toi",
+        "Tôi"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.anh-chi-em.c1",
+      "lexemeId": "vi.po.anh-chi-em",
+      "fr": "Bonjour (à une femme un peu plus âgée).",
+      "sentence": "Chào ___!",
+      "accepted": [
+        "chị",
+        "chi"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.anh-chi-em.c2",
+      "lexemeId": "vi.po.anh-chi-em",
+      "fr": "Merci (dit à un homme plus âgé).",
+      "sentence": "Em cảm ơn ___.",
+      "accepted": [
+        "anh"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.duoc-khong.c1",
+      "lexemeId": "vi.po.duoc-khong",
+      "fr": "Je peux prendre une photo ?",
+      "sentence": "Chụp ảnh được ___?",
+      "accepted": [
+        "không",
+        "khong"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.tam-biet.c1",
+      "lexemeId": "vi.po.tam-biet",
+      "fr": "Au revoir !",
+      "sentence": "___ biệt!",
+      "accepted": [
+        "tạm",
+        "tam",
+        "Tạm"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.tam-biet.c2",
+      "lexemeId": "vi.po.tam-biet",
+      "fr": "À bientôt.",
+      "sentence": "Hẹn gặp ___.",
+      "accepted": [
+        "lại",
+        "lai"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.tons.c1",
+      "lexemeId": "vi.po.tons",
+      "fr": "Le vietnamien compte six tons.",
+      "sentence": "Tiếng Việt có ___ thanh.",
+      "accepted": [
+        "sáu",
+        "sau"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.po.tons.c2",
+      "lexemeId": "vi.po.tons",
+      "fr": "Je ne parle pas encore bien vietnamien.",
+      "sentence": "Tôi nói tiếng Việt chưa ___.",
+      "accepted": [
+        "tốt",
+        "tot"
+      ]
     }
   ]
 }

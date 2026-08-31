@@ -409,6 +409,150 @@
         "mot"
       ],
       "hint": "m__"
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.an.c1",
+      "lexemeId": "vi.ma.an",
+      "fr": "Tu as déjà mangé ?",
+      "sentence": "___ cơm chưa?",
+      "accepted": [
+        "ăn",
+        "an",
+        "Ăn"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.uong.c1",
+      "lexemeId": "vi.ma.uong",
+      "fr": "Tu bois une bière ?",
+      "sentence": "___ bia không?",
+      "accepted": [
+        "uống",
+        "uong",
+        "Uống"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.nuoc.c1",
+      "lexemeId": "vi.ma.nuoc",
+      "fr": "Vous venez de quel pays ?",
+      "sentence": "Anh ở ___ nào?",
+      "accepted": [
+        "nước",
+        "nuoc"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.ca-phe.c1",
+      "lexemeId": "vi.ma.ca-phe",
+      "fr": "Un café noir chaud.",
+      "sentence": "___ ___ đen nóng.",
+      "accepted": [
+        "cà phê",
+        "ca phe",
+        "Cà phê"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.ca-phe.c2",
+      "lexemeId": "vi.ma.ca-phe",
+      "fr": "Un café glacé au lait, s'il vous plaît.",
+      "sentence": "Cho tôi một cà phê sữa ___.",
+      "accepted": [
+        "đá",
+        "da"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.pho.c1",
+      "lexemeId": "vi.ma.pho",
+      "fr": "Le phở au poulet est très bon.",
+      "sentence": "___ gà ngon lắm.",
+      "accepted": [
+        "phở",
+        "pho",
+        "Phở"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.ngon.c1",
+      "lexemeId": "vi.ma.ngon",
+      "fr": "Ce plat est bon ?",
+      "sentence": "Món này ___ không?",
+      "accepted": [
+        "ngon"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.cay.c1",
+      "lexemeId": "vi.ma.cay",
+      "fr": "Pas épicé, s'il vous plaît.",
+      "sentence": "Không ___ nhé.",
+      "accepted": [
+        "cay"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.chay.c1",
+      "lexemeId": "vi.ma.chay",
+      "fr": "Avez-vous des plats végétariens ?",
+      "sentence": "Có món ___ không?",
+      "accepted": [
+        "chay"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.tinh-tien.c1",
+      "lexemeId": "vi.ma.tinh-tien",
+      "fr": "L'addition, s'il vous plaît.",
+      "sentence": "Cho tôi ___ ___.",
+      "accepted": [
+        "tính tiền",
+        "tinh tien"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.tinh-tien.c2",
+      "lexemeId": "vi.ma.tinh-tien",
+      "fr": "Ça fait combien ?",
+      "sentence": "Bao nhiêu ___?",
+      "accepted": [
+        "tiền",
+        "tien"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.mot-hai.c1",
+      "lexemeId": "vi.ma.mot-hai",
+      "fr": "Deux cafés, s'il vous plaît.",
+      "sentence": "Cho tôi ___ cà phê.",
+      "accepted": [
+        "hai"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "vi.ma.mot-hai.c2",
+      "lexemeId": "vi.ma.mot-hai",
+      "fr": "Un bol de phở au bœuf.",
+      "sentence": "___ tô phở bò.",
+      "accepted": [
+        "một",
+        "mot",
+        "Một"
+      ]
     }
   ]
 }

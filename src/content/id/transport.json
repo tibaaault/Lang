@@ -405,6 +405,110 @@
       "lexemeId": "id.dp.lurus",
       "text": "Lurus saja, lalu belok kanan.",
       "fr": "Tout droit, puis tournez à droite."
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.ke.c1",
+      "lexemeId": "id.dp.ke",
+      "fr": "De Bali à Lombok.",
+      "sentence": "Dari Bali ___ Lombok.",
+      "accepted": [
+        "ke"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.di.c1",
+      "lexemeId": "id.dp.di",
+      "fr": "Tu es où ?",
+      "sentence": "___ mana kamu?",
+      "accepted": [
+        "di",
+        "Di"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.motor.c1",
+      "lexemeId": "id.dp.motor",
+      "fr": "En scooter c'est plus rapide.",
+      "sentence": "Naik ___ lebih cepat.",
+      "accepted": [
+        "motor"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.naik.c1",
+      "lexemeId": "id.dp.naik",
+      "fr": "Deux heures d'avion.",
+      "sentence": "___ pesawat dua jam.",
+      "accepted": [
+        "naik",
+        "Naik"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.sewa.c1",
+      "lexemeId": "id.dp.sewa",
+      "fr": "Je loue une chambre pour un mois.",
+      "sentence": "Saya ___ kamar sebulan.",
+      "accepted": [
+        "sewa"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.kamar.c1",
+      "lexemeId": "id.dp.kamar",
+      "fr": "Où est la salle de bain ?",
+      "sentence": "___ mandi di mana?",
+      "accepted": [
+        "kamar",
+        "Kamar"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.ada.c1",
+      "lexemeId": "id.dp.ada",
+      "fr": "Il n'y en a pas, désolé.",
+      "sentence": "Tidak ___, maaf.",
+      "accepted": [
+        "ada"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.dekat.c1",
+      "lexemeId": "id.dp.dekat",
+      "fr": "Y a-t-il un marché près d'ici ?",
+      "sentence": "Ada pasar ___ sini?",
+      "accepted": [
+        "dekat"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.berhenti.c1",
+      "lexemeId": "id.dp.berhenti",
+      "fr": "Le bus s'arrête devant.",
+      "sentence": "Bus ___ di depan.",
+      "accepted": [
+        "berhenti"
+      ]
+    },
+    {
+      "kind": "cloze",
+      "id": "id.dp.lurus.c1",
+      "lexemeId": "id.dp.lurus",
+      "fr": "Tout droit, simplement.",
+      "sentence": "___ saja.",
+      "accepted": [
+        "lurus",
+        "Lurus"
+      ]
     }
   ]
 }
