@@ -45,6 +45,28 @@ export function speak(text: string, lang: string, rate = 0.95) {
   window.speechSynthesis.speak(u)
 }
 
+/**
+ * Lit plusieurs répliques à la suite. Le navigateur les met en file : chaque
+ * voix peut avoir sa hauteur, ce qui suffit à distinguer deux personnages.
+ */
+export function speakAll(
+  lines: { text: string; pitch?: number }[],
+  lang: string,
+  rate = 0.9,
+) {
+  if (!('speechSynthesis' in window)) return
+  window.speechSynthesis.cancel()
+  const v = bestVoice(lang)
+  for (const line of lines) {
+    const u = new SpeechSynthesisUtterance(line.text)
+    u.lang = lang
+    u.rate = rate
+    u.pitch = line.pitch ?? 1
+    if (v) u.voice = v
+    window.speechSynthesis.speak(u)
+  }
+}
+
 export function stopSpeaking() {
   if ('speechSynthesis' in window) window.speechSynthesis.cancel()
 }

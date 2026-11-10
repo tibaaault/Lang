@@ -14,6 +14,11 @@ import { cardKey, emptyProgress } from '../../store/progress'
 
 const course = courseById('vi')!
 const index = indexPath(course)
+/** Dialogues et leçons d'oreille suivent d'autres règles : voir paths.test.ts. */
+const ordinary = index.lessons.filter((l) => !l.lesson.dialogue && !l.lesson.drill)
+const drilled = new Set(
+  index.lessons.filter((l) => l.lesson.drill).flatMap((l) => l.lesson.lexemeIds),
+)
 const proper = new Set((course.properNouns ?? []).map((n) => n.toLocaleLowerCase()))
 
 describe('parcours vietnamien : contenu', () => {
@@ -21,7 +26,7 @@ describe('parcours vietnamien : contenu', () => {
     expect(course.path).toBe(true)
     expect(index.lessons.length).toBeGreaterThanOrEqual(30)
     expect(index.words.length).toBeGreaterThanOrEqual(180)
-    for (const { lesson } of index.lessons) {
+    for (const { lesson } of ordinary) {
       // Au-delà de sept mots neufs, la mémoire de travail décroche.
       expect(lesson.lexemeIds.length, lesson.id).toBeGreaterThanOrEqual(4)
       expect(lesson.lexemeIds.length, lesson.id).toBeLessThanOrEqual(7)
@@ -67,13 +72,13 @@ describe('parcours vietnamien : contenu', () => {
         l.lesson.phrases.flatMap((p) => wordsOfPhrase(index, p)),
       ),
     )
-    for (const word of index.words) {
+    for (const word of index.words.filter((w) => !drilled.has(w.id))) {
       expect(used.has(word.id), word.term).toBe(true)
     }
   })
 
   it('emploie les mots neufs dans les phrases de leur propre leçon', () => {
-    for (const { lesson } of index.lessons) {
+    for (const { lesson } of ordinary) {
       const used = new Set(lesson.phrases.flatMap((p) => wordsOfPhrase(index, p)))
       for (const id of lesson.lexemeIds) {
         expect(used.has(id), `${lesson.id} · ${id}`).toBe(true)
@@ -82,7 +87,7 @@ describe('parcours vietnamien : contenu', () => {
   })
 
   it('donne des exemples au lexique à partir des phrases', () => {
-    for (const word of index.words) {
+    for (const word of index.words.filter((w) => !drilled.has(w.id))) {
       expect(word.examples?.length ?? 0, word.term).toBeGreaterThan(0)
     }
   })
@@ -123,7 +128,7 @@ describe('découpage en tuiles', () => {
 
 describe('fabrication des leçons', () => {
   // Les leurres sont tirés au sort : on rejoue chaque leçon plusieurs fois.
-  const everyLesson = index.lessons.flatMap((ref) =>
+  const everyLesson = ordinary.flatMap((ref) =>
     [false, true, false].map((practice) => ({
       ref,
       practice,

@@ -7,6 +7,9 @@ synchronisation.
 - **Vietnamien** : un parcours guidé de 32 leçons courtes (190 mots), sans
   vies ni limite — mots à reconnaître, paires à relier, phrases à assembler
   en tuiles, écoute, écriture. Un exercice raté revient en fin de leçon.
+- **Comprendre, pas seulement dire** (vietnamien) : cinq dialogues à écouter
+  avant d'en voir le texte, les prix à reconnaître à l'oreille, une leçon pour
+  marchander, et deux leçons d'entraînement aux tons.
 - **Thaï** : le même parcours, en 20 leçons (125 mots), avec la prononciation
   en lettres latines sous chaque mot thaï.
 - **Phrases utiles** : toutes les phrases d'un parcours, par situation, à

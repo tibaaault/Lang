@@ -22,7 +22,7 @@ function chunk<T>(items: T[], size: number): T[][] {
   return out
 }
 
-function adaptUnit(unit: Unit): Unit {
+function adaptUnit(unit: Unit, by: 'term' | 'gloss'): Unit {
   const lessons: Lesson[] = chunk(unit.lexemes, LESSON_SIZE).map(
     (words: Lexeme[], i) => {
       const ids = new Set(words.map((w) => w.id))
@@ -56,12 +56,13 @@ function adaptUnit(unit: Unit): Unit {
 
       return {
         id: `${unit.id}-${i + 1}`,
-        // Le titre annonce ce que la leçon contient.
-        title: words
-          .slice(0, 2)
-          .map((w) => w.term)
+        title: `${unit.title} · ${i + 1}`,
+        // Sous le titre, ce que la leçon contient.
+        summary: words
+          .slice(0, 3)
+          .map((w) => w[by])
           .join(', ')
-          .concat(words.length > 2 ? '…' : ''),
+          .concat(words.length > 3 ? '…' : ''),
         lexemeIds: words.map((w) => w.id),
         phrases,
         quizzes,
@@ -81,7 +82,8 @@ export function asPath(
     ...course,
     path: true,
     adapted: true,
-    units: course.units.map(adaptUnit),
+    // Un cours de connaissances se résume par ses questions, pas ses réponses.
+    units: course.units.map((u) => adaptUnit(u, course.silent ? 'gloss' : 'term')),
     ...extra,
   }
 }

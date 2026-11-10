@@ -12,6 +12,8 @@
 
 import type {
   ClozeExercise,
+  DialogueLine,
+  SpokenNumber,
   Course,
   Lesson,
   Lexeme,
@@ -198,8 +200,25 @@ export interface QuizStep {
   answer: string
 }
 
+/** Échange à écouter. `revealed` : texte et traduction affichés d'emblée. */
+export interface DialogueStep {
+  kind: 'dialogue'
+  key: string
+  lines: DialogueLine[]
+  revealed: boolean
+}
+
+/** Un nombre dit, à écrire en chiffres. */
+export interface NumberStep {
+  kind: 'number'
+  key: string
+  number: SpokenNumber
+}
+
 export type Step =
   | IntroStep
+  | DialogueStep
+  | NumberStep
   | QuizStep
   | ClozeStep
   | ChoiceStep
@@ -440,6 +459,31 @@ export function buildLesson(
   }
 
   const steps: Step[] = []
+  const quizStep = (quiz: Quiz): Step => ({
+    kind: 'quiz',
+    key: nextKey(),
+    quiz,
+    options: shuffle(quiz.options),
+    answer: quiz.options[0],
+  })
+
+  if (ref.lesson.dialogue) {
+    // On écoute d'abord sans rien lire, on répond aux questions, puis on
+    // relit l'échange avec sa traduction avant d'en reconstruire des
+    // répliques.
+    const lines = ref.lesson.dialogue
+    steps.push({ kind: 'dialogue', key: nextKey(), lines, revealed: false })
+    for (const quiz of ref.lesson.quizzes ?? []) steps.push(quizStep(quiz))
+    steps.push({ kind: 'dialogue', key: nextKey(), lines, revealed: true })
+    const modes: PhraseMode[] = ['listen', 'to-target', 'listen', 'fill']
+    shuffle(ref.lesson.phrases)
+      .slice(0, 4)
+      .forEach((phrase, i) => {
+        const step = makePhraseStep(index, phrase, modes[i], inLesson, pools)
+        if (step) steps.push(step)
+      })
+    return steps
+  }
 
   if (opts.practice) {
     // Leçon déjà faite : plus de présentation, et l'écoute d'entrée de jeu.
@@ -465,7 +509,19 @@ export function buildLesson(
     }
   }
 
-  steps.push(makeMatch(shuffle(words).slice(0, 5)))
+  if (words.length >= 3) steps.push(makeMatch(shuffle(words).slice(0, 5)))
+
+  if (ref.lesson.drill) {
+    // Leçon d'oreille : chaque mot revient deux fois, à l'écoute seule,
+    // puis toutes les questions. Rien à assembler ni à écrire.
+    for (const w of [...shuffle(words), ...shuffle(words)]) {
+      steps.push(makeChoice(w, 'listen', pools))
+    }
+    for (const quiz of shuffle(ref.lesson.quizzes ?? [])) {
+      steps.push(quizStep(quiz))
+    }
+    return steps
+  }
 
   // Une phrase à trou par mot, tirée au sort parmi celles qui existent :
   // refaire la leçon en fait voir d'autres.
@@ -502,17 +558,18 @@ export function buildLesson(
     }
     const quiz = quizzes[i]
     if (quiz) {
-      tail.push({
-        kind: 'quiz',
-        key: nextKey(),
-        quiz,
-        options: shuffle(quiz.options),
-        answer: quiz.options[0],
-      })
+      tail.push(quizStep(quiz))
     }
     if (clozes[i]) tail.push(clozes[i])
   }
   steps.push(...tail)
+
+  // Les nombres à l'oreille, du plus simple au plus long.
+  for (const number of shuffle(ref.lesson.numbers ?? [])
+    .slice(0, 8)
+    .sort((a, b) => a.text.length - b.text.length)) {
+    steps.push({ kind: 'number', key: nextKey(), number })
+  }
 
   // On termine en écrivant : c'est ce qui fixe le mieux, et ce qui coûte le
   // plus au pouce — d'où un ou deux mots seulement.
@@ -642,6 +699,8 @@ export function lessonTimes(
 ): number {
   const recorded = progress.lessons?.[lessonKey(courseId, lesson.id)]
   if (recorded) return recorded
+  // Une leçon sans mot neuf — un dialogue — ne se déduit de rien.
+  if (lesson.lexemeIds.length === 0) return 0
   return lesson.lexemeIds.every((id) => progress.cards[cardKey(courseId, id)])
     ? 1
     : 0

@@ -136,6 +136,33 @@ export interface Lesson {
   clozes?: ClozeExercise[]
   /** Réponses écrites admises pour un mot, au-delà de son terme. */
   accepted?: Record<string, string[]>
+  /** Ce que la leçon contient, sous son titre. */
+  summary?: string
+  /**
+   * Échange à écouter avant de répondre à des questions dessus. Ses
+   * répliques servent ensuite de phrases à reconstruire.
+   */
+  dialogue?: DialogueLine[]
+  /**
+   * Leçon d'oreille : on y distingue des sons proches, sans rien écrire ni
+   * assembler. Les règles d'une leçon ordinaire ne s'y appliquent pas.
+   */
+  drill?: boolean
+  /** Nombres à reconnaître à l'écoute : un prix dit, un prix à taper. */
+  numbers?: SpokenNumber[]
+}
+
+export interface DialogueLine {
+  /** `A` pour l'interlocuteur, `B` pour le voyageur. */
+  who: 'A' | 'B'
+  text: string
+  fr: string
+}
+
+export interface SpokenNumber {
+  /** Le nombre tel qu'il se dit. */
+  text: string
+  value: number
 }
 
 /**

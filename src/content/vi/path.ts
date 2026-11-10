@@ -9,6 +9,17 @@
 
 import type { Course } from '../../types'
 import { EMOJI, EXTRAS } from './extras'
+import {
+  bargainLesson,
+  hotelDialogue,
+  marketDialogue,
+  meetingDialogue,
+  pairsLesson,
+  pricesLesson,
+  restaurantDialogue,
+  taxiDialogue,
+  tonesUnit,
+} from './special'
 import { buildExtraUnits, buildPathUnits, type UnitSource } from '../path'
 
 /**
@@ -26,6 +37,7 @@ export const PROPER_NOUNS = [
   'Saïgon',
   'Vietnam',
   'France',
+  'Paul',
 ]
 
 const units: UnitSource[] = [
@@ -96,6 +108,7 @@ const units: UnitSource[] = [
       },
     ],
   },
+  tonesUnit,
   {
     id: 'presenter',
     title: 'Se présenter',
@@ -230,6 +243,7 @@ const units: UnitSource[] = [
           ['Bốn mươi nghìn đồng.', 'Quarante mille dongs.'],
         ],
       },
+      pricesLesson,
     ],
   },
   {
@@ -327,6 +341,7 @@ const units: UnitSource[] = [
           ['Cho tôi cơm rau.', 'Donnez-moi du riz aux légumes.'],
         ],
       },
+      restaurantDialogue,
     ],
   },
   {
@@ -401,6 +416,8 @@ const units: UnitSource[] = [
           ['Tôi muốn trả bằng thẻ.', 'Je veux payer par carte.'],
         ],
       },
+      bargainLesson,
+      marketDialogue,
     ],
   },
   {
@@ -475,6 +492,7 @@ const units: UnitSource[] = [
           ['Thuê xe máy bao nhiêu tiền?', 'Combien coûte la location du scooter ?'],
         ],
       },
+      taxiDialogue,
     ],
   },
   {
@@ -525,6 +543,7 @@ const units: UnitSource[] = [
           ['Khách sạn này đẹp lắm.', 'Cet hôtel est vraiment beau.'],
         ],
       },
+      hotelDialogue,
     ],
   },
   {
@@ -675,6 +694,7 @@ const units: UnitSource[] = [
           ['Tôi yêu Việt Nam.', "J'adore le Vietnam."],
         ],
       },
+      meetingDialogue,
     ],
   },
   {
@@ -805,6 +825,7 @@ const units: UnitSource[] = [
           ['Tạm biệt, hẹn gặp lại!', 'Au revoir, à bientôt !'],
         ],
       },
+      pairsLesson,
     ],
   },
 ]
