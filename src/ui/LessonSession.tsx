@@ -89,6 +89,7 @@ export function LessonSession({
   const outcome = useRef(new Map<string, boolean>())
 
   const step = queue[pos]
+  const lang = course.title.toLocaleLowerCase()
   const title = lessonId
     ? (index.byLessonId.get(lessonId)?.lesson.title ?? course.title)
     : 'Révision'
@@ -99,8 +100,15 @@ export function LessonSession({
   }, [pos])
 
   const say = useCallback(
-    (text: string, rate?: number) => speak(text, course.voice, rate),
-    [course.voice],
+    (text: string, rate?: number) =>
+      // Les mots thaïs sont séparés à l'écran pour être lisibles, mais la
+      // langue s'écrit d'un trait : on recolle avant de faire lire.
+      speak(
+        course.romanized ? text.replace(/\s+/g, '') : text,
+        course.voice,
+        rate,
+      ),
+    [course.voice, course.romanized],
   )
 
   const onResult = useCallback(
@@ -216,6 +224,7 @@ export function LessonSession({
           <Choice
             key={step.key}
             step={step}
+            rom={index.roman}
             say={say}
             deaf={deaf}
             onDeaf={() => setDeaf(true)}
@@ -227,6 +236,7 @@ export function LessonSession({
           <Match
             key={step.key}
             step={step}
+            rom={index.roman}
             say={say}
             locked={result !== null}
             onResult={onResult}
@@ -236,6 +246,8 @@ export function LessonSession({
           <Build
             key={step.key}
             step={step}
+            lang={lang}
+            rom={index.roman}
             say={say}
             deaf={deaf}
             onDeaf={() => setDeaf(true)}
@@ -247,6 +259,7 @@ export function LessonSession({
           <Fill
             key={step.key}
             step={step}
+            rom={index.roman}
             locked={result !== null}
             onResult={onResult}
           />
@@ -255,18 +268,34 @@ export function LessonSession({
           <Type
             key={step.key}
             step={step}
+            lang={lang}
             locked={result !== null}
             onResult={onResult}
           />
         )}
 
-        {result && <Feedback result={result} say={say} onNext={advance} />}
+        {result && <Feedback result={result} rom={index.roman} say={say} onNext={advance} />}
       </main>
     </div>
   )
 }
 
 type Say = (text: string, rate?: number) => void
+type Rom = (text: string) => string | undefined
+
+/**
+ * Prononciation en lettres latines, sous un texte écrit dans un autre
+ * alphabet. Rien ne s'affiche pour une langue déjà en alphabet latin.
+ */
+function Roman({ text, rom }: { text: string; rom: Rom }) {
+  const roman = rom(text)
+  if (!roman) return null
+  return (
+    <span className="mt-0.5 block font-sans text-xs font-normal text-muted">
+      {roman}
+    </span>
+  )
+}
 
 /** Lecture normale et lecture lente : la seconde détache les tons. */
 function Listen({ text, say, big }: { text: string; say: Say; big?: boolean }) {
@@ -357,6 +386,7 @@ function Intro({
 
 function Choice({
   step,
+  rom,
   say,
   deaf,
   onDeaf,
@@ -364,6 +394,7 @@ function Choice({
   onResult,
 }: {
   step: ChoiceStep
+  rom: Rom
   say: Say
   deaf: boolean
   onDeaf: () => void
@@ -409,7 +440,10 @@ function Choice({
         </div>
       ) : (
         <div className="mt-2 flex items-center justify-between gap-3">
-          <p className="font-serif text-3xl">{step.term}</p>
+          <p className="font-serif text-3xl">
+            {step.term}
+            <Roman text={step.term} rom={rom} />
+          </p>
           <Listen text={step.term} say={say} />
         </div>
       )}
@@ -429,6 +463,7 @@ function Choice({
             )}
           >
             {opt}
+            {step.mode === 'term' && <Roman text={opt} rom={rom} />}
           </button>
         ))}
       </div>
@@ -438,11 +473,13 @@ function Choice({
 
 function Match({
   step,
+  rom,
   say,
   locked,
   onResult,
 }: {
   step: MatchStep
+  rom: Rom
   say: Say
   locked: boolean
   onResult: (r: StepResult) => void
@@ -519,6 +556,7 @@ function Match({
               className={cell(p.id, term === p.id, clash?.[0] === p.id)}
             >
               {p.term}
+              <Roman text={p.term} rom={rom} />
             </button>
           ))}
         </div>
@@ -541,6 +579,8 @@ function Match({
 
 function Build({
   step,
+  lang,
+  rom,
   say,
   deaf,
   onDeaf,
@@ -548,6 +588,8 @@ function Build({
   onResult,
 }: {
   step: BuildStep
+  lang: string
+  rom: Rom
   say: Say
   deaf: boolean
   onDeaf: () => void
@@ -592,7 +634,7 @@ function Build({
               ? 'Écoutez et reconstruisez la phrase'
               : step.mode === 'listen'
                 ? 'Reconstruisez la phrase'
-                : 'Traduisez en vietnamien'}
+                : `Traduisez en ${lang}`}
         </p>
         {step.mode === 'to-target' ? (
           <p className="mt-2 font-serif text-2xl leading-snug">
@@ -607,6 +649,7 @@ function Build({
           <div className="mt-2 flex items-center justify-between gap-3">
             <p className="font-serif text-2xl leading-snug">
               {step.phrase.text}
+              <Roman text={step.phrase.text} rom={rom} />
             </p>
             <Listen text={step.phrase.text} say={say} />
           </div>
@@ -624,6 +667,7 @@ function Build({
               className={tile}
             >
               {step.tiles[i]}
+              {!toFr && <Roman text={step.tiles[i]} rom={rom} />}
             </button>
           ))}
         </div>
@@ -645,6 +689,7 @@ function Build({
                 className={`${tile} ${used ? 'border-dashed text-transparent' : ''}`}
               >
                 {t}
+                {!toFr && !used && <Roman text={t} rom={rom} />}
               </button>
             )
           })}
@@ -667,10 +712,12 @@ function Build({
 
 function Fill({
   step,
+  rom,
   locked,
   onResult,
 }: {
   step: FillStep
+  rom: Rom
   locked: boolean
   onResult: (r: StepResult) => void
 }) {
@@ -707,6 +754,7 @@ function Fill({
             )}
           </span>
         ))}
+        <Roman text={step.sentence} rom={rom} />
       </p>
       <div className="mt-6 grid grid-cols-2 gap-2">
         {step.options.map((opt) => (
@@ -723,6 +771,7 @@ function Fill({
             )} text-center`}
           >
             {opt}
+            <Roman text={opt} rom={rom} />
           </button>
         ))}
       </div>
@@ -732,10 +781,12 @@ function Fill({
 
 function Type({
   step,
+  lang,
   locked,
   onResult,
 }: {
   step: TypeStep
+  lang: string
   locked: boolean
   onResult: (r: StepResult) => void
 }) {
@@ -764,7 +815,7 @@ function Type({
   return (
     <>
       <div>
-        <p className="text-sm text-muted">Écrivez en vietnamien</p>
+        <p className="text-sm text-muted">Écrivez en {lang}</p>
         <p className="mt-2 font-serif text-2xl leading-snug">{step.gloss}</p>
         <input
           value={input}
@@ -797,10 +848,12 @@ function Type({
 
 function Feedback({
   result,
+  rom,
   say,
   onNext,
 }: {
   result: StepResult
+  rom: Rom
   say: Say
   onNext: () => void
 }) {
@@ -842,6 +895,7 @@ function Feedback({
             <div className="min-w-0">
               <p className="font-serif text-lg leading-snug">
                 {result.solution}
+                <Roman text={result.solution} rom={rom} />
               </p>
               {result.translation && (
                 <p className="mt-0.5 text-sm text-muted">

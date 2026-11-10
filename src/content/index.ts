@@ -41,6 +41,7 @@ import geoAmeriqueNord from './geo/amerique-nord.json'
 import geoAmeriqueSud from './geo/amerique-sud.json'
 import geoOceanie from './geo/oceanie.json'
 import { vietnamese } from './vi/path'
+import { thai } from './th/path'
 import idPremiersMots from './id/premiers-mots.json'
 import idMangerAcheter from './id/manger-acheter.json'
 import idNombres from './id/nombres.json'
@@ -136,6 +137,7 @@ const capitals: Course = {
 // ouvre par défaut.
 export const courses: Course[] = [
   vietnamese,
+  thai,
   english,
   englishBasics,
   indonesian,

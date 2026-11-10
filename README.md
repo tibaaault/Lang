@@ -7,6 +7,10 @@ synchronisation.
 - **Vietnamien** : un parcours guidé de 32 leçons courtes (190 mots), sans
   vies ni limite — mots à reconnaître, paires à relier, phrases à assembler
   en tuiles, écoute, écriture. Un exercice raté revient en fin de leçon.
+- **Thaï** : le même parcours, en 20 leçons (125 mots), avec la prononciation
+  en lettres latines sous chaque mot thaï.
+- **Phrases utiles** : toutes les phrases d'un parcours, par situation, à
+  chercher et à faire lire à voix haute.
 - **Anglais B2+** : faux amis, phrasal verbs, vocabulaire de nuance.
 - **Indonésien** : kit de voyage — politesse, marchandage, commander, s'orienter.
 - Exercices à trous, production, écoute, choix multiple.

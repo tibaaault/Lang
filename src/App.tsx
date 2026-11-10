@@ -8,6 +8,7 @@ import { Session } from './ui/Session'
 import { LessonSession } from './ui/LessonSession'
 import { indexPath } from './engine/lesson'
 import { Lexicon } from './ui/Lexicon'
+import { Phrasebook } from './ui/Phrasebook'
 import { Stats } from './ui/Stats'
 import { Account } from './ui/Account'
 import { Settings } from './ui/Settings'
@@ -17,6 +18,7 @@ type View =
   | { name: 'session'; courseId: string; mode: SessionMode }
   | { name: 'lesson'; courseId: string; lessonId: string | null }
   | { name: 'lexicon'; courseId: string }
+  | { name: 'phrases'; courseId: string }
   | { name: 'stats' }
   | { name: 'account' }
   | { name: 'settings' }
@@ -95,6 +97,10 @@ export default function App() {
     const course = courseById(view.courseId)
     if (course) return <Lexicon course={course} onBack={home} />
   }
+  if (view.name === 'phrases') {
+    const course = courseById(view.courseId)
+    if (course) return <Phrasebook course={course} onBack={home} />
+  }
   if (view.name === 'stats') return <Stats courses={courses} onBack={home} />
   if (view.name === 'account') return <Account onBack={home} />
   if (view.name === 'settings') return <Settings onBack={home} />
@@ -110,6 +116,7 @@ export default function App() {
         setSessionStamp((n) => n + 1)
         setView({ name: 'lesson', courseId, lessonId })
       }}
+      onPhrases={(courseId) => setView({ name: 'phrases', courseId })}
       onLexicon={(courseId) => setView({ name: 'lexicon', courseId })}
       onOpen={(name) => setView({ name } as View)}
     />
