@@ -1,0 +1,452 @@
+// Anglais pas à pas : du tout premier « I am » jusqu'au passé, au futur et à
+// la comparaison.
+//
+// Écrit pour quelqu'un que l'anglais a découragé à l'école. Chaque leçon
+// n'ajoute que cinq ou six mots, les phrases restent courtes, et les
+// conseils expliquent en français ce que les manuels supposent acquis :
+// pourquoi « she likes » prend un s, à quoi sert « do », pourquoi on ne dit
+// pas « I have 20 years ». Les questions portent sur ces pièges-là.
+
+import { quiz, type UnitSource } from '../path'
+
+export const STEPS_PROPER_NOUNS = ['Tom', 'Léa', 'France', 'English', 'French', 'London']
+
+export const steps: UnitSource[] = [
+  {
+    id: 'etre',
+    title: 'Se présenter',
+    subtitle: 'Je suis, tu es, il est',
+    tips: [
+      "Le verbe « être » n'a que trois formes au présent : I am, you are, he / she / it is. « You » sert pour « tu » comme pour « vous » : pas de vouvoiement en anglais.",
+      "« I » (je) s'écrit toujours en majuscule, même au milieu d'une phrase.",
+      "Pour poser une question avec « être », on inverse : « You are Tom » devient « Are you Tom? ». Pour nier, on ajoute « not » après le verbe : « I am not Tom ».",
+      "À l'oral, tout se contracte : I am → I'm, you are → you're, he is → he's, is not → isn't. Les deux formes sont justes.",
+    ],
+    lessons: [
+      {
+        title: 'Je suis, tu es',
+        words: [
+          ['hello', 'bonjour, salut'],
+          ['I', 'je', 'Toujours en majuscule.'],
+          ['am', 'suis (avec « I »)'],
+          ['you', 'tu, vous'],
+          ['are', 'es, êtes, sont'],
+          ['and', 'et'],
+        ],
+        phrases: [
+          ['Hello, I am Tom.', 'Bonjour, je suis Tom.'],
+          ['You are Léa.', 'Tu es Léa.'],
+          ['I am Tom and you are Léa.', 'Je suis Tom et tu es Léa.'],
+          ['Hello! Are you Tom?', 'Bonjour ! Es-tu Tom ?'],
+          ['I am Léa.', 'Je suis Léa.'],
+        ],
+        quizzes: [
+          quiz('Comment demander « Tu es Tom ? »', 'Are you Tom?', ['You are Tom?', 'Do you are Tom?'],
+            "Avec « être », la question se fait en inversant le sujet et le verbe : You are → Are you. Jamais de « do » avec « être »."),
+          quiz('Laquelle est correcte ?', 'I am Léa.', ['I is Léa.', 'I are Léa.'],
+            "Trois formes seulement : I am, you are, he / she is. « I » va toujours avec « am »."),
+        ],
+      },
+      {
+        title: 'Il, elle',
+        words: [
+          ['he', 'il'],
+          ['she', 'elle'],
+          ['is', 'est'],
+          ['my', 'mon, ma, mes', 'Ne change jamais : my friend, my friends.'],
+          ['your', 'ton, ta, tes ; votre'],
+          ['name', 'nom, prénom'],
+          ['friend', 'ami, amie'],
+        ],
+        phrases: [
+          ['My name is Léa.', "Je m'appelle Léa."],
+          ['He is Tom.', "C'est Tom."],
+          ['She is my friend.', "C'est mon amie."],
+          ['Tom is your friend.', 'Tom est ton ami.'],
+          ['He is my friend and she is your friend.', "C'est mon ami et c'est ton amie."],
+          ['Is she your friend?', 'Est-ce ton amie ?'],
+        ],
+        quizzes: [
+          quiz('Comment dit-on « Je m\'appelle Léa » ?', 'My name is Léa.', ['I call me Léa.', 'I name Léa.'],
+            "L'anglais dit « mon nom est Léa ». « I call me » est une traduction mot à mot qui n'existe pas."),
+          quiz('« Mes amis » se dit :', 'my friends', ['mys friends', 'mes friends'],
+            "« My » est invariable : my friend, my friends. C'est le nom seul qui prend le s du pluriel."),
+        ],
+      },
+      {
+        title: 'Questions simples',
+        words: [
+          ['what', 'quoi, quel'],
+          ['where', 'où'],
+          ['from', 'de (origine)'],
+          ['yes', 'oui'],
+          ['no', 'non'],
+          ['not', 'ne… pas', 'Se place après le verbe « être » : I am not.'],
+        ],
+        phrases: [
+          ['What is your name?', "Comment tu t'appelles ?"],
+          ['Where are you from?', "D'où viens-tu ?"],
+          ['I am from France.', 'Je viens de France.'],
+          ['No, I am not Tom.', 'Non, je ne suis pas Tom.'],
+          ['Yes, she is from France.', 'Oui, elle vient de France.'],
+          ['He is not my friend.', "Ce n'est pas mon ami."],
+        ],
+        quizzes: [
+          quiz('Comment dit-on « J\'ai vingt ans » ?', 'I am twenty.', ['I have twenty years.', 'I have twenty.'],
+            "L'âge se dit avec « être » en anglais : on « est » vingt ans. « I have twenty years » est la faute la plus connue des francophones."),
+          quiz('« D\'où viens-tu ? » : où va le mot « from » ?', 'à la fin : Where are you from?', ['au début : From where are you?', 'il disparaît : Where are you?'],
+            "En anglais courant, la préposition part en fin de question. « Where are you? » sans « from » voudrait dire « où es-tu ? »."),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'avoir',
+    title: 'Avoir, vouloir, aimer',
+    subtitle: 'Le présent, et le petit mot « do »',
+    tips: [
+      "Au présent, le verbe ne change presque pas : I have, you have, I like, you like. Une seule exception : avec he, she, it, on ajoute un s — she likes, he wants. Et « have » devient « has ».",
+      "« a » = un, une ; « the » = le, la, les. L'anglais n'a pas de genre : a dog, a car, the house.",
+      "Pour une question ou une négation, l'anglais appelle « do » à l'aide. Do you like tea? I don't like tea. Avec he / she, c'est « does », et le verbe perd alors son s : Does she like tea? She doesn't like tea.",
+      "« Don't » est la contraction de « do not », « doesn't » celle de « does not ».",
+    ],
+    lessons: [
+      {
+        title: "J'ai, elle a",
+        words: [
+          ['have', 'avoir'],
+          ['has', 'a (avec he, she, it)'],
+          ['a', 'un, une', 'Devient « an » devant une voyelle : an apple.'],
+          ['the', 'le, la, les'],
+          ['dog', 'chien'],
+          ['car', 'voiture'],
+          ['house', 'maison'],
+        ],
+        phrases: [
+          ['I have a dog.', "J'ai un chien."],
+          ['She has a car.', 'Elle a une voiture.'],
+          ['He has a house.', 'Il a une maison.'],
+          ['You have the car.', 'Tu as la voiture.'],
+          ['The dog is my friend.', 'Le chien est mon ami.'],
+          ['My friend has a dog and a car.', 'Mon ami a un chien et une voiture.'],
+        ],
+        quizzes: [
+          quiz('Laquelle est correcte ?', 'She has a dog.', ['She have a dog.', 'She haves a dog.'],
+            "Avec he, she, it, « have » devient « has ». C'est la seule forme irrégulière à retenir ici."),
+          quiz('« La maison » et « les maisons » se disent :', 'the house, the houses', ['the house, thes houses', 'la house, les houses'],
+            "« The » ne change jamais, au singulier comme au pluriel. Seul le nom prend un s."),
+        ],
+      },
+      {
+        title: 'Je veux, j\'aime',
+        words: [
+          ['want', 'vouloir'],
+          ['like', 'aimer, apprécier'],
+          ['coffee', 'café'],
+          ['tea', 'thé'],
+          ['water', 'eau'],
+          ['some', 'du, de la, des'],
+          ['please', "s'il vous plaît"],
+        ],
+        phrases: [
+          ['I want some coffee, please.', "Je veux du café, s'il vous plaît."],
+          ['I like tea.', "J'aime le thé."],
+          ['You want some water.', "Tu veux de l'eau."],
+          ['She likes coffee.', 'Elle aime le café.'],
+          ['He wants some tea, please.', "Il veut du thé, s'il vous plaît."],
+          ['I like my house.', "J'aime ma maison."],
+        ],
+        quizzes: [
+          quiz('Laquelle est correcte ?', 'He likes coffee.', ['He like coffee.', 'He is like coffee.'],
+            "Avec he, she, it, le verbe prend un s au présent : I like, mais he likes. C'est l'oubli le plus fréquent."),
+          quiz('Comment dit-on « J\'aime le thé » ?', 'I like tea.', ['I like the tea.', 'I am like tea.'],
+            "Pour parler d'une chose en général, l'anglais ne met pas d'article. « I like the tea » voudrait dire : j'aime ce thé-ci."),
+        ],
+      },
+      {
+        title: 'Do, don\'t',
+        words: [
+          ['do', '(sert à poser une question)'],
+          ["don't", 'ne… pas (devant un verbe)'],
+          ['does', '(question avec he, she, it)'],
+          ["doesn't", 'ne… pas (avec he, she, it)'],
+          ['speak', 'parler'],
+          ['English', "l'anglais"],
+          ['French', 'le français'],
+        ],
+        phrases: [
+          ['Do you speak English?', 'Parles-tu anglais ?'],
+          ["I don't speak English.", 'Je ne parle pas anglais.'],
+          ['Does she speak French?', 'Parle-t-elle français ?'],
+          ["She doesn't like coffee.", "Elle n'aime pas le café."],
+          ['Do you want some tea?', 'Veux-tu du thé ?'],
+          ["I don't have a car.", "Je n'ai pas de voiture."],
+        ],
+        quizzes: [
+          quiz('Laquelle est correcte ?', 'Does he like tea?', ['Does he likes tea?', 'Do he like tea?'],
+            "Le s de la troisième personne passe sur « does » : le verbe qui suit redevient simple. Does he like, jamais « does he likes »."),
+          quiz('Comment dire « Je n\'aime pas le café » ?', "I don't like coffee.", ['I like not coffee.', 'I not like coffee.'],
+            "Sauf avec « être », on ne peut pas nier un verbe directement : il faut « do not », contracté en « don't », devant lui."),
+          quiz('Comment demander « Tu veux de l\'eau ? »', 'Do you want some water?', ['Want you some water?', 'You want some water?'],
+            "On n'inverse pas un verbe ordinaire : on place « do » devant le sujet. La troisième se comprend à l'oral, mais ce n'est pas la forme correcte."),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'jours',
+    title: 'Le quotidien',
+    subtitle: 'Les verbes de tous les jours, les nombres, les moments',
+    tips: [
+      "Après « go », le lieu s'introduit par « to » : I go to London. Exception à connaître : « go home », rentrer chez soi, sans « to ».",
+      "« In » pour un pays ou une ville où l'on se trouve : I live in France. « At » pour une heure : at six.",
+      "Le pluriel se forme en ajoutant un s : one dog, two dogs. L'adjectif, lui, ne s'accorde jamais.",
+    ],
+    lessons: [
+      {
+        title: 'Verbes de tous les jours',
+        words: [
+          ['go', 'aller'],
+          ['eat', 'manger'],
+          ['work', 'travailler ; travail'],
+          ['live', 'habiter, vivre'],
+          ['in', 'dans, en, à'],
+          ['to', 'à, vers'],
+          ['every day', 'tous les jours'],
+        ],
+        phrases: [
+          ['I live in France.', "J'habite en France."],
+          ['I go to work every day.', 'Je vais au travail tous les jours.'],
+          ['Where do you live?', 'Où habites-tu ?'],
+          ['Do you work in London?', 'Travailles-tu à Londres ?'],
+          ["I don't eat in my car.", 'Je ne mange pas dans ma voiture.'],
+          ['She lives in London.', 'Elle habite à Londres.'],
+        ],
+        quizzes: [
+          quiz('Laquelle est correcte ?', 'I go to London.', ['I go at London.', 'I go in London.'],
+            "Un déplacement vers un lieu se dit avec « to ». « In London » sert quand on y est déjà : I live in London."),
+          quiz('Comment dire « Elle travaille à Londres » ?', 'She works in London.', ['She work in London.', 'She is work in London.'],
+            "Le s de he / she / it, encore lui : she works, she lives, she goes."),
+        ],
+      },
+      {
+        title: 'Les nombres',
+        words: [
+          ['one', 'un'],
+          ['two', 'deux'],
+          ['three', 'trois'],
+          ['four', 'quatre'],
+          ['five', 'cinq'],
+          ['ten', 'dix'],
+        ],
+        phrases: [
+          ['I have two dogs.', "J'ai deux chiens."],
+          ['She has three friends.', 'Elle a trois amis.'],
+          ['One coffee, please.', "Un café, s'il vous plaît."],
+          ['I want four coffees and one tea.', 'Je veux quatre cafés et un thé.'],
+          ['He has five cars.', 'Il a cinq voitures.'],
+          ['Ten friends live in London.', 'Dix amis habitent à Londres.'],
+        ],
+        quizzes: [
+          quiz('« Deux grandes maisons » se dit :', 'two big houses', ['two bigs houses', 'two houses bigs'],
+            "L'adjectif se place avant le nom et ne prend jamais de s. Seul le nom se met au pluriel."),
+          quiz('Écoutez. Quel nombre entendez-vous ?', 'three', ['tree', 'free'],
+            "Le « th » se dit la langue entre les dents. « Tree » est un arbre, « free » veut dire gratuit ou libre.", 'three'),
+        ],
+      },
+      {
+        title: 'Aujourd\'hui, demain',
+        words: [
+          ['today', "aujourd'hui"],
+          ['tomorrow', 'demain'],
+          ['now', 'maintenant'],
+          ['morning', 'matin'],
+          ['tonight', 'ce soir'],
+          ['at', 'à (une heure)'],
+        ],
+        phrases: [
+          ['I work today.', "Je travaille aujourd'hui."],
+          ['I go to London tomorrow.', 'Je vais à Londres demain.'],
+          ['Do you want to eat now?', 'Veux-tu manger maintenant ?'],
+          ['I eat at five.', 'Je mange à cinq heures.'],
+          ['She works every morning.', 'Elle travaille tous les matins.'],
+          ['Do you work tonight?', 'Travailles-tu ce soir ?'],
+        ],
+        quizzes: [
+          quiz('Comment dire « Je veux manger » ?', 'I want to eat.', ['I want eat.', 'I want eating.'],
+            "Entre « want » et le verbe qui suit, il faut « to » : I want to eat, I want to go. Même chose après « like » : I like to work."),
+          quiz('« Le matin », pour dire une habitude :', 'in the morning', ['at the morning', 'the morning'],
+            "In the morning, in the afternoon, in the evening — mais « at night ». Ce sont des expressions à apprendre d'un bloc."),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'passe',
+    title: 'Raconter au passé',
+    subtitle: 'Hier, la semaine dernière, il y a deux ans',
+    tips: [
+      "Le passé simple est facile : on ajoute -ed au verbe, à toutes les personnes. I worked, she worked, they worked. Plus de s à la troisième personne.",
+      "Quelques verbes très courants sont irréguliers, à apprendre un par un : go → went, have → had, eat → ate. « Être » a deux formes : I / he / she was, you / we / they were.",
+      "Question et négation se font avec « did », le passé de « do » — et le verbe revient à sa forme simple : Did you go? I didn't go. Jamais « did you went ».",
+      "« Ago » veut dire « il y a » et se place après la durée : two years ago.",
+    ],
+    lessons: [
+      {
+        title: 'Hier',
+        words: [
+          ['was', 'étais, était'],
+          ['were', 'étais, étiez, étaient'],
+          ['yesterday', 'hier'],
+          ['went', 'suis allé, est allé (passé de go)'],
+          ['had', 'avais, a eu (passé de have)'],
+          ['did', '(question au passé)'],
+        ],
+        phrases: [
+          ['I was in London yesterday.', "J'étais à Londres hier."],
+          ['You were my friend.', 'Tu étais mon ami.'],
+          ['I went to work yesterday.', 'Je suis allé au travail hier.'],
+          ['She had a dog.', 'Elle avait un chien.'],
+          ['Did you go to France?', 'Es-tu allé en France ?'],
+          ['Where were you yesterday?', 'Où étais-tu hier ?'],
+        ],
+        quizzes: [
+          quiz('Laquelle est correcte ?', 'Did you go to London?', ['Did you went to London?', 'Went you to London?'],
+            "« Did » porte déjà le passé : le verbe qui suit reste à sa forme simple. Did you go, jamais « did you went »."),
+          quiz('Comment dire « J\'étais fatigué » ?', 'I was tired.', ['I were tired.', 'I am was tired.'],
+            "Was avec I, he, she, it ; were avec you, we, they."),
+        ],
+      },
+      {
+        title: 'Les verbes en -ed',
+        words: [
+          ['worked', 'ai travaillé, travaillais'],
+          ['liked', 'ai aimé, aimais'],
+          ['wanted', 'ai voulu, voulais'],
+          ['lived', 'ai habité, habitais'],
+          ['last week', 'la semaine dernière'],
+          ['ago', 'il y a (après la durée)'],
+          ["didn't", 'ne… pas (au passé)'],
+        ],
+        phrases: [
+          ['I worked last week.', "J'ai travaillé la semaine dernière."],
+          ['She lived in France two years ago.', 'Elle habitait en France il y a deux ans.'],
+          ['I wanted some coffee.', 'Je voulais du café.'],
+          ['He liked my house.', 'Il a aimé ma maison.'],
+          ["I didn't work yesterday.", "Je n'ai pas travaillé hier."],
+          ["She didn't like the tea.", "Elle n'a pas aimé le thé."],
+        ],
+        quizzes: [
+          quiz('Comment dire « Il y a trois jours » ?', 'three days ago', ['ago three days', 'there is three days'],
+            "« Ago » se place après la durée. « There is » veut bien dire « il y a », mais seulement pour dire qu'une chose existe : there is a dog."),
+          quiz('Laquelle est correcte ?', "I didn't like the film.", ["I didn't liked the film.", 'I not liked the film.'],
+            "Après « didn't », le verbe perd son -ed : c'est « did » qui porte le passé."),
+          quiz('« J\'ai travaillé hier » se dit :', 'I worked yesterday.', ['I have worked yesterday.', 'I am worked yesterday.'],
+            "Avec un moment précis et terminé — yesterday, last week, in 2020 — l'anglais emploie le passé simple, pas « have » + participe comme le passé composé français."),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'futur',
+    title: 'Projets et possibilités',
+    subtitle: 'Le futur, pouvoir, devoir, relier ses idées',
+    tips: [
+      "Le futur se forme avec « will » devant le verbe, à toutes les personnes : I will go, she will go. Contracté : I'll go. Négation : won't.",
+      "Pour un projet déjà décidé, on dit plutôt « going to » : I'm going to visit London.",
+      "« Can », « must », « should », « will » sont suivis du verbe seul, sans « to » et sans s : she can speak, he must go. Jamais « she cans » ni « I can to go ».",
+    ],
+    lessons: [
+      {
+        title: 'Demain, je…',
+        words: [
+          ['will', '(marque du futur)'],
+          ['going to', 'aller (faire), avoir prévu de'],
+          ['can', 'pouvoir, savoir faire'],
+          ["can't", 'ne pas pouvoir'],
+          ['must', 'devoir (obligation)'],
+          ['should', 'devrais, devrait (conseil)'],
+        ],
+        phrases: [
+          ['I will go tomorrow.', "J'irai demain."],
+          ['I am going to work in London.', 'Je vais travailler à Londres.'],
+          ['I can speak English.', 'Je sais parler anglais.'],
+          ["I can't eat now.", 'Je ne peux pas manger maintenant.'],
+          ['You should go to London.', 'Tu devrais aller à Londres.'],
+          ['You must work today.', "Tu dois travailler aujourd'hui."],
+        ],
+        quizzes: [
+          quiz('Laquelle est correcte ?', 'She can speak French.', ['She cans speak French.', 'She can to speak French.'],
+            "Après can, must, should, will : le verbe tout nu. Pas de s à la troisième personne, pas de « to »."),
+          quiz('Vous avez déjà acheté le billet. Vous dites :', "I'm going to visit London.", ['I will to visit London.', 'I go visit London.'],
+            "« Going to » exprime un projet décidé. « Will » sert plutôt aux décisions prises sur le moment et aux prédictions."),
+        ],
+      },
+      {
+        title: 'Relier ses idées',
+        words: [
+          ['because', 'parce que'],
+          ['but', 'mais'],
+          ['so', 'donc, alors'],
+          ['if', 'si'],
+          ['when', 'quand'],
+          ['with', 'avec'],
+        ],
+        phrases: [
+          ["I can't go because I work.", 'Je ne peux pas y aller parce que je travaille.'],
+          ['I like tea but I want coffee.', "J'aime le thé mais je veux du café."],
+          ['I work tomorrow, so I will go now.', "Je travaille demain, donc je vais y aller maintenant."],
+          ['If you want, I can go with you.', 'Si tu veux, je peux aller avec toi.'],
+          ['When do you work?', 'Quand travailles-tu ?'],
+          ['She lives with my friend.', 'Elle habite avec mon ami.'],
+        ],
+        quizzes: [
+          quiz('Laquelle est correcte ?', 'If it rains, I will stay home.', ['If it will rain, I will stay home.', 'If it rain, I stay home.'],
+            "Après « if », on met le présent, jamais « will » : le futur n'apparaît que dans l'autre moitié de la phrase. Même règle après « when »."),
+          quiz('« Je suis d\'accord avec toi » se dit :', 'I agree with you.', ['I am agree with you.', 'I am okay with you.'],
+            "« Agree » est un verbe : I agree, she agrees. « I am agree » est un calque du français à oublier."),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'comparer',
+    title: 'Décrire et comparer',
+    subtitle: 'Grand, petit, mieux, plus… que',
+    tips: [
+      "Un adjectif court se compare en ajoutant -er : big → bigger, small → smaller. Un adjectif long prend « more » devant : more expensive, more interesting.",
+      "« Que » se dit « than » dans une comparaison : bigger than, more expensive than.",
+      "Deux irréguliers indispensables : good → better, bad → worse. On ne dit jamais « more good ».",
+    ],
+    lessons: [
+      {
+        title: 'Plus grand que',
+        words: [
+          ['big', 'grand, gros'],
+          ['small', 'petit'],
+          ['good', 'bon, bien'],
+          ['better', 'meilleur, mieux'],
+          ['more', 'plus (de)'],
+          ['than', 'que (dans une comparaison)'],
+          ['very', 'très'],
+        ],
+        phrases: [
+          ['The house is very big.', 'La maison est très grande.'],
+          ['My car is better than your car.', 'Ma voiture est meilleure que ta voiture.'],
+          ['I have a small dog.', "J'ai un petit chien."],
+          ['The coffee is very good.', 'Le café est très bon.'],
+          ['I want more water, please.', "Je veux plus d'eau, s'il vous plaît."],
+          ['London is bigger than my city.', 'Londres est plus grand que ma ville.'],
+        ],
+        quizzes: [
+          quiz('« Plus petit que » se dit :', 'smaller than', ['more small than', 'smaller that'],
+            "Adjectif court : on ajoute -er. Et « que » se traduit ici par « than », pas par « that »."),
+          quiz('« C\'est mieux » se dit :', "It's better.", ["It's more good.", "It's gooder."],
+            "Good → better → the best : irrégulier, comme bon → meilleur en français."),
+          quiz('« Plus cher que » se dit :', 'more expensive than', ['expensiver than', 'more expensiver than'],
+            "Adjectif long, de trois syllabes ou plus : « more » devant, et l'adjectif ne change pas."),
+        ],
+      },
+    ],
+  },
+]

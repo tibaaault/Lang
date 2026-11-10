@@ -44,6 +44,8 @@ import geoOceanie from './geo/oceanie.json'
 import { vietnamese } from './vi/path'
 import { thai } from './th/path'
 import { englishFluency } from './en/fluency'
+import { steps, STEPS_PROPER_NOUNS } from './en/steps'
+import { buildPathUnits } from './path'
 import idPremiersMots from './id/premiers-mots.json'
 import idMangerAcheter from './id/manger-acheter.json'
 import idNombres from './id/nombres.json'
@@ -102,11 +104,11 @@ const indonesian: Course = asPath({
 // Parcours débutant, distinct du parcours B2+ : les exercices de nuance du
 // second n'ont aucun sens sans les bases, et voir un cours hors de portée
 // décourage. Chaque compte choisit ce qu'il suit dans les réglages.
-const englishBasics: Course = asPath({
+const formerBasics = asPath({
   id: 'en-basics',
   lang: 'en',
   voice: 'en-GB',
-  title: 'Anglais — les bases',
+  title: 'Anglais — pas à pas',
   units: [
     ebVerbes,
     ebQuestions,
@@ -116,6 +118,15 @@ const englishBasics: Course = asPath({
     ebTemps,
   ] as Unit[],
 })
+
+// Le parcours écrit leçon par leçon vient d'abord ; les unités d'origine
+// suivent, en vocabulaire d'approfondissement. Le cours garde son
+// identifiant, et ces unités leurs mots : ce qui était appris le reste.
+const englishBasics: Course = {
+  ...formerBasics,
+  properNouns: STEPS_PROPER_NOUNS,
+  units: [...buildPathUnits('eb2', steps), ...formerBasics.units],
+}
 
 // Cours de connaissances plutôt que de langue : pas de synthèse vocale, et
 // la possibilité de se limiter à un continent, les unités n'ayant pas ici

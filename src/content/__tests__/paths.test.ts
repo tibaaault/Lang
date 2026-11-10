@@ -242,3 +242,62 @@ describe.each(
     expect(reused.length).toBe(written.length)
   })
 })
+
+describe('anglais pas à pas', () => {
+  const course = courses.find((c) => c.id === 'en-basics')!
+  const index = indexPath(course)
+  const written = index.lessons.filter((l) => l.unit.id.startsWith('eb2.'))
+
+  it("commence par le parcours écrit leçon par leçon, avant l'ancien vocabulaire", () => {
+    expect(written.length).toBeGreaterThanOrEqual(12)
+    expect(index.lessons.slice(0, written.length)).toEqual(written)
+    // L'ancien contenu suit, avec ses identifiants : la progression tient.
+    expect(index.lessons.length).toBeGreaterThan(written.length)
+    expect(index.words.some((w) => w.id.startsWith('eb.'))).toBe(true)
+  })
+
+  it('avance par petites leçons, chacune expliquée', () => {
+    for (const { lesson, unit } of written) {
+      expect(lesson.lexemeIds.length, lesson.id).toBeGreaterThanOrEqual(5)
+      expect(lesson.lexemeIds.length, lesson.id).toBeLessThanOrEqual(7)
+      expect(lesson.phrases.length, lesson.id).toBeGreaterThanOrEqual(5)
+      expect(lesson.quizzes!.length, lesson.id).toBeGreaterThanOrEqual(2)
+      expect(unit.tips!.length, unit.id).toBeGreaterThanOrEqual(3)
+      // Chaque mot neuf est employé dans une phrase de sa leçon.
+      const used = new Set(lesson.phrases.flatMap((p) => wordsOfPhrase(index, p)))
+      for (const id of lesson.lexemeIds) expect(used.has(id), `${lesson.id} · ${id}`).toBe(true)
+    }
+  })
+})
+
+describe('drapeaux des capitales', () => {
+  const course = courses.find((c) => c.id === 'geo-capitals')!
+  const index = indexPath(course)
+
+  it('donne son drapeau à chaque pays', () => {
+    for (const word of index.words) expect(word.emoji, word.gloss).toBeTruthy()
+    const flags = index.words.map((w) => w.emoji)
+    expect(new Set(flags).size).toBe(flags.length)
+  })
+
+  it('fait reconnaître un pays à son drapeau', () => {
+    const quizzes = index.lessons.flatMap((l) => l.lesson.quizzes ?? [])
+    const flagQuizzes = quizzes.filter((q) => q.prompt.includes('drapeau'))
+    expect(flagQuizzes.length).toBe(index.words.length)
+    for (const q of flagQuizzes) expect(new Set(q.options).size).toBe(4)
+  })
+
+  it('ne met jamais la bonne réponse toujours à la même place', () => {
+    // Le défaut d'origine : la première proposition était toujours la bonne.
+    const lesson = index.lessons[0].lesson
+    const places = new Set<number>()
+    for (let run = 0; run < 40; run++) {
+      for (const step of buildLesson(index, lesson.id)) {
+        if (step.kind === 'quiz' || step.kind === 'choice') {
+          places.add(step.options.indexOf(step.answer))
+        }
+      }
+    }
+    expect(places.size).toBe(4)
+  })
+})

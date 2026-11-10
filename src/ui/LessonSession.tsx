@@ -1166,6 +1166,11 @@ function QuizView({
 
   return (
     <div>
+      {step.quiz.picture && (
+        <p aria-hidden className="mb-3 text-7xl leading-none">
+          {step.quiz.picture}
+        </p>
+      )}
       <p className="font-serif text-xl leading-snug">{step.quiz.prompt}</p>
       {spoken && (
         <div className="mt-4">

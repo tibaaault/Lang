@@ -22,6 +22,11 @@ function chunk<T>(items: T[], size: number): T[][] {
   return out
 }
 
+/** Écart de rang entre deux mots de l'unité : des leurres pris tout près. */
+function distance(all: Lexeme[], a: Lexeme, b: Lexeme): number {
+  return Math.abs(all.indexOf(a) - all.indexOf(b))
+}
+
 function adaptUnit(unit: Unit, by: 'term' | 'gloss'): Unit {
   const lessons: Lesson[] = chunk(unit.lexemes, LESSON_SIZE).map(
     (words: Lexeme[], i) => {
@@ -45,6 +50,25 @@ function adaptUnit(unit: Unit, by: 'term' | 'gloss'): Unit {
             ]
           : [],
       )
+
+      // Un mot illustré d'un drapeau donne une question de plus : reconnaître
+      // le pays à son drapeau, parmi ses voisins de l'unité.
+      if (by === 'gloss') {
+        for (const w of words) {
+          if (!w.emoji) continue
+          const others = unit.lexemes
+            .filter((o) => o.id !== w.id)
+            .sort((a, b) => distance(unit.lexemes, a, w) - distance(unit.lexemes, b, w))
+            .slice(0, 3)
+            .map((o) => o.gloss)
+          quizzes.push({
+            picture: w.emoji,
+            prompt: 'À quel pays appartient ce drapeau ?',
+            options: [w.gloss, ...others],
+            why: `C'est le drapeau de : ${w.gloss}. Capitale : ${w.term}.`,
+          })
+        }
+      }
 
       const clozes = own.filter((e): e is ClozeExercise => e.kind === 'cloze')
 

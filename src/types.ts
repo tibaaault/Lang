@@ -174,6 +174,8 @@ export interface Quiz {
   prompt: string
   /** Texte lu à voix haute avec la question. */
   speak?: string
+  /** Pictogramme montré en grand au-dessus de la question : un drapeau. */
+  picture?: string
   /** La bonne réponse en premier ; l'ordre est mélangé à l'affichage. */
   options: string[]
   why: string

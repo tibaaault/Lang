@@ -6,6 +6,7 @@
 // au chargement : le calcul est immédiat, et le poids téléchargé bien moindre.
 
 import type { Exercise, Lexeme, Unit } from '../../types'
+import { flagOf } from './flags'
 
 /** [pays, capitale, note éventuelle, autres réponses acceptées] */
 export type CountryEntry = [string, string, (string | null)?, string[]?]
@@ -51,7 +52,14 @@ export function buildCapitalsUnit(data: CapitalsData): Unit {
 
   data.countries.forEach(([country, capital, note, variants], i) => {
     const id = `geo.${data.id}.${slug(country)}`
-    lexemes.push({ id, term: capital, gloss: country, ...(note ? { note } : {}) })
+    const emoji = flagOf(country)
+    lexemes.push({
+      id,
+      term: capital,
+      gloss: country,
+      ...(emoji ? { emoji } : {}),
+      ...(note ? { note } : {}),
+    })
 
     const why = note ?? `La capitale de ${country} est ${capital}.`
     const hint = `${capital[0]}${'_'.repeat(Math.max(capital.length - 2, 1))}${capital[capital.length - 1]}`
