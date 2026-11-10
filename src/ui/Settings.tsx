@@ -5,8 +5,6 @@ import { isRemoteEnabled } from '../store/supabase'
 import { useState } from 'react'
 import { Button, Card, Screen } from './components'
 
-const GOALS = [10, 20, 30, 50]
-const NEW_PER_DAY = [4, 8, 12, 20]
 
 export function Settings({ onBack }: { onBack: () => void }) {
   const progress = useProgress()
@@ -53,56 +51,12 @@ export function Settings({ onBack }: { onBack: () => void }) {
                     {followed ? '✓' : ''}
                   </span>
                   <span className={followed ? 'text-accent' : ''}>
+                    {course.icon && <span aria-hidden>{course.icon} </span>}
                     {course.title}
                   </span>
                 </button>
               )
             })}
-          </div>
-        </Card>
-
-        <Card>
-          <h2 className="text-sm font-medium">Objectif quotidien</h2>
-          <p className="mt-1 text-xs text-muted">
-            Nombre de réponses par session. Vingt tiennent en cinq minutes.
-          </p>
-          <div className="mt-3 grid grid-cols-4 gap-2">
-            {GOALS.map((g) => (
-              <button
-                key={g}
-                onClick={() => updateSettings({ dailyGoal: g })}
-                className={`min-h-12 rounded-xl border text-sm ${
-                  progress.settings.dailyGoal === g
-                    ? 'border-accent bg-accent-soft text-accent'
-                    : 'border-line'
-                }`}
-              >
-                {g}
-              </button>
-            ))}
-          </div>
-        </Card>
-
-        <Card>
-          <h2 className="text-sm font-medium">Mots nouveaux par jour</h2>
-          <p className="mt-1 text-xs text-muted">
-            Chaque mot nouveau engendre des révisions pendant des semaines. En
-            introduire trop d'un coup crée une dette qui décourage.
-          </p>
-          <div className="mt-3 grid grid-cols-4 gap-2">
-            {NEW_PER_DAY.map((n) => (
-              <button
-                key={n}
-                onClick={() => updateSettings({ newPerDay: n })}
-                className={`min-h-12 rounded-xl border text-sm ${
-                  progress.settings.newPerDay === n
-                    ? 'border-accent bg-accent-soft text-accent'
-                    : 'border-line'
-                }`}
-              >
-                {n}
-              </button>
-            ))}
           </div>
         </Card>
 
@@ -135,7 +89,6 @@ export function Settings({ onBack }: { onBack: () => void }) {
             <div className="flex justify-between gap-3">
               <dt className="text-muted">Réglages enregistrés</dt>
               <dd className="text-right tabular-nums">
-                {progress.settings.newPerDay} nouveaux ·{' '}
                 {progress.settings.courses
                   ? `${progress.settings.courses.length} cours`
                   : 'tous les cours'}

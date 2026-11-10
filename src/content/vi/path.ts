@@ -835,6 +835,7 @@ export const vietnamese: Course = {
   lang: 'vi',
   voice: 'vi-VN',
   title: 'Vietnamien',
+  icon: '🇻🇳',
   path: true,
   properNouns: PROPER_NOUNS,
   units: buildPathUnits('v', units, EMOJI),

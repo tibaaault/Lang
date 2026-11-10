@@ -10,6 +10,13 @@
 
 import type { Course, Quiz } from '../../types'
 import { buildPathUnits, type UnitSource } from '../path'
+import {
+  dublinDialogue,
+  missingWordDialogue,
+  opinionDialogue,
+  pubDialogue,
+  servoDialogue,
+} from './dialogues'
 
 /** question, texte lu éventuel, bonne réponse, leurres, explication. */
 const q = (
@@ -160,6 +167,7 @@ const units: UnitSource[] = [
           ),
         ],
       },
+      missingWordDialogue,
     ],
   },
   {
@@ -522,6 +530,7 @@ const units: UnitSource[] = [
           ),
         ],
       },
+      pubDialogue,
     ],
   },
   {
@@ -612,6 +621,7 @@ const units: UnitSource[] = [
           ),
         ],
       },
+      opinionDialogue,
     ],
   },
   {
@@ -707,6 +717,7 @@ const units: UnitSource[] = [
           ),
         ],
       },
+      dublinDialogue,
     ],
   },
   {
@@ -802,6 +813,7 @@ const units: UnitSource[] = [
           ),
         ],
       },
+      servoDialogue,
     ],
   },
 ]
@@ -811,6 +823,7 @@ export const englishFluency: Course = {
   lang: 'en',
   voice: 'en-GB',
   title: "Anglais à l'oral",
+  icon: '🗣️',
   path: true,
   advanced: true,
   properNouns: PROPER_NOUNS,

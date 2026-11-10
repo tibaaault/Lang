@@ -145,7 +145,7 @@ describe("parcours complet d'une session", () => {
     await user.click(screen.getByRole('button', { name: 'Retour' }))
 
     await user.click(await screen.findByRole('button', { name: 'Réglages' }))
-    expect(await screen.findByText('Objectif quotidien')).toBeTruthy()
+    expect(await screen.findByText('Cours suivis')).toBeTruthy()
   }, 20_000)
 
   it('expose chaque cours avec des mots tous couverts par un exercice', () => {

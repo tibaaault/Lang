@@ -12,6 +12,7 @@ import { Phrasebook } from './ui/Phrasebook'
 import { Stats } from './ui/Stats'
 import { Account } from './ui/Account'
 import { Settings } from './ui/Settings'
+import { BottomNav, type Tab } from './ui/components'
 
 type View =
   | { name: 'home' }
@@ -101,11 +102,23 @@ export default function App() {
     const course = courseById(view.courseId)
     if (course) return <Phrasebook course={course} onBack={home} />
   }
-  if (view.name === 'stats') return <Stats courses={courses} onBack={home} />
-  if (view.name === 'account') return <Account onBack={home} />
-  if (view.name === 'settings') return <Settings onBack={home} />
+  // Les quatre écrans principaux partagent la barre du bas.
+  const tab: Tab =
+    view.name === 'stats' || view.name === 'account' || view.name === 'settings'
+      ? view.name
+      : 'home'
+  const screen =
+    view.name === 'stats' ? (
+      <Stats courses={courses} onBack={home} />
+    ) : view.name === 'account' ? (
+      <Account onBack={home} />
+    ) : view.name === 'settings' ? (
+      <Settings onBack={home} />
+    ) : null
 
   return (
+    <>
+      {screen ?? (
     <Home
       courses={courses}
       onStart={(courseId, mode) => {
@@ -120,5 +133,10 @@ export default function App() {
       onLexicon={(courseId) => setView({ name: 'lexicon', courseId })}
       onOpen={(name) => setView({ name } as View)}
     />
+      )}
+      {/* Réserve la hauteur de la barre : le bas de l'écran reste lisible. */}
+      <div aria-hidden className="h-20" />
+      <BottomNav current={tab} onGo={(name) => setView({ name } as View)} />
+    </>
   )
 }

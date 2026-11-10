@@ -88,6 +88,56 @@ export function Screen({
   )
 }
 
+export type Tab = 'home' | 'stats' | 'account' | 'settings'
+
+const TABS: { id: Tab; icon: string; label: string }[] = [
+  { id: 'home', icon: '📚', label: 'Apprendre' },
+  { id: 'stats', icon: '📈', label: 'Progression' },
+  { id: 'account', icon: '👥', label: 'Comptes' },
+  { id: 'settings', icon: '⚙️', label: 'Réglages' },
+]
+
+/**
+ * Barre de navigation, fixée en bas : les quatre écrans de l'application à
+ * portée de pouce, où que l'on soit. Elle s'efface pendant une leçon, où
+ * rien ne doit distraire ni se toucher par erreur.
+ */
+export function BottomNav({
+  current,
+  onGo,
+}: {
+  current: Tab
+  onGo: (tab: Tab) => void
+}) {
+  return (
+    <nav
+      aria-label="Navigation"
+      className="fixed inset-x-0 bottom-0 z-10 border-t border-line bg-paper/95 pb-[env(safe-area-inset-bottom)] backdrop-blur"
+    >
+      <div className="mx-auto grid max-w-lg grid-cols-4">
+        {TABS.map((tab) => {
+          const active = tab.id === current
+          return (
+            <button
+              key={tab.id}
+              onClick={() => onGo(tab.id)}
+              aria-current={active ? 'page' : undefined}
+              className={`flex min-h-16 flex-col items-center justify-center gap-0.5 text-xs active:opacity-70 ${
+                active ? 'font-semibold text-accent' : 'text-muted'
+              }`}
+            >
+              <span aria-hidden className="text-xl leading-none">
+                {tab.icon}
+              </span>
+              {tab.label}
+            </button>
+          )
+        })}
+      </div>
+    </nav>
+  )
+}
+
 export function SpeakButton({
   onClick,
   label = 'Écouter',
