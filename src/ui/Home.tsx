@@ -12,6 +12,7 @@ export function Home({
   onStart,
   onLesson,
   onLexicon,
+  onPhrases,
   onOpen,
 }: {
   courses: Course[]
@@ -19,6 +20,7 @@ export function Home({
   /** Ouvre une leçon de parcours, ou une révision si `lessonId` est nul. */
   onLesson: (courseId: string, lessonId: string | null) => void
   onLexicon: (courseId: string) => void
+  onPhrases: (courseId: string) => void
   onOpen: (view: 'stats' | 'account' | 'settings') => void
 }) {
   const progress = useProgress()
@@ -125,6 +127,7 @@ export function Home({
           course={activePath}
           onLesson={(lessonId) => onLesson(activePath.id, lessonId)}
           onLexicon={() => onLexicon(activePath.id)}
+          onPhrases={() => onPhrases(activePath.id)}
         />
       ) : (
         <>

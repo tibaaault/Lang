@@ -35,6 +35,11 @@ export interface PathIndex {
   /** Du terme, en minuscules, vers l'identifiant du mot. */
   idOfTerm: Map<string, string>
   tokenizer: Tokenizer
+  /**
+   * Prononciation en lettres latines d'un texte, mot à mot ; rien si le
+   * cours s'écrit déjà en alphabet latin.
+   */
+  roman: (text: string) => string | undefined
 }
 
 export function indexPath(course: Course): PathIndex {
@@ -59,6 +64,21 @@ export function indexPath(course: Course): PathIndex {
     }
   }
 
+  const tokenizer = makeTokenizer(
+    words.map((w) => w.term),
+    course.properNouns ?? [],
+  )
+  const roman = (text: string) =>
+    course.romanized
+      ? tokenizer
+          .target(text)
+          .map((t) => {
+            const id = idOfTerm.get(t.toLocaleLowerCase())
+            return (id && byId.get(id)?.roman) || t
+          })
+          .join(' ')
+      : undefined
+
   return {
     course,
     words,
@@ -67,10 +87,8 @@ export function indexPath(course: Course): PathIndex {
     byLessonId,
     lessonOfWord,
     idOfTerm,
-    tokenizer: makeTokenizer(
-      words.map((w) => w.term),
-      course.properNouns ?? [],
-    ),
+    tokenizer,
+    roman,
   }
 }
 
@@ -330,6 +348,8 @@ function makePhraseStep(
 
 /** Un sens entre parenthèses décrit un rôle grammatical : rien à écrire. */
 const typable = (w: Lexeme) => !w.gloss.startsWith('(')
+/** Un alphabet que le clavier ne sait pas saisir : on n'y écrit pas. */
+const canType = (index: PathIndex) => !index.course.romanized
 
 // --- Leçon -------------------------------------------------------------------
 
@@ -414,7 +434,10 @@ export function buildLesson(
 
   // On termine en écrivant : c'est ce qui fixe le mieux, et ce qui coûte le
   // plus au pouce — d'où un ou deux mots seulement.
-  for (const w of shuffle(words.filter(typable)).slice(0, opts.practice ? 2 : 1)) {
+  for (const w of shuffle(canType(index) ? words.filter(typable) : []).slice(
+    0,
+    opts.practice ? 2 : 1,
+  )) {
     steps.push(makeType(w))
   }
 
@@ -483,7 +506,7 @@ export function buildReview(
     if (k.card.stability < 2) {
       return makeChoice(k.word, i % 2 ? 'listen' : 'meaning', pools)
     }
-    if (i % 3 === 2 && typable(k.word)) return makeType(k.word)
+    if (i % 3 === 2 && canType(index) && typable(k.word)) return makeType(k.word)
     return makeChoice(k.word, i % 2 ? 'term' : 'listen', pools)
   })
 

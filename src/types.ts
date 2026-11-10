@@ -4,7 +4,7 @@
 // donc rien à faire dans une base de données. Supabase ne stocke que la
 // progression personnelle.
 
-export type LangCode = 'en' | 'ja' | 'vi' | 'id' | 'ar' | 'fr'
+export type LangCode = 'en' | 'ja' | 'vi' | 'th' | 'id' | 'ar' | 'fr'
 
 export type Pos = 'verb' | 'noun' | 'adj' | 'adv' | 'phrase' | 'expr'
 
@@ -164,6 +164,11 @@ export interface Course {
    * exercices variés, plutôt qu'une file de révision.
    */
   path?: boolean
+  /**
+   * Langue écrite dans un autre alphabet : la prononciation en lettres
+   * latines accompagne alors chaque mot, et rien n'est demandé au clavier.
+   */
+  romanized?: boolean
   /** Noms propres des phrases, à ne pas mettre en minuscules sur les tuiles. */
   properNouns?: string[]
   units: Unit[]

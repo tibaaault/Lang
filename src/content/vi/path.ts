@@ -7,26 +7,8 @@
 // enseignés, dans sa leçon ou dans une leçon antérieure. C'est ce qui permet
 // de la proposer en tuiles à assembler sans jamais poser un mot inconnu.
 
-import type { Course, Lesson, Lexeme, Unit } from '../../types'
-
-/** terme, sens, note éventuelle, prononciation approchée éventuelle. */
-type W = [term: string, gloss: string, note?: string, roman?: string]
-/** phrase vietnamienne, traduction française. */
-type P = [text: string, fr: string]
-
-interface LessonSource {
-  title: string
-  words: W[]
-  phrases: P[]
-}
-
-interface UnitSource {
-  id: string
-  title: string
-  subtitle: string
-  tips: string[]
-  lessons: LessonSource[]
-}
+import type { Course } from '../../types'
+import { buildPathUnits, type UnitSource } from '../path'
 
 /**
  * Noms propres et emprunts employés dans les phrases sans être enseignés
@@ -309,6 +291,7 @@ const units: UnitSource[] = [
           ['quá', 'trop, tellement', "Après l'adjectif : « cay quá » = trop épicé."],
           ['lắm', 'très, vraiment', "Après l'adjectif : « ngon lắm »."],
           ['chay', 'végétarien'],
+          ['ít', 'peu', "Devant l'adjectif : « ít cay » = peu épicé."],
         ],
         phrases: [
           ['Cho tôi một phở.', 'Donnez-moi un phở.'],
@@ -317,6 +300,8 @@ const units: UnitSource[] = [
           ['Phở rất ngon.', 'Le phở est très bon.'],
           ['Không cay.', 'Pas épicé.'],
           ['Cay quá!', "C'est trop épicé !"],
+          ['Ít cay.', 'Peu épicé.'],
+          ['Tôi không ăn cay.', 'Je ne mange pas épicé.'],
           ['Tôi ăn chay.', 'Je mange végétarien.'],
           ['Bánh mì ngon lắm.', 'Le sandwich est vraiment bon.'],
         ],
@@ -361,6 +346,7 @@ const units: UnitSource[] = [
           ['mua', 'acheter'],
           ['đắt', 'cher', "Au sud : « mắc »."],
           ['rẻ', 'bon marché, pas cher'],
+          ['lấy', 'prendre', "« Tôi lấy cái này » : la phrase pour dire qu'on achète."],
         ],
         phrases: [
           ['Cái này bao nhiêu tiền?', 'Ça coûte combien ?'],
@@ -370,6 +356,8 @@ const units: UnitSource[] = [
           ['Cái này rẻ lắm.', "Ça, c'est vraiment pas cher."],
           ['Bạn muốn mua gì?', 'Tu veux acheter quoi ?'],
           ['Tôi không mua.', "Je n'achète pas."],
+          ['Tôi lấy cái này.', 'Je prends ça.'],
+          ['Tôi lấy cái kia.', 'Je prends celui-là.'],
         ],
       },
       {
@@ -640,7 +628,7 @@ const units: UnitSource[] = [
           ['Anh khỏe không?', 'Vous allez bien ?'],
           ['Chị tên là gì?', 'Comment vous appelez-vous ?'],
           ['Cảm ơn bà.', 'Merci madame.'],
-          ['Chào ông!', 'Bonjour monsieur !'],
+          ['Chào ông!', 'Bonjour, cher monsieur !'],
         ],
       },
       {
@@ -820,54 +808,6 @@ const units: UnitSource[] = [
   },
 ]
 
-/** Identifiant d'un mot : dérivé du terme, donc stable si une leçon bouge. */
-export const wordId = (term: string) => `v:${term}`
-
-function buildUnit(source: UnitSource): Unit {
-  const lexemes: Lexeme[] = []
-  const lessons: Lesson[] = []
-
-  source.lessons.forEach((lesson, i) => {
-    for (const [term, gloss, note, roman] of lesson.words) {
-      lexemes.push({ id: wordId(term), term, gloss, note, roman })
-    }
-    lessons.push({
-      id: `${source.id}-${i + 1}`,
-      title: lesson.title,
-      lexemeIds: lesson.words.map(([term]) => wordId(term)),
-      phrases: lesson.phrases.map(([text, fr]) => ({ text, fr })),
-    })
-  })
-
-  return {
-    id: `vi.${source.id}`,
-    title: source.title,
-    subtitle: source.subtitle,
-    tips: source.tips,
-    lexemes,
-    exercises: [],
-    lessons,
-  }
-}
-
-const builtUnits = units.map(buildUnit)
-
-// Les exemples du lexique sont les phrases du parcours qui emploient le mot :
-// rien à écrire deux fois, et l'on relit ce que l'on a réellement pratiqué.
-{
-  const phrases = builtUnits.flatMap((u) => u.lessons!.flatMap((l) => l.phrases))
-  const flat = (s: string) =>
-    ` ${s.toLocaleLowerCase().replace(/[.,!?…]/g, '')} `
-  for (const unit of builtUnits) {
-    for (const lex of unit.lexemes) {
-      const needle = ` ${lex.term.toLocaleLowerCase()} `
-      lex.examples = phrases
-        .filter((p) => flat(p.text).includes(needle))
-        .slice(0, 2)
-    }
-  }
-}
-
 export const vietnamese: Course = {
   id: 'vi',
   lang: 'vi',
@@ -875,5 +815,5 @@ export const vietnamese: Course = {
   title: 'Vietnamien',
   path: true,
   properNouns: PROPER_NOUNS,
-  units: builtUnits,
+  units: buildPathUnits('v', units),
 }

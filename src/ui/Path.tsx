@@ -23,11 +23,13 @@ export function Path({
   course,
   onLesson,
   onLexicon,
+  onPhrases,
 }: {
   course: Course
   /** `null` lance une révision des mots déjà vus. */
   onLesson: (lessonId: string | null) => void
   onLexicon: () => void
+  onPhrases: () => void
 }) {
   const progress = useProgress()
   const index = useMemo(() => indexPath(course), [course])
@@ -64,7 +66,7 @@ export function Path({
         </div>
       </Card>
 
-      <div className="mb-8 flex gap-3">
+      <div className="mb-3 flex gap-3">
         <Button
           variant={due > 0 ? 'primary' : 'ghost'}
           className="flex-1"
@@ -72,6 +74,13 @@ export function Path({
           onClick={() => onLesson(null)}
         >
           {due > 0 ? `Réviser · ${due} mot${due > 1 ? 's' : ''}` : "S'entraîner"}
+        </Button>
+      </div>
+      {/* Consulter sans être interrogé : retrouver une phrase au moment de
+          commander ou de marchander. */}
+      <div className="mb-8 grid grid-cols-2 gap-3">
+        <Button variant="ghost" onClick={onPhrases}>
+          Phrases utiles
         </Button>
         <Button variant="ghost" onClick={onLexicon}>
           Lexique
