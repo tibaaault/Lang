@@ -112,6 +112,24 @@ export type Exercise =
 
 export type ExerciseKind = Exercise['kind']
 
+/** Une phrase d'un parcours, faite de mots déjà enseignés. */
+export interface Phrase {
+  text: string
+  fr: string
+}
+
+/**
+ * Une leçon d'un parcours guidé : quelques mots neufs et des phrases qui les
+ * emploient. Les exercices ne sont pas écrits à la main : ils sont fabriqués
+ * à la volée à partir de ces deux listes (voir engine/lesson.ts).
+ */
+export interface Lesson {
+  id: string
+  title: string
+  lexemeIds: string[]
+  phrases: Phrase[]
+}
+
 /** Un ensemble cohérent de mots et d'exercices : un thème, une leçon. */
 export interface Unit {
   id: string
@@ -119,6 +137,10 @@ export interface Unit {
   subtitle?: string
   lexemes: Lexeme[]
   exercises: Exercise[]
+  /** Découpage en leçons, pour un cours suivi comme un parcours. */
+  lessons?: Lesson[]
+  /** Repères de prononciation ou de grammaire, lisibles avant l'unité. */
+  tips?: string[]
 }
 
 export interface Course {
@@ -137,5 +159,12 @@ export interface Course {
    * de découverte y étant pédagogique.
    */
   filterByUnit?: boolean
+  /**
+   * Cours suivi comme un parcours : des leçons courtes qui s'enchaînent, aux
+   * exercices variés, plutôt qu'une file de révision.
+   */
+  path?: boolean
+  /** Noms propres des phrases, à ne pas mettre en minuscules sur les tuiles. */
+  properNouns?: string[]
   units: Unit[]
 }

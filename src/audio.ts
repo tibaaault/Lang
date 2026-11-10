@@ -48,3 +48,16 @@ export function speak(text: string, lang: string, rate = 0.95) {
 export function stopSpeaking() {
   if ('speechSynthesis' in window) window.speechSynthesis.cancel()
 }
+
+/**
+ * Peut-on proposer un exercice d'écoute dans cette langue ?
+ *
+ * Plus permissif que `canSpeak` : sur Android, la liste des voix arrive
+ * souvent vide alors que la lecture fonctionne. On ne renonce donc que si le
+ * navigateur annonce des voix et qu'aucune ne convient. Dans le doute,
+ * l'exercice offre de toute façon une sortie : « Je ne peux pas écouter ».
+ */
+export function mayListen(lang: string): boolean {
+  if (!('speechSynthesis' in window)) return false
+  return voices().length === 0 || bestVoice(lang) !== undefined
+}

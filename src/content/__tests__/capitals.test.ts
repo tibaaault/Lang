@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { courseById, courses } from '../index'
 import { indexCourse, buildSession } from '../../engine/scheduler'
 import { emptyProgress } from '../../store/progress'
-import { checkAnswer, normalize } from '../../engine/grade'
+import { checkAnswer } from '../../engine/grade'
 
 const capitals = courseById('geo-capitals')!
 
@@ -123,55 +123,11 @@ describe('catalogue complet', () => {
   })
 })
 
-describe('kit de voyage vietnamien', () => {
-  const vietnamese = courseById('vi')!
-
-  it('couvre les cinq domaines du voyage', () => {
-    expect(vietnamese.units.map((u) => u.title)).toEqual([
-      'Premiers mots',
-      'Manger et boire',
-      'Acheter et négocier',
-      'Se déplacer et se loger',
-      'Rencontrer et discuter',
-    ])
-    expect(indexCourse(vietnamese).lexemes.length).toBe(50)
-  })
-
-  it('donne une prononciation approchée à chaque entrée', () => {
-    // Le vietnamien s'écrit en alphabet latin mais ne se lit pas comme le
-    // français : sans indication, on prononce « phở » comme « fo ».
-    for (const lex of indexCourse(vietnamese).lexemes) {
-      expect(lex.roman, lex.term).toBeTruthy()
-    }
-  })
-
-  it('ne contient aucun mot que le retrait des tons rendrait ambigu', () => {
-    const seen = new Map<string, string>()
-    for (const lex of indexCourse(vietnamese).lexemes) {
-      const key = normalize(lex.term)
-      const previous = seen.get(key)
-      // Deux entrées différentes réduites à la même graphie rendraient un
-      // exercice écrit impossible à corriger.
-      expect(previous === undefined || previous === lex.term, lex.term).toBe(true)
-      seen.set(key, lex.term)
-    }
-  })
-
-  it("explique les pronoms, principale difficulté pour un étranger", () => {
-    const pronouns = indexCourse(vietnamese).lexemes.find(
-      (l) => l.id === 'vi.po.anh-chi-em',
-    )
-    // La note doit expliquer que le pronom dépend de l'âge de l'interlocuteur.
-    expect(pronouns?.note).toMatch(/plus âgé/)
-    expect(pronouns?.note).toMatch(/plus jeune/)
-  })
-})
-
 describe('densité des phrases à trou', () => {
   // Parcours où cette forme a été demandée à l'usage : écrire le mot manquant
   // dans une phrase. Avec une seule phrase par mot, elle revenait à
   // l'identique dès la deuxième révision.
-  const denseCourses = ['en-basics', 'id', 'vi']
+  const denseCourses = ['en-basics', 'id']
 
   it.each(denseCourses)('donne au moins deux phrases par mot : %s', (id) => {
     const index = indexCourse(courseById(id)!)

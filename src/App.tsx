@@ -5,6 +5,8 @@ import { initAuth, useAuth } from './store/sync'
 import { isRemoteEnabled } from './store/supabase'
 import { Home } from './ui/Home'
 import { Session } from './ui/Session'
+import { LessonSession } from './ui/LessonSession'
+import { indexPath } from './engine/lesson'
 import { Lexicon } from './ui/Lexicon'
 import { Stats } from './ui/Stats'
 import { Account } from './ui/Account'
@@ -13,6 +15,7 @@ import { Settings } from './ui/Settings'
 type View =
   | { name: 'home' }
   | { name: 'session'; courseId: string; mode: SessionMode }
+  | { name: 'lesson'; courseId: string; lessonId: string | null }
   | { name: 'lexicon'; courseId: string }
   | { name: 'stats' }
   | { name: 'account' }
@@ -40,6 +43,13 @@ export default function App() {
   const sessionIndex = useMemo(
     () => (sessionCourse ? indexCourse(sessionCourse) : null),
     [sessionCourse],
+  )
+
+  const lessonCourse =
+    view.name === 'lesson' ? courseById(view.courseId) : undefined
+  const pathIndex = useMemo(
+    () => (lessonCourse ? indexPath(lessonCourse) : null),
+    [lessonCourse],
   )
 
   // Ces sorties viennent après tous les hooks : React exige qu'ils soient
@@ -70,6 +80,17 @@ export default function App() {
       />
     )
   }
+  if (view.name === 'lesson' && lessonCourse && pathIndex) {
+    return (
+      <LessonSession
+        key={`${lessonCourse.id}-${view.lessonId}-${sessionStamp}`}
+        course={lessonCourse}
+        index={pathIndex}
+        lessonId={view.lessonId}
+        onExit={home}
+      />
+    )
+  }
   if (view.name === 'lexicon') {
     const course = courseById(view.courseId)
     if (course) return <Lexicon course={course} onBack={home} />
@@ -84,6 +105,10 @@ export default function App() {
       onStart={(courseId, mode) => {
         setSessionStamp((n) => n + 1)
         setView({ name: 'session', courseId, mode })
+      }}
+      onLesson={(courseId, lessonId) => {
+        setSessionStamp((n) => n + 1)
+        setView({ name: 'lesson', courseId, lessonId })
       }}
       onLexicon={(courseId) => setView({ name: 'lexicon', courseId })}
       onOpen={(name) => setView({ name } as View)}

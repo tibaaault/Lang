@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event'
 import App from '../../App'
 import { courses } from '../../content'
 import { indexCourse } from '../../engine/scheduler'
-import { getProgress, resetProgress } from '../../store/progress'
+import { getProgress, resetProgress, updateSettings } from '../../store/progress'
 
 // Les identifiants Supabase sont désormais présents en développement : sans
 // ce leurre, chaque test ouvrirait une vraie connexion au projet.
@@ -25,6 +25,9 @@ beforeEach(() => {
   })
   vi.stubGlobal('SpeechSynthesisUtterance', class {})
   resetProgress()
+  // Ces tests portent sur les cours à file de révision : l'accueil ouvre
+  // sinon le parcours guidé.
+  updateSettings({ homeTab: 'others' })
 })
 
 afterEach(() => {
@@ -142,7 +145,8 @@ describe("parcours complet d'une session", () => {
     expect(new Set(courses.map((c) => c.id)).size).toBe(courses.length)
     // Le parcours débutant doit rester distinct du parcours B2+.
     expect(courses.some((c) => c.id === 'en-basics')).toBe(true)
-    for (const course of courses) {
+    // Un parcours guidé fabrique ses exercices à la volée : voir path.test.ts.
+    for (const course of courses.filter((c) => !c.path)) {
       const index = indexCourse(course)
       expect(index.lexemes.length).toBeGreaterThanOrEqual(20)
       const ids = new Set(index.lexemes.map((l) => l.id))

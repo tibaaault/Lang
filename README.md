@@ -4,6 +4,9 @@ Application d'apprentissage des langues par répétition espacée, hébergée
 gratuitement sur GitHub Pages, avec Supabase pour les comptes et la
 synchronisation.
 
+- **Vietnamien** : un parcours guidé de 32 leçons courtes (190 mots), sans
+  vies ni limite — mots à reconnaître, paires à relier, phrases à assembler
+  en tuiles, écoute, écriture. Un exercice raté revient en fin de leçon.
 - **Anglais B2+** : faux amis, phrasal verbs, vocabulaire de nuance.
 - **Indonésien** : kit de voyage — politesse, marchandage, commander, s'orienter.
 - Exercices à trous, production, écoute, choix multiple.
@@ -112,3 +115,14 @@ explication qui fait apprendre, davantage que la correction elle-même.
 | `supabase/schema.sql` | Tables et droits, dans le schéma `lang` |
 | `src/content/` | Les leçons |
 | `src/ui/` | Les écrans |
+
+## Ajouter des leçons de vietnamien
+
+Tout le parcours tient dans [`src/content/vi/path.ts`](src/content/vi/path.ts) :
+chaque leçon est une liste de mots et une liste de phrases. Les exercices sont
+fabriqués à la volée à partir de ces deux listes (`src/engine/lesson.ts`), il
+n'y a donc rien d'autre à écrire.
+
+Une seule règle, vérifiée par `npm test` : une phrase n'emploie que des mots
+enseignés dans sa leçon ou dans une leçon antérieure (les noms propres vont
+dans `PROPER_NOUNS`). C'est ce qui permet de la proposer en tuiles.
