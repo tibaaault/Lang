@@ -8,7 +8,8 @@
 // de la proposer en tuiles à assembler sans jamais poser un mot inconnu.
 
 import type { Course } from '../../types'
-import { buildPathUnits, type UnitSource } from '../path'
+import { EMOJI, EXTRAS } from './extras'
+import { buildExtraUnits, buildPathUnits, type UnitSource } from '../path'
 
 /**
  * Noms propres et emprunts employés dans les phrases sans être enseignés
@@ -815,5 +816,6 @@ export const vietnamese: Course = {
   title: 'Vietnamien',
   path: true,
   properNouns: PROPER_NOUNS,
-  units: buildPathUnits('v', units),
+  units: buildPathUnits('v', units, EMOJI),
+  extras: buildExtraUnits('v', EXTRAS, EMOJI),
 }

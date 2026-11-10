@@ -126,9 +126,12 @@ async function play(user: ReturnType<typeof userEvent.setup>, wrong = false) {
   const options = screen
     .getAllByRole('button')
     .filter((b) => b.className.includes('min-h-14'))
-  const labels = options.map((o) => o.textContent!)
+  // Le pictogramme qui précède un sens n'en fait pas partie.
+  const plain = (o: HTMLElement) =>
+    o.textContent!.replace(/^[^\p{L}(]+/u, '')
+  const labels = options.map(plain)
   const right = options.find((o) => {
-    const label = o.textContent!
+    const label = plain(o)
     const asGloss = termOf.get(label)
     const asTerm = glossOf.get(label)
     // Sens proposés : le mot affiché est celui dont c'est le sens, et

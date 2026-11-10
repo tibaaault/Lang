@@ -26,7 +26,11 @@ export interface UnitSource {
  * `prefix` distingue les mots d'une langue de ceux d'une autre. L'identifiant
  * d'un mot dérive de son terme : il reste stable si une leçon est déplacée.
  */
-export function buildPathUnits(prefix: string, sources: UnitSource[]): Unit[] {
+export function buildPathUnits(
+  prefix: string,
+  sources: UnitSource[],
+  emoji: Record<string, string> = {},
+): Unit[] {
   const wordId = (term: string) => `${prefix}:${term}`
 
   const units = sources.map((source): Unit => {
@@ -34,7 +38,14 @@ export function buildPathUnits(prefix: string, sources: UnitSource[]): Unit[] {
     const lessons: Lesson[] = []
     source.lessons.forEach((lesson, i) => {
       for (const [term, gloss, note, roman] of lesson.words) {
-        lexemes.push({ id: wordId(term), term, gloss, note, roman })
+        lexemes.push({
+          id: wordId(term),
+          term,
+          gloss,
+          note,
+          roman,
+          emoji: emoji[term],
+        })
       }
       lessons.push({
         id: `${source.id}-${i + 1}`,
@@ -68,4 +79,29 @@ export function buildPathUnits(prefix: string, sources: UnitSource[]): Unit[] {
     }
   }
   return units
+}
+
+/**
+ * Vocabulaire hors leçons, rangé par thème, pour le lexique seulement.
+ * Les identifiants portent un préfixe distinct : un mot ajouté plus tard à
+ * une leçon n'héritera pas d'un état qu'il n'a jamais eu.
+ */
+export function buildExtraUnits(
+  prefix: string,
+  themes: { title: string; words: W[] }[],
+  emoji: Record<string, string> = {},
+): Unit[] {
+  return themes.map((theme, i) => ({
+    id: `${prefix}.plus-${i + 1}`,
+    title: theme.title,
+    lexemes: theme.words.map(([term, gloss, note, roman]) => ({
+      id: `${prefix}+:${term}`,
+      term,
+      gloss,
+      note,
+      roman,
+      emoji: emoji[term],
+    })),
+    exercises: [],
+  }))
 }

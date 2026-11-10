@@ -40,6 +40,8 @@ export interface PathIndex {
    * cours s'écrit déjà en alphabet latin.
    */
   roman: (text: string) => string | undefined
+  /** Pictogramme d'un mot, retrouvé par son terme ou par son sens. */
+  emoji: (termOrGloss: string) => string | undefined
 }
 
 export function indexPath(course: Course): PathIndex {
@@ -62,6 +64,13 @@ export function indexPath(course: Course): PathIndex {
       byLessonId.set(lesson.id, ref)
       for (const id of lesson.lexemeIds) lessonOfWord.set(id, ref.order)
     }
+  }
+
+  const emojiOf = new Map<string, string>()
+  for (const w of words) {
+    if (!w.emoji) continue
+    emojiOf.set(w.term, w.emoji)
+    emojiOf.set(w.gloss, w.emoji)
   }
 
   const tokenizer = makeTokenizer(
@@ -89,6 +98,7 @@ export function indexPath(course: Course): PathIndex {
     idOfTerm,
     tokenizer,
     roman,
+    emoji: (key) => emojiOf.get(key),
   }
 }
 

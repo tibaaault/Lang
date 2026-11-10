@@ -224,6 +224,7 @@ export function LessonSession({
           <Choice
             key={step.key}
             step={step}
+            emo={index.emoji}
             rom={index.roman}
             say={say}
             deaf={deaf}
@@ -236,6 +237,7 @@ export function LessonSession({
           <Match
             key={step.key}
             step={step}
+            emo={index.emoji}
             rom={index.roman}
             say={say}
             locked={result !== null}
@@ -282,6 +284,13 @@ export function LessonSession({
 
 type Say = (text: string, rate?: number) => void
 type Rom = (text: string) => string | undefined
+type Emo = (termOrGloss: string) => string | undefined
+
+/** Pictogramme devant un sens. Décoratif : absent de ce que lit un lecteur d'écran. */
+function Emoji({ of, emo }: { of: string; emo: Emo }) {
+  const emoji = emo(of)
+  return emoji ? <span aria-hidden>{emoji} </span> : null
+}
 
 /**
  * Prononciation en lettres latines, sous un texte écrit dans un autre
@@ -362,7 +371,10 @@ function Intro({
       <Card className="border-accent/30 bg-accent-soft">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
-            <p className="font-serif text-3xl">{word.term}</p>
+            <p className="font-serif text-3xl">
+              {word.emoji && <span aria-hidden>{word.emoji} </span>}
+              {word.term}
+            </p>
             {word.roman && (
               <p className="mt-1 text-sm text-muted">≈ {word.roman}</p>
             )}
@@ -386,6 +398,7 @@ function Intro({
 
 function Choice({
   step,
+  emo,
   rom,
   say,
   deaf,
@@ -394,6 +407,7 @@ function Choice({
   onResult,
 }: {
   step: ChoiceStep
+  emo: Emo
   rom: Rom
   say: Say
   deaf: boolean
@@ -432,7 +446,10 @@ function Choice({
             : 'Que veut dire ce mot ?'}
       </p>
       {step.mode === 'term' ? (
-        <p className="mt-2 font-serif text-2xl leading-snug">{step.gloss}</p>
+        <p className="mt-2 font-serif text-2xl leading-snug">
+          <Emoji of={step.gloss} emo={emo} />
+          {step.gloss}
+        </p>
       ) : blind ? (
         <div className="mt-4">
           <Listen text={step.term} say={say} big />
@@ -462,6 +479,7 @@ function Choice({
                   : 'idle',
             )}
           >
+            {step.mode !== 'term' && <Emoji of={opt} emo={emo} />}
             {opt}
             {step.mode === 'term' && <Roman text={opt} rom={rom} />}
           </button>
@@ -473,12 +491,14 @@ function Choice({
 
 function Match({
   step,
+  emo,
   rom,
   say,
   locked,
   onResult,
 }: {
   step: MatchStep
+  emo: Emo
   rom: Rom
   say: Say
   locked: boolean
@@ -568,6 +588,7 @@ function Match({
               onClick={() => attempt(term, p.id)}
               className={cell(p.id, gloss === p.id, clash?.[1] === p.id)}
             >
+              <Emoji of={p.gloss} emo={emo} />
               {p.gloss}
             </button>
           ))}

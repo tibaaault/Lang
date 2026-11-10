@@ -33,6 +33,11 @@ export function Lexicon({
   const [openId, setOpenId] = useState<string | null>(null)
   const [unitFilter, setUnitFilter] = useState<string | null>(null)
 
+  // Les leçons d'abord, puis le vocabulaire à consulter seulement.
+  const allUnits = useMemo(
+    () => [...course.units, ...(course.extras ?? [])],
+    [course],
+  )
   const audible = !course.silent && canSpeak(course.voice)
 
   const stateOf = (lex: Lexeme): State => {
@@ -43,7 +48,7 @@ export function Lexicon({
 
   const units = useMemo(() => {
     const needle = normalize(query)
-    return course.units
+    return allUnits
       .filter((u) => !unitFilter || u.title === unitFilter)
       .map((unit) => ({
         title: unit.title,
@@ -59,7 +64,7 @@ export function Lexicon({
         }),
       }))
       .filter((u) => u.lexemes.length > 0)
-  }, [course.units, query, unitFilter])
+  }, [allUnits, query, unitFilter])
 
   const total = units.reduce((n, u) => n + u.lexemes.length, 0)
 
@@ -75,9 +80,9 @@ export function Lexicon({
         className="w-full rounded-xl border border-line bg-surface px-4 py-3.5 outline-none focus:border-accent"
       />
 
-      {course.units.length > 1 && (
+      {allUnits.length > 1 && (
         <div className="mt-3 flex flex-wrap gap-2">
-          {[null, ...course.units.map((u) => u.title)].map((title) => (
+          {[null, ...allUnits.map((u) => u.title)].map((title) => (
             <button
               key={title ?? 'tout'}
               onClick={() => setUnitFilter(title)}
@@ -116,6 +121,9 @@ export function Lexicon({
                     >
                       <span className="min-w-0">
                         <span className="block font-serif text-lg leading-tight">
+                          {lex.emoji && (
+                            <span aria-hidden>{lex.emoji} </span>
+                          )}
                           {lex.term}
                         </span>
                         {lex.roman && (
