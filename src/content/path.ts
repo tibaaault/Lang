@@ -1,7 +1,14 @@
 // Mise en forme d'un parcours guidé à partir d'une écriture compacte : des
 // mots et des phrases par leçon. Commun à toutes les langues suivies ainsi.
 
-import type { Lesson, Lexeme, Quiz, Unit } from '../types'
+import type {
+  DialogueLine,
+  Lesson,
+  Lexeme,
+  Quiz,
+  SpokenNumber,
+  Unit,
+} from '../types'
 
 /** terme, sens, note éventuelle, prononciation approchée éventuelle. */
 export type W = [term: string, gloss: string, note?: string, roman?: string]
@@ -13,6 +20,9 @@ export interface LessonSource {
   words: W[]
   phrases: P[]
   quizzes?: Quiz[]
+  dialogue?: DialogueLine[]
+  drill?: boolean
+  numbers?: SpokenNumber[]
 }
 
 export interface UnitSource {
@@ -53,8 +63,15 @@ export function buildPathUnits(
         id: `${source.id}-${i + 1}`,
         title: lesson.title,
         lexemeIds: lesson.words.map(([term]) => wordId(term)),
-        phrases: lesson.phrases.map(([text, fr]) => ({ text, fr })),
+        // Les répliques d'un dialogue sont aussi des phrases à reconstruire.
+        phrases: [
+          ...lesson.phrases.map(([text, fr]) => ({ text, fr })),
+          ...(lesson.dialogue ?? []).map(({ text, fr }) => ({ text, fr })),
+        ],
         quizzes: lesson.quizzes,
+        dialogue: lesson.dialogue,
+        drill: lesson.drill,
+        numbers: lesson.numbers,
       })
     })
     return {
@@ -109,3 +126,12 @@ export function buildExtraUnits(
     exercises: [],
   }))
 }
+
+/** Question rédigée : la bonne réponse, ses leurres, l'explication. */
+export const quiz = (
+  prompt: string,
+  answer: string,
+  wrong: string[],
+  why: string,
+  speak?: string,
+): Quiz => ({ prompt, speak, options: [answer, ...wrong], why })

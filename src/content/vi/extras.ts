@@ -21,6 +21,7 @@ export const EMOJI: Record<string, string> = {
   'giúp': '🆘', 'bác sĩ': '🩺', 'thuốc': '💊', 'mệt': '😮‍💨', 'bệnh viện': '🏥',
   'ốm': '🤒', 'hộ chiếu': '🛂', 'điện thoại': '📱', 'trời': '☁️', 'mưa': '🌧️',
   'lạnh': '🥶', 'ngủ': '😴', 'dô': '🍻', 'sức khỏe': '💪', 'may mắn': '🍀',
+  'ma': '👻', 'mả': '🪦', 'mạ': '🌱', 'giảm giá': '🏷️', 'đồng ý': '🤝',
   // Lexique
   'bún': '🍜', 'mì': '🍝', 'xôi': '🍚', 'nem rán': '🥟', 'gỏi cuốn': '🌯', 'trứng': '🥚',
   'tôm': '🦐', 'thịt lợn': '🐖', 'vịt': '🦆', 'lạc': '🥜', 'đường': '🛣️', 'muối': '🧂',

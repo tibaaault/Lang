@@ -12,6 +12,8 @@ import type {
   BuildStep,
   ChoiceStep,
   ClozeStep,
+  DialogueStep,
+  NumberStep,
   FillStep,
   QuizStep,
   MatchStep,
@@ -31,7 +33,7 @@ import {
   getProgress,
   recordStep,
 } from '../store/progress'
-import { mayListen, speak, stopSpeaking } from '../audio'
+import { mayListen, speak, speakAll, stopSpeaking } from '../audio'
 import { Button, Card, ProgressBar, SpeakButton, Stat } from './components'
 
 /** Ce qu'un exercice rapporte une fois la réponse donnée. */
@@ -241,7 +243,13 @@ export function LessonSession({
 
       <main className="flex flex-1 flex-col">
         <p className="mb-2 text-xs uppercase tracking-wide text-muted">
-          {step.kind === 'intro' ? 'Nouveau mot' : title}
+          {step.kind === 'intro'
+            ? 'Nouveau mot'
+            : step.kind === 'dialogue'
+              ? step.revealed
+                ? 'Relisez le dialogue'
+                : 'Écoutez le dialogue'
+              : title}
         </p>
 
         {step.kind === 'intro' && (
@@ -278,6 +286,26 @@ export function LessonSession({
             step={step}
             lang={lang}
             rom={index.roman}
+            say={say}
+            deaf={deaf}
+            onDeaf={() => setDeaf(true)}
+            locked={result !== null}
+            onResult={onResult}
+          />
+        )}
+        {step.kind === 'dialogue' && (
+          <DialogueView
+            key={step.key}
+            step={step}
+            voice={voice}
+            say={say}
+            onNext={advance}
+          />
+        )}
+        {step.kind === 'number' && (
+          <NumberView
+            key={step.key}
+            step={step}
             say={say}
             deaf={deaf}
             onDeaf={() => setDeaf(true)}
@@ -850,6 +878,173 @@ function Fill({
         ))}
       </div>
     </div>
+  )
+}
+
+/**
+ * Un échange à écouter. Au premier passage le texte est masqué : on
+ * s'entraîne à comprendre ce que l'on entend, pas ce que l'on lit. Chacun
+ * peut l'afficher s'il décroche — l'exercice n'est pas noté.
+ */
+function DialogueView({
+  step,
+  voice,
+  say,
+  onNext,
+}: {
+  step: DialogueStep
+  voice: string
+  say: Say
+  onNext: () => void
+}) {
+  const [showText, setShowText] = useState(step.revealed)
+  const [showFr, setShowFr] = useState(step.revealed)
+
+  const playAll = useCallback(() => {
+    speakAll(
+      // Deux hauteurs de voix : on suit qui parle sans regarder l'écran.
+      step.lines.map((l) => ({ text: l.text, pitch: l.who === 'A' ? 1.15 : 0.85 })),
+      voice,
+    )
+  }, [step.lines, voice])
+
+  useEffect(() => {
+    if (!step.revealed) playAll()
+  }, [playAll, step.revealed])
+
+  return (
+    <>
+      <div className="flex flex-wrap gap-2">
+        <button
+          onClick={playAll}
+          className="rounded-xl bg-accent px-4 py-2.5 text-sm font-medium text-paper active:opacity-70"
+        >
+          ▶ Tout écouter
+        </button>
+        <button
+          onClick={() => setShowText((v) => !v)}
+          aria-pressed={showText}
+          className="rounded-xl border border-line px-4 py-2.5 text-sm text-muted active:opacity-70"
+        >
+          {showText ? 'Masquer le texte' : 'Voir le texte'}
+        </button>
+        <button
+          onClick={() => setShowFr((v) => !v)}
+          aria-pressed={showFr}
+          className="rounded-xl border border-line px-4 py-2.5 text-sm text-muted active:opacity-70"
+        >
+          {showFr ? 'Masquer la traduction' : 'Traduction'}
+        </button>
+      </div>
+
+      <ol className="mt-5 space-y-3">
+        {step.lines.map((line, i) => (
+          <li
+            key={i}
+            className={`flex ${line.who === 'B' ? 'justify-end' : 'justify-start'}`}
+          >
+            <button
+              onClick={() => say(line.text)}
+              aria-label={`Réplique ${i + 1}`}
+              className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-left active:opacity-70 ${
+                line.who === 'B'
+                  ? 'bg-accent-soft text-ink'
+                  : 'border border-line bg-surface'
+              }`}
+            >
+              <span className="block font-serif text-lg leading-snug">
+                {showText ? line.text : '🔊 • • •'}
+              </span>
+              {showFr && (
+                <span className="mt-0.5 block text-sm text-muted">{line.fr}</span>
+              )}
+            </button>
+          </li>
+        ))}
+      </ol>
+
+      <div className="flex-1" />
+      <Button className="mt-6 w-full" onClick={onNext}>
+        Continuer
+      </Button>
+    </>
+  )
+}
+
+const formatNumber = (n: number) =>
+  n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+
+/** Un prix dit à voix haute, à écrire en chiffres. */
+function NumberView({
+  step,
+  say,
+  deaf,
+  onDeaf,
+  locked,
+  onResult,
+}: {
+  step: NumberStep
+  say: Say
+  deaf: boolean
+  onDeaf: () => void
+  locked: boolean
+  onResult: (r: StepResult) => void
+}) {
+  const [input, setInput] = useState('')
+  const { text, value } = step.number
+
+  useEffect(() => {
+    say(text)
+  }, [say, text])
+
+  const check = () => {
+    if (locked || !input.trim()) return
+    const typed = Number(input.replace(/\D/g, ''))
+    onResult({
+      // Sur un marché, on annonce les prix en milliers : « 35 » vaut 35 000.
+      correct: typed === value || typed * 1000 === value,
+      words: [],
+      solution: text,
+      translation: formatNumber(value),
+    })
+  }
+
+  return (
+    <>
+      <div>
+        <p className="text-sm text-muted">Quel prix entendez-vous ?</p>
+        {deaf ? (
+          <p className="mt-2 font-serif text-2xl leading-snug">{text}</p>
+        ) : (
+          <div className="mt-4">
+            <Listen text={text} say={say} big />
+            <CantListen onClick={onDeaf} />
+          </div>
+        )}
+        <input
+          value={input}
+          disabled={locked}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') check()
+          }}
+          inputMode="numeric"
+          autoComplete="off"
+          enterKeyHint="go"
+          placeholder="En chiffres"
+          className="mt-6 w-full rounded-xl border-2 border-line bg-surface px-4 py-4 text-lg outline-none focus:border-accent disabled:opacity-70"
+        />
+        <p className="mt-2 text-xs text-muted">
+          En dongs, ou en milliers : 35 vaut 35 000.
+        </p>
+      </div>
+      <div className="flex-1" />
+      {!locked && (
+        <Button className="mt-4 w-full" onClick={check} disabled={!input.trim()}>
+          Vérifier
+        </Button>
+      )}
+    </>
   )
 }
 

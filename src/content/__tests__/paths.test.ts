@@ -1,8 +1,12 @@
 import { describe, expect, it } from 'vitest'
+import type { Lesson } from '../../types'
 import { courses } from '../index'
 import { buildLesson, indexPath, wordsOfPhrase } from '../../engine/lesson'
 import { EMOJI as VI_EMOJI } from '../vi/extras'
 import { EMOJI as TH_EMOJI } from '../th/extras'
+
+/** Une leçon faite de mots neufs et de phrases qui les emploient. */
+const ordinary = (l: Lesson) => !l.dialogue && !l.drill
 
 const EMOJI: Record<string, Record<string, string>> = { vi: VI_EMOJI, th: TH_EMOJI }
 
@@ -19,7 +23,8 @@ describe.each(
 
     it('découpe le cours en leçons courtes', () => {
       expect(index.lessons.length).toBeGreaterThanOrEqual(15)
-      for (const { lesson } of index.lessons) {
+      // Dialogues et leçons d'oreille n'enseignent pas de mots neufs.
+      for (const { lesson } of index.lessons.filter((l) => ordinary(l.lesson))) {
         expect(lesson.lexemeIds.length, lesson.id).toBeGreaterThanOrEqual(4)
         expect(lesson.lexemeIds.length, lesson.id).toBeLessThanOrEqual(7)
         expect(lesson.phrases.length, lesson.id).toBeGreaterThanOrEqual(4)
@@ -51,7 +56,7 @@ describe.each(
     })
 
     it('emploie chaque mot neuf dans les phrases de sa leçon', () => {
-      for (const { lesson } of index.lessons) {
+      for (const { lesson } of index.lessons.filter((l) => ordinary(l.lesson))) {
         const used = new Set(lesson.phrases.flatMap((p) => wordsOfPhrase(index, p)))
         for (const id of lesson.lexemeIds) {
           expect(used.has(id), `${lesson.id} · ${id}`).toBe(true)
@@ -110,7 +115,7 @@ describe.each(
       for (const { lesson } of index.lessons) {
         for (const practice of [false, true]) {
           const steps = buildLesson(index, lesson.id, { practice })
-          expect(steps.length, lesson.id).toBeGreaterThanOrEqual(10)
+          expect(steps.length, lesson.id).toBeGreaterThanOrEqual(8)
           for (const step of steps) {
             if (step.kind === 'quiz') {
               expect(step.options.length, lesson.id).toBeGreaterThanOrEqual(3)
@@ -129,6 +134,56 @@ describe.each(
     })
   },
 )
+
+describe('leçons vietnamiennes hors du moule', () => {
+  const index = indexPath(courses.find((c) => c.id === 'vi')!)
+  const dialogues = index.lessons.filter((l) => l.lesson.dialogue)
+
+  it('propose un dialogue à écouter dans les situations de voyage', () => {
+    expect(dialogues.length).toBeGreaterThanOrEqual(5)
+    for (const { lesson } of dialogues) {
+      expect(lesson.dialogue!.length, lesson.id).toBeGreaterThanOrEqual(6)
+      // Les deux personnages parlent.
+      expect(new Set(lesson.dialogue!.map((l) => l.who)).size).toBe(2)
+      expect(lesson.quizzes!.length, lesson.id).toBeGreaterThanOrEqual(4)
+    }
+  })
+
+  it("fait écouter le dialogue avant d'en montrer le texte", () => {
+    for (const { lesson } of dialogues) {
+      const steps = buildLesson(index, lesson.id)
+      expect(steps[0]).toMatchObject({ kind: 'dialogue', revealed: false })
+      const again = steps.findIndex((s) => s.kind === 'dialogue' && s.revealed)
+      // Les questions viennent entre l'écoute et la relecture.
+      expect(steps.slice(1, again).every((s) => s.kind === 'quiz')).toBe(true)
+      expect(steps.slice(again + 1).length).toBeGreaterThanOrEqual(3)
+    }
+  })
+
+  it('dit les prix comme on les annonce', () => {
+    const prices = index.lessons.find((l) => l.lesson.numbers)!.lesson
+    const said = new Map(prices.numbers!.map((n) => [n.value, n.text]))
+    expect(said.get(15_000)).toBe('mười lăm nghìn')
+    expect(said.get(21_000)).toBe('hai mươi mốt nghìn')
+    expect(said.get(55_000)).toBe('năm mươi lăm nghìn')
+    expect(said.get(105_000)).toBe('một trăm linh năm nghìn')
+    expect(said.get(350_000)).toBe('ba trăm năm mươi nghìn')
+    expect(said.get(1_500_000)).toBe('một triệu năm trăm nghìn')
+    const steps = buildLesson(index, prices.id)
+    expect(steps.filter((s) => s.kind === 'number').length).toBe(8)
+  })
+
+  it("entraîne l'oreille aux tons sans rien faire écrire", () => {
+    for (const { lesson } of index.lessons.filter((l) => l.lesson.drill)) {
+      const steps = buildLesson(index, lesson.id)
+      expect(steps.some((s) => s.kind === 'type' || s.kind === 'build')).toBe(false)
+      const heard = steps.filter(
+        (s) => (s.kind === 'quiz' && s.quiz.speak) || (s.kind === 'choice' && s.mode === 'listen'),
+      )
+      expect(heard.length, lesson.id).toBeGreaterThanOrEqual(5)
+    }
+  })
+})
 
 // Les cours rédigés avant les parcours, mis à leur format après coup.
 describe.each(

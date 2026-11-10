@@ -140,7 +140,12 @@ export function Path({
                           ) : times ? (
                             `Terminée${times > 1 ? ` · ${times} fois` : ''}`
                           ) : (
-                            `${lesson.lexemeIds.length} mots`
+                            (lesson.summary ??
+                            (lesson.dialogue
+                              ? 'À écouter'
+                              : lesson.lexemeIds.length
+                                ? `${lesson.lexemeIds.length} mots`
+                                : "À l'oreille"))
                           )}
                         </span>
                       </span>
