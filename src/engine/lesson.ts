@@ -10,7 +10,7 @@
 // voir le mot, le reconnaître, l'apparier, comprendre une phrase, la
 // construire, puis l'écrire.
 
-import type { Course, Lesson, Lexeme, Phrase, Unit } from '../types'
+import type { Course, Lesson, Lexeme, Phrase, Quiz, Unit } from '../types'
 import type { Progress } from '../store/progress'
 import { cardKey } from '../store/progress'
 import { isDue, retrievability } from './fsrs'
@@ -172,8 +172,18 @@ export interface TypeStep {
   gloss: string
 }
 
+/** Question rédigée, avec son explication. */
+export interface QuizStep {
+  kind: 'quiz'
+  key: string
+  quiz: Quiz
+  options: string[]
+  answer: string
+}
+
 export type Step =
   | IntroStep
+  | QuizStep
   | ChoiceStep
   | MatchStep
   | BuildStep
@@ -363,6 +373,12 @@ const canType = (index: PathIndex) => !index.course.romanized
 
 // --- Leçon -------------------------------------------------------------------
 
+/**
+ * Pour qui lit déjà la langue : traduire vers le français n'apprend rien.
+ * On écoute et on produit.
+ */
+const ADVANCED_ROTATION: PhraseMode[] = ['listen', 'to-target', 'fill']
+
 const PHRASE_ROTATION: PhraseMode[] = [
   'to-fr',
   'to-target',
@@ -436,17 +452,31 @@ export function buildLesson(
   // Une leçon refaite attaque par la production, une première fois par la
   // compréhension.
   const shift = opts.practice ? 1 : 0
+  const rotation = index.course.advanced ? ADVANCED_ROTATION : PHRASE_ROTATION
+  const quizzes = shuffle(ref.lesson.quizzes ?? [])
   phrases.forEach((phrase, i) => {
-    const mode = PHRASE_ROTATION[(i + shift) % PHRASE_ROTATION.length]
+    const mode = rotation[(i + shift) % rotation.length]
     const step = makePhraseStep(index, phrase, mode, inLesson, pools)
     if (step) steps.push(step)
+    // Les questions rédigées s'intercalent entre les phrases.
+    const quiz = quizzes[i]
+    if (quiz) {
+      steps.push({
+        kind: 'quiz',
+        key: nextKey(),
+        quiz,
+        options: shuffle(quiz.options),
+        answer: quiz.options[0],
+      })
+    }
   })
 
   // On termine en écrivant : c'est ce qui fixe le mieux, et ce qui coûte le
   // plus au pouce — d'où un ou deux mots seulement.
   for (const w of shuffle(canType(index) ? words.filter(typable) : []).slice(
     0,
-    opts.practice ? 2 : 1,
+    // À un niveau avancé, c'est retrouver ses mots qui manque : on écrit plus.
+    index.course.advanced ? 3 : opts.practice ? 2 : 1,
   )) {
     steps.push(makeType(w))
   }

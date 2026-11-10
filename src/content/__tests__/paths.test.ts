@@ -32,6 +32,8 @@ describe.each(courses.filter((c) => c.path).map((c) => [c.title, c] as const))(
     })
 
     it("n'emploie dans une phrase que des mots déjà enseignés", () => {
+      // Un parcours avancé emploie librement tout le vocabulaire.
+      if (course.advanced) return
       for (const { lesson, order } of index.lessons) {
         for (const phrase of lesson.phrases) {
           for (const token of index.tokenizer.target(phrase.text)) {
@@ -73,6 +75,8 @@ describe.each(courses.filter((c) => c.path).map((c) => [c.title, c] as const))(
     })
 
     it('enrichit le lexique de mots de voyage que les leçons ne donnent pas', () => {
+      // Un parcours avancé emploie librement tout le vocabulaire.
+      if (course.advanced) return
       const taught = new Set(index.words.map((w) => w.term.toLocaleLowerCase()))
       const extras = (course.extras ?? []).flatMap((u) => u.lexemes)
       expect(extras.length).toBeGreaterThanOrEqual(80)
@@ -88,6 +92,8 @@ describe.each(courses.filter((c) => c.path).map((c) => [c.title, c] as const))(
     })
 
     it('ne pose un pictogramme que sur des mots qui existent', () => {
+      // Un parcours avancé emploie librement tout le vocabulaire.
+      if (course.advanced) return
       const all = [...index.words, ...(course.extras ?? []).flatMap((u) => u.lexemes)]
       expect(all.filter((w) => w.emoji).length).toBeGreaterThanOrEqual(60)
       // Une faute de frappe dans la table laisserait un mot sans image,
@@ -104,6 +110,11 @@ describe.each(courses.filter((c) => c.path).map((c) => [c.title, c] as const))(
           const steps = buildLesson(index, lesson.id, { practice })
           expect(steps.length, lesson.id).toBeGreaterThanOrEqual(10)
           for (const step of steps) {
+            if (step.kind === 'quiz') {
+              expect(step.options.length, lesson.id).toBeGreaterThanOrEqual(3)
+              expect(new Set(step.options).size, lesson.id).toBe(step.options.length)
+              expect(step.quiz.why.length, lesson.id).toBeGreaterThan(20)
+            }
             if (step.kind === 'choice' || step.kind === 'fill') {
               expect(new Set(step.options).size, lesson.id).toBe(4)
               expect(step.options).toContain(step.answer)
