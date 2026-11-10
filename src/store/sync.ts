@@ -13,6 +13,7 @@ import {
   getProgress,
   mergeLessons,
   replaceProgress,
+  today,
   setProgressListener,
   type Progress,
 } from './progress'
@@ -352,12 +353,43 @@ export async function fetchProfiles(): Promise<PublicProfile[]> {
     .select('id, pseudo, streak, mastered, reviews_7d, last_active')
     .order('reviews_7d', { ascending: false })
   if (error || !data) return []
-  return data.map((r) => ({
-    id: r.id as string,
-    pseudo: r.pseudo as string,
-    streak: (r.streak as number) ?? 0,
-    mastered: (r.mastered as number) ?? 0,
-    reviews7d: (r.reviews_7d as number) ?? 0,
-    lastActive: (r.last_active as string) ?? null,
-  }))
+  return data
+    .map((r) =>
+      currentProfile({
+        id: r.id as string,
+        pseudo: r.pseudo as string,
+        streak: (r.streak as number) ?? 0,
+        mastered: (r.mastered as number) ?? 0,
+        reviews7d: (r.reviews_7d as number) ?? 0,
+        lastActive: (r.last_active as string) ?? null,
+      }),
+    )
+    .sort((a, b) => b.reviews7d - a.reviews7d)
+}
+
+/**
+ * Ramène un profil à ce qui est vrai aujourd'hui.
+ *
+ * Un profil n'est réécrit que lorsque son propriétaire ouvre l'application.
+ * Ses totaux datent donc de sa dernière visite : sans cette correction,
+ * quelqu'un d'absent depuis un mois affiche toujours les réponses « de la
+ * semaine » et la série de jours qu'il avait en partant.
+ */
+export function currentProfile(
+  profile: PublicProfile,
+  now = new Date(),
+): PublicProfile {
+  const last = profile.lastActive ? Date.parse(profile.lastActive) : NaN
+  // Jours entiers écoulés depuis la dernière activité ; inconnue, elle est
+  // tenue pour ancienne.
+  const idle = Number.isNaN(last)
+    ? Infinity
+    : Math.floor((Date.parse(today(now)) - last) / 86_400_000)
+  return {
+    ...profile,
+    // Une série tient tant qu'on a travaillé aujourd'hui ou hier.
+    streak: idle <= 1 ? profile.streak : 0,
+    // Au-delà de sept jours, plus rien de ce total n'appartient à la semaine.
+    reviews7d: idle < 7 ? profile.reviews7d : 0,
+  }
 }
