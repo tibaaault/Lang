@@ -17,6 +17,7 @@ synchronisation.
 - **Anglais à l'oral** : 17 leçons pour qui lit l'anglais mais cherche ses
   mots — tournures pour gagner du temps, calques à éviter, prononciation,
   conversation de pub, et clés pour décoder l'irlandais et l'australien.
+  Cinq dialogues à écouter, dont un à Dublin et un en Australie.
 - **Anglais pas à pas** : 14 leçons écrites pour un vrai débutant, du premier
   « I am » au passé, au futur et à la comparaison, chaque piège de francophone
   expliqué en français.

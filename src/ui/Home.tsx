@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import type { Course } from '../types'
 import { indexCourse, pendingCount, type SessionMode } from '../engine/scheduler'
 import { courseStats, today, updateSettings, useProgress } from '../store/progress'
@@ -46,6 +46,17 @@ export function Home({
       ? undefined
       : (paths.find((c) => c.id === tab) ?? paths[0])
 
+  const tabs: { id: string; label: string; icon?: string }[] = [
+    ...paths.map((c) => ({ id: c.id, label: c.title, icon: c.icon })),
+    ...(listed.length > 0 ? [{ id: 'others', label: 'Autres cours' }] : []),
+  ]
+  const activeTab = activePath?.id ?? 'others'
+  // L'onglet ouvert doit être visible sans faire défiler la rangée.
+  const activeRef = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    activeRef.current?.scrollIntoView?.({ inline: 'center', block: 'nearest' })
+  }, [activeTab])
+
   const indexes = useMemo(
     () => new Map(listed.map((c) => [c.id, indexCourse(c)])),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -69,13 +80,6 @@ export function Home({
               : 'Bonjour'}
           </h1>
         </div>
-        <button
-          onClick={() => onOpen('settings')}
-          aria-label="Réglages"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-muted"
-        >
-          ⚙
-        </button>
       </header>
 
       {/* Un état qui change silencieusement le comportement doit rester
@@ -98,35 +102,29 @@ export function Home({
         </button>
       )}
 
-      {paths.length + (listed.length > 0 ? 1 : 0) > 1 && (
-        // Un onglet par cours suivi ; ceux à file de révision, s'il en reste,
-        // se partagent le dernier.
-
-        <div className="mb-4 flex flex-wrap gap-2">
-          {[
-            ...paths.map((c) => ({ id: c.id, label: c.title })),
-            ...(listed.length > 0
-              ? [{ id: 'others', label: 'Autres cours' }]
-              : []),
-          ].map(
-            ({ id, label }) => {
-              const active = id === (activePath?.id ?? 'others')
-              return (
-                <button
-                  key={id}
-                  onClick={() => updateSettings({ homeTab: id })}
-                  aria-pressed={active}
-                  className={`rounded-full border px-4 py-2 text-sm ${
-                    active
-                      ? 'border-accent bg-accent-soft text-accent'
-                      : 'border-line text-muted'
-                  }`}
-                >
-                  {label}
-                </button>
-              )
-            },
-          )}
+      {tabs.length > 1 && (
+        // Une seule ligne, que l'on fait défiler du doigt : sept cours sur
+        // trois rangées repoussaient les leçons hors de l'écran.
+        <div className="-mx-5 mb-4 flex gap-2 overflow-x-auto px-5 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {tabs.map(({ id, label, icon }) => {
+            const active = id === activeTab
+            return (
+              <button
+                key={id}
+                ref={active ? activeRef : undefined}
+                onClick={() => updateSettings({ homeTab: id })}
+                aria-pressed={active}
+                className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm ${
+                  active
+                    ? 'border-accent bg-accent-soft font-medium text-accent'
+                    : 'border-line text-muted'
+                }`}
+              >
+                {icon && <span aria-hidden>{icon} </span>}
+                {label}
+              </button>
+            )
+          })}
         </div>
       )}
 
@@ -271,18 +269,6 @@ export function Home({
         </>
       )}
 
-      <div className="mt-8 flex gap-3">
-        <Button variant="ghost" className="flex-1" onClick={() => onOpen('stats')}>
-          Progression
-        </Button>
-        <Button
-          variant="ghost"
-          className="flex-1"
-          onClick={() => onOpen('account')}
-        >
-          Comptes
-        </Button>
-      </div>
     </div>
   )
 }

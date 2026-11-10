@@ -199,6 +199,8 @@ export interface Unit {
 export interface Course {
   id: string
   lang: LangCode
+  /** Pictogramme du cours, devant son nom dans les onglets. */
+  icon?: string
   /** Code BCP-47 passé à la synthèse vocale du navigateur. */
   voice: string
   title: string

@@ -57,6 +57,7 @@ const english: Course = asPath({
   lang: 'en',
   voice: 'en-GB',
   title: 'Anglais B2+',
+  icon: '🇬🇧',
   units: [
     enFalseFriends,
     enPhrasal,
@@ -92,6 +93,7 @@ const indonesian: Course = asPath({
   lang: 'id',
   voice: 'id-ID',
   title: 'Indonésien — kit de voyage',
+  icon: '🇮🇩',
   units: [
     idPremiersMots,
     idNombres,
@@ -109,6 +111,7 @@ const formerBasics = asPath({
   lang: 'en',
   voice: 'en-GB',
   title: 'Anglais — pas à pas',
+  icon: '🌱',
   units: [
     ebVerbes,
     ebQuestions,
@@ -138,6 +141,7 @@ const capitals: Course = asPath({
   silent: true,
   filterByUnit: true,
   title: 'Capitales du monde',
+  icon: '🌍',
   // Les exercices sont dérivés des données au chargement : voir geo/build.ts.
   units: [
     geoEurope,

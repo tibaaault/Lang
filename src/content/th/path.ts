@@ -522,6 +522,7 @@ export const thai: Course = {
   lang: 'th',
   voice: 'th-TH',
   title: 'Thaï',
+  icon: '🇹🇭',
   path: true,
   romanized: true,
   properNouns: PROPER_NOUNS,
