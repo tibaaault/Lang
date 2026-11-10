@@ -66,7 +66,10 @@ export function indexPath(course: Course): PathIndex {
     for (const lex of unit.lexemes) {
       words.push(lex)
       byId.set(lex.id, lex)
-      idOfTerm.set(lex.term.toLocaleLowerCase(), lex.id)
+      // Un terme repris plus loin dans le cours reste attaché à la leçon
+      // qui l'a enseigné en premier.
+      const key = lex.term.toLocaleLowerCase()
+      if (!idOfTerm.has(key)) idOfTerm.set(key, lex.id)
     }
     for (const lesson of unit.lessons ?? []) {
       const ref = { lesson, unit, order: lessons.length }
@@ -83,8 +86,19 @@ export function indexPath(course: Course): PathIndex {
     emojiOf.set(w.gloss, w.emoji)
   }
 
+  // Les expressions de plusieurs mots ne font une seule tuile que si une
+  // leçon les enseigne telles quelles. Celles des unités rédigées avant les
+  // parcours (« to work », « to put off ») sont des entrées de dictionnaire :
+  // les souder avalerait le « to » de « I go to work ».
+  const legacy = new Set(
+    course.units
+      .filter((u) => u.exercises.length > 0)
+      .flatMap((u) => u.lexemes.map((l) => l.id)),
+  )
   const tokenizer = makeTokenizer(
-    words.map((w) => w.term),
+    words
+      .filter((w) => !(legacy.has(w.id) && w.term.includes(' ')))
+      .map((w) => w.term),
     course.properNouns ?? [],
   )
   const roman = (text: string) =>

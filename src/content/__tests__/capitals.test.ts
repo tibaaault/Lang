@@ -130,8 +130,13 @@ describe('densité des phrases à trou', () => {
   const denseCourses = ['en-basics', 'id']
 
   it.each(denseCourses)('donne au moins deux phrases par mot : %s', (id) => {
-    const index = indexCourse(courseById(id)!)
-    for (const lex of index.lexemes) {
+    const course = courseById(id)!
+    const index = indexCourse(course)
+    // Les unités écrites en parcours fabriquent leurs exercices à la volée.
+    const authored = course.units
+      .filter((u) => u.exercises.length > 0)
+      .flatMap((u) => u.lexemes)
+    for (const lex of authored) {
       const clozes = (index.exercisesOf.get(lex.id) ?? []).filter(
         (e) => e.kind === 'cloze',
       )

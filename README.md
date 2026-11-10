@@ -17,6 +17,10 @@ synchronisation.
 - **Anglais à l'oral** : 17 leçons pour qui lit l'anglais mais cherche ses
   mots — tournures pour gagner du temps, calques à éviter, prononciation,
   conversation de pub, et clés pour décoder l'irlandais et l'australien.
+- **Anglais pas à pas** : 14 leçons écrites pour un vrai débutant, du premier
+  « I am » au passé, au futur et à la comparaison, chaque piège de francophone
+  expliqué en français.
+- **Capitales** : chaque pays a son drapeau, à reconnaître aussi.
 - **Anglais B2+** : faux amis, phrasal verbs, vocabulaire de nuance.
 - Tous les cours suivent le même format de parcours : un onglet par cours
   suivi, des leçons de cinq mots, et les phrases à trou où l'on écrit.

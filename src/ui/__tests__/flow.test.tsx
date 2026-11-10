@@ -161,7 +161,11 @@ describe("parcours complet d'une session", () => {
       const index = indexCourse(course)
       expect(index.lexemes.length).toBeGreaterThanOrEqual(20)
       const ids = new Set(index.lexemes.map((l) => l.id))
-      for (const lex of index.lexemes) {
+      // Seules les unités rédigées exercice par exercice sont concernées.
+      const authored = course.units
+        .filter((u) => u.exercises.length > 0)
+        .flatMap((u) => u.lexemes)
+      for (const lex of authored) {
         // Un mot sans exercice ne serait jamais proposé en session.
         expect(index.exercisesOf.get(lex.id)?.length ?? 0).toBeGreaterThan(0)
       }
