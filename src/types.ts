@@ -17,6 +17,8 @@ export interface Lexeme {
   pos?: Pos
   /** Sens en français. */
   gloss: string
+  /** Pictogramme d'un mot concret : une image sans le poids d'une image. */
+  emoji?: string
   /** Nuance, registre, faux-ami, piège fréquent. */
   note?: string
   /** Absent pour un fait bref, comme une capitale, où l'exemple serait creux. */
@@ -169,6 +171,11 @@ export interface Course {
    * latines accompagne alors chaque mot, et rien n'est demandé au clavier.
    */
   romanized?: boolean
+  /**
+   * Vocabulaire du lexique seulement : des mots à consulter sur place, que
+   * les leçons n'enseignent pas.
+   */
+  extras?: Unit[]
   /** Noms propres des phrases, à ne pas mettre en minuscules sur les tuiles. */
   properNouns?: string[]
   units: Unit[]

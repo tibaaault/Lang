@@ -8,7 +8,8 @@
 // « ผม » par « ฉัน » et « ครับ » par « ค่ะ » : les conseils le rappellent.
 
 import type { Course } from '../../types'
-import { buildPathUnits, type UnitSource, type W } from '../path'
+import { EMOJI, EXTRAS } from './extras'
+import { buildExtraUnits, buildPathUnits, type UnitSource, type W } from '../path'
 
 /** terme, prononciation, sens, note éventuelle. */
 const t = (term: string, roman: string, gloss: string, note?: string): W => [
@@ -524,5 +525,6 @@ export const thai: Course = {
   path: true,
   romanized: true,
   properNouns: PROPER_NOUNS,
-  units: buildPathUnits('t', units),
+  units: buildPathUnits('t', units, EMOJI),
+  extras: buildExtraUnits('t', EXTRAS, EMOJI),
 }
