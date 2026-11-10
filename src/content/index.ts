@@ -5,6 +5,7 @@
 // build, donc disponible hors-ligne dès la première visite.
 
 import type { Course, Unit } from '../types'
+import { asPath } from './adapt'
 
 import enFalseFriends from './en/false-friends.json'
 import enPhrasal from './en/phrasal.json'
@@ -49,7 +50,7 @@ import idNombres from './id/nombres.json'
 import idTransport from './id/transport.json'
 import idRencontre from './id/rencontre.json'
 
-const english: Course = {
+const english: Course = asPath({
   id: 'en',
   lang: 'en',
   voice: 'en-GB',
@@ -79,9 +80,12 @@ const english: Course = {
     enIdioms1,
     enIdioms2,
   ] as Unit[],
-}
+  },
+  // Niveau avancé : on écoute et on produit, sans repasser par le français.
+  { advanced: true },
+)
 
-const indonesian: Course = {
+const indonesian: Course = asPath({
   id: 'id',
   lang: 'id',
   voice: 'id-ID',
@@ -93,12 +97,12 @@ const indonesian: Course = {
     idTransport,
     idRencontre,
   ] as Unit[],
-}
+})
 
 // Parcours débutant, distinct du parcours B2+ : les exercices de nuance du
 // second n'ont aucun sens sans les bases, et voir un cours hors de portée
 // décourage. Chaque compte choisit ce qu'il suit dans les réglages.
-const englishBasics: Course = {
+const englishBasics: Course = asPath({
   id: 'en-basics',
   lang: 'en',
   voice: 'en-GB',
@@ -111,12 +115,12 @@ const englishBasics: Course = {
     ebGens,
     ebTemps,
   ] as Unit[],
-}
+})
 
 // Cours de connaissances plutôt que de langue : pas de synthèse vocale, et
 // la possibilité de se limiter à un continent, les unités n'ayant pas ici
 // d'ordre pédagogique.
-const capitals: Course = {
+const capitals: Course = asPath({
   id: 'geo-capitals',
   lang: 'fr',
   voice: 'fr-FR',
@@ -132,7 +136,15 @@ const capitals: Course = {
     geoAmeriqueSud,
     geoOceanie,
   ].map((data) => buildCapitalsUnit(data as CapitalsData)),
-}
+  },
+  {
+    labels: {
+      meaning: 'De quel pays est-ce la capitale ?',
+      term: 'Quelle est sa capitale ?',
+      write: 'Écrivez sa capitale',
+    },
+  },
+)
 
 // Le vietnamien vient en tête : c'est le parcours guidé, celui que l'accueil
 // ouvre par défaut.

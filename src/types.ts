@@ -132,6 +132,10 @@ export interface Lesson {
   phrases: Phrase[]
   /** Questions rédigées : usage, prononciation, registre. */
   quizzes?: Quiz[]
+  /** Phrases à trou rédigées, où l'on écrit le mot manquant. */
+  clozes?: ClozeExercise[]
+  /** Réponses écrites admises pour un mot, au-delà de son terme. */
+  accepted?: Record<string, string[]>
 }
 
 /**
@@ -184,6 +188,13 @@ export interface Course {
    * exercices variés, plutôt qu'une file de révision.
    */
   path?: boolean
+  /**
+   * Cours rédigé avant les parcours et mis à leur format après coup : ses
+   * phrases emploient librement tout le vocabulaire.
+   */
+  adapted?: boolean
+  /** Intitulés des questions, quand « que veut dire ce mot » ne convient pas. */
+  labels?: { meaning?: string; term?: string; write?: string }
   /**
    * Parcours pour qui parle déjà la langue : les phrases emploient librement
    * tout le vocabulaire, et l'on produit plus qu'on ne reconnaît.

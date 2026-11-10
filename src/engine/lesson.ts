@@ -10,7 +10,15 @@
 // voir le mot, le reconnaître, l'apparier, comprendre une phrase, la
 // construire, puis l'écrire.
 
-import type { Course, Lesson, Lexeme, Phrase, Quiz, Unit } from '../types'
+import type {
+  ClozeExercise,
+  Course,
+  Lesson,
+  Lexeme,
+  Phrase,
+  Quiz,
+  Unit,
+} from '../types'
 import type { Progress } from '../store/progress'
 import { cardKey } from '../store/progress'
 import { isDue, retrievability } from './fsrs'
@@ -170,6 +178,15 @@ export interface TypeStep {
   wordId: string
   term: string
   gloss: string
+  /** Autres graphies admises. */
+  accepted?: string[]
+}
+
+/** Phrase à trou rédigée : on écrit le mot manquant. */
+export interface ClozeStep {
+  kind: 'cloze'
+  key: string
+  cloze: ClozeExercise
 }
 
 /** Question rédigée, avec son explication. */
@@ -184,6 +201,7 @@ export interface QuizStep {
 export type Step =
   | IntroStep
   | QuizStep
+  | ClozeStep
   | ChoiceStep
   | MatchStep
   | BuildStep
@@ -254,8 +272,9 @@ function makeMatch(words: Lexeme[]): MatchStep {
   }
 }
 
-function makeType(word: Lexeme): TypeStep {
+function makeType(word: Lexeme, accepted?: string[]): TypeStep {
   return {
+    accepted,
     kind: 'type',
     key: nextKey(),
     wordId: word.id,
@@ -448,20 +467,42 @@ export function buildLesson(
 
   steps.push(makeMatch(shuffle(words).slice(0, 5)))
 
-  const phrases = shuffle(ref.lesson.phrases).slice(0, opts.practice ? 7 : 6)
+  // Une phrase à trou par mot, tirée au sort parmi celles qui existent :
+  // refaire la leçon en fait voir d'autres.
+  const clozeOf = new Map<string, ClozeExercise>()
+  for (const c of shuffle(ref.lesson.clozes ?? [])) {
+    if (!clozeOf.has(c.lexemeId)) clozeOf.set(c.lexemeId, c)
+  }
+  const clozes: Step[] = [...clozeOf.values()].map((cloze) => ({
+    kind: 'cloze',
+    key: nextKey(),
+    cloze,
+  }))
+  // Avec des phrases à trou, la leçon est déjà longue : moins du reste.
+  const dense = clozes.length > 0
+
+  const phrases = shuffle(ref.lesson.phrases).slice(
+    0,
+    dense ? 3 : opts.practice ? 7 : 6,
+  )
   // Une leçon refaite attaque par la production, une première fois par la
   // compréhension.
   const shift = opts.practice ? 1 : 0
   const rotation = index.course.advanced ? ADVANCED_ROTATION : PHRASE_ROTATION
-  const quizzes = shuffle(ref.lesson.quizzes ?? [])
-  phrases.forEach((phrase, i) => {
-    const mode = rotation[(i + shift) % rotation.length]
-    const step = makePhraseStep(index, phrase, mode, inLesson, pools)
-    if (step) steps.push(step)
-    // Les questions rédigées s'intercalent entre les phrases.
+  const quizzes = shuffle(ref.lesson.quizzes ?? []).slice(0, dense ? 2 : 4)
+  const tail: Step[] = []
+  // Les questions rédigées s'intercalent entre les phrases, et les
+  // phrases à trou entre les deux.
+  for (let i = 0; i < Math.max(phrases.length, quizzes.length, clozes.length); i++) {
+    const phrase = phrases[i]
+    if (phrase) {
+      const mode = rotation[(i + shift) % rotation.length]
+      const step = makePhraseStep(index, phrase, mode, inLesson, pools)
+      if (step) tail.push(step)
+    }
     const quiz = quizzes[i]
     if (quiz) {
-      steps.push({
+      tail.push({
         kind: 'quiz',
         key: nextKey(),
         quiz,
@@ -469,16 +510,18 @@ export function buildLesson(
         answer: quiz.options[0],
       })
     }
-  })
+    if (clozes[i]) tail.push(clozes[i])
+  }
+  steps.push(...tail)
 
   // On termine en écrivant : c'est ce qui fixe le mieux, et ce qui coûte le
   // plus au pouce — d'où un ou deux mots seulement.
   for (const w of shuffle(canType(index) ? words.filter(typable) : []).slice(
     0,
     // À un niveau avancé, c'est retrouver ses mots qui manque : on écrit plus.
-    index.course.advanced ? 3 : opts.practice ? 2 : 1,
+    dense ? 1 : index.course.advanced ? 3 : opts.practice ? 2 : 1,
   )) {
-    steps.push(makeType(w))
+    steps.push(makeType(w, ref.lesson.accepted?.[w.id]))
   }
 
   return steps
@@ -581,6 +624,25 @@ export function currentLesson(
   progress: Progress,
 ): LessonRef | undefined {
   return index.lessons.find(
-    (l) => !progress.lessons?.[lessonKey(index.course.id, l.lesson.id)],
+    (l) => !lessonTimes(index.course.id, l.lesson, progress),
   )
+}
+
+/**
+ * Nombre de fois où une leçon a été menée au bout.
+ *
+ * Une leçon dont tous les mots ont déjà une fiche compte pour faite, même
+ * sans trace : c'est le cas des mots appris avant que le cours ne devienne
+ * un parcours, qu'il serait absurde de présenter comme inconnus.
+ */
+export function lessonTimes(
+  courseId: string,
+  lesson: Lesson,
+  progress: Progress,
+): number {
+  const recorded = progress.lessons?.[lessonKey(courseId, lesson.id)]
+  if (recorded) return recorded
+  return lesson.lexemeIds.every((id) => progress.cards[cardKey(courseId, id)])
+    ? 1
+    : 0
 }

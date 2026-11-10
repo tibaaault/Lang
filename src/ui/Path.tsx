@@ -3,7 +3,7 @@ import type { Course, Unit } from '../types'
 import {
   currentLesson,
   indexPath,
-  lessonKey,
+  lessonTimes,
   reviewStatus,
 } from '../engine/lesson'
 import { useProgress } from '../store/progress'
@@ -36,6 +36,7 @@ export function Path({
   const { learned, due } = reviewStatus(index, progress)
   const next = currentLesson(index, progress)
   const nextRef = useRef<HTMLButtonElement>(null)
+  const hasPhrases = index.lessons.some((l) => l.lesson.phrases.length > 0)
 
   // On retrouve sa place en ouvrant l'application, sans faire défiler tout
   // ce qui est déjà fait.
@@ -49,9 +50,8 @@ export function Path({
   }, [])
 
   const doneCount = (unit: Unit) =>
-    (unit.lessons ?? []).filter(
-      (l) => progress.lessons?.[lessonKey(course.id, l.id)],
-    ).length
+    (unit.lessons ?? []).filter((l) => lessonTimes(course.id, l, progress))
+      .length
 
   return (
     <div>
@@ -78,10 +78,15 @@ export function Path({
       </div>
       {/* Consulter sans être interrogé : retrouver une phrase au moment de
           commander ou de marchander. */}
-      <div className="mb-8 grid grid-cols-2 gap-3">
-        <Button variant="ghost" onClick={onPhrases}>
-          Phrases utiles
-        </Button>
+      <div
+        className={`mb-8 grid gap-3 ${hasPhrases ? 'grid-cols-2' : 'grid-cols-1'}`}
+      >
+        {/* Un cours de connaissances n'a pas de phrases à consulter. */}
+        {hasPhrases && (
+          <Button variant="ghost" onClick={onPhrases}>
+            Phrases utiles
+          </Button>
+        )}
         <Button variant="ghost" onClick={onLexicon}>
           Lexique
         </Button>
@@ -97,8 +102,7 @@ export function Path({
             />
             <ol className="mt-5 space-y-4">
               {(unit.lessons ?? []).map((lesson, i) => {
-                const times =
-                  progress.lessons?.[lessonKey(course.id, lesson.id)] ?? 0
+                const times = lessonTimes(course.id, lesson, progress)
                 const isNext = next?.lesson.id === lesson.id
                 return (
                   <li
