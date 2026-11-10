@@ -98,9 +98,17 @@ export function Home({
         </button>
       )}
 
-      {paths.length > 0 && listed.length > 0 && (
+      {paths.length + (listed.length > 0 ? 1 : 0) > 1 && (
+        // Un onglet par cours suivi ; ceux à file de révision, s'il en reste,
+        // se partagent le dernier.
+
         <div className="mb-4 flex flex-wrap gap-2">
-          {[...paths.map((c) => ({ id: c.id, label: c.title })), { id: 'others', label: 'Autres cours' }].map(
+          {[
+            ...paths.map((c) => ({ id: c.id, label: c.title })),
+            ...(listed.length > 0
+              ? [{ id: 'others', label: 'Autres cours' }]
+              : []),
+          ].map(
             ({ id, label }) => {
               const active = id === (activePath?.id ?? 'others')
               return (

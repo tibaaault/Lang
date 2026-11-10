@@ -1,8 +1,17 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import type { Course, Lexeme } from '../types'
 import type {
   BuildStep,
   ChoiceStep,
+  ClozeStep,
   FillStep,
   QuizStep,
   MatchStep,
@@ -10,7 +19,7 @@ import type {
   Step,
   TypeStep,
 } from '../engine/lesson'
-import { buildLesson, buildReview, lessonKey } from '../engine/lesson'
+import { buildLesson, buildReview, lessonTimes } from '../engine/lesson'
 import { checkAnswer } from '../engine/grade'
 import { sameTokens } from '../engine/tokens'
 import { shuffle } from '../engine/shuffle'
@@ -74,7 +83,8 @@ export function LessonSession({
 }) {
   const [queue, setQueue] = useState<Step[]>(() => {
     if (!lessonId) return buildReview(index, getProgress())
-    const done = getProgress().lessons?.[lessonKey(course.id, lessonId)]
+    const ref = index.byLessonId.get(lessonId)
+    const done = ref && lessonTimes(course.id, ref.lesson, getProgress())
     return buildLesson(index, lessonId, { practice: Boolean(done) })
   })
   const [total] = useState(queue.length)
@@ -84,7 +94,9 @@ export function LessonSession({
   const [answered, setAnswered] = useState(0)
   const [mistakes, setMistakes] = useState(0)
   // Sans voix disponible, les exercices d'écoute montrent leur texte.
-  const [deaf, setDeaf] = useState(() => !mayListen(course.voice))
+  const [deaf, setDeaf] = useState(
+    () => Boolean(course.silent) || !mayListen(course.voice),
+  )
   const [xp, setXp] = useState<number | null>(null)
 
   const sessionStart = useRef(Date.now())
@@ -111,15 +123,18 @@ export function LessonSession({
   }, [pos])
 
   const say = useCallback(
-    (text: string, rate?: number) =>
+    (text: string, rate?: number) => {
+      // Un cours de connaissances n'a rien à faire entendre.
+      if (course.silent) return
       // Les mots thaïs sont séparés à l'écran pour être lisibles, mais la
       // langue s'écrit d'un trait : on recolle avant de faire lire.
       speak(
         course.romanized ? text.replace(/\s+/g, '') : text,
         voice,
         rate,
-      ),
-    [voice, course.romanized],
+      )
+    },
+    [voice, course.romanized, course.silent],
   )
 
   const onResult = useCallback(
@@ -209,6 +224,7 @@ export function LessonSession({
   }
 
   return (
+    <Silent.Provider value={Boolean(course.silent)}>
     <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col px-5 pb-6">
       <header className="flex items-center gap-4 py-4">
         <button
@@ -235,6 +251,7 @@ export function LessonSession({
           <Choice
             key={step.key}
             step={step}
+            labels={course.labels}
             emo={index.emoji}
             rom={index.roman}
             say={say}
@@ -268,6 +285,14 @@ export function LessonSession({
             onResult={onResult}
           />
         )}
+        {step.kind === 'cloze' && (
+          <ClozeView
+            key={step.key}
+            step={step}
+            locked={result !== null}
+            onResult={onResult}
+          />
+        )}
         {step.kind === 'quiz' && (
           <QuizView
             key={step.key}
@@ -290,6 +315,7 @@ export function LessonSession({
           <Type
             key={step.key}
             step={step}
+            labels={course.labels}
             lang={lang}
             locked={result !== null}
             onResult={onResult}
@@ -299,8 +325,12 @@ export function LessonSession({
         {result && <Feedback result={result} rom={index.roman} say={say} onNext={advance} />}
       </main>
     </div>
+    </Silent.Provider>
   )
 }
+
+/** Vrai pour un cours sans son : les boutons d'écoute disparaissent. */
+const Silent = createContext(false)
 
 type Say = (text: string, rate?: number) => void
 type Rom = (text: string) => string | undefined
@@ -328,6 +358,7 @@ function Roman({ text, rom }: { text: string; rom: Rom }) {
 
 /** Lecture normale et lecture lente : la seconde détache les tons. */
 function Listen({ text, say, big }: { text: string; say: Say; big?: boolean }) {
+  if (useContext(Silent)) return null
   return (
     <div className="flex items-center gap-2">
       <button
@@ -418,6 +449,7 @@ function Intro({
 
 function Choice({
   step,
+  labels,
   emo,
   rom,
   say,
@@ -427,6 +459,7 @@ function Choice({
   onResult,
 }: {
   step: ChoiceStep
+  labels?: { meaning?: string; term?: string; write?: string }
   emo: Emo
   rom: Rom
   say: Say
@@ -460,10 +493,10 @@ function Choice({
     <div>
       <p className="text-sm text-muted">
         {step.mode === 'term'
-          ? 'Comment dit-on ?'
+          ? (labels?.term ?? 'Comment dit-on ?')
           : blind
             ? 'Que veut dire ce que vous entendez ?'
-            : 'Que veut dire ce mot ?'}
+            : (labels?.meaning ?? 'Que veut dire ce mot ?')}
       </p>
       {step.mode === 'term' ? (
         <p className="mt-2 font-serif text-2xl leading-snug">
@@ -820,6 +853,90 @@ function Fill({
   )
 }
 
+/** La phrase d'un exercice à trou, ses trous comblés par la réponse. */
+function filled(sentence: string, answer: string): string {
+  const holes = sentence.split('___').length - 1
+  // Plusieurs trous : un mot de la réponse dans chacun, dans l'ordre.
+  const parts = holes > 1 ? answer.split(' ') : [answer]
+  let i = 0
+  return sentence.replace(/___/g, () => parts[i++] ?? '')
+}
+
+/**
+ * Phrase à trou où l'on écrit le mot manquant. C'est la forme la plus
+ * exigeante : rien n'est proposé, et une erreur prévue reçoit son explication.
+ */
+function ClozeView({
+  step,
+  locked,
+  onResult,
+}: {
+  step: ClozeStep
+  locked: boolean
+  onResult: (r: StepResult) => void
+}) {
+  const [input, setInput] = useState('')
+  const [right, setRight] = useState(false)
+  const { cloze } = step
+
+  const check = () => {
+    if (locked || !input.trim()) return
+    const verdict = checkAnswer(input, cloze.accepted, cloze.nearMisses ?? [])
+    setRight(verdict.correct)
+    const sentence = filled(cloze.sentence, verdict.answer)
+    onResult({
+      correct: verdict.correct,
+      words: [{ id: cloze.lexemeId, correct: verdict.correct, strict: true }],
+      solution: sentence,
+      translation: cloze.fr,
+      remark: verdict.feedback,
+      speakAfter: sentence,
+    })
+  }
+
+  return (
+    <>
+      <div>
+        <p className="text-sm text-muted">Complétez la phrase</p>
+        <p className="mt-2 text-base text-muted">{cloze.fr}</p>
+        <p className="mt-3 font-serif text-2xl leading-snug">
+          {cloze.sentence.split('___').map((part, i, all) => (
+            <span key={i}>
+              {part}
+              {i < all.length - 1 && (
+                <span className="mx-1 inline-block min-w-16 border-b-2 border-accent text-center text-accent">
+                  {right ? input.trim().split(' ')[all.length > 2 ? i : 0] : ' '}
+                </span>
+              )}
+            </span>
+          ))}
+        </p>
+        <input
+          value={input}
+          disabled={locked}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') check()
+          }}
+          autoCapitalize="none"
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck={false}
+          enterKeyHint="go"
+          placeholder="Le mot manquant"
+          className="mt-6 w-full rounded-xl border-2 border-line bg-surface px-4 py-4 text-lg outline-none focus:border-accent disabled:opacity-70"
+        />
+      </div>
+      <div className="flex-1" />
+      {!locked && (
+        <Button className="mt-4 w-full" onClick={check} disabled={!input.trim()}>
+          Vérifier
+        </Button>
+      )}
+    </>
+  )
+}
+
 function QuizView({
   step,
   say,
@@ -884,11 +1001,13 @@ function QuizView({
 
 function Type({
   step,
+  labels,
   lang,
   locked,
   onResult,
 }: {
   step: TypeStep
+  labels?: { meaning?: string; term?: string; write?: string }
   lang: string
   locked: boolean
   onResult: (r: StepResult) => void
@@ -897,7 +1016,7 @@ function Type({
 
   const check = () => {
     if (locked || !input.trim()) return
-    const verdict = checkAnswer(input, [step.term])
+    const verdict = checkAnswer(input, [step.term, ...(step.accepted ?? [])])
     // Les tons ne se tapent pas sur un clavier français : on accepte le mot
     // sans eux, mais on montre toujours la graphie complète.
     const exact =
@@ -918,7 +1037,7 @@ function Type({
   return (
     <>
       <div>
-        <p className="text-sm text-muted">Écrivez en {lang}</p>
+        <p className="text-sm text-muted">{labels?.write ?? `Écrivez en ${lang}`}</p>
         <p className="mt-2 font-serif text-2xl leading-snug">{step.gloss}</p>
         <input
           value={input}
@@ -960,6 +1079,7 @@ function Feedback({
   say: Say
   onNext: () => void
 }) {
+  const silent = useContext(Silent)
   // Entrée valide puis enchaîne : le raccourci ne s'arme qu'après un court
   // délai, sans quoi le même appui ferait disparaître la correction.
   useEffect(() => {
@@ -1006,7 +1126,9 @@ function Feedback({
                 </p>
               )}
             </div>
-            <SpeakButton onClick={() => say(result.solution!)} label="" />
+            {!silent && (
+              <SpeakButton onClick={() => say(result.solution!)} label="" />
+            )}
           </div>
         )}
         {result.remark && (

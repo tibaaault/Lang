@@ -15,6 +15,8 @@ synchronisation.
   mots — tournures pour gagner du temps, calques à éviter, prononciation,
   conversation de pub, et clés pour décoder l'irlandais et l'australien.
 - **Anglais B2+** : faux amis, phrasal verbs, vocabulaire de nuance.
+- Tous les cours suivent le même format de parcours : un onglet par cours
+  suivi, des leçons de cinq mots, et les phrases à trou où l'on écrit.
 - **Indonésien** : kit de voyage — politesse, marchandage, commander, s'orienter.
 - Exercices à trous, production, écoute, choix multiple.
 - Planification par **FSRS** : chaque mot revient juste avant d'être oublié.

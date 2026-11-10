@@ -7,7 +7,9 @@ import { EMOJI as TH_EMOJI } from '../th/extras'
 const EMOJI: Record<string, Record<string, string>> = { vi: VI_EMOJI, th: TH_EMOJI }
 
 // Les règles communes à tous les parcours guidés, quelle que soit la langue.
-describe.each(courses.filter((c) => c.path).map((c) => [c.title, c] as const))(
+describe.each(
+  courses.filter((c) => c.path && !c.adapted).map((c) => [c.title, c] as const),
+)(
   'parcours guidé : %s',
   (_title, course) => {
     const index = indexPath(course)
@@ -127,3 +129,61 @@ describe.each(courses.filter((c) => c.path).map((c) => [c.title, c] as const))(
     })
   },
 )
+
+// Les cours rédigés avant les parcours, mis à leur format après coup.
+describe.each(
+  courses.filter((c) => c.adapted).map((c) => [c.title, c] as const),
+)('cours mis au format parcours : %s', (_title, course) => {
+  const index = indexPath(course)
+
+  it('range chaque mot dans une leçon, et une seule', () => {
+    const placed = index.lessons.flatMap((l) => l.lesson.lexemeIds)
+    expect(new Set(placed).size).toBe(placed.length)
+    expect(placed.length).toBe(index.words.length)
+    for (const { lesson } of index.lessons) {
+      expect(lesson.lexemeIds.length, lesson.id).toBeGreaterThanOrEqual(3)
+      expect(lesson.lexemeIds.length, lesson.id).toBeLessThanOrEqual(8)
+    }
+  })
+
+  it('garde les identifiants des mots, donc la progression acquise', () => {
+    for (const unit of course.units) {
+      for (const ex of unit.exercises) {
+        expect(index.byId.has(ex.lexemeId), ex.id).toBe(true)
+      }
+    }
+  })
+
+  it('fabrique pour chaque leçon une séance jouable', () => {
+    for (const { lesson } of index.lessons) {
+      for (const practice of [false, true]) {
+        const steps = buildLesson(index, lesson.id, { practice })
+        expect(steps.length, lesson.id).toBeGreaterThanOrEqual(8)
+        expect(steps.length, lesson.id).toBeLessThanOrEqual(32)
+        for (const step of steps) {
+          if (step.kind === 'choice') {
+            expect(new Set(step.options).size, lesson.id).toBe(4)
+            expect(step.options).toContain(step.answer)
+          }
+          if (step.kind === 'quiz') {
+            expect(step.options).toContain(step.answer)
+            expect(new Set(step.options).size, lesson.id).toBe(step.options.length)
+          }
+          if (step.kind === 'build') {
+            expect(step.answer.length, lesson.id).toBeGreaterThanOrEqual(2)
+          }
+          // Une phrase à trou ne porte que sur un mot de sa leçon.
+          if (step.kind === 'cloze') {
+            expect(lesson.lexemeIds).toContain(step.cloze.lexemeId)
+          }
+        }
+      }
+    }
+  })
+
+  it('réemploie les phrases à trou écrites pour le cours', () => {
+    const written = course.units.flatMap((u) => u.exercises).filter((e) => e.kind === 'cloze')
+    const reused = index.lessons.flatMap((l) => l.lesson.clozes ?? [])
+    expect(reused.length).toBe(written.length)
+  })
+})

@@ -3,6 +3,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from '../../App'
+import { Session } from '../Session'
+import { courseById } from '../../content'
 import { courses } from '../../content'
 import { indexCourse } from '../../engine/scheduler'
 import { getProgress, resetProgress, updateSettings } from '../../store/progress'
@@ -35,15 +37,26 @@ afterEach(() => {
   vi.unstubAllGlobals()
 })
 
-describe("parcours complet d'une session", () => {
-  it('enchaîne accueil, session et retour, en enregistrant la progression', async () => {
-    const user = userEvent.setup()
-    render(<App />)
+/**
+ * La file de révision n'est plus proposée depuis l'accueil, tous les cours
+ * étant devenus des parcours : on ouvre donc l'écran directement.
+ */
+function renderSession() {
+  const course = courseById('en')!
+  render(
+    <Session
+      course={course}
+      index={indexCourse(course)}
+      mode="daily"
+      onExit={() => {}}
+    />,
+  )
+}
 
-    // L'accueil propose de commencer, avec des mots en attente.
-    // Un bouton « Réviser » par cours : on prend celui de l'anglais.
-    const start = (await screen.findAllByRole('button', { name: /Réviser/ }))[0]
-    await user.click(start)
+describe("parcours complet d'une session", () => {
+  it('enchaîne une session entière en enregistrant la progression', async () => {
+    const user = userEvent.setup()
+    renderSession()
 
     // Le premier écran présente un mot neuf : il montre, il n'interroge pas.
     expect(await screen.findByText(/Nouveau mot/)).toBeTruthy()
@@ -100,10 +113,7 @@ describe("parcours complet d'une session", () => {
 
   it('affiche la bonne réponse et son explication après une erreur', async () => {
     const user = userEvent.setup()
-    render(<App />)
-    await user.click(
-      (await screen.findAllByRole('button', { name: /Réviser/ }))[0],
-    )
+    renderSession()
 
     // On traverse les présentations pour atteindre la première vraie question.
     for (let i = 0; i < 12; i++) {
@@ -146,7 +156,8 @@ describe("parcours complet d'une session", () => {
     // Le parcours débutant doit rester distinct du parcours B2+.
     expect(courses.some((c) => c.id === 'en-basics')).toBe(true)
     // Un parcours guidé fabrique ses exercices à la volée : voir path.test.ts.
-    for (const course of courses.filter((c) => !c.path)) {
+    // Les parcours rédigés d'emblée fabriquent leurs exercices à la volée.
+    for (const course of courses.filter((c) => !c.path || c.adapted)) {
       const index = indexCourse(course)
       expect(index.lexemes.length).toBeGreaterThanOrEqual(20)
       const ids = new Set(index.lexemes.map((l) => l.id))
