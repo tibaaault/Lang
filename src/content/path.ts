@@ -1,7 +1,7 @@
 // Mise en forme d'un parcours guidé à partir d'une écriture compacte : des
 // mots et des phrases par leçon. Commun à toutes les langues suivies ainsi.
 
-import type { Lesson, Lexeme, Unit } from '../types'
+import type { Lesson, Lexeme, Quiz, Unit } from '../types'
 
 /** terme, sens, note éventuelle, prononciation approchée éventuelle. */
 export type W = [term: string, gloss: string, note?: string, roman?: string]
@@ -12,6 +12,7 @@ export interface LessonSource {
   title: string
   words: W[]
   phrases: P[]
+  quizzes?: Quiz[]
 }
 
 export interface UnitSource {
@@ -19,6 +20,7 @@ export interface UnitSource {
   title: string
   subtitle: string
   tips: string[]
+  voice?: string
   lessons: LessonSource[]
 }
 
@@ -52,6 +54,7 @@ export function buildPathUnits(
         title: lesson.title,
         lexemeIds: lesson.words.map(([term]) => wordId(term)),
         phrases: lesson.phrases.map(([text, fr]) => ({ text, fr })),
+        quizzes: lesson.quizzes,
       })
     })
     return {
@@ -59,6 +62,7 @@ export function buildPathUnits(
       title: source.title,
       subtitle: source.subtitle,
       tips: source.tips,
+      voice: source.voice,
       lexemes,
       exercises: [],
       lessons,

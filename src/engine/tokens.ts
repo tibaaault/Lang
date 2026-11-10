@@ -24,8 +24,8 @@ export interface Tokenizer {
   fr(text: string): string[]
 }
 
-/** Longueur maximale d'un mot, en syllabes (« nhà vệ sinh » en compte trois). */
-const MAX_SYLLABLES = 4
+/** Longueur maximale d'un mot ou d'une expression figée, en syllabes. */
+const MAX_SYLLABLES = 8
 
 export function makeTokenizer(terms: string[], properNouns: string[]): Tokenizer {
   // Graphie de référence de chaque mot : c'est elle qui s'affiche sur la
@@ -42,7 +42,12 @@ export function makeTokenizer(terms: string[], properNouns: string[]): Tokenizer
       let i = 0
       while (i < syllables.length) {
         let taken = 1
-        let token = lower(syllables[i])
+        // Mot inconnu du cours : on ne lui retire que la majuscule de début
+        // de phrase, et jamais celle du « I » anglais.
+        let token =
+          i === 0 && !/^I($|')/.test(syllables[i])
+            ? lower(syllables[i])
+            : syllables[i]
         for (let n = Math.min(MAX_SYLLABLES, syllables.length - i); n >= 1; n--) {
           const candidate = lower(syllables.slice(i, i + n).join(' '))
           const known = canonical.get(candidate)

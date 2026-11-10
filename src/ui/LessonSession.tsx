@@ -4,6 +4,7 @@ import type {
   BuildStep,
   ChoiceStep,
   FillStep,
+  QuizStep,
   MatchStep,
   PathIndex,
   Step,
@@ -42,6 +43,12 @@ interface StepResult {
   speakAfter?: string
   /** Erreurs commises en route, pour un exercice qui se finit toujours. */
   slips?: number
+}
+
+const LANG_NAME: Record<string, string> = {
+  vi: 'vietnamien',
+  th: 'thaï',
+  en: 'anglais',
 }
 
 const XP_LESSON = 10
@@ -89,7 +96,11 @@ export function LessonSession({
   const outcome = useRef(new Map<string, boolean>())
 
   const step = queue[pos]
-  const lang = course.title.toLocaleLowerCase()
+  const lang = LANG_NAME[course.lang] ?? course.title.toLocaleLowerCase()
+  // Une unité peut avoir sa propre voix : un accent régional, quand
+  // l'appareil en propose un.
+  const voice =
+    (lessonId && index.byLessonId.get(lessonId)?.unit.voice) || course.voice
   const title = lessonId
     ? (index.byLessonId.get(lessonId)?.lesson.title ?? course.title)
     : 'Révision'
@@ -105,10 +116,10 @@ export function LessonSession({
       // langue s'écrit d'un trait : on recolle avant de faire lire.
       speak(
         course.romanized ? text.replace(/\s+/g, '') : text,
-        course.voice,
+        voice,
         rate,
       ),
-    [course.voice, course.romanized],
+    [voice, course.romanized],
   )
 
   const onResult = useCallback(
@@ -253,6 +264,15 @@ export function LessonSession({
             say={say}
             deaf={deaf}
             onDeaf={() => setDeaf(true)}
+            locked={result !== null}
+            onResult={onResult}
+          />
+        )}
+        {step.kind === 'quiz' && (
+          <QuizView
+            key={step.key}
+            step={step}
+            say={say}
             locked={result !== null}
             onResult={onResult}
           />
@@ -800,6 +820,68 @@ function Fill({
   )
 }
 
+function QuizView({
+  step,
+  say,
+  locked,
+  onResult,
+}: {
+  step: QuizStep
+  say: Say
+  locked: boolean
+  onResult: (r: StepResult) => void
+}) {
+  const [chosen, setChosen] = useState<string | null>(null)
+  const { speak: spoken } = step.quiz
+
+  useEffect(() => {
+    if (spoken) say(spoken)
+  }, [say, spoken])
+
+  const choose = (opt: string) => {
+    if (locked) return
+    setChosen(opt)
+    onResult({
+      correct: opt === step.answer,
+      words: [],
+      // La bonne option est déjà mise en évidence : la répéter ici ferait
+      // lire une réponse française par une voix anglaise.
+      // L'explication est le cœur de l'exercice : elle s'affiche que la
+      // réponse soit juste ou non.
+      remark: step.quiz.why,
+    })
+  }
+
+  return (
+    <div>
+      <p className="font-serif text-xl leading-snug">{step.quiz.prompt}</p>
+      {spoken && (
+        <div className="mt-4">
+          <Listen text={spoken} say={say} />
+        </div>
+      )}
+      <div className="mt-6 grid gap-2">
+        {step.options.map((opt) => (
+          <button
+            key={opt}
+            disabled={locked}
+            onClick={() => choose(opt)}
+            className={optionClass(
+              locked && opt === step.answer
+                ? 'right'
+                : locked && opt === chosen
+                  ? 'wrong'
+                  : 'idle',
+            )}
+          >
+            {opt}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function Type({
   step,
   lang,
@@ -854,7 +936,7 @@ function Type({
           className="mt-6 w-full rounded-xl border-2 border-line bg-surface px-4 py-4 text-lg outline-none focus:border-accent disabled:opacity-70"
         />
         <p className="mt-2 text-xs text-muted">
-          Les accents sont facultatifs : « cam on » vaut « cảm ơn ».
+          Les accents et la ponctuation sont facultatifs.
         </p>
       </div>
       <div className="flex-1" />

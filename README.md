@@ -11,6 +11,9 @@ synchronisation.
   en lettres latines sous chaque mot thaï.
 - **Phrases utiles** : toutes les phrases d'un parcours, par situation, à
   chercher et à faire lire à voix haute.
+- **Anglais à l'oral** : 17 leçons pour qui lit l'anglais mais cherche ses
+  mots — tournures pour gagner du temps, calques à éviter, prononciation,
+  conversation de pub, et clés pour décoder l'irlandais et l'australien.
 - **Anglais B2+** : faux amis, phrasal verbs, vocabulaire de nuance.
 - **Indonésien** : kit de voyage — politesse, marchandage, commander, s'orienter.
 - Exercices à trous, production, écoute, choix multiple.

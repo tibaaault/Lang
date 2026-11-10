@@ -130,6 +130,22 @@ export interface Lesson {
   title: string
   lexemeIds: string[]
   phrases: Phrase[]
+  /** Questions rédigées : usage, prononciation, registre. */
+  quizzes?: Quiz[]
+}
+
+/**
+ * Question à choix rédigée à la main, avec son explication. Sert à ce qu'un
+ * exercice fabriqué ne sait pas poser : pourquoi une tournure sonne mieux
+ * qu'une autre, où tombe l'accent d'un mot, ce qu'un accent régional avale.
+ */
+export interface Quiz {
+  prompt: string
+  /** Texte lu à voix haute avec la question. */
+  speak?: string
+  /** La bonne réponse en premier ; l'ordre est mélangé à l'affichage. */
+  options: string[]
+  why: string
 }
 
 /** Un ensemble cohérent de mots et d'exercices : un thème, une leçon. */
@@ -139,6 +155,8 @@ export interface Unit {
   subtitle?: string
   lexemes: Lexeme[]
   exercises: Exercise[]
+  /** Voix propre à l'unité, pour un accent régional ; sinon celle du cours. */
+  voice?: string
   /** Découpage en leçons, pour un cours suivi comme un parcours. */
   lessons?: Lesson[]
   /** Repères de prononciation ou de grammaire, lisibles avant l'unité. */
@@ -166,6 +184,11 @@ export interface Course {
    * exercices variés, plutôt qu'une file de révision.
    */
   path?: boolean
+  /**
+   * Parcours pour qui parle déjà la langue : les phrases emploient librement
+   * tout le vocabulaire, et l'on produit plus qu'on ne reconnaît.
+   */
+  advanced?: boolean
   /**
    * Langue écrite dans un autre alphabet : la prononciation en lettres
    * latines accompagne alors chaque mot, et rien n'est demandé au clavier.
