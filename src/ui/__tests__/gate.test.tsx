@@ -53,7 +53,8 @@ describe('connexion demandée avant de réviser', () => {
     )
 
     expect(await screen.findByText(/Hors connexion/)).toBeTruthy()
-    expect(screen.getAllByRole('button', { name: /Réviser/ }).length).toBeGreaterThan(0)
+    // L'accueil ouvre le parcours guidé : ses leçons sont là.
+    expect(screen.getAllByRole('button', { name: /commencer/ }).length).toBeGreaterThan(0)
   })
 
   it('ouvre directement l’accueil quand la session est déjà là', async () => {
@@ -61,7 +62,7 @@ describe('connexion demandée avant de réviser', () => {
     render(<App />)
 
     expect(
-      (await screen.findAllByRole('button', { name: /Réviser|À jour/ })).length,
+      (await screen.findAllByRole('button', { name: /commencer/ })).length,
     ).toBeGreaterThan(0)
     expect(screen.queryByText(/Hors connexion/)).toBeNull()
   })

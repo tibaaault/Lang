@@ -1,0 +1,879 @@
+// Parcours vietnamien : des leçons courtes qui s'enchaînent, du premier
+// « xin chào » aux conversations de voyage.
+//
+// Le contenu est écrit sous une forme compacte — des mots et des phrases — et
+// les exercices en sont dérivés au moment de la leçon. Une règle tient tout
+// l'édifice, et un test la vérifie : une phrase n'emploie que des mots déjà
+// enseignés, dans sa leçon ou dans une leçon antérieure. C'est ce qui permet
+// de la proposer en tuiles à assembler sans jamais poser un mot inconnu.
+
+import type { Course, Lesson, Lexeme, Unit } from '../../types'
+
+/** terme, sens, note éventuelle, prononciation approchée éventuelle. */
+type W = [term: string, gloss: string, note?: string, roman?: string]
+/** phrase vietnamienne, traduction française. */
+type P = [text: string, fr: string]
+
+interface LessonSource {
+  title: string
+  words: W[]
+  phrases: P[]
+}
+
+interface UnitSource {
+  id: string
+  title: string
+  subtitle: string
+  tips: string[]
+  lessons: LessonSource[]
+}
+
+/**
+ * Noms propres et emprunts employés dans les phrases sans être enseignés
+ * comme des mots : ils gardent leur majuscule sur les tuiles.
+ */
+export const PROPER_NOUNS = [
+  'Nam',
+  'Lan',
+  'Mai',
+  'Hà Nội',
+  'Sài Gòn',
+  'wifi',
+  'Hanoï',
+  'Saïgon',
+  'Vietnam',
+  'France',
+]
+
+const units: UnitSource[] = [
+  {
+    id: 'salut',
+    title: 'Premiers mots',
+    subtitle: 'Saluer, remercier, se nommer',
+    tips: [
+      "Le vietnamien s'écrit en alphabet latin, mais ne se lit pas comme le français. À retenir : đ = d ; d et gi = z au nord, y au sud ; x = s ; ph = f ; nh = gn ; kh = un « r » raclé ; tr ≈ tch ; ư = un « ou » dit lèvres étirées ; ơ = « eu ».",
+      "Six tons changent le sens d'une syllabe : a (plat), à (descendant), á (montant), ả (qui descend puis remonte), ã (montant brisé), ạ (bas et coupé net). Écoutez chaque mot plusieurs fois : le ton fait partie du mot.",
+      "Pas de conjugaison, pas de genre, pas de pluriel : « tôi là » = je suis, « bạn là » = tu es. L'ordre des mots fait tout le travail.",
+      "Pour poser une question fermée, on ajoute « không » à la fin : « Bạn khỏe không? » = Tu vas bien ?",
+    ],
+    lessons: [
+      {
+        title: 'Bonjour',
+        words: [
+          ['xin chào', 'bonjour', "Convient à toute heure. Entre proches, on dit simplement « chào ».", 'sin tchao'],
+          ['cảm ơn', 'merci', undefined, 'kam eun'],
+          ['xin lỗi', 'pardon, excusez-moi', "Sert à s'excuser comme à aborder quelqu'un.", 'sin loï'],
+          ['tạm biệt', 'au revoir', undefined, 'tam biète'],
+          ['vâng', 'oui', "Oui poli du nord. Au sud, on dit plutôt « dạ ».", 'veung'],
+          ['không', 'non ; ne… pas', "Trois emplois : « non », la négation devant un verbe, et la marque de question en fin de phrase.", 'khom'],
+        ],
+        phrases: [
+          ['Không, cảm ơn.', 'Non, merci.'],
+          ['Vâng, cảm ơn.', 'Oui, merci.'],
+          ['Cảm ơn, tạm biệt!', 'Merci, au revoir !'],
+          ['Xin chào! Xin lỗi…', 'Bonjour ! Excusez-moi…'],
+        ],
+      },
+      {
+        title: 'Moi et toi',
+        words: [
+          ['tôi', 'je, moi', "Le « je » neutre, sûr en toute circonstance.", 'toï'],
+          ['bạn', 'tu, toi ; ami', "Littéralement « ami ». Un « tu » neutre, pratique entre gens du même âge.", 'bane'],
+          ['là', 'être', "Relie deux noms : « tôi là Nam ». On ne l'emploie pas devant un adjectif.", 'la'],
+          ['tên', 'nom, prénom', undefined, 'tène'],
+          ['gì', 'quoi', "Le mot interrogatif reste à la place de la réponse, en fin de phrase.", 'zi'],
+        ],
+        phrases: [
+          ['Tôi là Nam.', 'Je suis Nam.'],
+          ['Tên tôi là Lan.', "Je m'appelle Lan."],
+          ['Bạn tên là gì?', "Comment tu t'appelles ?"],
+          ['Xin chào, tôi là Mai.', 'Bonjour, je suis Mai.'],
+          ['Tôi tên là Nam.', 'Mon nom est Nam.'],
+          ['Xin lỗi, bạn tên là gì?', 'Pardon, quel est ton nom ?'],
+        ],
+      },
+      {
+        title: 'Ça va ?',
+        words: [
+          ['khỏe', 'en forme, aller bien', undefined, 'khwè'],
+          ['rất', 'très', "Se place avant l'adjectif : « rất khỏe ».", 'zeut'],
+          ['vui', 'content, joyeux', undefined, 'vouï'],
+          ['cũng', 'aussi', "Toujours juste avant le verbe ou l'adjectif.", 'koung'],
+          ['còn', 'et (pour renvoyer la question)', "« Còn bạn? » = Et toi ?", 'kone'],
+        ],
+        phrases: [
+          ['Bạn khỏe không?', 'Tu vas bien ?'],
+          ['Tôi khỏe, cảm ơn.', 'Je vais bien, merci.'],
+          ['Tôi rất khỏe.', 'Je vais très bien.'],
+          ['Còn bạn?', 'Et toi ?'],
+          ['Tôi cũng khỏe.', 'Je vais bien aussi.'],
+          ['Tôi rất vui.', 'Je suis très content.'],
+          ['Tôi không khỏe.', 'Je ne vais pas bien.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'presenter',
+    title: 'Se présenter',
+    subtitle: "D'où l'on vient, ce que l'on parle, ce que l'on comprend",
+    tips: [
+      "La nationalité se dit « người + pays » : người Pháp = (une) personne de France, donc français.",
+      "Le déterminant suit le nom : « nước nào » = pays quel, « tiếng Việt » = langue viet.",
+      "« được không? » en fin de phrase demande si c'est possible : la formule de politesse la plus utile du voyage.",
+    ],
+    lessons: [
+      {
+        title: "D'où viens-tu ?",
+        words: [
+          ['người', 'personne', undefined, 'ngueuï'],
+          ['Pháp', 'France', undefined, 'fap'],
+          ['Việt Nam', 'Vietnam', undefined, 'viète nam'],
+          ['nước', 'pays ; eau', "Deux sens pour un même mot : « nước Pháp » = la France, « uống nước » = boire de l'eau.", 'neuc'],
+          ['nào', 'quel, lequel', undefined, 'nao'],
+          ['ở', 'à, dans ; habiter, se trouver', "Verbe et préposition à la fois : « tôi ở Pháp » = j'habite en France.", 'eu'],
+        ],
+        phrases: [
+          ['Tôi là người Pháp.', 'Je suis français.'],
+          ['Bạn là người nước nào?', 'Tu es de quel pays ?'],
+          ['Nam là người Việt Nam.', 'Nam est vietnamien.'],
+          ['Tôi ở Pháp.', "J'habite en France."],
+          ['Lan ở Việt Nam.', 'Lan habite au Vietnam.'],
+          ['Bạn ở nước nào?', 'Tu habites dans quel pays ?'],
+        ],
+      },
+      {
+        title: 'Les langues',
+        words: [
+          ['nói', 'parler, dire', undefined, 'noï'],
+          ['tiếng', 'langue ; son', "« tiếng Pháp » = le français.", 'tiéng'],
+          ['tiếng Việt', 'le vietnamien', undefined, 'tiéng viète'],
+          ['tiếng Anh', "l'anglais", undefined, 'tiéng agn'],
+          ['một chút', 'un peu', undefined, 'mote tchoute'],
+          ['hiểu', 'comprendre', undefined, 'hiéou'],
+        ],
+        phrases: [
+          ['Tôi nói tiếng Pháp.', 'Je parle français.'],
+          ['Bạn nói tiếng Anh không?', 'Tu parles anglais ?'],
+          ['Tôi nói tiếng Việt một chút.', 'Je parle un peu vietnamien.'],
+          ['Tôi không hiểu.', 'Je ne comprends pas.'],
+          ['Bạn hiểu không?', 'Tu comprends ?'],
+          ['Tôi hiểu một chút.', 'Je comprends un peu.'],
+          ['Xin lỗi, tôi không nói tiếng Việt.', 'Désolé, je ne parle pas vietnamien.'],
+        ],
+      },
+      {
+        title: 'Plus lentement',
+        words: [
+          ['biết', 'savoir, connaître', undefined, 'biète'],
+          ['chậm', 'lent, lentement', undefined, 'tcheum'],
+          ['hơn', 'plus (que)', "Forme le comparatif, après l'adjectif : « chậm hơn » = plus lentement.", 'heune'],
+          ['được', 'pouvoir ; d\'accord', "Seul, « Được! » veut dire « d'accord, ça marche ».", 'deuc'],
+          ['lại', 'encore, de nouveau', "« nói lại » = redire, répéter.", 'laï'],
+          ['gặp', 'rencontrer', undefined, 'gap'],
+        ],
+        phrases: [
+          ['Tôi không biết.', 'Je ne sais pas.'],
+          ['Bạn nói chậm hơn được không?', 'Tu peux parler plus lentement ?'],
+          ['Bạn nói lại được không?', 'Tu peux répéter ?'],
+          ['Rất vui được gặp bạn.', 'Enchanté de te rencontrer.'],
+          ['Tôi biết một chút tiếng Việt.', 'Je connais un peu de vietnamien.'],
+          ['Xin lỗi, tôi không biết.', 'Désolé, je ne sais pas.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'nombres',
+    title: 'Les nombres',
+    subtitle: 'Compter, lire un prix',
+    tips: [
+      "Les dizaines se forment avec « mươi » : hai mươi = 20, ba mươi = 30. Dix tout seul se dit « mười ».",
+      "Quelques irrégularités à l'oral : 15 = mười lăm, 21 = hai mươi mốt, 25 = hai mươi lăm.",
+      "Les prix sont en milliers de dongs : « năm mươi nghìn » = 50 000. Au sud, on dit « ngàn » au lieu de « nghìn ». On abrège souvent : « năm mươi » pour 50 000.",
+    ],
+    lessons: [
+      {
+        title: 'De 1 à 5',
+        words: [
+          ['một', 'un', undefined, 'mote'],
+          ['hai', 'deux', undefined, 'haï'],
+          ['ba', 'trois', undefined, 'ba'],
+          ['bốn', 'quatre', undefined, 'bone'],
+          ['năm', 'cinq', "Veut aussi dire « année ».", 'nam'],
+        ],
+        phrases: [
+          ['Một, hai, ba!', 'Un, deux, trois !'],
+          ['Ba, bốn, năm.', 'Trois, quatre, cinq.'],
+          ['Năm, bốn, ba, hai, một!', 'Cinq, quatre, trois, deux, un !'],
+          ['Hai, bốn.', 'Deux, quatre.'],
+          ['Một, ba, năm.', 'Un, trois, cinq.'],
+        ],
+      },
+      {
+        title: 'De 6 à 10',
+        words: [
+          ['sáu', 'six', undefined, 'chaou'],
+          ['bảy', 'sept', undefined, 'baï'],
+          ['tám', 'huit', undefined, 'tam'],
+          ['chín', 'neuf', undefined, 'tchine'],
+          ['mười', 'dix', undefined, 'meuï'],
+        ],
+        phrases: [
+          ['Sáu, bảy, tám.', 'Six, sept, huit.'],
+          ['Chín, mười!', 'Neuf, dix !'],
+          ['Mười, chín, tám, bảy, sáu!', 'Dix, neuf, huit, sept, six !'],
+          ['Hai, bốn, sáu, tám, mười.', 'Deux, quatre, six, huit, dix.'],
+          ['Một, ba, năm, bảy, chín.', 'Un, trois, cinq, sept, neuf.'],
+        ],
+      },
+      {
+        title: 'Les prix',
+        words: [
+          ['mươi', '(dizaine) : hai mươi = vingt', "Ton plat, à la différence de « mười » (dix)."],
+          ['trăm', 'cent'],
+          ['nghìn', 'mille', "Au sud : « ngàn »."],
+          ['đồng', 'dong (la monnaie)'],
+          ['bao nhiêu', 'combien'],
+          ['tiền', 'argent'],
+        ],
+        phrases: [
+          ['Bao nhiêu tiền?', 'Combien ça coûte ?'],
+          ['Năm mươi nghìn đồng.', 'Cinquante mille dongs.'],
+          ['Một trăm nghìn đồng.', 'Cent mille dongs.'],
+          ['Ba mươi nghìn.', 'Trente mille.'],
+          ['Hai trăm nghìn đồng.', 'Deux cent mille dongs.'],
+          ['Mười nghìn đồng.', 'Dix mille dongs.'],
+          ['Bốn mươi nghìn đồng.', 'Quarante mille dongs.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'manger',
+    title: 'Manger et boire',
+    subtitle: "Commander dans la rue, dire ce qu'on aime, payer",
+    tips: [
+      "« Cho tôi… » (donnez-moi) est la façon normale de commander : rien d'impoli.",
+      "L'adjectif suit le nom : « cà phê nóng » = café chaud, « phở bò » = phở (au) bœuf.",
+      "« quá » et « lắm » se placent après l'adjectif : « ngon quá! » = trop bon !, « ngon lắm » = très bon.",
+      "« ăn chay » = manger végétarien. Utile aussi : « không cay » = pas épicé.",
+    ],
+    lessons: [
+      {
+        title: "J'ai faim",
+        words: [
+          ['ăn', 'manger'],
+          ['uống', 'boire'],
+          ['muốn', 'vouloir'],
+          ['cơm', 'riz (cuit) ; repas', "« ăn cơm » veut dire prendre un repas, pas seulement manger du riz."],
+          ['phở', 'phở (soupe de nouilles)', "Se prononce « feu », avec un ton qui descend puis remonte."],
+          ['bánh mì', 'pain ; sandwich'],
+        ],
+        phrases: [
+          ['Tôi muốn ăn phở.', 'Je veux manger un phở.'],
+          ['Bạn muốn ăn gì?', 'Tu veux manger quoi ?'],
+          ['Tôi muốn ăn cơm.', 'Je veux manger du riz.'],
+          ['Tôi muốn uống nước.', "Je veux boire de l'eau."],
+          ['Bạn muốn uống gì?', 'Tu veux boire quoi ?'],
+          ['Tôi ăn bánh mì.', 'Je mange un sandwich.'],
+          ['Tôi không muốn ăn.', 'Je ne veux pas manger.'],
+        ],
+      },
+      {
+        title: 'Les boissons',
+        words: [
+          ['cà phê', 'café'],
+          ['trà', 'thé'],
+          ['bia', 'bière'],
+          ['đá', 'glace, glaçons', "« trà đá » = thé glacé, servi partout."],
+          ['sữa', 'lait', "« cà phê sữa đá » : café, lait concentré, glaçons."],
+          ['nóng', 'chaud'],
+        ],
+        phrases: [
+          ['Tôi muốn uống cà phê.', 'Je veux boire un café.'],
+          ['Một cà phê sữa đá.', 'Un café glacé au lait.'],
+          ['Một trà đá.', 'Un thé glacé.'],
+          ['Hai cà phê nóng.', 'Deux cafés chauds.'],
+          ['Bạn uống bia không?', 'Tu bois de la bière ?'],
+          ['Tôi không uống cà phê.', 'Je ne bois pas de café.'],
+          ['Ba bia.', 'Trois bières.'],
+        ],
+      },
+      {
+        title: 'Commander',
+        words: [
+          ['cho', 'donner ; pour', "« Cho tôi… » = donnez-moi…"],
+          ['ngon', 'bon, délicieux'],
+          ['cay', 'épicé, piquant'],
+          ['quá', 'trop, tellement', "Après l'adjectif : « cay quá » = trop épicé."],
+          ['lắm', 'très, vraiment', "Après l'adjectif : « ngon lắm »."],
+          ['chay', 'végétarien'],
+        ],
+        phrases: [
+          ['Cho tôi một phở.', 'Donnez-moi un phở.'],
+          ['Cho tôi hai cà phê.', 'Donnez-moi deux cafés.'],
+          ['Ngon quá!', "C'est trop bon !"],
+          ['Phở rất ngon.', 'Le phở est très bon.'],
+          ['Không cay.', 'Pas épicé.'],
+          ['Cay quá!', "C'est trop épicé !"],
+          ['Tôi ăn chay.', 'Je mange végétarien.'],
+          ['Bánh mì ngon lắm.', 'Le sandwich est vraiment bon.'],
+        ],
+      },
+      {
+        title: 'Au menu',
+        words: [
+          ['thịt', 'viande'],
+          ['bò', 'bœuf'],
+          ['gà', 'poulet'],
+          ['cá', 'poisson'],
+          ['rau', 'légumes'],
+          ['tính tiền', "l'addition ; faire le compte"],
+        ],
+        phrases: [
+          ['Tôi muốn ăn phở bò.', 'Je veux manger un phở au bœuf.'],
+          ['Cho tôi cơm gà.', 'Donnez-moi du riz au poulet.'],
+          ['Tôi không ăn thịt.', 'Je ne mange pas de viande.'],
+          ['Tôi ăn cá.', 'Je mange du poisson.'],
+          ['Xin lỗi, tính tiền!', "Excusez-moi, l'addition !"],
+          ['Phở gà ngon lắm.', 'Le phở au poulet est vraiment bon.'],
+          ['Cho tôi cơm rau.', 'Donnez-moi du riz aux légumes.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'acheter',
+    title: 'Acheter et négocier',
+    subtitle: 'Demander un prix, marchander, payer',
+    tips: [
+      "« Có… không? » encadre ce que l'on demande : « Có bia không? » = Il y a de la bière ? On répond « Có » (oui) ou « Không » (non).",
+      "Marchander fait partie du jeu sur les marchés : « Đắt quá! » puis « Bớt được không? ». Au sud, « cher » se dit « mắc ».",
+      "« cái » est le mot passe-partout pour compter les objets : « một cái túi » = un sac.",
+    ],
+    lessons: [
+      {
+        title: "C'est combien ?",
+        words: [
+          ['cái này', 'ceci, ça'],
+          ['cái kia', 'cela, celui-là'],
+          ['mua', 'acheter'],
+          ['đắt', 'cher', "Au sud : « mắc »."],
+          ['rẻ', 'bon marché, pas cher'],
+        ],
+        phrases: [
+          ['Cái này bao nhiêu tiền?', 'Ça coûte combien ?'],
+          ['Tôi muốn mua cái này.', 'Je veux acheter ça.'],
+          ['Cái này đắt quá!', "C'est trop cher !"],
+          ['Cái kia rẻ hơn.', 'Celui-là est moins cher.'],
+          ['Cái này rẻ lắm.', "Ça, c'est vraiment pas cher."],
+          ['Bạn muốn mua gì?', 'Tu veux acheter quoi ?'],
+          ['Tôi không mua.', "Je n'achète pas."],
+        ],
+      },
+      {
+        title: 'Vous avez… ?',
+        words: [
+          ['có', 'avoir, il y a ; oui'],
+          ['bớt', 'baisser (un prix)'],
+          ['lớn', 'grand', "Au nord, on dit aussi « to »."],
+          ['nhỏ', 'petit'],
+          ['đẹp', 'beau, joli'],
+          ['cái', '(mot pour compter les objets)', "Se place entre le nombre et le nom : « hai cái túi »."],
+        ],
+        phrases: [
+          ['Bạn có bia không?', 'Tu as de la bière ?'],
+          ['Tôi không có tiền.', "Je n'ai pas d'argent."],
+          ['Bớt được không?', 'Vous pouvez baisser le prix ?'],
+          ['Cái này đẹp quá!', "C'est trop beau !"],
+          ['Có cái lớn hơn không?', 'Vous en avez un plus grand ?'],
+          ['Cái này nhỏ quá.', "C'est trop petit."],
+          ['Có cái rẻ hơn không?', 'Vous en avez un moins cher ?'],
+        ],
+      },
+      {
+        title: 'Payer',
+        words: [
+          ['cần', 'avoir besoin de'],
+          ['túi', 'sac'],
+          ['thẻ', 'carte (bancaire)'],
+          ['tiền mặt', 'espèces'],
+          ['trả', 'payer ; rendre'],
+          ['bằng', 'avec, au moyen de'],
+        ],
+        phrases: [
+          ['Tôi không cần túi.', "Je n'ai pas besoin de sac."],
+          ['Không cần, cảm ơn.', 'Pas besoin, merci.'],
+          ['Tôi trả bằng tiền mặt.', 'Je paie en espèces.'],
+          ['Trả bằng thẻ được không?', 'On peut payer par carte ?'],
+          ['Tôi không có tiền mặt.', "Je n'ai pas d'espèces."],
+          ['Tôi cần một cái túi.', "J'ai besoin d'un sac."],
+          ['Tôi muốn trả bằng thẻ.', 'Je veux payer par carte.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'deplacer',
+    title: 'Se déplacer',
+    subtitle: 'Demander son chemin, prendre un taxi-moto',
+    tips: [
+      "« ở đâu? » = où (se trouve) : « Chợ ở đâu? ». Avec un verbe de mouvement, « đâu » suffit : « Bạn đi đâu? ».",
+      "Au sud, « tourner » se dit « quẹo » plutôt que « rẽ ».",
+      "Pour un taxi-moto (xe ôm), fixez le prix avant de monter, ou passez par une application : le compteur n'existe pas.",
+    ],
+    lessons: [
+      {
+        title: 'Où est… ?',
+        words: [
+          ['đi', 'aller ; partir'],
+          ['đâu', 'où'],
+          ['khách sạn', 'hôtel'],
+          ['sân bay', 'aéroport'],
+          ['chợ', 'marché'],
+          ['nhà vệ sinh', 'toilettes'],
+        ],
+        phrases: [
+          ['Bạn đi đâu?', 'Tu vas où ?'],
+          ['Tôi muốn đi sân bay.', "Je veux aller à l'aéroport."],
+          ['Khách sạn ở đâu?', "Où est l'hôtel ?"],
+          ['Nhà vệ sinh ở đâu?', 'Où sont les toilettes ?'],
+          ['Tôi đi chợ.', 'Je vais au marché.'],
+          ['Tôi muốn đi Hà Nội.', 'Je veux aller à Hanoï.'],
+          ['Chợ ở đâu?', 'Où est le marché ?'],
+        ],
+      },
+      {
+        title: 'Près, loin',
+        words: [
+          ['gần', 'près, proche'],
+          ['xa', 'loin'],
+          ['đây', 'ici ; voici'],
+          ['rẽ', 'tourner', "Au sud : « quẹo »."],
+          ['trái', 'gauche'],
+          ['phải', 'droite ; devoir'],
+          ['thẳng', 'droit, tout droit'],
+        ],
+        phrases: [
+          ['Có xa không?', "C'est loin ?"],
+          ['Không xa lắm.', 'Pas très loin.'],
+          ['Chợ có gần đây không?', "Le marché est près d'ici ?"],
+          ['Rẽ trái ở đây.', 'Tournez à gauche ici.'],
+          ['Rẽ phải.', 'Tournez à droite.'],
+          ['Đi thẳng.', 'Allez tout droit.'],
+          ['Khách sạn rất gần.', "L'hôtel est très proche."],
+          ['Sân bay xa quá!', "L'aéroport est trop loin !"],
+        ],
+      },
+      {
+        title: 'Les transports',
+        words: [
+          ['xe máy', 'scooter, moto'],
+          ['xe buýt', 'bus'],
+          ['xe ôm', 'taxi-moto'],
+          ['thuê', 'louer'],
+          ['dừng', "s'arrêter"],
+          ['vé', 'billet, ticket'],
+        ],
+        phrases: [
+          ['Tôi muốn thuê xe máy.', 'Je veux louer un scooter.'],
+          ['Dừng ở đây.', 'Arrêtez-vous ici.'],
+          ['Tôi đi xe buýt.', 'Je prends le bus.'],
+          ['Vé bao nhiêu tiền?', 'Combien coûte le billet ?'],
+          ['Đi xe ôm rẻ hơn.', "C'est moins cher en taxi-moto."],
+          ['Cho tôi một vé đi Hà Nội.', 'Donnez-moi un billet pour Hanoï.'],
+          ['Thuê xe máy bao nhiêu tiền?', 'Combien coûte la location du scooter ?'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'loger',
+    title: "À l'hôtel",
+    subtitle: 'Réserver, demander ce qui manque',
+    tips: [
+      "« này » (ce…-ci) suit le nom : « phòng này » = cette chambre.",
+      "La climatisation se dit « máy lạnh » au sud et « điều hòa » au nord : les deux sont compris partout.",
+    ],
+    lessons: [
+      {
+        title: 'Une chambre',
+        words: [
+          ['phòng', 'chambre, pièce'],
+          ['đêm', 'nuit'],
+          ['ngày', 'jour'],
+          ['đặt', 'réserver ; poser'],
+          ['chìa khóa', 'clé'],
+        ],
+        phrases: [
+          ['Có phòng không?', 'Vous avez une chambre ?'],
+          ['Tôi muốn đặt một phòng.', 'Je veux réserver une chambre.'],
+          ['Phòng bao nhiêu tiền một đêm?', 'La chambre coûte combien par nuit ?'],
+          ['Tôi ở ba đêm.', 'Je reste trois nuits.'],
+          ['Tôi ở đây hai ngày.', 'Je reste ici deux jours.'],
+          ['Chìa khóa ở đâu?', 'Où est la clé ?'],
+          ['Cho tôi chìa khóa phòng.', 'Donnez-moi la clé de la chambre.'],
+        ],
+      },
+      {
+        title: 'Dans la chambre',
+        words: [
+          ['mật khẩu', 'mot de passe'],
+          ['sạch', 'propre'],
+          ['ồn', 'bruyant'],
+          ['máy lạnh', 'climatisation', "Au nord : « điều hòa »."],
+          ['khăn', 'serviette'],
+          ['này', 'ce, cette (…-ci)'],
+        ],
+        phrases: [
+          ['Mật khẩu wifi là gì?', 'Quel est le mot de passe du wifi ?'],
+          ['Phòng này rất sạch.', 'Cette chambre est très propre.'],
+          ['Phòng này ồn quá.', 'Cette chambre est trop bruyante.'],
+          ['Phòng không có nước nóng.', "La chambre n'a pas d'eau chaude."],
+          ['Phòng có máy lạnh không?', 'La chambre a la climatisation ?'],
+          ['Tôi cần một cái khăn.', "J'ai besoin d'une serviette."],
+          ['Khách sạn này đẹp lắm.', 'Cet hôtel est vraiment beau.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'temps',
+    title: 'Le temps',
+    subtitle: 'Les heures, hier, demain, déjà, pas encore',
+    tips: [
+      "Le verbe ne change jamais : c'est un mot de temps (hôm qua, ngày mai) ou une petite marque qui situe l'action — « đã » pour le passé, « sẽ » pour le futur. On peut souvent s'en passer.",
+      "« rồi » (déjà) et « chưa » (pas encore) vont en fin de phrase. « Bạn ăn cơm chưa? » — Tu as mangé ? — est une salutation courante.",
+      "L'heure : nombre + « giờ », puis le moment de la journée : « bảy giờ sáng » = 7 h du matin.",
+    ],
+    lessons: [
+      {
+        title: 'Quelle heure ?',
+        words: [
+          ['hôm nay', "aujourd'hui"],
+          ['ngày mai', 'demain'],
+          ['hôm qua', 'hier'],
+          ['bây giờ', 'maintenant'],
+          ['giờ', 'heure'],
+          ['mấy', 'combien (petit nombre)', "« Mấy giờ? » = quelle heure ?"],
+        ],
+        phrases: [
+          ['Bây giờ là mấy giờ?', 'Quelle heure est-il maintenant ?'],
+          ['Bây giờ là ba giờ.', 'Il est trois heures maintenant.'],
+          ['Hôm nay tôi đi Hà Nội.', "Aujourd'hui je vais à Hanoï."],
+          ['Ngày mai tôi đi sân bay.', "Demain je vais à l'aéroport."],
+          ['Mấy giờ bạn đi?', 'Tu pars à quelle heure ?'],
+          ['Hôm qua tôi đi chợ.', 'Hier je suis allé au marché.'],
+        ],
+      },
+      {
+        title: 'Passé, futur',
+        words: [
+          ['sáng', 'matin'],
+          ['chiều', 'après-midi'],
+          ['tối', 'soir'],
+          ['sẽ', '(marque du futur)'],
+          ['đã', '(marque du passé)'],
+          ['rồi', 'déjà ; ça y est'],
+        ],
+        phrases: [
+          ['Tôi sẽ đi Sài Gòn.', "J'irai à Saïgon."],
+          ['Tôi đã ăn rồi.', "J'ai déjà mangé."],
+          ['Bảy giờ sáng.', 'Sept heures du matin.'],
+          ['Ba giờ chiều.', "Trois heures de l'après-midi."],
+          ['Tám giờ tối.', 'Huit heures du soir.'],
+          ['Tôi hiểu rồi.', "Ça y est, j'ai compris."],
+          ['Tôi đã đặt phòng rồi.', "J'ai déjà réservé une chambre."],
+          ['Ngày mai tôi sẽ đi Hà Nội.', "Demain j'irai à Hanoï."],
+        ],
+      },
+      {
+        title: 'Quand ?',
+        words: [
+          ['chưa', 'pas encore'],
+          ['khi nào', 'quand'],
+          ['lúc', 'à (telle heure) ; moment'],
+          ['phút', 'minute'],
+          ['chờ', 'attendre', "Au nord, on dit aussi « đợi »."],
+          ['nhanh', 'rapide, vite'],
+        ],
+        phrases: [
+          ['Bạn ăn cơm chưa?', 'Tu as déjà mangé ?'],
+          ['Tôi chưa ăn.', "Je n'ai pas encore mangé."],
+          ['Khi nào bạn đi?', 'Tu pars quand ?'],
+          ['Chờ một chút!', 'Attends un peu !'],
+          ['Chờ mười phút.', 'Attends dix minutes.'],
+          ['Nhanh hơn được không?', 'Plus vite, c\'est possible ?'],
+          ['Tôi đi lúc tám giờ.', 'Je pars à huit heures.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'gens',
+    title: 'Les gens',
+    subtitle: 'Les bons pronoms, la famille, ce que l\'on aime',
+    tips: [
+      "On s'adresse aux gens par des mots de famille, choisis selon l'âge : « anh » (homme un peu plus âgé), « chị » (femme un peu plus âgée), « em » (plus jeune), « ông » / « bà » (personnes âgées). Le même mot sert pour « tu / vous » et pour « je ».",
+      "Dans le doute, « anh » ou « chị » flatte et ne vexe jamais. « bạn » reste correct, mais sonne un peu scolaire.",
+      "« ơi » sert à appeler : « Em ơi! » pour un serveur plus jeune, « Anh ơi! », « Chị ơi! ».",
+      "La possession se marque avec « của » : « bạn của tôi » = mon ami.",
+    ],
+    lessons: [
+      {
+        title: 'Anh, chị, em',
+        words: [
+          ['anh', 'grand frère ; vous (homme un peu plus âgé)'],
+          ['chị', 'grande sœur ; vous (femme un peu plus âgée)'],
+          ['em', 'petit frère, petite sœur ; toi (plus jeune)'],
+          ['ông', 'monsieur (âgé) ; grand-père'],
+          ['bà', 'madame (âgée) ; grand-mère'],
+          ['chào', 'saluer ; bonjour, salut'],
+          ['ơi', '(pour appeler quelqu\'un)'],
+        ],
+        phrases: [
+          ['Chào anh!', 'Bonjour monsieur !'],
+          ['Chào chị!', 'Bonjour madame !'],
+          ['Cảm ơn anh.', 'Merci monsieur.'],
+          ['Em ơi, tính tiền!', "S'il vous plaît, l'addition !"],
+          ['Anh khỏe không?', 'Vous allez bien ?'],
+          ['Chị tên là gì?', 'Comment vous appelez-vous ?'],
+          ['Cảm ơn bà.', 'Merci madame.'],
+          ['Chào ông!', 'Bonjour monsieur !'],
+        ],
+      },
+      {
+        title: 'La famille',
+        words: [
+          ['bố', 'père', "Au sud : « ba »."],
+          ['mẹ', 'mère', "Au sud : « má »."],
+          ['con', 'enfant'],
+          ['vợ', 'épouse'],
+          ['chồng', 'mari'],
+          ['gia đình', 'famille'],
+          ['của', 'de (possession)'],
+        ],
+        phrases: [
+          ['Đây là vợ của tôi.', 'Voici ma femme.'],
+          ['Đây là bạn của tôi.', 'Voici mon ami.'],
+          ['Mẹ của tôi là người Pháp.', 'Ma mère est française.'],
+          ['Bạn có con không?', 'Tu as des enfants ?'],
+          ['Tôi có hai con.', "J'ai deux enfants."],
+          ['Gia đình của bạn ở đâu?', 'Où habite ta famille ?'],
+          ['Chồng của tôi nói tiếng Anh.', 'Mon mari parle anglais.'],
+          ['Bố của tôi ở Pháp.', 'Mon père habite en France.'],
+        ],
+      },
+      {
+        title: 'Parler de soi',
+        words: [
+          ['tuổi', 'âge ; an (d\'âge)'],
+          ['thích', 'aimer, apprécier'],
+          ['yêu', 'aimer (d\'amour), adorer'],
+          ['làm', 'faire ; travailler'],
+          ['du lịch', 'voyager ; tourisme'],
+          ['học', 'étudier, apprendre'],
+        ],
+        phrases: [
+          ['Bạn bao nhiêu tuổi?', 'Tu as quel âge ?'],
+          ['Tôi ba mươi tuổi.', "J'ai trente ans."],
+          ['Tôi thích Việt Nam.', "J'aime le Vietnam."],
+          ['Tôi thích ăn phở.', "J'aime manger du phở."],
+          ['Bạn làm gì?', 'Tu fais quoi ?'],
+          ['Tôi đi du lịch.', 'Je voyage.'],
+          ['Tôi học tiếng Việt.', "J'apprends le vietnamien."],
+          ['Tôi yêu Việt Nam.', "J'adore le Vietnam."],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'urgences',
+    title: 'Santé et imprévus',
+    subtitle: 'Demander de l\'aide, dire où l\'on a mal',
+    tips: [
+      "« bị » précède ce qui vous arrive de fâcheux : « bị đau » = avoir mal, « bị mất » = perdre, « bị ốm » = tomber malade (au sud : « bị bệnh »).",
+      "« Giúp tôi với! » = aidez-moi ! Le « với » final adoucit la demande.",
+      "Numéros utiles au Vietnam : 113 police, 114 pompiers, 115 ambulance.",
+    ],
+    lessons: [
+      {
+        title: 'À l\'aide',
+        words: [
+          ['giúp', 'aider'],
+          ['với', 'avec'],
+          ['đau', 'avoir mal ; douloureux'],
+          ['bác sĩ', 'médecin'],
+          ['thuốc', 'médicament'],
+          ['mệt', 'fatigué'],
+          ['bệnh viện', 'hôpital'],
+        ],
+        phrases: [
+          ['Bạn giúp tôi được không?', 'Tu peux m\'aider ?'],
+          ['Giúp tôi với!', 'Aidez-moi !'],
+          ['Tôi mệt quá.', 'Je suis trop fatigué.'],
+          ['Tôi đau lắm.', "J'ai vraiment mal."],
+          ['Tôi cần bác sĩ.', "J'ai besoin d'un médecin."],
+          ['Bệnh viện ở đâu?', "Où est l'hôpital ?"],
+          ['Tôi cần mua thuốc.', "J'ai besoin d'acheter un médicament."],
+          ['Tôi muốn đi bệnh viện.', "Je veux aller à l'hôpital."],
+          ['Tôi đi với bạn.', 'Je viens avec toi.'],
+        ],
+      },
+      {
+        title: 'Ça ne va pas',
+        words: [
+          ['đầu', 'tête'],
+          ['bụng', 'ventre'],
+          ['bị', '(subir quelque chose de fâcheux)'],
+          ['ốm', 'malade', "Au sud : « bệnh »."],
+          ['mất', 'perdre'],
+          ['hộ chiếu', 'passeport'],
+          ['điện thoại', 'téléphone'],
+        ],
+        phrases: [
+          ['Tôi bị đau đầu.', "J'ai mal à la tête."],
+          ['Tôi bị đau bụng.', "J'ai mal au ventre."],
+          ['Tôi bị ốm.', 'Je suis malade.'],
+          ['Tôi bị mất hộ chiếu.', "J'ai perdu mon passeport."],
+          ['Tôi bị mất điện thoại.', "J'ai perdu mon téléphone."],
+          ['Điện thoại của tôi ở đâu?', 'Où est mon téléphone ?'],
+          ['Bạn của tôi bị ốm.', 'Mon ami est malade.'],
+        ],
+      },
+    ],
+  },
+  {
+    id: 'discuter',
+    title: 'Discuter',
+    subtitle: 'Relier ses phrases, parler du temps, trinquer',
+    tips: [
+      "« hay » = « ou » dans une question : « trà hay cà phê? ».",
+      "La météo commence par « trời » (le ciel) : « trời mưa » = il pleut, « trời nóng » = il fait chaud.",
+      "Pour trinquer : « Một, hai, ba, dô! ». Refuser un verre est permis, mais on vous resservira.",
+    ],
+    lessons: [
+      {
+        title: 'Et, mais, parce que',
+        words: [
+          ['và', 'et'],
+          ['nhưng', 'mais'],
+          ['vì', 'parce que'],
+          ['hay', 'ou (dans une question)'],
+          ['tại sao', 'pourquoi'],
+        ],
+        phrases: [
+          ['Tôi thích phở và bánh mì.', "J'aime le phở et le sandwich."],
+          ['Tôi muốn đi nhưng tôi mệt.', 'Je veux y aller mais je suis fatigué.'],
+          ['Bạn muốn uống trà hay cà phê?', 'Tu veux boire du thé ou du café ?'],
+          ['Tại sao bạn học tiếng Việt?', 'Pourquoi tu apprends le vietnamien ?'],
+          ['Vì tôi thích Việt Nam.', "Parce que j'aime le Vietnam."],
+          ['Cái này đẹp nhưng đắt.', "C'est beau mais cher."],
+          ['Tôi nói tiếng Pháp và tiếng Anh.', 'Je parle français et anglais.'],
+        ],
+      },
+      {
+        title: 'Le temps qu\'il fait',
+        words: [
+          ['ai', 'qui'],
+          ['thế nào', 'comment'],
+          ['trời', 'ciel ; temps (météo)'],
+          ['mưa', 'pluie ; pleuvoir'],
+          ['lạnh', 'froid'],
+        ],
+        phrases: [
+          ['Đây là ai?', "C'est qui ?"],
+          ['Cái này là cái gì?', "C'est quoi, ça ?"],
+          ['Hôm nay trời nóng quá!', "Aujourd'hui il fait trop chaud !"],
+          ['Trời mưa rồi.', 'Ça y est, il pleut.'],
+          ['Hôm nay trời đẹp.', "Aujourd'hui il fait beau."],
+          ['Việt Nam thế nào?', "C'est comment, le Vietnam ?"],
+          ['Ngày mai trời lạnh.', 'Demain il fait froid.'],
+          ['Ai nói tiếng Pháp?', 'Qui parle français ?'],
+        ],
+      },
+      {
+        title: 'Formules utiles',
+        words: [
+          ['không sao', 'pas grave, ce n\'est rien'],
+          ['chúc', 'souhaiter'],
+          ['sức khỏe', 'santé'],
+          ['hẹn', 'donner rendez-vous'],
+          ['may mắn', 'chance ; chanceux'],
+          ['ngủ', 'dormir'],
+          ['dô', '(cri pour trinquer)'],
+        ],
+        phrases: [
+          ['Không sao, cảm ơn.', 'Pas grave, merci.'],
+          ['Không có gì.', 'De rien.'],
+          ['Chúc sức khỏe!', 'À ta santé !'],
+          ['Hẹn gặp lại!', 'À bientôt !'],
+          ['Chúc may mắn!', 'Bonne chance !'],
+          ['Chúc ngủ ngon!', 'Bonne nuit !'],
+          ['Một, hai, ba, dô!', 'Un, deux, trois, santé !'],
+          ['Tôi muốn ngủ.', 'Je veux dormir.'],
+          ['Tạm biệt, hẹn gặp lại!', 'Au revoir, à bientôt !'],
+        ],
+      },
+    ],
+  },
+]
+
+/** Identifiant d'un mot : dérivé du terme, donc stable si une leçon bouge. */
+export const wordId = (term: string) => `v:${term}`
+
+function buildUnit(source: UnitSource): Unit {
+  const lexemes: Lexeme[] = []
+  const lessons: Lesson[] = []
+
+  source.lessons.forEach((lesson, i) => {
+    for (const [term, gloss, note, roman] of lesson.words) {
+      lexemes.push({ id: wordId(term), term, gloss, note, roman })
+    }
+    lessons.push({
+      id: `${source.id}-${i + 1}`,
+      title: lesson.title,
+      lexemeIds: lesson.words.map(([term]) => wordId(term)),
+      phrases: lesson.phrases.map(([text, fr]) => ({ text, fr })),
+    })
+  })
+
+  return {
+    id: `vi.${source.id}`,
+    title: source.title,
+    subtitle: source.subtitle,
+    tips: source.tips,
+    lexemes,
+    exercises: [],
+    lessons,
+  }
+}
+
+const builtUnits = units.map(buildUnit)
+
+// Les exemples du lexique sont les phrases du parcours qui emploient le mot :
+// rien à écrire deux fois, et l'on relit ce que l'on a réellement pratiqué.
+{
+  const phrases = builtUnits.flatMap((u) => u.lessons!.flatMap((l) => l.phrases))
+  const flat = (s: string) =>
+    ` ${s.toLocaleLowerCase().replace(/[.,!?…]/g, '')} `
+  for (const unit of builtUnits) {
+    for (const lex of unit.lexemes) {
+      const needle = ` ${lex.term.toLocaleLowerCase()} `
+      lex.examples = phrases
+        .filter((p) => flat(p.text).includes(needle))
+        .slice(0, 2)
+    }
+  }
+}
+
+export const vietnamese: Course = {
+  id: 'vi',
+  lang: 'vi',
+  voice: 'vi-VN',
+  title: 'Vietnamien',
+  path: true,
+  properNouns: PROPER_NOUNS,
+  units: builtUnits,
+}

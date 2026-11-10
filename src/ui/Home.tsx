@@ -5,15 +5,19 @@ import { courseStats, today, updateSettings, useProgress } from '../store/progre
 import { useAuth } from '../store/sync'
 import { isRemoteEnabled } from '../store/supabase'
 import { Button, Card, Stat } from './components'
+import { Path } from './Path'
 
 export function Home({
   courses,
   onStart,
+  onLesson,
   onLexicon,
   onOpen,
 }: {
   courses: Course[]
   onStart: (courseId: string, mode: SessionMode) => void
+  /** Ouvre une leçon de parcours, ou une révision si `lessonId` est nul. */
+  onLesson: (courseId: string, lessonId: string | null) => void
   onLexicon: (courseId: string) => void
   onOpen: (view: 'stats' | 'account' | 'settings') => void
 }) {
@@ -29,8 +33,20 @@ export function Home({
     [courses, followed],
   )
 
+  // Un parcours guidé occupe tout l'accueil ; les autres cours se partagent
+  // un second onglet. Le choix est mémorisé avec les réglages : qui ne suit
+  // que l'anglais ne doit pas retomber sur le vietnamien à chaque ouverture.
+  const paths = visibleCourses.filter((c) => c.path)
+  const listed = visibleCourses.filter((c) => !c.path)
+  const tab = progress.settings.homeTab
+  const activePath =
+    tab === 'others' && listed.length > 0
+      ? undefined
+      : (paths.find((c) => c.id === tab) ?? paths[0])
+
   const indexes = useMemo(
-    () => new Map(visibleCourses.map((c) => [c.id, indexCourse(c)])),
+    () => new Map(listed.map((c) => [c.id, indexCourse(c)])),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [visibleCourses],
   )
 
@@ -80,6 +96,38 @@ export function Home({
         </button>
       )}
 
+      {paths.length > 0 && listed.length > 0 && (
+        <div className="mb-4 flex flex-wrap gap-2">
+          {[...paths.map((c) => ({ id: c.id, label: c.title })), { id: 'others', label: 'Autres cours' }].map(
+            ({ id, label }) => {
+              const active = id === (activePath?.id ?? 'others')
+              return (
+                <button
+                  key={id}
+                  onClick={() => updateSettings({ homeTab: id })}
+                  aria-pressed={active}
+                  className={`rounded-full border px-4 py-2 text-sm ${
+                    active
+                      ? 'border-accent bg-accent-soft text-accent'
+                      : 'border-line text-muted'
+                  }`}
+                >
+                  {label}
+                </button>
+              )
+            },
+          )}
+        </div>
+      )}
+
+      {activePath ? (
+        <Path
+          course={activePath}
+          onLesson={(lessonId) => onLesson(activePath.id, lessonId)}
+          onLexicon={() => onLexicon(activePath.id)}
+        />
+      ) : (
+        <>
       <Card className="mb-6">
         <div className="grid grid-cols-3 gap-3">
           <Stat value={doneToday} label="réponses aujourd'hui" />
@@ -94,7 +142,7 @@ export function Home({
       </Card>
 
       <div className="space-y-3">
-        {visibleCourses.map((course) => {
+        {listed.map((course) => {
           const index = indexes.get(course.id)!
           const unit = progress.settings.unitFilter?.[course.id] || undefined
           const { due, fresh, remaining } = pendingCount(
@@ -209,6 +257,8 @@ export function Home({
         en réserve, puis les moins bien retenus. Réussir un mot n'y repousse pas
         sa révision — travailler plus ne fausse pas la mémorisation estimée.
       </p>
+        </>
+      )}
 
       <div className="mt-8 flex gap-3">
         <Button variant="ghost" className="flex-1" onClick={() => onOpen('stats')}>

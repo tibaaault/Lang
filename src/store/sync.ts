@@ -11,6 +11,7 @@ import { getSupabase, isRemoteEnabled } from './supabase'
 import {
   activateAccount,
   getProgress,
+  mergeLessons,
   replaceProgress,
   setProgressListener,
   type Progress,
@@ -100,6 +101,9 @@ export function mergeProgress(local: Progress, remote: Progress): Progress {
     // additionner compterait deux fois les révisions déjà synchronisées.
     if (!other || stats.reviews > other.reviews) merged.days[day] = stats
   }
+
+  merged.lessons = mergeLessons(local.lessons, remote.lessons)
+  merged.xp = Math.max(local.xp ?? 0, remote.xp ?? 0)
 
   merged.streak = {
     current: Math.max(local.streak.current, remote.streak.current),

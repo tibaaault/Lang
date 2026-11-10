@@ -21,6 +21,8 @@ export interface DayStats {
    * mots d'anglais ne doit pas épuiser le quota d'indonésien.
    */
   newByCourse?: Record<string, number>
+  /** Points gagnés ce jour-là en terminant des leçons. */
+  xp?: number
 }
 
 export interface Progress {
@@ -46,7 +48,19 @@ export interface Progress {
      * Absent ou vide signifie « tout le cours ».
      */
     unitFilter?: Record<string, string>
+    /**
+     * Ce que l'accueil affiche : l'identifiant d'un parcours guidé, ou
+     * `others` pour la liste des autres cours. Absent, le parcours l'emporte.
+     */
+    homeTab?: string
   }
+  /**
+   * Leçons de parcours terminées, indexées `courseId:lessonId`, avec le
+   * nombre de fois où chacune a été menée au bout.
+   */
+  lessons?: Record<string, number>
+  /** Total des points gagnés. */
+  xp?: number
   /** Horodatage de la dernière écriture, pour arbitrer la synchronisation. */
   updatedAt: string
 }
@@ -174,6 +188,8 @@ function mergeCards(base: Progress, extra: Progress): Progress {
     const other = merged.days[day]
     if (!other || stats.reviews > other.reviews) merged.days[day] = stats
   }
+  merged.lessons = mergeLessons(base.lessons, extra.lessons)
+  merged.xp = Math.max(base.xp ?? 0, extra.xp ?? 0)
   merged.streak = {
     current: Math.max(base.streak.current, extra.streak.current),
     longest: Math.max(base.streak.longest, extra.streak.longest),
@@ -184,6 +200,21 @@ function mergeCards(base: Progress, extra: Progress): Progress {
   }
   merged.updatedAt = new Date().toISOString()
   return merged
+}
+
+/**
+ * Réunit deux relevés de leçons terminées. On garde le plus grand compte de
+ * chaque leçon : additionner compterait deux fois ce qui est déjà synchronisé.
+ */
+export function mergeLessons(
+  a: Record<string, number> | undefined,
+  b: Record<string, number> | undefined,
+): Record<string, number> {
+  const out = { ...a }
+  for (const [key, count] of Object.entries(b ?? {})) {
+    out[key] = Math.max(count, out[key] ?? 0)
+  }
+  return out
 }
 
 export function activateAccount(
@@ -251,6 +282,72 @@ export function getCard(
   return state.cards[cardKey(courseId, lexemeId)]
 }
 
+/** Compte une réponse dans la journée et entretient la série de jours. */
+function touchDay(p: Progress, correct: boolean, seconds: number): DayStats {
+  const day = today()
+  const stats = (p.days[day] ??= {
+    reviews: 0,
+    correct: 0,
+    seconds: 0,
+    newWords: 0,
+  })
+  stats.reviews += 1
+  if (correct) stats.correct += 1
+  // Une réponse qui prend plus de deux minutes est une pause, pas du travail.
+  stats.seconds += Math.min(seconds, 120)
+
+  if (p.streak.lastDay !== day) {
+    const yesterday = today(new Date(Date.now() - 86_400_000))
+    p.streak.current = p.streak.lastDay === yesterday ? p.streak.current + 1 : 1
+    p.streak.longest = Math.max(p.streak.longest, p.streak.current)
+    p.streak.lastDay = day
+  }
+  return stats
+}
+
+function countNewWord(stats: DayStats, courseId: string) {
+  stats.newWords += 1
+  stats.newByCourse = {
+    ...stats.newByCourse,
+    [courseId]: (stats.newByCourse?.[courseId] ?? 0) + 1,
+  }
+}
+
+/**
+ * Enregistre une réponse à un exercice de parcours.
+ *
+ * Un tel exercice peut porter sur plusieurs mots à la fois — une phrase à
+ * assembler — ou sur aucun en particulier : la réponse compte toujours dans
+ * la journée, et seules les fiches fournies sont replanifiées.
+ */
+export function recordStep(opts: {
+  courseId: string
+  correct: boolean
+  seconds: number
+  cards: { lexemeId: string; card: CardState; isNew: boolean }[]
+}) {
+  update((p) => {
+    const stats = touchDay(p, opts.correct, opts.seconds)
+    for (const { lexemeId, card, isNew } of opts.cards) {
+      p.cards[cardKey(opts.courseId, lexemeId)] = card
+      if (isNew) countNewWord(stats, opts.courseId)
+    }
+  })
+}
+
+/** Marque une leçon comme terminée et crédite ses points. */
+export function completeLesson(courseId: string, lessonId: string | null, xp: number) {
+  update((p) => {
+    if (lessonId) {
+      const key = `${courseId}:${lessonId}`
+      p.lessons = { ...p.lessons, [key]: (p.lessons?.[key] ?? 0) + 1 }
+    }
+    p.xp = (p.xp ?? 0) + xp
+    const stats = p.days[today()]
+    if (stats) stats.xp = (stats.xp ?? 0) + xp
+  }, true)
+}
+
 /** Enregistre le résultat d'une réponse et met à jour la série de jours. */
 export function recordReview(opts: {
   courseId: string
@@ -265,31 +362,8 @@ export function recordReview(opts: {
     p.cards[cardKey(opts.courseId, opts.lexemeId)] = opts.card
     p.seen[opts.exerciseId] = (p.seen[opts.exerciseId] ?? 0) + 1
 
-    const day = today()
-    const stats = (p.days[day] ??= {
-      reviews: 0,
-      correct: 0,
-      seconds: 0,
-      newWords: 0,
-    })
-    stats.reviews += 1
-    if (opts.correct) stats.correct += 1
-    if (opts.isNew) {
-      stats.newWords += 1
-      stats.newByCourse = {
-        ...stats.newByCourse,
-        [opts.courseId]: (stats.newByCourse?.[opts.courseId] ?? 0) + 1,
-      }
-    }
-    // Une réponse qui prend plus de deux minutes est une pause, pas du travail.
-    stats.seconds += Math.min(opts.seconds, 120)
-
-    if (p.streak.lastDay !== day) {
-      const yesterday = today(new Date(Date.now() - 86_400_000))
-      p.streak.current = p.streak.lastDay === yesterday ? p.streak.current + 1 : 1
-      p.streak.longest = Math.max(p.streak.longest, p.streak.current)
-      p.streak.lastDay = day
-    }
+    const stats = touchDay(p, opts.correct, opts.seconds)
+    if (opts.isNew) countNewWord(stats, opts.courseId)
   })
 }
 
