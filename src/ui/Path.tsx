@@ -169,6 +169,8 @@ export function Path({
                             (lesson.summary ??
                             (lesson.dialogue
                               ? 'À écouter'
+                              : lesson.clozes?.length && !lesson.lexemeIds.length
+                                ? 'Phrases à trou'
                               : lesson.lexemeIds.length
                                 ? `${lesson.lexemeIds.length} mots`
                                 : "À l'oreille"))

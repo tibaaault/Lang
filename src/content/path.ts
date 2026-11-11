@@ -2,6 +2,7 @@
 // mots et des phrases par leçon. Commun à toutes les langues suivies ainsi.
 
 import type {
+  ClozeExercise,
   DialogueLine,
   Lesson,
   Lexeme,
@@ -23,6 +24,7 @@ export interface LessonSource {
   dialogue?: DialogueLine[]
   drill?: boolean
   numbers?: SpokenNumber[]
+  clozes?: ClozeExercise[]
 }
 
 export interface UnitSource {
@@ -72,6 +74,7 @@ export function buildPathUnits(
         dialogue: lesson.dialogue,
         drill: lesson.drill,
         numbers: lesson.numbers,
+        clozes: lesson.clozes,
       })
     })
     return {
