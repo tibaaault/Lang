@@ -36,7 +36,7 @@ export const PROPER_NOUNS = [
   'French',
   'Monday',
   'Friday',
-  'Tom',
+  'Thibault',
 ]
 
 const units: UnitSource[] = [
@@ -463,7 +463,7 @@ const units: UnitSource[] = [
           ['how was your weekend', "c'était comment, ton week-end"],
         ],
         phrases: [
-          ["Hi Tom, how's it going?", 'Salut Tom, comment ça va ?'],
+          ["Hi Thibault, how's it going?", 'Salut Thibault, comment ça va ?'],
           ['Not too bad, thanks. And you?', 'Pas trop mal, merci. Et toi ?'],
           ["Can't complain, the weather is nice.", 'Je ne me plains pas, il fait beau.'],
           ['So, what have you been up to?', "Alors, qu'est-ce que tu deviens ?"],

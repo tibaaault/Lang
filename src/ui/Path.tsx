@@ -7,7 +7,7 @@ import {
   reviewStatus,
 } from '../engine/lesson'
 import { useProgress } from '../store/progress'
-import { Button, Card, Stat } from './components'
+import { Button, Card, ProgressBar, Stat } from './components'
 
 /** Décalage horizontal des leçons : le chemin serpente au lieu de s'empiler. */
 const ZIGZAG = [0, 36, 72, 36]
@@ -53,8 +53,30 @@ export function Path({
     (unit.lessons ?? []).filter((l) => lessonTimes(course.id, l, progress))
       .length
 
+  const lessonsDone = index.lessons.filter((l) =>
+    lessonTimes(course.id, l.lesson, progress),
+  ).length
+
   return (
     <div>
+      {/* Le cours et où l'on en est : ce que l'on veut savoir en ouvrant. */}
+      <header className="mb-4">
+        <h1 className="font-serif text-2xl">
+          {course.icon && <span aria-hidden>{course.icon} </span>}
+          {course.title}
+        </h1>
+        <div className="mt-2 flex items-center gap-3">
+          <div className="flex-1">
+            <ProgressBar
+              value={index.lessons.length ? lessonsDone / index.lessons.length : 0}
+            />
+          </div>
+          <span className="text-xs tabular-nums text-muted">
+            {lessonsDone}/{index.lessons.length} leçons
+          </span>
+        </div>
+      </header>
+
       <Card className="mb-4">
         <div className="grid grid-cols-3 gap-3">
           <Stat
@@ -94,7 +116,11 @@ export function Path({
 
       <div className="space-y-10">
         {course.units.map((unit, u) => (
-          <section key={unit.id} aria-label={unit.title}>
+          <section
+            key={unit.id}
+            aria-label={unit.title}
+            className={`hue-${u % 6}`}
+          >
             <UnitHeader
               number={u + 1}
               unit={unit}
@@ -120,9 +146,9 @@ export function Path({
                       <span
                         className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-b-4 text-xl font-semibold ${
                           times
-                            ? 'border-accent/40 bg-accent text-paper'
+                            ? 'border-black/20 bg-[var(--hue)] text-paper'
                             : isNext
-                              ? 'border-accent bg-accent-soft text-accent ring-4 ring-accent/25'
+                              ? 'border-[var(--hue)] bg-[var(--hue-soft)] text-[var(--hue)] ring-4 ring-[var(--hue-soft)]'
                               : 'border-line bg-surface text-muted'
                         }`}
                       >
@@ -134,7 +160,7 @@ export function Path({
                         </span>
                         <span className="block text-xs text-muted">
                           {isNext ? (
-                            <span className="font-semibold text-accent">
+                            <span className="font-semibold text-[var(--hue)]">
                               Commencer
                             </span>
                           ) : times ? (
@@ -180,7 +206,7 @@ function UnitHeader({
   const total = unit.lessons?.length ?? 0
 
   return (
-    <div className="rounded-2xl bg-accent px-5 py-4 text-paper">
+    <div className="rounded-2xl bg-[var(--hue)] px-5 py-4 text-paper">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-wide opacity-80">

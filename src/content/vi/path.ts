@@ -37,7 +37,7 @@ export const PROPER_NOUNS = [
   'Saïgon',
   'Vietnam',
   'France',
-  'Paul',
+  'Thibault',
 ]
 
 const units: UnitSource[] = [
@@ -74,16 +74,16 @@ const units: UnitSource[] = [
         words: [
           ['tôi', 'je, moi', "Le « je » neutre, sûr en toute circonstance.", 'toï'],
           ['bạn', 'tu, toi ; ami', "Littéralement « ami ». Un « tu » neutre, pratique entre gens du même âge.", 'bane'],
-          ['là', 'être', "Relie deux noms : « tôi là Nam ». On ne l'emploie pas devant un adjectif.", 'la'],
+          ['là', 'être', "Relie deux noms : « tôi là Thibault ». On ne l'emploie pas devant un adjectif.", 'la'],
           ['tên', 'nom, prénom', undefined, 'tène'],
           ['gì', 'quoi', "Le mot interrogatif reste à la place de la réponse, en fin de phrase.", 'zi'],
         ],
         phrases: [
-          ['Tôi là Nam.', 'Je suis Nam.'],
-          ['Tên tôi là Lan.', "Je m'appelle Lan."],
+          ['Tôi là Thibault.', 'Je suis Thibault.'],
+          ['Tên tôi là Thibault.', "Je m'appelle Thibault."],
           ['Bạn tên là gì?', "Comment tu t'appelles ?"],
-          ['Xin chào, tôi là Mai.', 'Bonjour, je suis Mai.'],
-          ['Tôi tên là Nam.', 'Mon nom est Nam.'],
+          ['Xin chào, tôi là Thibault.', 'Bonjour, je suis Thibault.'],
+          ['Tôi tên là Thibault.', 'Mon nom est Thibault.'],
           ['Xin lỗi, bạn tên là gì?', 'Pardon, quel est ton nom ?'],
         ],
       },

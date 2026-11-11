@@ -65,40 +65,23 @@ export function Home({
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col px-5 pb-10">
-      <header className="flex items-center justify-between py-5">
-        <div>
-          <p className="text-xs uppercase tracking-wide text-muted">
-            {new Date().toLocaleDateString('fr-FR', {
-              weekday: 'long',
-              day: 'numeric',
-              month: 'long',
-            })}
-          </p>
-          <h1 className="font-serif text-2xl">
-            {progress.streak.current > 0
-              ? `${progress.streak.current} jour${progress.streak.current > 1 ? 's' : ''} d'affilée`
-              : 'Bonjour'}
-          </h1>
-        </div>
-      </header>
+      <div className="h-4" />
 
       {/* Un état qui change silencieusement le comportement doit rester
           visible : c'est en travaillant sans le savoir hors connexion qu'on
           perd une série entière. */}
       {isRemoteEnabled && !auth.user && (
+        // Une ligne, pas un bandeau : l'état reste visible à chaque ouverture
+        // sans repousser le cours hors de l'écran.
         <button
           onClick={() => onOpen('account')}
-          className="mb-4 flex w-full items-center gap-3 rounded-xl border border-wrong/40 bg-wrong-soft px-4 py-3 text-left"
+          className="mb-3 flex w-full items-center gap-2 rounded-full border border-wrong/30 px-3 py-1.5 text-left text-xs text-wrong"
         >
-          <span aria-hidden className="text-lg">
-            ⚠
+          <span aria-hidden>⚠</span>
+          <span className="flex-1">
+            Hors connexion — progression sur cet appareil
           </span>
-          <span className="text-sm leading-snug text-wrong">
-            Hors connexion — cette progression reste sur cet appareil.
-            <span className="mt-0.5 block underline underline-offset-4">
-              Se connecter
-            </span>
-          </span>
+          <span className="underline underline-offset-2">Se connecter</span>
         </button>
       )}
 
@@ -137,6 +120,22 @@ export function Home({
         />
       ) : (
         <>
+      <header className="flex items-center justify-between pb-5">
+        <div>
+          <p className="text-xs uppercase tracking-wide text-muted">
+            {new Date().toLocaleDateString('fr-FR', {
+              weekday: 'long',
+              day: 'numeric',
+              month: 'long',
+            })}
+          </p>
+          <h1 className="font-serif text-2xl">
+            {progress.streak.current > 0
+              ? `${progress.streak.current} jour${progress.streak.current > 1 ? 's' : ''} d'affilée`
+              : 'Bonjour'}
+          </h1>
+        </div>
+      </header>
       <Card className="mb-6">
         <div className="grid grid-cols-3 gap-3">
           <Stat value={doneToday} label="réponses aujourd'hui" />
