@@ -4,12 +4,20 @@ import { getLastPushedAt, pushNow, useAuth } from '../store/sync'
 import { isRemoteEnabled } from '../store/supabase'
 import { useState } from 'react'
 import { Button, Card, Screen } from './components'
+import { getTheme, setTheme, type Theme } from '../theme'
+
+const THEMES: { id: Theme; label: string }[] = [
+  { id: 'auto', label: 'Automatique' },
+  { id: 'light', label: 'Clair' },
+  { id: 'dark', label: 'Sombre' },
+]
 
 
 export function Settings({ onBack }: { onBack: () => void }) {
   const progress = useProgress()
   const auth = useAuth()
   const [saving, setSaving] = useState(false)
+  const [theme, setThemeState] = useState(getTheme)
   const [saved, setSaved] = useState<string | null>(null)
 
   return (
@@ -57,6 +65,33 @@ export function Settings({ onBack }: { onBack: () => void }) {
                 </button>
               )
             })}
+          </div>
+        </Card>
+
+        <Card>
+          <h2 className="text-sm font-medium">Apparence</h2>
+          <p className="mt-1 text-sm text-muted">
+            Automatique suit le réglage du téléphone. Dehors, en plein jour, le
+            clair se lit bien mieux.
+          </p>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            {THEMES.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => {
+                  setTheme(id)
+                  setThemeState(id)
+                }}
+                aria-pressed={theme === id}
+                className={`min-h-12 rounded-xl border text-sm ${
+                  theme === id
+                    ? 'border-accent bg-accent-soft font-medium text-accent'
+                    : 'border-line bg-surface'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </Card>
 

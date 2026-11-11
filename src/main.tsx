@@ -2,6 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import { applyTheme } from './theme'
+
+// Avant le premier rendu : sans cela la page clignote dans l'autre thème.
+applyTheme()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
