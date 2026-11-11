@@ -258,7 +258,7 @@ export const taxiDialogue: LessonSource = {
       '« Bốn mươi nghìn được không? — Được. » Le chauffeur accepte la contre-proposition.', 'Bốn mươi nghìn được không?'),
     quiz('Quelle direction donne-t-il ?', 'tout droit, puis à droite', ['à gauche, puis tout droit', 'tout droit, puis à gauche'],
       '« Đi thẳng, rẽ phải » : « phải » = droite, « trái » = gauche.', 'Đi thẳng, rẽ phải ở đây.'),
-    quiz('Le chauffeur demande « Bạn đi đâu? ». Que répondre ?', 'Tôi muốn đi sân bay.', ['Tôi tên là Paul.', 'Bốn mươi nghìn.'],
+    quiz('Le chauffeur demande « Bạn đi đâu? ». Que répondre ?', 'Tôi muốn đi sân bay.', ['Tôi tên là Thibault.', 'Bốn mươi nghìn.'],
       '« Đi đâu? » = aller où ? On répond par « Tôi muốn đi… » suivi du lieu.', 'Bạn đi đâu?'),
   ],
 }
@@ -297,7 +297,7 @@ export const meetingDialogue: LessonSource = {
   phrases: [],
   dialogue: [
     A('Chào anh! Anh tên là gì?', 'Bonjour ! Comment vous appelez-vous ?'),
-    B('Tôi tên là Paul. Còn chị?', "Je m'appelle Paul. Et vous ?"),
+    B('Tôi tên là Thibault. Còn chị?', "Je m'appelle Thibault. Et vous ?"),
     A('Tôi tên là Lan. Anh là người nước nào?', "Je m'appelle Lan. Vous êtes de quel pays ?"),
     B('Tôi là người Pháp. Tôi đi du lịch.', 'Je suis français. Je voyage.'),
     A('Anh bao nhiêu tuổi?', 'Vous avez quel âge ?'),
@@ -306,7 +306,7 @@ export const meetingDialogue: LessonSource = {
     B('Tôi yêu Việt Nam. Phở ngon lắm!', "J'adore le Vietnam. Le phở est vraiment bon !"),
   ],
   quizzes: [
-    quiz("Comment s'appelle la femme ?", 'Lan', ['Mai', 'Paul'],
+    quiz("Comment s'appelle la femme ?", 'Lan', ['Mai', 'Thibault'],
       '« Tôi tên là Lan » : mon nom est Lan.', 'Tôi tên là Lan. Anh là người nước nào?'),
     quiz("D'où vient le voyageur ?", 'de France', ['du Vietnam', "d'Angleterre"],
       '« Người Pháp » : personne de France, donc français.', 'Tôi là người Pháp. Tôi đi du lịch.'),
@@ -314,7 +314,7 @@ export const meetingDialogue: LessonSource = {
       '« Đi du lịch » = voyager. Étudier se dirait « học », travailler « làm ».', 'Tôi là người Pháp. Tôi đi du lịch.'),
     quiz('Quel âge a-t-il ?', 'trente ans', ['treize ans', 'vingt-trois ans'],
       '« Ba mươi tuổi » : trois dizaines. Treize se dirait « mười ba ».', 'Tôi ba mươi tuổi.'),
-    quiz('On vous demande « Anh là người nước nào? ». Que répondre ?', 'Tôi là người Pháp.', ['Tôi ba mươi tuổi.', 'Tôi tên là Paul.'],
+    quiz('On vous demande « Anh là người nước nào? ». Que répondre ?', 'Tôi là người Pháp.', ['Tôi ba mươi tuổi.', 'Tôi tên là Thibault.'],
       '« Người nước nào » = de quel pays : la question la plus posée aux voyageurs, avec l\'âge.', 'Anh là người nước nào?'),
   ],
 }

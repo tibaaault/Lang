@@ -220,6 +220,13 @@ export function LessonSession({
         mistakes={mistakes}
         seconds={Math.round((Date.now() - sessionStart.current) / 1000)}
         streak={getProgress().streak.current}
+        words={
+          lessonId
+            ? (index.byLessonId
+                .get(lessonId)
+                ?.lesson.lexemeIds.map((id) => index.byId.get(id)!) ?? [])
+            : []
+        }
         onExit={onExit}
       />
     )
@@ -1355,6 +1362,7 @@ function Summary({
   mistakes,
   seconds,
   streak,
+  words,
   onExit,
 }: {
   empty: boolean
@@ -1364,6 +1372,8 @@ function Summary({
   mistakes: number
   seconds: number
   streak: number
+  /** Les mots de la leçon, rappelés une dernière fois. */
+  words: Lexeme[]
   onExit: () => void
 }) {
   const accuracy = answered
@@ -1372,7 +1382,7 @@ function Summary({
   const minutes = Math.max(1, Math.round(seconds / 60))
 
   return (
-    <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col justify-center px-5">
+    <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col justify-center px-5 py-8">
       {empty ? (
         <>
           <h2 className="font-serif text-3xl">Rien à réviser</h2>
@@ -1382,7 +1392,7 @@ function Summary({
         </>
       ) : (
         <>
-          <p className="text-5xl" aria-hidden>
+          <p className="pop text-6xl" aria-hidden>
             {mistakes === 0 ? '🌟' : '🎉'}
           </p>
           <h2 className="mt-4 font-serif text-3xl">
@@ -1395,11 +1405,38 @@ function Summary({
             {streak > 0 &&
               ` ${streak} jour${streak > 1 ? 's' : ''} d'affilée.`}
           </p>
-          <div className="mt-8 grid grid-cols-3 gap-4">
+          <div
+            className="rise mt-8 grid grid-cols-3 gap-4 rounded-2xl border border-line bg-surface p-4"
+            style={{ animationDelay: '0.25s' }}
+          >
             <Stat value={`+${xp}`} label="points" />
             <Stat value={`${accuracy} %`} label="de justesse" />
             <Stat value={`${minutes} min`} label="de travail" />
           </div>
+          {words.length > 0 && (
+            // Revoir d'un coup d'œil ce que la leçon vient d'apporter.
+            <div className="rise mt-6" style={{ animationDelay: '0.45s' }}>
+              <p className="text-xs uppercase tracking-wide text-muted">
+                {words.length} mots dans cette leçon
+              </p>
+              <ul className="mt-2 divide-y divide-line rounded-2xl border border-line bg-surface">
+                {words.map((w) => (
+                  <li
+                    key={w.id}
+                    className="flex items-baseline justify-between gap-3 px-4 py-2.5"
+                  >
+                    <span className="font-serif text-lg">
+                      {w.emoji && <span aria-hidden>{w.emoji} </span>}
+                      {w.term}
+                    </span>
+                    <span className="text-right text-sm text-muted">
+                      {w.gloss}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </>
       )}
       <Button className="mt-10 w-full" onClick={onExit}>

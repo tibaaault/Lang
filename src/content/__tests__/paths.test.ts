@@ -78,7 +78,7 @@ describe.each(
         expect(word.roman, word.term).toBeTruthy()
       }
       // Sur les tuiles, aucun mot ne doit rester sans lettres latines.
-      expect(index.roman('ผม ชื่อ Tom ครับ')).toBe('phom chue Tom khrap')
+      expect(index.roman('ผม ชื่อ Thibault ครับ')).toBe('phom chue Thibault khrap')
     })
 
     it('enrichit le lexique de mots de voyage que les leçons ne donnent pas', () => {

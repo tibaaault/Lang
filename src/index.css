@@ -59,3 +59,27 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Une teinte par unité du parcours : on se repère à la couleur avant de lire
+   le titre. Les teintes sont claires et peu saturées, pour porter un texte
+   sombre : l'application s'affiche toujours sur fond sombre, la palette
+   claire déclarée plus haut n'étant pas retenue à la compilation. */
+.hue-0 { --hue: #7fb894; --hue-soft: #1e2b24; }
+.hue-1 { --hue: #86b3df; --hue-soft: #1c2733; }
+.hue-2 { --hue: #b9a0e0; --hue-soft: #272135; }
+.hue-3 { --hue: #e0a878; --hue-soft: #31261c; }
+.hue-4 { --hue: #e39ab4; --hue-soft: #321f27; }
+.hue-5 { --hue: #7cc4c9; --hue-soft: #1a2c2e; }
+
+/* Fin de leçon : le pictogramme surgit, le reste monte en place. */
+@keyframes pop {
+  0% { transform: scale(0.3) rotate(-12deg); opacity: 0; }
+  60% { transform: scale(1.25) rotate(6deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); }
+}
+@keyframes rise {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.pop { animation: pop 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2) both; transform-origin: left bottom; }
+.rise { animation: rise 0.45s ease-out both; }

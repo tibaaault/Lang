@@ -19,7 +19,7 @@ const t = (term: string, roman: string, gloss: string, note?: string): W => [
   roman,
 ]
 
-export const PROPER_NOUNS = ['Tom', 'France']
+export const PROPER_NOUNS = ['Thibault', 'France']
 
 const units: UnitSource[] = [
   {
@@ -63,7 +63,7 @@ const units: UnitSource[] = [
           t('ไหม', 'mai', '(marque de question)', 'En fin de phrase. Même notation latine que « ไม่ » (non), mais un autre ton.'),
         ],
         phrases: [
-          ['ผม ชื่อ Tom ครับ', "Je m'appelle Tom."],
+          ['ผม ชื่อ Thibault ครับ', "Je m'appelle Thibault."],
           ['คุณ ชื่อ อะไร ครับ', 'Comment vous appelez-vous ?'],
           ['คุณ สบายดี ไหม ครับ', 'Vous allez bien ?'],
           ['ผม สบายดี ครับ', 'Je vais bien.'],
