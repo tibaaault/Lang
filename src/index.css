@@ -1,11 +1,18 @@
 @import 'tailwindcss';
 
 /* Palette sobre : peu de couleurs, un seul accent, un contraste confortable
-   en plein soleil comme le soir. Le thème suit le réglage du système. */
+   en plein soleil comme le soir.
+
+   Le thème clair est la référence. Le sombre s'applique quand le système le
+   demande, ou quand on le force dans les réglages (voir theme.ts) ; à
+   l'inverse, `data-theme="light"` garde le clair sur un téléphone réglé en
+   sombre. Les couleurs sombres redéfinissent les variables plutôt que de
+   passer par un second @theme : Tailwind remonte un @theme hors de sa requête
+   média, et le sombre s'appliquait alors partout, tout le temps. */
 @theme {
   --color-paper: #faf9f7;
   --color-ink: #16181a;
-  --color-muted: #6b7280;
+  --color-muted: #5f6672;
   --color-line: #e4e1dc;
   --color-surface: #ffffff;
   --color-accent: #2f6f4e;
@@ -17,8 +24,23 @@
   --font-serif: ui-serif, Georgia, 'Times New Roman', serif;
 }
 
+:root {
+  color-scheme: light;
+  /* Une teinte par unité du parcours : on se repère à la couleur avant de
+     lire le titre. */
+  --hue-0: #2f6f4e; --hue-0-soft: #e6f0ea;
+  --hue-1: #2b5f8f; --hue-1-soft: #e4edf6;
+  --hue-2: #6b4a9c; --hue-2-soft: #ece6f5;
+  --hue-3: #a8571c; --hue-3-soft: #f6eadf;
+  --hue-4: #a13a5c; --hue-4-soft: #f6e4ea;
+  --hue-5: #1f7178; --hue-5-soft: #e0f0f1;
+}
+
+/* Les deux blocs qui suivent portent les mêmes valeurs : l'un pour le sombre
+   demandé par le système, l'autre pour le sombre forcé. */
 @media (prefers-color-scheme: dark) {
-  @theme {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
     --color-paper: #131416;
     --color-ink: #e9e7e4;
     --color-muted: #9aa0a6;
@@ -28,7 +50,32 @@
     --color-accent-soft: #1e2b24;
     --color-wrong: #e0837a;
     --color-wrong-soft: #2c1e1d;
+    --hue-0: #7fb894; --hue-0-soft: #1e2b24;
+    --hue-1: #86b3df; --hue-1-soft: #1c2733;
+    --hue-2: #b9a0e0; --hue-2-soft: #272135;
+    --hue-3: #e0a878; --hue-3-soft: #31261c;
+    --hue-4: #e39ab4; --hue-4-soft: #321f27;
+    --hue-5: #7cc4c9; --hue-5-soft: #1a2c2e;
   }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-paper: #131416;
+  --color-ink: #e9e7e4;
+  --color-muted: #9aa0a6;
+  --color-line: #2a2d31;
+  --color-surface: #1b1d20;
+  --color-accent: #7fb894;
+  --color-accent-soft: #1e2b24;
+  --color-wrong: #e0837a;
+  --color-wrong-soft: #2c1e1d;
+  --hue-0: #7fb894; --hue-0-soft: #1e2b24;
+  --hue-1: #86b3df; --hue-1-soft: #1c2733;
+  --hue-2: #b9a0e0; --hue-2-soft: #272135;
+  --hue-3: #e0a878; --hue-3-soft: #31261c;
+  --hue-4: #e39ab4; --hue-4-soft: #321f27;
+  --hue-5: #7cc4c9; --hue-5-soft: #1a2c2e;
 }
 
 html {
@@ -60,16 +107,12 @@ body {
   }
 }
 
-/* Une teinte par unité du parcours : on se repère à la couleur avant de lire
-   le titre. Les teintes sont claires et peu saturées, pour porter un texte
-   sombre : l'application s'affiche toujours sur fond sombre, la palette
-   claire déclarée plus haut n'étant pas retenue à la compilation. */
-.hue-0 { --hue: #7fb894; --hue-soft: #1e2b24; }
-.hue-1 { --hue: #86b3df; --hue-soft: #1c2733; }
-.hue-2 { --hue: #b9a0e0; --hue-soft: #272135; }
-.hue-3 { --hue: #e0a878; --hue-soft: #31261c; }
-.hue-4 { --hue: #e39ab4; --hue-soft: #321f27; }
-.hue-5 { --hue: #7cc4c9; --hue-soft: #1a2c2e; }
+.hue-0 { --hue: var(--hue-0); --hue-soft: var(--hue-0-soft); }
+.hue-1 { --hue: var(--hue-1); --hue-soft: var(--hue-1-soft); }
+.hue-2 { --hue: var(--hue-2); --hue-soft: var(--hue-2-soft); }
+.hue-3 { --hue: var(--hue-3); --hue-soft: var(--hue-3-soft); }
+.hue-4 { --hue: var(--hue-4); --hue-soft: var(--hue-4-soft); }
+.hue-5 { --hue: var(--hue-5); --hue-soft: var(--hue-5-soft); }
 
 /* Fin de leçon : le pictogramme surgit, le reste monte en place. */
 @keyframes pop {
