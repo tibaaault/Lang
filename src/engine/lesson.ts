@@ -543,7 +543,12 @@ export function buildLesson(
   for (const c of shuffle(ref.lesson.clozes ?? [])) {
     if (!clozeOf.has(c.lexemeId)) clozeOf.set(c.lexemeId, c)
   }
-  const clozes: Step[] = [...clozeOf.values()].map((cloze) => ({
+  // Une leçon de grammaire n'a pas de mots : toutes ses phrases à trou sont
+  // candidates, et l'on en tire une douzaine.
+  const chosenClozes = words.length
+    ? [...clozeOf.values()]
+    : shuffle(ref.lesson.clozes ?? []).slice(0, 12)
+  const clozes: Step[] = chosenClozes.map((cloze) => ({
     kind: 'cloze',
     key: nextKey(),
     cloze,
@@ -559,7 +564,10 @@ export function buildLesson(
   // compréhension.
   const shift = opts.practice ? 1 : 0
   const rotation = index.course.advanced ? ADVANCED_ROTATION : PHRASE_ROTATION
-  const quizzes = shuffle(ref.lesson.quizzes ?? []).slice(0, dense ? 2 : 4)
+  const quizzes = shuffle(ref.lesson.quizzes ?? []).slice(
+    0,
+    dense && words.length ? 2 : 4,
+  )
   const tail: Step[] = []
   // Les questions rédigées s'intercalent entre les phrases, et les
   // phrases à trou entre les deux.

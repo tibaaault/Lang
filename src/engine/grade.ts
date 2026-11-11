@@ -114,3 +114,20 @@ export function checkAnswer(
 
   return { correct: false, fuzzy: false, answer }
 }
+
+/**
+ * Correction sans tolérance, pour la grammaire. Ailleurs une lettre de
+ * travers passe pour une faute de frappe ; ici « live » pour « lives » ou
+ * « take » pour « taken » est précisément l'erreur que l'exercice traque.
+ */
+export function checkExactly(
+  input: string,
+  accepted: string[],
+  nearMisses: NearMiss[] = [],
+): Verdict {
+  const given = normalize(input)
+  const hit = accepted.find((a) => normalize(a) === given)
+  if (hit) return { correct: true, fuzzy: false, answer: hit }
+  const miss = nearMisses.find((m) => normalize(m.word) === given)
+  return { correct: false, fuzzy: false, answer: accepted[0], feedback: miss?.why }
+}

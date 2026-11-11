@@ -6,7 +6,8 @@ import { EMOJI as VI_EMOJI } from '../vi/extras'
 import { EMOJI as TH_EMOJI } from '../th/extras'
 
 /** Une leçon faite de mots neufs et de phrases qui les emploient. */
-const ordinary = (l: Lesson) => !l.dialogue && !l.drill
+const ordinary = (l: Lesson) =>
+  !l.dialogue && !l.drill && l.lexemeIds.length > 0
 
 const EMOJI: Record<string, Record<string, string>> = { vi: VI_EMOJI, th: TH_EMOJI }
 
@@ -299,5 +300,45 @@ describe('drapeaux des capitales', () => {
       }
     }
     expect(places.size).toBe(4)
+  })
+})
+
+describe('conjuguer sans hésiter', () => {
+  const course = courses.find((c) => c.id === 'en-oral')!
+  const index = indexPath(course)
+  const lessons = index.lessons.filter((l) => l.unit.id.endsWith('conjuguer'))
+
+  it('fait écrire le verbe à la bonne forme, phrase après phrase', () => {
+    expect(lessons.length).toBe(5)
+    for (const { lesson } of lessons) {
+      expect(lesson.clozes!.length, lesson.id).toBeGreaterThanOrEqual(12)
+      const steps = buildLesson(index, lesson.id)
+      expect(steps.filter((s) => s.kind === 'cloze').length, lesson.id).toBe(12)
+      expect(steps.some((s) => s.kind === 'quiz')).toBe(true)
+      // Rien d'autre : ni mots à découvrir, ni tuiles.
+      expect(steps.every((s) => s.kind === 'cloze' || s.kind === 'quiz')).toBe(true)
+    }
+  })
+
+  it('donne le verbe, et autant de trous que la réponse a de mots au plus', () => {
+    const ids = new Set<string>()
+    for (const { lesson } of lessons) {
+      for (const cloze of lesson.clozes!) {
+        expect(ids.has(cloze.id), cloze.id).toBe(false)
+        ids.add(cloze.id)
+        expect(cloze.hint, cloze.sentence).toBeTruthy()
+        const holes = cloze.sentence.split('___').length - 1
+        expect(holes, cloze.sentence).toBeGreaterThanOrEqual(1)
+        for (const answer of cloze.accepted) {
+          // Plusieurs trous : un mot de la réponse dans chacun.
+          if (holes > 1) expect(answer.split(' ').length, cloze.sentence).toBe(holes)
+        }
+        // Une erreur expliquée ne peut pas être aussi une bonne réponse.
+        for (const miss of cloze.nearMisses ?? []) {
+          expect(cloze.accepted, cloze.sentence).not.toContain(miss.word)
+          expect(miss.why.length).toBeGreaterThan(20)
+        }
+      }
+    }
   })
 })

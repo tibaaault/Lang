@@ -22,7 +22,7 @@ import type {
   TypeStep,
 } from '../engine/lesson'
 import { buildLesson, buildReview, lessonTimes } from '../engine/lesson'
-import { checkAnswer } from '../engine/grade'
+import { checkAnswer, checkExactly } from '../engine/grade'
 import { sameTokens } from '../engine/tokens'
 import { shuffle } from '../engine/shuffle'
 import type { CardState } from '../engine/fsrs'
@@ -1083,15 +1083,26 @@ function ClozeView({
 
   const check = () => {
     if (locked || !input.trim()) return
-    const verdict = checkAnswer(input, cloze.accepted, cloze.nearMisses ?? [])
+    const verdict = cloze.lexemeId
+      ? checkAnswer(input, cloze.accepted, cloze.nearMisses ?? [])
+      : checkExactly(input, cloze.accepted, cloze.nearMisses ?? [])
     setRight(verdict.correct)
     const sentence = filled(cloze.sentence, verdict.answer)
     onResult({
       correct: verdict.correct,
-      words: [{ id: cloze.lexemeId, correct: verdict.correct, strict: true }],
+      // Une phrase de grammaire ne se rattache à aucun mot du lexique.
+      words: cloze.lexemeId
+        ? [{ id: cloze.lexemeId, correct: verdict.correct, strict: true }]
+        : [],
       solution: sentence,
       translation: cloze.fr,
-      remark: verdict.feedback,
+      // En grammaire, une erreur imprévue reçoit tout de même la règle que
+      // la phrase illustre : se tromper sans savoir pourquoi n'apprend rien.
+      remark:
+        verdict.feedback ??
+        (!verdict.correct && !cloze.lexemeId
+          ? cloze.nearMisses?.[0]?.why
+          : undefined),
       speakAfter: sentence,
     })
   }
@@ -1113,6 +1124,12 @@ function ClozeView({
             </span>
           ))}
         </p>
+        {cloze.hint && (
+          // Le verbe à mettre à la bonne forme, donné tel qu'au dictionnaire.
+          <p className="mt-3 text-sm text-muted">
+            Verbe : <span className="font-medium text-ink">{cloze.hint}</span>
+          </p>
+        )}
         <input
           value={input}
           disabled={locked}
@@ -1125,7 +1142,7 @@ function ClozeView({
           autoComplete="off"
           spellCheck={false}
           enterKeyHint="go"
-          placeholder="Le mot manquant"
+          placeholder={cloze.hint ? `${cloze.hint}…` : 'Le mot manquant'}
           className="mt-6 w-full rounded-xl border-2 border-line bg-surface px-4 py-4 text-lg outline-none focus:border-accent disabled:opacity-70"
         />
       </div>

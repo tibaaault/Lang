@@ -17,6 +17,7 @@ import {
   pubDialogue,
   servoDialogue,
 } from './dialogues'
+import { conjugationUnit } from './conjugation'
 
 /** question, texte lu éventuel, bonne réponse, leurres, explication. */
 const q = (
@@ -301,6 +302,7 @@ const units: UnitSource[] = [
       },
     ],
   },
+  conjugationUnit,
   {
     id: 'prononcer',
     title: 'Prononciation',
